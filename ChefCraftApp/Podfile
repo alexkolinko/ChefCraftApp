@@ -12,5 +12,6 @@ target 'ChefCraftApp' do
   pod 'RxRealm'
   pod 'Swinject'
   pod 'RealmSwift'
+  pod 'ReachabilitySwift'
 
 end

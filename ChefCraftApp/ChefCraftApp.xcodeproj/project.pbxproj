@@ -3,17 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005B8A7909C90B6E79C3BCCF /* Pods_ChefCraftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */; };
 		4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */; };
 		4BD8F9C126A9A14E003FAC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C026A9A14E003FAC6A /* SceneDelegate.swift */; };
 		4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C226A9A14E003FAC6A /* ViewController.swift */; };
 		4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C426A9A14E003FAC6A /* Main.storyboard */; };
 		4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C726A9A150003FAC6A /* Assets.xcassets */; };
 		4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */; };
-		F3C32C339A7A1A8F518B3279 /* Pods_ChefCraftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60979F201C9E8957AD5A366 /* Pods_ChefCraftApp.framework */; };
+		965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63826A9B35B00958782 /* DependenciesHolder.swift */; };
+		965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63D26A9BC7400958782 /* RealmMigrationService.swift */; };
+		965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */; };
+		965DA64226A9BD1E00958782 /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA64126A9BD1E00958782 /* DatabaseError.swift */; };
+		965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA64326A9BD5300958782 /* RMObjectMethod.swift */; };
+		965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA64526A9BD7A00958782 /* RealmProtocols.swift */; };
+		965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA64726A9BDA500958782 /* RealmStorageManager.swift */; };
+		965DA64E26A9C77F00958782 /* RealmResults+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA64D26A9C77F00958782 /* RealmResults+Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +33,17 @@
 		4BD8F9C726A9A150003FAC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD8F9CA26A9A150003FAC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD8F9CC26A9A150003FAC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76E2440D3DBEA1F87F10D3F8 /* Pods-ChefCraftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.release.xcconfig"; sourceTree = "<group>"; };
-		BF35D434509FA5CC63E726FC /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
-		D60979F201C9E8957AD5A366 /* Pods_ChefCraftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		965DA63826A9B35B00958782 /* DependenciesHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesHolder.swift; sourceTree = "<group>"; };
+		965DA63D26A9BC7400958782 /* RealmMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationService.swift; sourceTree = "<group>"; };
+		965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertibleType.swift; sourceTree = "<group>"; };
+		965DA64126A9BD1E00958782 /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
+		965DA64326A9BD5300958782 /* RMObjectMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMObjectMethod.swift; sourceTree = "<group>"; };
+		965DA64526A9BD7A00958782 /* RealmProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocols.swift; sourceTree = "<group>"; };
+		965DA64726A9BDA500958782 /* RealmStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageManager.swift; sourceTree = "<group>"; };
+		965DA64D26A9C77F00958782 /* RealmResults+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmResults+Array.swift"; sourceTree = "<group>"; };
+		CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C32C339A7A1A8F518B3279 /* Pods_ChefCraftApp.framework in Frameworks */,
+				005B8A7909C90B6E79C3BCCF /* Pods_ChefCraftApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +64,7 @@
 				4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */,
 				4BD8F9BC26A9A14E003FAC6A /* Products */,
 				D4B5A0B48BE47B42B47E25BF /* Pods */,
-				9AC1372C8DA408742F5A2969 /* Frameworks */,
+				74E362B676995E7149C6F050 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,32 +79,135 @@
 		4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */ = {
 			isa = PBXGroup;
 			children = (
-				4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */,
-				4BD8F9C026A9A14E003FAC6A /* SceneDelegate.swift */,
+				965DA64B26A9C74D00958782 /* Extensions */,
+				965DA63626A9B2D200958782 /* Flow */,
+				965DA63A26A9BC1A00958782 /* Storage */,
+				965DA63226A9B12000958782 /* Support Files */,
+				965DA63526A9B22300958782 /* Themes */,
 				4BD8F9C226A9A14E003FAC6A /* ViewController.swift */,
 				4BD8F9C426A9A14E003FAC6A /* Main.storyboard */,
-				4BD8F9C726A9A150003FAC6A /* Assets.xcassets */,
 				4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */,
 				4BD8F9CC26A9A150003FAC6A /* Info.plist */,
 			);
 			path = ChefCraftApp;
 			sourceTree = "<group>";
 		};
-		9AC1372C8DA408742F5A2969 /* Frameworks */ = {
+		74E362B676995E7149C6F050 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D60979F201C9E8957AD5A366 /* Pods_ChefCraftApp.framework */,
+				7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		965DA63226A9B12000958782 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				965DA63726A9B31B00958782 /* DependenciesHolder */,
+				965DA63426A9B1E100958782 /* AppDelegate */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		965DA63426A9B1E100958782 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */,
+				4BD8F9C026A9A14E003FAC6A /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		965DA63526A9B22300958782 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				4BD8F9C726A9A150003FAC6A /* Assets.xcassets */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		965DA63626A9B2D200958782 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flow;
+			sourceTree = "<group>";
+		};
+		965DA63726A9B31B00958782 /* DependenciesHolder */ = {
+			isa = PBXGroup;
+			children = (
+				965DA63826A9B35B00958782 /* DependenciesHolder.swift */,
+			);
+			path = DependenciesHolder;
+			sourceTree = "<group>";
+		};
+		965DA63A26A9BC1A00958782 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				965DA63B26A9BC2B00958782 /* Realm */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		965DA63B26A9BC2B00958782 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				965DA64A26A9BE2D00958782 /* Realm Models */,
+				965DA64926A9BE2200958782 /* Providers */,
+				965DA63C26A9BC4900958782 /* Database Service */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		965DA63C26A9BC4900958782 /* Database Service */ = {
+			isa = PBXGroup;
+			children = (
+				965DA63D26A9BC7400958782 /* RealmMigrationService.swift */,
+				965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */,
+				965DA64126A9BD1E00958782 /* DatabaseError.swift */,
+				965DA64326A9BD5300958782 /* RMObjectMethod.swift */,
+				965DA64526A9BD7A00958782 /* RealmProtocols.swift */,
+				965DA64726A9BDA500958782 /* RealmStorageManager.swift */,
+			);
+			path = "Database Service";
+			sourceTree = "<group>";
+		};
+		965DA64926A9BE2200958782 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		965DA64A26A9BE2D00958782 /* Realm Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Realm Models";
+			sourceTree = "<group>";
+		};
+		965DA64B26A9C74D00958782 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				965DA64C26A9C76600958782 /* Core Extensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		965DA64C26A9C76600958782 /* Core Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				965DA64D26A9C77F00958782 /* RealmResults+Array.swift */,
+			);
+			path = "Core Extensions";
 			sourceTree = "<group>";
 		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF35D434509FA5CC63E726FC /* Pods-ChefCraftApp.debug.xcconfig */,
-				76E2440D3DBEA1F87F10D3F8 /* Pods-ChefCraftApp.release.xcconfig */,
+				CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */,
+				F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,11 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BD8F9CF26A9A150003FAC6A /* Build configuration list for PBXNativeTarget "ChefCraftApp" */;
 			buildPhases = (
-				5E1141270307A018D345C9A2 /* [CP] Check Pods Manifest.lock */,
+				736B70E0EEE38A2B28B54CC9 /* [CP] Check Pods Manifest.lock */,
 				4BD8F9B726A9A14E003FAC6A /* Sources */,
 				4BD8F9B826A9A14E003FAC6A /* Frameworks */,
 				4BD8F9B926A9A14E003FAC6A /* Resources */,
-				9C1F94A37597889AFD058CD3 /* [CP] Embed Pods Frameworks */,
+				AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,7 +279,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E1141270307A018D345C9A2 /* [CP] Check Pods Manifest.lock */ = {
+		736B70E0EEE38A2B28B54CC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,7 +301,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C1F94A37597889AFD058CD3 /* [CP] Embed Pods Frameworks */ = {
+		AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,9 +325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965DA64226A9BD1E00958782 /* DatabaseError.swift in Sources */,
+				965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */,
+				965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */,
+				965DA64E26A9C77F00958782 /* RealmResults+Array.swift in Sources */,
 				4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */,
+				965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */,
+				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				4BD8F9C126A9A14E003FAC6A /* SceneDelegate.swift in Sources */,
+				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
+				965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +479,7 @@
 		};
 		4BD8F9D026A9A150003FAC6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF35D434509FA5CC63E726FC /* Pods-ChefCraftApp.debug.xcconfig */;
+			baseConfigurationReference = CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -372,7 +499,7 @@
 		};
 		4BD8F9D126A9A150003FAC6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76E2440D3DBEA1F87F10D3F8 /* Pods-ChefCraftApp.release.xcconfig */;
+			baseConfigurationReference = F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

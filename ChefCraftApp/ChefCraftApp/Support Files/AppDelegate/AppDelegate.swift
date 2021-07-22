@@ -10,6 +10,11 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // - Internal Properties
+    var window: UIWindow?
+    
+    // - Private Service Properties
+    private var dependenciesHolder: DependenciesHolder!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

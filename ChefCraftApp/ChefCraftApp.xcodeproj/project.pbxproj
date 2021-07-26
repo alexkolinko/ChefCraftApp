@@ -13,6 +13,11 @@
 		4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C426A9A14E003FAC6A /* Main.storyboard */; };
 		4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C726A9A150003FAC6A /* Assets.xcassets */; };
 		4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */; };
+		960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */; };
+		960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */; };
+		960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F926AEBD9600DDD3CA /* CellInizializable.swift */; };
+		960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */; };
+		960676FE26AEC06700DDD3CA /* ChefCraftViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676FD26AEC06700DDD3CA /* ChefCraftViewData.swift */; };
 		9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9612C35226AAAEF700AB16AA /* UIScreen+Brightness.swift */; };
 		962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418DE26AAD2C800200576 /* Metropolis-Bold.otf */; };
 		962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E026AAD2D600200576 /* Metropolis-Light.otf */; };
@@ -59,6 +64,11 @@
 		4BD8F9CA26A9A150003FAC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD8F9CC26A9A150003FAC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSectionModel.swift; sourceTree = "<group>"; };
+		960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollections+Extensions.swift"; sourceTree = "<group>"; };
+		960676F926AEBD9600DDD3CA /* CellInizializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInizializable.swift; sourceTree = "<group>"; };
+		960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		960676FD26AEC06700DDD3CA /* ChefCraftViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftViewData.swift; sourceTree = "<group>"; };
 		9612C35226AAAEF700AB16AA /* UIScreen+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Brightness.swift"; sourceTree = "<group>"; };
 		962418DE26AAD2C800200576 /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Bold.otf"; sourceTree = "<group>"; };
 		962418E026AAD2D600200576 /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Light.otf"; sourceTree = "<group>"; };
@@ -152,6 +162,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		960676F326AEBBFF00DDD3CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */,
+				960676FD26AEC06700DDD3CA /* ChefCraftViewData.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		960676F426AEBC1D00DDD3CA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				960676F326AEBBFF00DDD3CA /* Models */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
 		962418DD26AAD26A00200576 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +222,7 @@
 		965DA63626A9B2D200958782 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				960676F426AEBC1D00DDD3CA /* Support Files */,
 				965DA66D26AA97B400958782 /* HomeView */,
 			);
 			name = Flow;
@@ -266,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				965DA64D26A9C77F00958782 /* RealmResults+Array.swift */,
+				960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */,
 			);
 			path = "Core Extensions";
 			sourceTree = "<group>";
@@ -289,6 +318,7 @@
 			children = (
 				965DA67D26AA9A6400958782 /* Custom Inits */,
 				965DA69E26AAA1AF00958782 /* UIWindow+switchRoot.swift */,
+				960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -298,6 +328,7 @@
 			children = (
 				965DA67E26AA9A7D00958782 /* StoryboardInitializable.swift */,
 				9612C35226AAAEF700AB16AA /* UIScreen+Brightness.swift */,
+				960676F926AEBD9600DDD3CA /* CellInizializable.swift */,
 			);
 			path = "Custom Inits";
 			sourceTree = "<group>";
@@ -482,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965DA69526AAA05F00958782 /* ModalTransition.swift in Sources */,
+				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965DA68A26AA9F9000958782 /* Router.swift in Sources */,
 				965DA64226A9BD1E00958782 /* DatabaseError.swift in Sources */,
 				965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */,
@@ -493,17 +525,21 @@
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,
 				965DA67526AA97E000958782 /* HomePresenter.swift in Sources */,
+				960676FE26AEC06700DDD3CA /* ChefCraftViewData.swift in Sources */,
 				965DA68C26AA9FC400958782 /* AnimatorProtocol.swift in Sources */,
 				965DA64E26A9C77F00958782 /* RealmResults+Array.swift in Sources */,
+				960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */,
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
 				4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */,
 				965DA69126AAA02A00958782 /* ClosablePushTransition.swift in Sources */,
 				965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */,
+				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
 				965DA69D26AAA13800958782 /* FadeAnimator.swift in Sources */,
 				9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */,
+				960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */,
 				965DA67726AA97E000958782 /* HomeRouter.swift in Sources */,
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,

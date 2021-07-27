@@ -15,6 +15,9 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipeDescription: UILabel!
     @IBOutlet weak var backgroundCellView: UIView!
     
+    // - Private properties
+    private let constants: AppConstants.Constants = .init()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configUI()
@@ -22,7 +25,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.recipeImage.layer.cornerRadius = 20
+        self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
     }
     
     private func configUI() {
@@ -30,11 +33,11 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeImage.clipsToBounds = true
         backgroundCellView.backgroundColor = .clear
         
-        recipeName.textColor =  .gray
-        recipeName.font = UIFont(name: "Metropolis", size: 12.0)
+        recipeName.textColor = .gray
+        recipeName.font = constants.cellFontMetropolis
         
         recipeDescription.textColor =  .lightGray
-        recipeDescription.font = UIFont(name: "Metropolis", size: 12.0)
+        recipeDescription.font = constants.cellFontMetropolis
     }
     
     func configure(viewData: Recipes) {

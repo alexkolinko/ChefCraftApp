@@ -13,6 +13,9 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var collectionRecipesImage: UIImageView!
     @IBOutlet weak var backgroundCellView: UIView!
     
+    // - Private properties
+    private let constants: AppConstants.Constants = .init()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configUI()
@@ -20,13 +23,13 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.collectionRecipesImage.layer.cornerRadius = 20
+        self.collectionRecipesImage.layer.cornerRadius = constants.cellImageCornerRadius
     }
     
     private func configUI() {
         backgroundCellView.backgroundColor = .clear
         collectionRecipesName.textColor =  .gray
-        collectionRecipesName.font = UIFont(name: "Metropolis", size: 12.0)
+        collectionRecipesName.font = constants.cellFontMetropolis
     }
     
     func configure(viewData: CollectionRecipes) {

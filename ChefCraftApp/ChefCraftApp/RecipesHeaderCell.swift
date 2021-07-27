@@ -16,6 +16,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipesCollectionView: UICollectionView!
     
     // - Private properties
+    private let constants: AppConstants.Constants = .init()
     private(set) var disposeBag = DisposeBag()
     private let recipes = BehaviorRelay<[AnimatableSection<Recipes>]>(value: [])
     
@@ -48,8 +49,8 @@ private extension RecipesHeaderCell {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 6.0
-        layout.minimumLineSpacing = 12.0
+        layout.minimumInteritemSpacing = constants.layoutMinimumInteritemSpacing
+        layout.minimumLineSpacing = constants.layoutMinimumLineSpacing
         self.recipesCollectionView.collectionViewLayout = layout
     }
     
@@ -66,9 +67,7 @@ private extension RecipesHeaderCell {
 extension RecipesHeaderCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = 350
-        let width: CGFloat = 280
-        return CGSize(width: width, height: height)
+        return CGSize(width: constants.recipesHeaderCellWidth, height: constants.recipesHeaderCellHeight)
     }
 }
 

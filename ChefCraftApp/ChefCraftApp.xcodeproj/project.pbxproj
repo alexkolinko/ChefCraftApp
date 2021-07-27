@@ -61,6 +61,7 @@
 		969428C826B0026B00A0D3B6 /* ChefCraftRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428C726B0026B00A0D3B6 /* ChefCraftRecipe.swift */; };
 		969428CA26B012AC00A0D3B6 /* CollectionRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428C926B012AC00A0D3B6 /* CollectionRecipes.swift */; };
 		969428CC26B012CC00A0D3B6 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428CB26B012CC00A0D3B6 /* Recipes.swift */; };
+		969428CF26B01B2300A0D3B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428CE26B01B2300A0D3B6 /* AppConstants.swift */; };
 		96A383FD26AEDBF700F6530C /* ChefCraftAllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A383FC26AEDBF700F6530C /* ChefCraftAllRecipes.swift */; };
 		96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A383FF26AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift */; };
 		96A3840226AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A3840026AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib */; };
@@ -127,6 +128,7 @@
 		969428C726B0026B00A0D3B6 /* ChefCraftRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftRecipe.swift; sourceTree = "<group>"; };
 		969428C926B012AC00A0D3B6 /* CollectionRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRecipes.swift; sourceTree = "<group>"; };
 		969428CB26B012CC00A0D3B6 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		969428CE26B01B2300A0D3B6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		96A383FC26AEDBF700F6530C /* ChefCraftAllRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftAllRecipes.swift; sourceTree = "<group>"; };
 		96A383FF26AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRecipesHeaderCell.swift; sourceTree = "<group>"; };
 		96A3840026AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsRecipesHeaderCell.xib; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */ = {
 			isa = PBXGroup;
 			children = (
+				969428CD26B01AFA00A0D3B6 /* Constants */,
 				965DA64B26A9C74D00958782 /* Extensions */,
 				965DA63626A9B2D200958782 /* Flow */,
 				965DA63A26A9BC1A00958782 /* Storage */,
@@ -448,6 +451,14 @@
 			path = Animators;
 			sourceTree = "<group>";
 		};
+		969428CD26B01AFA00A0D3B6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				969428CE26B01B2300A0D3B6 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		96A383FE26AEE18F00F6530C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +663,7 @@
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
+				969428CF26B01B2300A0D3B6 /* AppConstants.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
 				965DA67B26AA97E000958782 /* HomeBuilder.swift in Sources */,
 				965DA69A26AAA0A500958782 /* PushTransition.swift in Sources */,

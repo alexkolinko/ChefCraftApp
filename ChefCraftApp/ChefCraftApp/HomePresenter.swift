@@ -48,7 +48,7 @@ class HomePresenter {
     }
     
     func mapToViewData(session: ChefCraftAllRecipes) -> ChefCraftOverviewViewData {
-        let collectionsRecipesHeader = ChefCraftOverviewViewData.CollectionsRecipesHeader(
+        let collectionsRecipesHeader = ChefCraftOverviewViewData.RecipesCategoriesSection(
             collectionsRecipes:
                 session.collectionsRecipes
                 .map {
@@ -58,7 +58,7 @@ class HomePresenter {
                     )
                 })
         
-        let recipesHeader = ChefCraftOverviewViewData.RecipesHeader(recipesHeader: session.recipes.map {
+        let recipesHeader = ChefCraftOverviewViewData.MainRecipesSection(recipesHeader: session.recipes.map {
             Recipes(id: $0.id,
                                               title: $0.name,
                                               description: $0.description

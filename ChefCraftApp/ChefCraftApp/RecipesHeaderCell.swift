@@ -30,7 +30,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
         self.setupBinding()
     }
     
-    func configure(viewData: ChefCraftOverviewViewData.RecipesHeader) {
+    func configure(viewData: ChefCraftOverviewViewData.MainRecipesSection) {
         self.recipes.accept([.init(items: viewData.recipesHeader)])
     }
 }

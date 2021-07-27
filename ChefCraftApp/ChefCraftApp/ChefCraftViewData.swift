@@ -14,31 +14,20 @@ struct ChefCraftOverviewViewData: Equatable {
     let previewId: String
     let sectionModel: AnimatableSection<ChefCraftOverviewContentBox>
     
-    struct CollectionsRecipesHeader {
+    struct RecipesCategoriesSection {
         let collectionsRecipes: [CollectionRecipes]
     }
     
-//    struct CollectionRecipes {
-//        let id: String
-//        let title: String
-//    }
-    
-    struct RecipesHeader {
+    struct MainRecipesSection {
         let recipesHeader: [Recipes]
     }
-    
-//    struct Recipes {
-//        let id: String
-//        let title: String
-//        let description: String
-//    }
     
 }
 
 // MARK: - ChefCraftOverviewContentBox
 enum ChefCraftOverviewContentBox: IdentifiableItem {
-    case collectionsRecipesHeader(item: ChefCraftOverviewViewData.CollectionsRecipesHeader)
-    case recipesHeader(item: ChefCraftOverviewViewData.RecipesHeader)
+    case collectionsRecipesHeader(item: ChefCraftOverviewViewData.RecipesCategoriesSection)
+    case recipesHeader(item: ChefCraftOverviewViewData.MainRecipesSection)
     
     func calculateItemSize(width: CGFloat) -> CGSize {
         switch self {

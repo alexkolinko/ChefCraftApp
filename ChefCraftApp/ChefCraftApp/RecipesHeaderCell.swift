@@ -17,7 +17,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     
     // - Private properties
     private(set) var disposeBag = DisposeBag()
-    private let recipes = BehaviorRelay<[AnimatableSection<ChefCraftOverviewViewData.Recipes>]>(value: [])
+    private let recipes = BehaviorRelay<[AnimatableSection<Recipes>]>(value: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,7 +74,7 @@ extension RecipesHeaderCell: UICollectionViewDelegateFlowLayout {
 
 // MARK: - RxCollectionViewSectionedReloadDataSource
 extension RecipesHeaderCell {
-    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<ChefCraftOverviewViewData.Recipes>>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<Recipes>>
     
     var dataSource: DataSource {
         return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in

@@ -29,7 +29,7 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
         collectionRecipesName.font = UIFont(name: "Metropolis", size: 12.0)
     }
     
-    func configure(viewData: ChefCraftOverviewViewData.CollectionRecipes) {
+    func configure(viewData: CollectionRecipes) {
         collectionRecipesName.text = viewData.title
         collectionRecipesImage.image = UIImage(named: "soup")
     }

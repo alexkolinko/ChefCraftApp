@@ -18,20 +18,20 @@ struct ChefCraftOverviewViewData: Equatable {
         let collectionsRecipes: [CollectionRecipes]
     }
     
-    struct CollectionRecipes {
-        let id: String
-        let title: String
-    }
+//    struct CollectionRecipes {
+//        let id: String
+//        let title: String
+//    }
     
     struct RecipesHeader {
         let recipesHeader: [Recipes]
     }
     
-    struct Recipes {
-        let id: String
-        let title: String
-        let description: String
-    }
+//    struct Recipes {
+//        let id: String
+//        let title: String
+//        let description: String
+//    }
     
 }
 
@@ -55,17 +55,5 @@ enum ChefCraftOverviewContentBox: IdentifiableItem {
 extension ChefCraftOverviewContentBox {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.identity == rhs.identity
-    }
-}
-
-extension ChefCraftOverviewViewData.CollectionRecipes: IdentifiableItem {
-    var identity: String {
-        id
-    }
-}
-
-extension ChefCraftOverviewViewData.Recipes: IdentifiableItem {
-    var identity: String {
-        id
     }
 }

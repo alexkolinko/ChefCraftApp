@@ -37,7 +37,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeDescription.font = UIFont(name: "Metropolis", size: 12.0)
     }
     
-    func configure(viewData: ChefCraftOverviewViewData.Recipes) {
+    func configure(viewData: Recipes) {
         recipeImage.image = UIImage(named: "bitmap")
         recipeName.text = viewData.title
         recipeDescription.text = viewData.description

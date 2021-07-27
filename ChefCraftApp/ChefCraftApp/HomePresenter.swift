@@ -52,14 +52,14 @@ class HomePresenter {
             collectionsRecipes:
                 session.collectionsRecipes
                 .map {
-                    ChefCraftOverviewViewData.CollectionRecipes(
+                    CollectionRecipes(
                         id: $0.id,
                         title: $0.name
                     )
                 })
         
         let recipesHeader = ChefCraftOverviewViewData.RecipesHeader(recipesHeader: session.recipes.map {
-            ChefCraftOverviewViewData.Recipes(id: $0.id,
+            Recipes(id: $0.id,
                                               title: $0.name,
                                               description: $0.description
             )

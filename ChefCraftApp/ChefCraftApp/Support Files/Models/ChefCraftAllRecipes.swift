@@ -23,21 +23,6 @@ struct ChefCraftAllRecipes: Decodable {
     }
 }
 
-// MARK: - CollectionRecipes
-struct ChefCraftCollectionRecipes: Codable {
-    let id: String
-    let name: String
-}
-
-// MARK: - CollectionRecipes
-struct ChefCraftRecipe: Codable {
-    let id: String
-    let name: String
-    let description: String
-}
-
-
-
 extension ChefCraftAllRecipes: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id

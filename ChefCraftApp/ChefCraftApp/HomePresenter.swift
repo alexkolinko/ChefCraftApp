@@ -37,22 +37,28 @@ class HomePresenter {
             .disposed(by: disposeBag)
     }
     
-   private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> ChefCraftOverviewViewData? {
+    private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> ChefCraftOverviewViewData? {
         guard let recipes = recipes else { return nil }
-        let collectionsRecipesHeader = ChefCraftOverviewViewData.RecipesCategoriesSection(
-            collectionsRecipes:
-                recipes.collectionsRecipes
-                .map {
-                    CollectionRecipes(
-                        id: $0.id,
-                        title: $0.name
-                    )
-                })
+        let collectionsRecipesHeader = ChefCraftOverviewViewData.RecipesCategoriesSection(collectionsRecipes: recipes.collectionsRecipes.map {
+            CollectionRecipes(
+                id: $0.id,
+                title: $0.name,
+                image: $0.image,
+                recipes: $0.recipes
+            )
+        })
         
         let recipesHeader = ChefCraftOverviewViewData.MainRecipesSection(recipesHeader: recipes.recipes.map {
-            Recipes(id: $0.id,
-                                              title: $0.name,
-                                              description: $0.description
+            Recipe(
+                id: $0.id,
+                title: $0.name,
+                image: $0.image,
+                description: $0.description,
+                owner: $0.owner,
+                isLike: $0.isLike,
+                stars: $0.stars,
+                about: $0.about,
+                compositions: $0.compositions
             )
         })
         

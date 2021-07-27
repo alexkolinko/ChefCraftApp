@@ -19,7 +19,7 @@ struct ChefCraftOverviewViewData: Equatable {
     }
     
     struct MainRecipesSection {
-        let recipesHeader: [Recipes]
+        let recipesHeader: [Recipe]
     }
     
 }

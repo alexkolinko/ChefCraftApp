@@ -60,8 +60,11 @@
 		969428C626B0023E00A0D3B6 /* ChefCraftCollectionRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428C526B0023E00A0D3B6 /* ChefCraftCollectionRecipes.swift */; };
 		969428C826B0026B00A0D3B6 /* ChefCraftRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428C726B0026B00A0D3B6 /* ChefCraftRecipe.swift */; };
 		969428CA26B012AC00A0D3B6 /* CollectionRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428C926B012AC00A0D3B6 /* CollectionRecipes.swift */; };
-		969428CC26B012CC00A0D3B6 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428CB26B012CC00A0D3B6 /* Recipes.swift */; };
+		969428CC26B012CC00A0D3B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428CB26B012CC00A0D3B6 /* Recipe.swift */; };
 		969428CF26B01B2300A0D3B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428CE26B01B2300A0D3B6 /* AppConstants.swift */; };
+		969428D126B04C7A00A0D3B6 /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428D026B04C7A00A0D3B6 /* RecipeItem.swift */; };
+		969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428D226B0606E00A0D3B6 /* RecipeComposition.swift */; };
+		969428D526B0608E00A0D3B6 /* RecipeCompositionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969428D426B0608E00A0D3B6 /* RecipeCompositionType.swift */; };
 		96A383FD26AEDBF700F6530C /* ChefCraftAllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A383FC26AEDBF700F6530C /* ChefCraftAllRecipes.swift */; };
 		96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A383FF26AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift */; };
 		96A3840226AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A3840026AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib */; };
@@ -127,8 +130,11 @@
 		969428C526B0023E00A0D3B6 /* ChefCraftCollectionRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftCollectionRecipes.swift; sourceTree = "<group>"; };
 		969428C726B0026B00A0D3B6 /* ChefCraftRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftRecipe.swift; sourceTree = "<group>"; };
 		969428C926B012AC00A0D3B6 /* CollectionRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRecipes.swift; sourceTree = "<group>"; };
-		969428CB26B012CC00A0D3B6 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		969428CB26B012CC00A0D3B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		969428CE26B01B2300A0D3B6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		969428D026B04C7A00A0D3B6 /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
+		969428D226B0606E00A0D3B6 /* RecipeComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeComposition.swift; sourceTree = "<group>"; };
+		969428D426B0608E00A0D3B6 /* RecipeCompositionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCompositionType.swift; sourceTree = "<group>"; };
 		96A383FC26AEDBF700F6530C /* ChefCraftAllRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCraftAllRecipes.swift; sourceTree = "<group>"; };
 		96A383FF26AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRecipesHeaderCell.swift; sourceTree = "<group>"; };
 		96A3840026AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsRecipesHeaderCell.xib; sourceTree = "<group>"; };
@@ -201,7 +207,7 @@
 				960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */,
 				960676FD26AEC06700DDD3CA /* ChefCraftViewData.swift */,
 				969428C926B012AC00A0D3B6 /* CollectionRecipes.swift */,
-				969428CB26B012CC00A0D3B6 /* Recipes.swift */,
+				969428CB26B012CC00A0D3B6 /* Recipe.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -252,6 +258,9 @@
 				96A383FC26AEDBF700F6530C /* ChefCraftAllRecipes.swift */,
 				969428C526B0023E00A0D3B6 /* ChefCraftCollectionRecipes.swift */,
 				969428C726B0026B00A0D3B6 /* ChefCraftRecipe.swift */,
+				969428D026B04C7A00A0D3B6 /* RecipeItem.swift */,
+				969428D226B0606E00A0D3B6 /* RecipeComposition.swift */,
+				969428D426B0608E00A0D3B6 /* RecipeCompositionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -634,6 +643,7 @@
 				965DA68826AA9F7400958782 /* InjectorProtocol.swift in Sources */,
 				965DA68626AA9F5400958782 /* ClosableRouterProtocol.swift in Sources */,
 				965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */,
+				969428D526B0608E00A0D3B6 /* RecipeCompositionType.swift in Sources */,
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,
 				965DA67526AA97E000958782 /* HomePresenter.swift in Sources */,
@@ -646,13 +656,15 @@
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
 				4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */,
-				969428CC26B012CC00A0D3B6 /* Recipes.swift in Sources */,
+				969428CC26B012CC00A0D3B6 /* Recipe.swift in Sources */,
 				969428C626B0023E00A0D3B6 /* ChefCraftCollectionRecipes.swift in Sources */,
 				965DA69126AAA02A00958782 /* ClosablePushTransition.swift in Sources */,
 				965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */,
 				96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */,
 				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
+				969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
+				969428D126B04C7A00A0D3B6 /* RecipeItem.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
 				965DA69D26AAA13800958782 /* FadeAnimator.swift in Sources */,
 				9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */,

@@ -11,5 +11,11 @@ import Foundation
 struct ChefCraftRecipe: Codable {
     let id: String
     let name: String
+    let image: String
     let description: String
+    let owner: String
+    let isLike: Bool
+    let stars: Int
+    let about: String
+    let compositions: [RecipeComposition]
 }

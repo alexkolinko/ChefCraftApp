@@ -34,6 +34,6 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     
     func configure(viewData: CollectionRecipes) {
         collectionRecipesName.text = viewData.title
-        collectionRecipesImage.image = UIImage(named: "soup")
+        collectionRecipesImage.image = UIImage(named: viewData.image)
     }
 }

@@ -40,8 +40,8 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeDescription.font = constants.cellFontMetropolis
     }
     
-    func configure(viewData: Recipes) {
-        recipeImage.image = UIImage(named: "bitmap")
+    func configure(viewData: Recipe) {
+        recipeImage.image = UIImage(named: viewData.image)
         recipeName.text = viewData.title
         recipeDescription.text = viewData.description
     }

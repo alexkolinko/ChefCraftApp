@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     private func configBinding() {
         let viewData = presenter.viewDataPublisher
             .observe(on: MainScheduler.instance)
+        
         viewData
             .asObservable()
             .ignoreNil()
@@ -44,9 +45,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     }
     
     func configCollectionView() {
-        contentCollection.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
+        contentCollection.delegate = self
         
         let layout = UICollectionViewFlowLayout()
         self.contentCollection.collectionViewLayout = layout

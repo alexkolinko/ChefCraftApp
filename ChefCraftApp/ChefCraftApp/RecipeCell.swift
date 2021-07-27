@@ -36,7 +36,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeName.textColor = .gray
         recipeName.font = constants.cellFontMetropolis
         
-        recipeDescription.textColor =  .lightGray
+        recipeDescription.textColor = .lightGray
         recipeDescription.font = constants.cellFontMetropolis
     }
     

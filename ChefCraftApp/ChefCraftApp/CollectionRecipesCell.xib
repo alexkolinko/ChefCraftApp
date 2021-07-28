@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IDp-Wc-ozR" customClass="CollectionRecipesCell" customModule="ChefCraftApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="144" height="193"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8vX-jd-iuZ">
+                <rect key="frame" x="0.0" y="0.0" width="144" height="193"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyk-V2-fVe">
+                        <rect key="frame" x="0.0" y="10" width="144" height="183"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-rm-WpR">
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="183"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SCp-Nt-v30">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="144" id="ECZ-Gx-fcH"/>
+                                            <constraint firstAttribute="height" constant="144" id="g9O-tU-W1r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-71-lH4">
+                                        <rect key="frame" x="0.0" y="154" width="144" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bGc-rm-WpR" firstAttribute="top" secondItem="Tyk-V2-fVe" secondAttribute="top" id="0g2-M3-QuH"/>
+                            <constraint firstItem="bGc-rm-WpR" firstAttribute="leading" secondItem="Tyk-V2-fVe" secondAttribute="leading" id="AOE-ue-Y0e"/>
+                            <constraint firstAttribute="bottom" secondItem="bGc-rm-WpR" secondAttribute="bottom" id="MDG-ww-75y"/>
+                            <constraint firstAttribute="trailing" secondItem="bGc-rm-WpR" secondAttribute="trailing" id="e9q-r7-PDt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Tyk-V2-fVe" firstAttribute="leading" secondItem="8vX-jd-iuZ" secondAttribute="leading" id="Gpc-OU-9WK"/>
+                    <constraint firstAttribute="trailing" secondItem="Tyk-V2-fVe" secondAttribute="trailing" id="M52-hV-vKk"/>
+                    <constraint firstItem="Tyk-V2-fVe" firstAttribute="top" secondItem="8vX-jd-iuZ" secondAttribute="top" constant="10" id="Zpc-Kz-LS2"/>
+                    <constraint firstAttribute="bottom" secondItem="Tyk-V2-fVe" secondAttribute="bottom" id="iFZ-0v-GrE"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="144" height="193"/>
+            <connections>
+                <outlet property="backgroundCellView" destination="Tyk-V2-fVe" id="paH-di-tON"/>
+                <outlet property="collectionRecipesImage" destination="SCp-Nt-v30" id="kLy-0e-ryJ"/>
+                <outlet property="collectionRecipesName" destination="1A5-71-lH4" id="4Od-K1-n2D"/>
+            </connections>
+            <point key="canvasLocation" x="147.82608695652175" y="163.72767857142856"/>
+        </collectionViewCell>
+    </objects>
+</document>

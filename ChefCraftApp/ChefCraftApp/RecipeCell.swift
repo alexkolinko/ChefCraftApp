@@ -16,7 +16,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var backgroundCellView: UIView!
     
     // - Private properties
-    private let constants: AppConstants.Constants = .init()
+    private let constants: RecipeCell.Constants = .init()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,5 +44,14 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeImage.image = UIImage(named: viewData.image)
         recipeName.text = viewData.title
         recipeDescription.text = viewData.description
+    }
+}
+
+private extension RecipeCell {
+    
+    // MARK: - Internal constants
+    struct Constants {
+        let cellImageCornerRadius: CGFloat = 20
+        let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)
     }
 }

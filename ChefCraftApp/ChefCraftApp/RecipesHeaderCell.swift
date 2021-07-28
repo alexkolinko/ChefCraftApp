@@ -16,7 +16,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipesCollectionView: UICollectionView!
     
     // - Private properties
-    private let constants: AppConstants.Constants = .init()
+    private let constants: RecipesHeaderCell.Constants = .init()
     private(set) var disposeBag = DisposeBag()
     private let recipes = BehaviorRelay<[AnimatableSection<Recipe>]>(value: [])
     
@@ -81,5 +81,16 @@ extension RecipesHeaderCell {
             cell.configure(viewData: item)
             return cell
         })
+    }
+}
+
+private extension RecipesHeaderCell {
+    
+    // MARK: - Internal constants
+    struct Constants {
+        let layoutMinimumInteritemSpacing: CGFloat = 6.0
+        let layoutMinimumLineSpacing: CGFloat = 12.0
+        let recipesHeaderCellHeight: CGFloat = 350
+        let recipesHeaderCellWidth: CGFloat = 280
     }
 }

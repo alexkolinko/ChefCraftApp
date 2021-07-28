@@ -14,7 +14,7 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var backgroundCellView: UIView!
     
     // - Private properties
-    private let constants: AppConstants.Constants = .init()
+    private let constants: CollectionRecipesCell.Constants = .init()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,5 +35,14 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     func configure(viewData: CollectionRecipes) {
         collectionRecipesName.text = viewData.title
         collectionRecipesImage.image = UIImage(named: viewData.image)
+    }
+}
+
+private extension CollectionRecipesCell {
+    
+    // MARK: - Internal constants
+    struct Constants {
+        let cellImageCornerRadius: CGFloat = 20
+        let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)
     }
 }

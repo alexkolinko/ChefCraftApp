@@ -1,9 +1,10 @@
 # Uncomment the next line to define a global platform for your project
-  platform :ios, '13.0'
+use_frameworks!
+inhibit_all_warnings!
 
 target 'ChefCraftApp' do
+  platform :ios, '13.0'
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
 
   # Pods for ChefCraftApp
   pod 'RxSwift'
@@ -12,5 +13,15 @@ target 'ChefCraftApp' do
   pod 'RxRealm'
   pod 'Swinject'
   pod 'RealmSwift'
+  
+  target 'ChefCraftAppTests' do
+    inherit! :search_paths
+    platform :ios, '13.0'
+
+    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'RxNimble'
+  end
 
 end

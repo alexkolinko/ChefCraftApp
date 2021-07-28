@@ -16,7 +16,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var backgroundCellView: UIView!
     
     // - Private properties
-    private let constants: RecipeCell.Constants = .init()
+    private let constants: Constants = .init()
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -16,7 +16,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipesCollectionView: UICollectionView!
     
     // - Private properties
-    private let constants: RecipesHeaderCell.Constants = .init()
+    private let constants: Constants = .init()
     private(set) var disposeBag = DisposeBag()
     private let recipes = BehaviorRelay<[AnimatableSection<Recipe>]>(value: [])
     

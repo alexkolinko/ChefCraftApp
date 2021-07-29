@@ -13,6 +13,7 @@
 		4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C426A9A14E003FAC6A /* Main.storyboard */; };
 		4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C726A9A150003FAC6A /* Assets.xcassets */; };
 		4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */; };
+		7281B7BEC9DD1EC978F18EBC /* Pods_ChefCraftAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */; };
 		960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */; };
 		960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */; };
 		960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F926AEBD9600DDD3CA /* CellInizializable.swift */; };
@@ -71,9 +72,21 @@
 		96A3841826AEEAAB00F6530C /* CollectionRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3841626AEEAAB00F6530C /* CollectionRecipesCell.swift */; };
 		96A3841926AEEAAB00F6530C /* CollectionRecipesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A3841726AEEAAB00F6530C /* CollectionRecipesCell.xib */; };
 		96A3841B26AEEBBC00F6530C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */; };
+		96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		96CDFF6C26B16ED100652CE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BD8F9B326A9A14E003FAC6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BD8F9BA26A9A14E003FAC6A;
+			remoteInfo = ChefCraftApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BD8F9BB26A9A14E003FAC6A /* ChefCraftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefCraftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD8F9C226A9A14E003FAC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +153,11 @@
 		96A3841626AEEAAB00F6530C /* CollectionRecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRecipesCell.swift; sourceTree = "<group>"; };
 		96A3841726AEEAAB00F6530C /* CollectionRecipesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionRecipesCell.xib; sourceTree = "<group>"; };
 		96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefCraftAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CDFF6B26B16ED100652CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +171,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96CDFF6426B16ED100652CE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7281B7BEC9DD1EC978F18EBC /* Pods_ChefCraftAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -160,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */,
+				96CDFF6826B16ED100652CE4 /* ChefCraftAppTests */,
 				4BD8F9BC26A9A14E003FAC6A /* Products */,
 				D4B5A0B48BE47B42B47E25BF /* Pods */,
 				74E362B676995E7149C6F050 /* Frameworks */,
@@ -170,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD8F9BB26A9A14E003FAC6A /* ChefCraftApp.app */,
+				96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */,
+				98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -485,11 +514,38 @@
 			name = CollectionRecipes;
 			sourceTree = "<group>";
 		};
+		96CDFF6826B16ED100652CE4 /* ChefCraftAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				96CDFF7126B170EC00652CE4 /* Flow Tests */,
+				96CDFF6B26B16ED100652CE4 /* Info.plist */,
+			);
+			path = ChefCraftAppTests;
+			sourceTree = "<group>";
+		};
+		96CDFF7126B170EC00652CE4 /* Flow Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96CDFF7226B1710200652CE4 /* HomePresenterTests */,
+			);
+			path = "Flow Tests";
+			sourceTree = "<group>";
+		};
+		96CDFF7226B1710200652CE4 /* HomePresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */,
+			);
+			path = HomePresenterTests;
+			sourceTree = "<group>";
+		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */,
 				F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */,
+				32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */,
+				C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -516,6 +572,26 @@
 			productReference = 4BD8F9BB26A9A14E003FAC6A /* ChefCraftApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		96CDFF6626B16ED100652CE4 /* ChefCraftAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96CDFF7026B16ED100652CE4 /* Build configuration list for PBXNativeTarget "ChefCraftAppTests" */;
+			buildPhases = (
+				09B1DE81D551B5802F7ECE3F /* [CP] Check Pods Manifest.lock */,
+				96CDFF6326B16ED100652CE4 /* Sources */,
+				96CDFF6426B16ED100652CE4 /* Frameworks */,
+				96CDFF6526B16ED100652CE4 /* Resources */,
+				0E0B9DFF236245D86E2DA194 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96CDFF6D26B16ED100652CE4 /* PBXTargetDependency */,
+			);
+			name = ChefCraftAppTests;
+			productName = ChefCraftAppTests;
+			productReference = 96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -527,6 +603,10 @@
 				TargetAttributes = {
 					4BD8F9BA26A9A14E003FAC6A = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					96CDFF6626B16ED100652CE4 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 4BD8F9BA26A9A14E003FAC6A;
 					};
 				};
 			};
@@ -544,6 +624,7 @@
 			projectRoot = "";
 			targets = (
 				4BD8F9BA26A9A14E003FAC6A /* ChefCraftApp */,
+				96CDFF6626B16ED100652CE4 /* ChefCraftAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -569,9 +650,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96CDFF6526B16ED100652CE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09B1DE81D551B5802F7ECE3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChefCraftAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E0B9DFF236245D86E2DA194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		736B70E0EEE38A2B28B54CC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -671,7 +798,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96CDFF6326B16ED100652CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96CDFF6D26B16ED100652CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BD8F9BA26A9A14E003FAC6A /* ChefCraftApp */;
+			targetProxy = 96CDFF6C26B16ED100652CE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4BD8F9C426A9A14E003FAC6A /* Main.storyboard */ = {
@@ -849,6 +992,48 @@
 			};
 			name = Release;
 		};
+		96CDFF6E26B16ED100652CE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9KD6SGS6V;
+				INFOPLIST_FILE = ChefCraftAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.ChefCraft.ChefCraftAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChefCraftApp.app/ChefCraftApp";
+			};
+			name = Debug;
+		};
+		96CDFF6F26B16ED100652CE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9KD6SGS6V;
+				INFOPLIST_FILE = ChefCraftAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.ChefCraft.ChefCraftAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChefCraftApp.app/ChefCraftApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -866,6 +1051,15 @@
 			buildConfigurations = (
 				4BD8F9D026A9A150003FAC6A /* Debug */,
 				4BD8F9D126A9A150003FAC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96CDFF7026B16ED100652CE4 /* Build configuration list for PBXNativeTarget "ChefCraftAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96CDFF6E26B16ED100652CE4 /* Debug */,
+				96CDFF6F26B16ED100652CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

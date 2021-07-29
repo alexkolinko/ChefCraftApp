@@ -1,31 +1,46 @@
 PODS:
   - Differentiator (5.0.0)
-  - Realm (10.10.0):
-    - Realm/Headers (= 10.10.0)
-  - Realm/Headers (10.10.0)
-  - RealmSwift (10.10.0):
-    - Realm (= 10.10.0)
-  - RxCocoa (6.1.0):
-    - RxRelay (= 6.1.0)
-    - RxSwift (= 6.1.0)
+  - Nimble (9.2.0)
+  - Quick (4.0.0)
+  - Realm (10.11.0):
+    - Realm/Headers (= 10.11.0)
+  - Realm/Headers (10.11.0)
+  - RealmSwift (10.11.0):
+    - Realm (= 10.11.0)
+  - RxBlocking (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
   - RxDataSources (5.0.0):
     - Differentiator (~> 5.0)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxNimble (5.1.2):
+    - RxNimble/RxBlocking (= 5.1.2)
+  - RxNimble/Core (5.1.2):
+    - Nimble (~> 9.2)
+    - RxSwift (~> 6.0)
+  - RxNimble/RxBlocking (5.1.2):
+    - RxBlocking
+    - RxNimble/Core
   - RxRealm (5.0.1):
     - Realm (~> 10.5)
     - RealmSwift (~> 10.5)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - RxRelay (6.1.0):
-    - RxSwift (= 6.1.0)
-  - RxSwift (6.1.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - RealmSwift
   - RxCocoa
   - RxDataSources
+  - RxNimble
   - RxRealm
   - RxSwift
   - Swinject
@@ -33,10 +48,14 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Differentiator
+    - Nimble
+    - Quick
     - Realm
     - RealmSwift
+    - RxBlocking
     - RxCocoa
     - RxDataSources
+    - RxNimble
     - RxRealm
     - RxRelay
     - RxSwift
@@ -44,15 +63,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
-  Realm: f501df41a4222c67850c77cf135d472192ecf294
-  RealmSwift: c69aadfc7db0d60075178d037c2f34ada73d5201
-  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  Realm: 39ff23f0f709cd4ed93eb47ee6593c2158945b38
+  RealmSwift: 42713e09a8631070d6c12c3c5fb22b8edc1daa41
+  RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxNimble: 60c8162b1518306a11d0c272a65ade133b209670
   RxRealm: bd7c601e78cfebe48c24d4550db83c31e1ab2c33
-  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
-  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: d1ae0ed448c52cc479d20c72c3a93597c226e522
+PODFILE CHECKSUM: 7797e5c8f4fb0a2476bea42ab4ddf57b1af10258
 
 COCOAPODS: 1.10.1

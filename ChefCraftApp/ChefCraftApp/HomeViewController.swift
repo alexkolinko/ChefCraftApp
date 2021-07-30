@@ -72,6 +72,13 @@ extension HomeViewController {
             case .recipesHeader(item: let item):
                 let cell: RecipesHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configure(viewData: item)
+                cell.selectedRecipe
+                    .subscribe (onNext: { [weak self] recipe in
+                        guard let recipe = recipe else { return }
+                        self?.presenter.selectCell(model: recipe)
+                    })
+                    .disposed(by: self.disposeBag)
+
                 return cell
             }
         })

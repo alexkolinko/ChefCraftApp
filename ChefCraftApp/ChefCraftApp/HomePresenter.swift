@@ -25,6 +25,10 @@ class HomePresenter {
         self.binding()
     }
     
+    func selectCell(model: Recipe) {
+        self.router.showRecipeDetails(details: model)
+    }
+    
     // - Private functions
     private func binding() {
         

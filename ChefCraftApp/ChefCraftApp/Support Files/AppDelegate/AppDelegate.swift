@@ -22,13 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         self.dependenciesHolder = DependenciesHolder()
         let injector = dependenciesHolder.injector()
+        self.configureGeneralUI()
         self.windowConfig(injector: injector)
         return true
     }
 
     func windowConfig(injector: Container) {
-        window?.rootViewController = HomeBuilder.build(injector: injector)
-        window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let navController = UINavigationController()
+        let mainView = HomeBuilder.build(injector: injector)
+        navController.viewControllers = [mainView]
+        self.window!.rootViewController = navController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    /// Set up global UI settings for navigation bar
+    func configureGeneralUI() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = .clear
     }
 }
 

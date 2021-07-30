@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func windowConfig(injector: Container) {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navController = UINavigationController()
         let mainView = HomeBuilder.build(injector: injector)
+        let navController = UINavigationController(rootViewController: mainView)
         navController.viewControllers = [mainView]
-        self.window!.rootViewController = navController
+        self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
     }
     

@@ -15,6 +15,9 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     // - Outlets
     @IBOutlet weak var recipesCollectionView: UICollectionView!
     
+    // - Internal properties
+    let selectedRecipe = BehaviorRelay<Recipe?>(value: nil)
+    
     // - Private properties
     private let constants: Constants = .init()
     private(set) var disposeBag = DisposeBag()
@@ -60,6 +63,11 @@ private extension RecipesHeaderCell {
         self.recipes
             .bind(to: self.recipesCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        self.recipesCollectionView.rx
+            .modelSelected(Recipe.self)
+            .bind(to: self.selectedRecipe)
+            .disposed(by: self.disposeBag)
     }
 }
 

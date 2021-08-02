@@ -15,14 +15,23 @@ import UIKit
 // MARK: - HomeNavigation
 /// Abstract navigation layer for HomeRouter
 protocol HomeNavigationProtocol {
-    
+    func showRecipeDetails(details: Recipe)
 }
 
 // MARK: - HomeRoute
-class HomeRouter: Router<HomeViewController> {
+class HomeRouter: Router<HomeViewController>, HomeRouter.Routes {
+    
+    typealias Routes = RecipeDetailsRoute
+    
+    var RecipeDetailsTransition: Transition {
+        PushTransition()
+    }
+    
 }
 
 // MARK: - HomeRouter: InAppMessageDetailsNavigation
 extension HomeRouter: HomeNavigationProtocol {
-    
+    func showRecipeDetails(details: Recipe) {
+        self.showDetails(details)
+    }
 }

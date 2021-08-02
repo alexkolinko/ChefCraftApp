@@ -27,8 +27,8 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     }
     
     private func configUI() {
-        backgroundCellView.backgroundColor = .clear
-        collectionRecipesName.textColor =  .gray
+        backgroundCellView.backgroundColor = .white
+        collectionRecipesName.textColor = .gray
         collectionRecipesName.font = constants.cellFontMetropolis
     }
     

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="f011003t.ttf">
+            <string>ShellFutura-Book</string>
+        </array>
+        <array key="f011006t.ttf">
+            <string>ShellFutura-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeAboutCell" id="gTV-IL-0wX" customClass="RecipeAboutCell" customModule="ChefCraftApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="273" height="128"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-ES-UgC">
+                        <rect key="frame" x="0.0" y="0.0" width="273" height="128"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cHq-is-BAh">
+                                <rect key="frame" x="0.0" y="0.0" width="273" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wVd-Wc-Jut">
+                                        <rect key="frame" x="30" y="10" width="219" height="118"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sW3-wA-cun">
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Recipe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiy-z3-UIo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="19"/>
+                                                        <fontDescription key="fontDescription" name="ShellFutura-Bold" family="ShellFutura" pointSize="16"/>
+                                                        <color key="textColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-Ru-1hy">
+                                                        <rect key="frame" x="0.0" y="27" width="219" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="10" left="30" bottom="0.0" right="24"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cHq-is-BAh" firstAttribute="top" secondItem="NZf-ES-UgC" secondAttribute="top" id="CzC-8K-bNw"/>
+                            <constraint firstAttribute="bottom" secondItem="cHq-is-BAh" secondAttribute="bottom" id="IG1-xI-oDe"/>
+                            <constraint firstItem="cHq-is-BAh" firstAttribute="leading" secondItem="NZf-ES-UgC" secondAttribute="leading" id="PGz-Mm-jiG"/>
+                            <constraint firstAttribute="trailing" secondItem="cHq-is-BAh" secondAttribute="trailing" id="fyZ-Vk-REc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NZf-ES-UgC" secondAttribute="bottom" id="1ht-2y-wuF"/>
+                <constraint firstItem="NZf-ES-UgC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="J9a-fA-BJd"/>
+                <constraint firstAttribute="trailing" secondItem="NZf-ES-UgC" secondAttribute="trailing" id="e9P-v1-Tgr"/>
+                <constraint firstItem="NZf-ES-UgC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="stu-89-Egy"/>
+            </constraints>
+            <size key="customSize" width="273" height="128"/>
+            <connections>
+                <outlet property="aboutDescription" destination="Zkv-Ru-1hy" id="AhB-ss-huj"/>
+                <outlet property="aboutTitle" destination="Oiy-z3-UIo" id="Jcp-dr-Bfw"/>
+            </connections>
+            <point key="canvasLocation" x="367.39130434782612" y="66.964285714285708"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -53,9 +53,9 @@ class HomePresenterTests: QuickSpec {
                         ]),
                     ], recipes: [
                         ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
-                            RecipeComposition(type: .calories, value: 200),
-                            RecipeComposition(type: .ingredients, value: 7),
-                            RecipeComposition(type: .totalTime, value: 40)
+                            ChefCraftRecipeComposition(type: .calories, value: 200),
+                            ChefCraftRecipeComposition(type: .ingredients, value: 7),
+                            ChefCraftRecipeComposition(type: .totalTime, value: 40)
                         ])
                     ])
                     

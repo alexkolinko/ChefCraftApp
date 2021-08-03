@@ -1,5 +1,5 @@
 //
-//  RecipeViewData.swift
+//  RecipeDetailsViewContent.swift
 //  ChefCraftApp
 //
 //  Created by Work on 30.07.2021.
@@ -8,46 +8,46 @@
 import RxDataSources
 import UIKit
 
-struct RecipeOwerViewData: Equatable {
+struct RecipeDetailsViewContent: Equatable {
     let id: String
     
-    let sectionModel: AnimatableSection<RecipeOverviewContentBox>
+    let sectionModel: AnimatableSection<RecipeDetailsOverviewContentBox>
     
-    struct RecipeHeaderSection {
+    struct HeaderSection {
         var model: RecipeHeaderSectionModel
     }
     
-    struct RecipeCompositionsSection {
+    struct CompositionsSection {
         let compositions: [RecipeCompositionCellModel]
     }
     
-    struct RecipeAboutSection {
+    struct AboutSection {
         let about: String
     }
 }
 
-// MARK: - RecipeOverviewContentBox
-enum RecipeOverviewContentBox: IdentifiableItem {
-    case recipeHeader(item: RecipeOwerViewData.RecipeHeaderSection)
-    case recipeCompositionsHeader(item: RecipeOwerViewData.RecipeCompositionsSection)
-    case recipeAboutHeader(item: RecipeOwerViewData.RecipeAboutSection)
+// MARK: - RecipeDetailsOverviewContentBox
+enum RecipeDetailsOverviewContentBox: IdentifiableItem {
+    case header(item: RecipeDetailsViewContent.HeaderSection)
+    case compositions(item: RecipeDetailsViewContent.CompositionsSection)
+    case about(item: RecipeDetailsViewContent.AboutSection)
 
     func calculateItemSize(width: CGFloat) -> CGSize {
         switch self {
-        case .recipeHeader:
+        case .header:
             let height = CGFloat(100)
             return CGSize(width: width, height: height)
-        case .recipeCompositionsHeader:
+        case .compositions:
             let height = CGFloat(80)
             return CGSize(width: width, height: height)
-        case .recipeAboutHeader:
+        case .about:
             let height = CGFloat(150)
             return CGSize(width: width, height: height)
         }
     }
 }
 
-extension RecipeOverviewContentBox {
+extension RecipeDetailsOverviewContentBox {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.identity == rhs.identity
     }

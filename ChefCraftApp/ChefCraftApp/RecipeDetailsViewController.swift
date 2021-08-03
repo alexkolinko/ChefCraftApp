@@ -42,13 +42,15 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
         viewData
             .asObservable()
             .ignoreNil()
-            .map { [$0.sectionModel] }
+            .map { [$0.content.sectionModel] }
             .bind(to: contentCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        self.presenter.imageHeader
+        viewData
+            .asObservable()
+            .ignoreNil()
+            .map { $0.imageHeader }
             .subscribe (onNext: { [weak self] image in
-                guard let image = image else { return }
                 self?.configureParalaxHeader(image)
             })
             .disposed(by: self.disposeBag)
@@ -102,7 +104,7 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
 extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let item = self.presenter.viewDataPublisher.value?.sectionModel.items[indexPath.row] else {
+        guard let item = self.presenter.viewDataPublisher.value?.content.sectionModel.items[indexPath.row] else {
             return .zero
         }
         return item.calculateItemSize(width: collectionView.frame.width)
@@ -110,20 +112,20 @@ extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension RecipeDetailsViewController {
-    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeOverviewContentBox>>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeDetailsOverviewContentBox>>
     var dataSource: DataSource {
         return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in
             
             switch item {
-            case .recipeHeader(item: let item):
+            case .header(item: let item):
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item.model)
                 return cell
-            case .recipeCompositionsHeader(item: let item):
+            case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configure(viewData: item)
                 return cell
-            case .recipeAboutHeader(item: let item):
+            case .about(item: let item):
                 let cell: RecipeAboutCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item.about)
                 return cell

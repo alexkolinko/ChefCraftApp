@@ -53,9 +53,9 @@ class HomePresenterTests: QuickSpec {
                         ]),
                     ], recipes: [
                         ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
-                            ChefCraftRecipeComposition(type: .calories, value: 200),
-                            ChefCraftRecipeComposition(type: .ingredients, value: 7),
-                            ChefCraftRecipeComposition(type: .totalTime, value: 40)
+                            RecipeComposition(type: .calories, value: 200),
+                            RecipeComposition(type: .ingredients, value: 7),
+                            RecipeComposition(type: .totalTime, value: 40)
                         ])
                     ])
                     
@@ -94,6 +94,16 @@ class HomePresenterTests: QuickSpec {
                     
                     expect(data_mirrow).last.to(beNil(), description: "Expect for returning nil")
                 }
+                
+                it("trigger show showRecipeDetails action") {
+                    let selectModel = Recipe(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
+                    
+                    tested_presenter.selectCell(model: selectModel)
+                    
+                    tested_router.action_subj.onCompleted()
+                    
+                    expect(tested_router.action_subj).last.to(equal(.showRecipeDetails), description: "Expect for calling show recipe details navigation from router according to presenter flow")
+                }
             }
         }
     }
@@ -108,5 +118,15 @@ private class MockedInteractor: HomeInteractor {
 // MARK: - MockkedRouter: HomeNavigationProtocol
 private class MockedRouter: HomeNavigationProtocol {
     
+    var action_subj = ReplaySubject<MockNavigationAction>.createUnbounded()
     
+    func showRecipeDetails(details: Recipe) {
+        self.action_subj.onNext(.showRecipeDetails)
+    }
+    
+}
+
+// MARK: - MockNavigationAction
+private enum MockNavigationAction: String, Equatable {
+    case showRecipeDetails
 }

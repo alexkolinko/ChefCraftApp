@@ -11,14 +11,11 @@ import RxCocoa
 class RecipeDetailsPresenter {
     
     // - Internal Properties
-    let viewDataPublisher = BehaviorRelay<RecipeOwerViewData?>(value: nil)
-    let imageHeader = BehaviorRelay<String?>(value: nil)
-    
-    let details: Recipe
+    let viewDataPublisher = BehaviorRelay<Output?>(value: nil)
     
     // - Private Properties
     private let disposeBag = DisposeBag()
-    
+    private let details: Recipe
     private let router: RecipeDetailsNavigation
     private let interactor: RecipeDetailsInteractor
     
@@ -33,36 +30,44 @@ class RecipeDetailsPresenter {
     // - Private functions
     private func binding() {
         let data = self.mapToViewData(self.details)
-        self.imageHeader.accept(self.details.image)
-        self.viewDataPublisher.accept(data)
+        self.viewDataPublisher.accept(Output(content: data, imageHeader: self.details.image))
     }
     
     func popView() {
         self.router.popView()
     }
     
-    private func mapToViewData(_ recipe: Recipe) -> RecipeOwerViewData? {
+    private func mapToViewData(_ recipe: Recipe) -> RecipeDetailsViewContent {
         
-        let recipeHeader = RecipeOwerViewData.RecipeHeaderSection(model: RecipeHeaderSectionModel(
+        let recipeHeader = RecipeDetailsViewContent.HeaderSection(model: RecipeHeaderSectionModel(
             id: "1",
             title: recipe.title,
             owner: recipe.owner,
             stars: recipe.stars
         ))
-        let recipeCompositionsHeader = RecipeOwerViewData.RecipeCompositionsSection(compositions: recipe.compositions.map {
+        let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
             RecipeCompositionCellModel(
                 id: "1",
                 type: $0.type,
                 value: $0.value
             )
         })
-        let recipeAboutHeader = RecipeOwerViewData.RecipeAboutSection(about: recipe.about)
-        let sectionItems: [RecipeOverviewContentBox] = [
-            .recipeHeader(item: recipeHeader),
-            .recipeCompositionsHeader(item: recipeCompositionsHeader),
-            .recipeAboutHeader(item: recipeAboutHeader)
+        let recipeAboutHeader = RecipeDetailsViewContent.AboutSection(about: recipe.about)
+        let sectionItems: [RecipeDetailsOverviewContentBox] = [
+            .header(item: recipeHeader),
+            .compositions(item: recipeCompositionsHeader),
+            .about(item: recipeAboutHeader)
         ]
         
-        return RecipeOwerViewData(id: recipe.id, sectionModel: AnimatableSection<RecipeOverviewContentBox>(items: sectionItems))
+        return RecipeDetailsViewContent(id: recipe.id, sectionModel: AnimatableSection<RecipeDetailsOverviewContentBox>(items: sectionItems))
     }
+}
+
+extension RecipeDetailsPresenter {
+    
+    struct Output {
+    let content: RecipeDetailsViewContent
+    let imageHeader: String
+    }
+    
 }

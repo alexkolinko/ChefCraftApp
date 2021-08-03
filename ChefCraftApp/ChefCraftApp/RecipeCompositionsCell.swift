@@ -25,7 +25,7 @@ class RecipeCompositionsCell: UICollectionViewCell, CellInizializable {
         self.setupBinding()
     }
     
-    func configure(viewData: RecipeOwerViewData.RecipeCompositionsSection) {
+    func configure(viewData: RecipeDetailsViewContent.CompositionsSection) {
         self.compositions.accept([.init(items: viewData.compositions)])
     }
     

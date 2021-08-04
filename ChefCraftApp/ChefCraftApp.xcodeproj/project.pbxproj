@@ -49,6 +49,7 @@
 		965D79F226B819E600D280B3 /* RecipeCompositionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965D79F026B819E600D280B3 /* RecipeCompositionsCell.xib */; };
 		965D79FC26B8280900D280B3 /* CompositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D79FA26B8280900D280B3 /* CompositionCell.swift */; };
 		965D79FD26B8280900D280B3 /* CompositionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965D79FB26B8280900D280B3 /* CompositionCell.xib */; };
+		965D7A0026BA97DF00D280B3 /* RecipeDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D79FF26BA97DE00D280B3 /* RecipeDetailsPresenterTests.swift */; };
 		965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63826A9B35B00958782 /* DependenciesHolder.swift */; };
 		965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63D26A9BC7400958782 /* RealmMigrationService.swift */; };
 		965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */; };
@@ -148,6 +149,7 @@
 		965D79F026B819E600D280B3 /* RecipeCompositionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCompositionsCell.xib; sourceTree = "<group>"; };
 		965D79FA26B8280900D280B3 /* CompositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionCell.swift; sourceTree = "<group>"; };
 		965D79FB26B8280900D280B3 /* CompositionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionCell.xib; sourceTree = "<group>"; };
+		965D79FF26BA97DE00D280B3 /* RecipeDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		965DA63826A9B35B00958782 /* DependenciesHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesHolder.swift; sourceTree = "<group>"; };
 		965DA63D26A9BC7400958782 /* RealmMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationService.swift; sourceTree = "<group>"; };
 		965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertibleType.swift; sourceTree = "<group>"; };
@@ -431,6 +433,14 @@
 			name = CompositionCell;
 			sourceTree = "<group>";
 		};
+		965D79FE26BA97C200D280B3 /* RecipeDetailsPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				965D79FF26BA97DE00D280B3 /* RecipeDetailsPresenterTests.swift */,
+			);
+			path = RecipeDetailsPresenterTests;
+			sourceTree = "<group>";
+		};
 		965DA63226A9B12000958782 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +678,7 @@
 		96CDFF7126B170EC00652CE4 /* Flow Tests */ = {
 			isa = PBXGroup;
 			children = (
+				965D79FE26BA97C200D280B3 /* RecipeDetailsPresenterTests */,
 				96CDFF7226B1710200652CE4 /* HomePresenterTests */,
 			);
 			path = "Flow Tests";
@@ -963,6 +974,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */,
+				965D7A0026BA97DF00D280B3 /* RecipeDetailsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

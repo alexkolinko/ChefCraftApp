@@ -25,7 +25,11 @@ class HomePresenter {
         self.binding()
     }
     
-    func selectCell(model: HomeViewContent.RecipeCellItem) {
+    func selectCategoryCell(model: HomeViewContent.CategoryCellItem) {
+        self.router.showCategoryDetails(details: model)
+    }
+    
+    func selectRecipeCell(model: HomeViewContent.RecipeCellItem) {
         self.router.showRecipeDetails(details: model)
     }
     

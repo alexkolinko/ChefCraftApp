@@ -98,7 +98,7 @@ class HomePresenterTests: QuickSpec {
                 it("trigger show showRecipeDetails action") {
                     let selectModel = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
                     
-                    tested_presenter.selectCell(model: selectModel)
+                    tested_presenter.selectRecipeCell(model: selectModel)
                     
                     tested_router.action_subj.onCompleted()
                     

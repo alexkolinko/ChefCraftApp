@@ -15,13 +15,20 @@ import UIKit
 // MARK: - HomeNavigation
 /// Abstract navigation layer for HomeRouter
 protocol HomeNavigationProtocol {
+    
+    func showCategoryDetails(details: HomeViewContent.CategoryCellItem)
+    
     func showRecipeDetails(details: HomeViewContent.RecipeCellItem)
 }
 
 // MARK: - HomeRoute
 class HomeRouter: Router<HomeViewController>, HomeRouter.Routes {
     
-    typealias Routes = RecipeDetailsRoute
+    typealias Routes = RecipeDetailsRoute & CategoryRecipesRoute
+    
+    var CategoryRecipesTransition: Transition {
+        PushTransition()
+    }
     
     var RecipeDetailsTransition: Transition {
         PushTransition()
@@ -31,7 +38,12 @@ class HomeRouter: Router<HomeViewController>, HomeRouter.Routes {
 
 // MARK: - HomeRouter: InAppMessageDetailsNavigation
 extension HomeRouter: HomeNavigationProtocol {
+    
+    func showCategoryDetails(details: HomeViewContent.CategoryCellItem) {
+        self.showCategoryRecipes(item: details)
+    }
+    
     func showRecipeDetails(details: HomeViewContent.RecipeCellItem) {
-        self.showDetails(details)
+        self.showRecipe(details)
     }
 }

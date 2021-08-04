@@ -119,7 +119,7 @@ extension RecipeDetailsViewController {
             switch item {
             case .header(item: let item):
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
-                cell.setModel(item.model)
+                cell.setModel(item)
                 return cell
             case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)

@@ -16,12 +16,12 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipesCollectionView: UICollectionView!
     
     // - Internal properties
-    let selectedRecipe = BehaviorRelay<Recipe?>(value: nil)
+    let selectedRecipe = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
     
     // - Private properties
     private let constants: Constants = .init()
     private(set) var disposeBag = DisposeBag()
-    private let recipes = BehaviorRelay<[AnimatableSection<Recipe>]>(value: [])
+    private let recipes = BehaviorRelay<[AnimatableSection<HomeViewContent.RecipeCellItem>]>(value: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +35,7 @@ final class RecipesHeaderCell: UICollectionViewCell, CellInizializable {
     }
     
     func configure(viewData: HomeViewContent.RecipesSection) {
-        self.recipes.accept([.init(items: viewData.recipesHeader)])
+        self.recipes.accept([.init(items: viewData.recipes)])
     }
 }
 
@@ -65,7 +65,7 @@ private extension RecipesHeaderCell {
             .disposed(by: disposeBag)
         
         self.recipesCollectionView.rx
-            .modelSelected(Recipe.self)
+            .modelSelected(HomeViewContent.RecipeCellItem.self)
             .bind(to: self.selectedRecipe)
             .disposed(by: self.disposeBag)
     }
@@ -81,7 +81,7 @@ extension RecipesHeaderCell: UICollectionViewDelegateFlowLayout {
 
 // MARK: - RxCollectionViewSectionedReloadDataSource
 extension RecipesHeaderCell {
-    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<Recipe>>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<HomeViewContent.RecipeCellItem>>
     
     var dataSource: DataSource {
         return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in

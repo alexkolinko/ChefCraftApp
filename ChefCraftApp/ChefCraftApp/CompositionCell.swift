@@ -38,7 +38,7 @@ class CompositionCell: UICollectionViewCell, CellInizializable {
         compositionValue.font = constants.cellFontMetropolis
     }
     
-    func configure(model: RecipeCompositionCellModel) {
+    func configure(model: RecipeDetailsViewContent.CompositionCellItem) {
         compositionType.text = model.type.title
         compositionValue.text = "\(model.value) \(model.type.unit)"
     }

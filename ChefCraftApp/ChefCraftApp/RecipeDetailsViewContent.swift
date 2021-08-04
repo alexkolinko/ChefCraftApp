@@ -14,15 +14,25 @@ struct RecipeDetailsViewContent: Equatable {
     let sectionModel: AnimatableSection<RecipeDetailsOverviewContentBox>
     
     struct HeaderSection {
-        var model: RecipeHeaderSectionModel
+        let id: String
+        let title: String
+        let owner: String
+        let stars: Int
     }
     
     struct CompositionsSection {
-        let compositions: [RecipeCompositionCellModel]
+        let compositions: [CompositionCellItem]
     }
     
     struct AboutSection {
         let about: String
+    }
+    
+    
+    struct CompositionCellItem {
+        let id: String
+        let type: RecipeCompositionType
+        let value: Int
     }
 }
 
@@ -50,6 +60,30 @@ enum RecipeDetailsOverviewContentBox: IdentifiableItem {
 extension RecipeDetailsOverviewContentBox {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.identity == rhs.identity
+    }
+}
+
+extension RecipeDetailsViewContent.HeaderSection: IdentifiableItem {
+    var identity: String {
+        id
+    }
+}
+
+extension RecipeDetailsViewContent.CompositionCellItem: IdentifiableItem {
+    var identity: String {
+        id
+    }
+}
+
+extension RecipeDetailsViewContent.HeaderSection: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension RecipeDetailsViewContent.CompositionCellItem: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
     }
 }
 

@@ -17,7 +17,7 @@ class RecipeCompositionsCell: UICollectionViewCell, CellInizializable {
     // - Private properties
     private let constants: Constants = .init()
     private(set) var disposeBag = DisposeBag()
-    private let compositions = BehaviorRelay<[AnimatableSection<RecipeCompositionCellModel>]>(value: [])
+    private let compositions = BehaviorRelay<[AnimatableSection<RecipeDetailsViewContent.CompositionCellItem>]>(value: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -71,7 +71,7 @@ extension RecipeCompositionsCell: UICollectionViewDelegateFlowLayout {
 
 // MARK: - RxCollectionViewSectionedReloadDataSource
 extension RecipeCompositionsCell {
-    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeCompositionCellModel>>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeDetailsViewContent.CompositionCellItem>>
     
     var dataSource: DataSource {
         return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in

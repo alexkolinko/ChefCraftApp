@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 
 class RecipeDetailsBuilder {
-    static func build(injector: Container, details: Recipe) -> RecipeDetailsViewController {
+    static func build(injector: Container, details: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewController {
         let viewController = RecipeDetailsViewController.board(.RecipeDetails)
 
         let router = RecipeDetailsRouter(injector: injector)

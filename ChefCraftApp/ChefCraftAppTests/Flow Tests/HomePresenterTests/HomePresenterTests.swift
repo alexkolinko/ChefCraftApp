@@ -96,7 +96,7 @@ class HomePresenterTests: QuickSpec {
                 }
                 
                 it("trigger show showRecipeDetails action") {
-                    let selectModel = Recipe(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
+                    let selectModel = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
                     
                     tested_presenter.selectCell(model: selectModel)
                     
@@ -120,7 +120,7 @@ private class MockedRouter: HomeNavigationProtocol {
     
     var action_subj = ReplaySubject<MockNavigationAction>.createUnbounded()
     
-    func showRecipeDetails(details: Recipe) {
+    func showRecipeDetails(details: HomeViewContent.RecipeCellItem) {
         self.action_subj.onNext(.showRecipeDetails)
     }
     

@@ -22,7 +22,7 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     }
     
     // - Internal Logic
-    func setModel(_ model: RecipeHeaderSectionModel) {
+    func setModel(_ model: RecipeDetailsViewContent.HeaderSection) {
         self.recipeTitle.text = model.title
         self.recipeOwner.text = "by \(model.owner)"
     }

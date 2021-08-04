@@ -25,7 +25,7 @@ class HomePresenter {
         self.binding()
     }
     
-    func selectCell(model: Recipe) {
+    func selectCell(model: HomeViewContent.RecipeCellItem) {
         self.router.showRecipeDetails(details: model)
     }
     
@@ -43,8 +43,8 @@ class HomePresenter {
     
     private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> HomeViewContent? {
         guard let recipes = recipes else { return nil }
-        let collectionsRecipesHeader = HomeViewContent.CategoriesSection(collectionsRecipes: recipes.collectionsRecipes.map {
-            CollectionRecipes(
+        let collectionsRecipesHeader = HomeViewContent.CategoriesSection(categories: recipes.collectionsRecipes.map {
+            HomeViewContent.CategoryCellItem(
                 id: $0.id,
                 title: $0.name,
                 image: $0.image,
@@ -52,8 +52,8 @@ class HomePresenter {
             )
         })
         
-        let recipesHeader = HomeViewContent.RecipesSection(recipesHeader: recipes.recipes.map {
-            Recipe(
+        let recipesHeader = HomeViewContent.RecipesSection(recipes: recipes.recipes.map {
+            HomeViewContent.RecipeCellItem(
                 id: $0.id,
                 title: $0.name,
                 image: $0.image,

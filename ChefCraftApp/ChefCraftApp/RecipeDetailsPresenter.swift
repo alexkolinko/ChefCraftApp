@@ -15,12 +15,12 @@ class RecipeDetailsPresenter {
     
     // - Private Properties
     private let disposeBag = DisposeBag()
-    private let details: Recipe
+    private let details: HomeViewContent.RecipeCellItem
     private let router: RecipeDetailsNavigation
     private let interactor: RecipeDetailsInteractor
     
     // - Base
-    init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor, details: Recipe) {
+    init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor, details: HomeViewContent.RecipeCellItem) {
         self.router = router
         self.interactor = interactor
         self.details = details
@@ -37,16 +37,16 @@ class RecipeDetailsPresenter {
         self.router.popView()
     }
     
-    private func mapToViewData(_ recipe: Recipe) -> RecipeDetailsViewContent {
+    private func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
         
-        let recipeHeader = RecipeDetailsViewContent.HeaderSection(model: RecipeHeaderSectionModel(
+        let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
             title: recipe.title,
             owner: recipe.owner,
             stars: recipe.stars
-        ))
+        )
         let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
-            RecipeCompositionCellModel(
+            RecipeDetailsViewContent.CompositionCellItem(
                 id: "1",
                 type: $0.type,
                 value: $0.value

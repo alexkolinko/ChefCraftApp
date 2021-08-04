@@ -15,7 +15,7 @@ import UIKit
 // MARK: - HomeNavigation
 /// Abstract navigation layer for HomeRouter
 protocol HomeNavigationProtocol {
-    func showRecipeDetails(details: Recipe)
+    func showRecipeDetails(details: HomeViewContent.RecipeCellItem)
 }
 
 // MARK: - HomeRoute
@@ -31,7 +31,7 @@ class HomeRouter: Router<HomeViewController>, HomeRouter.Routes {
 
 // MARK: - HomeRouter: InAppMessageDetailsNavigation
 extension HomeRouter: HomeNavigationProtocol {
-    func showRecipeDetails(details: Recipe) {
+    func showRecipeDetails(details: HomeViewContent.RecipeCellItem) {
         self.showDetails(details)
     }
 }

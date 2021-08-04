@@ -40,7 +40,7 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         recipeDescription.font = constants.cellFontMetropolis
     }
     
-    func configure(viewData: Recipe) {
+    func configure(viewData: HomeViewContent.RecipeCellItem) {
         recipeImage.image = UIImage(named: viewData.image)
         recipeName.text = viewData.title
         recipeDescription.text = viewData.description

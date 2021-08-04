@@ -1,9 +1,8 @@
 //
 //  CategoryRecipesInteractor.swift
-//  shell
+//  ChefCraftApp
 //
 //  Created by Work on 04.08.2021.
-//  Copyright © 2021 CoreTeka. All rights reserved.
 //
 
 import RxCocoa

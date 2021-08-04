@@ -1,9 +1,8 @@
 //
 //  CategoryRecipesRoute.swift
-//  shell
+//  ChefCraftApp
 //
 //  Created by Work on 04.08.2021.
-//  Copyright © 2021 CoreTeka. All rights reserved.
 //
 
 import Foundation
@@ -17,7 +16,7 @@ protocol CategoryRecipesRoute {
 extension CategoryRecipesRoute where Self: RouterProtocol {
     
     func showCategoryRecipes(item: HomeViewContent.CategoryCellItem) {
-        let viewController = CategoryRecipesBuilder.build(injector: injector)
+        let viewController = CategoryRecipesBuilder.build(injector: injector, category: item)
         open(viewController, transition: CategoryRecipesTransition)
     }
 }

@@ -16,20 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-FF-mwc">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-dw-oCw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Vb-OB-BWu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="QAF-c9-87s"/>
+                                        </constraints>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-u7-sJZ">
+                                        <rect key="frame" x="0.0" y="350" width="414" height="512"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iSh-ct-ISV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xjd-FF-mwc" firstAttribute="centerY" secondItem="w5c-I5-CN8" secondAttribute="centerY" id="SiY-F5-yC1"/>
-                            <constraint firstItem="Xjd-FF-mwc" firstAttribute="centerX" secondItem="w5c-I5-CN8" secondAttribute="centerX" id="XLv-7m-TSO"/>
+                            <constraint firstItem="bcG-dw-oCw" firstAttribute="leading" secondItem="iSh-ct-ISV" secondAttribute="leading" id="0a3-CN-hYV"/>
+                            <constraint firstItem="iSh-ct-ISV" firstAttribute="trailing" secondItem="bcG-dw-oCw" secondAttribute="trailing" id="7iF-YB-edm"/>
+                            <constraint firstItem="bcG-dw-oCw" firstAttribute="top" secondItem="w5c-I5-CN8" secondAttribute="top" id="NG7-11-iRz"/>
+                            <constraint firstItem="iSh-ct-ISV" firstAttribute="bottom" secondItem="bcG-dw-oCw" secondAttribute="bottom" id="pdb-bG-9rd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryImage" destination="3Vb-OB-BWu" id="iza-ht-IBX"/>
+                        <outlet property="recipesTable" destination="fIp-u7-sJZ" id="2UR-Ub-Wb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVK-qB-eIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

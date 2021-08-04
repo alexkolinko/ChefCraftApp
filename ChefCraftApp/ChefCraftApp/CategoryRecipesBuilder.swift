@@ -1,9 +1,8 @@
 //
 //  CategoryRecipesBuilder.swift
-//  shell
+//  ChefCraftApp
 //
 //  Created by Work on 04.08.2021.
-//  Copyright © 2021 CoreTeka. All rights reserved.
 //
 
 import Foundation
@@ -11,15 +10,15 @@ import UIKit
 import Swinject
 
 class CategoryRecipesBuilder {
-    static func build(injector: Container) -> CategoryRecipesViewController {
+    static func build(injector: Container, category: HomeViewContent.CategoryCellItem) -> CategoryRecipesViewController {
         let viewController = CategoryRecipesViewController.board(.CategoryRecipes)
-
+        
         let router = CategoryRecipesRouter(injector: injector)
         router.viewController = viewController
         
         let interactor = CategoryRecipesInteractorImpl()
         
-        let presenter = CategoryRecipesPresenter(router: router, interactor: interactor)
+        let presenter = CategoryRecipesPresenter(router: router, interactor: interactor, category: category)
         
         viewController.presenter = presenter
         

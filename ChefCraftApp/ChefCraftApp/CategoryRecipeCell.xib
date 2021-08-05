@@ -3,38 +3,149 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="f011003t.ttf">
+            <string>ShellFutura-Book</string>
+        </array>
+        <array key="f011006t.ttf">
+            <string>ShellFutura-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CategoryRecipeCell" customModule="ChefCraftApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="CategoryRecipeCell" customModule="ChefCraftApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="336" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggc-Sx-XFZ">
-                        <rect key="frame" x="15" y="15" width="290" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqP-MV-0dW">
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="115"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l5r-41-QJB">
+                                <rect key="frame" x="0.0" y="0.0" width="336" height="115"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xmg-d1-jdX">
+                                        <rect key="frame" x="24" y="0.0" width="288" height="114"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6L4-PP-Ksr">
+                                                <rect key="frame" x="0.0" y="16" width="288" height="82"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="86h-hc-C6N">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5T2-Wt-bIj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shell_cell_logo" translatesAutoresizingMaskIntoConstraints="NO" id="mBe-jd-eZU">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="40" id="FjZ-2s-iCN"/>
+                                                                            <constraint firstAttribute="width" secondItem="mBe-jd-eZU" secondAttribute="height" multiplier="1:1" id="cpE-A4-QOz"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="5T2-Wt-bIj" secondAttribute="height" multiplier="1:1" id="Kcl-eU-UjH"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="OUg-wn-CQA"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5U-bf-upJ">
+                                                        <rect key="frame" x="48" y="0.0" width="240" height="54"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="oB3-Ny-puY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="54"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-gS-cFv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ShellFutura-Bold" family="ShellFutura" pointSize="16"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blh-1C-6HY">
+                                                                        <rect key="frame" x="0.0" y="2" width="240" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="14"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zNr-zK-WNi">
+                                                                        <rect key="frame" x="0.0" y="4" width="240" height="50"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ef-YY-cEm">
+                                                                                <rect key="frame" x="0.0" y="19" width="12" height="12"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="12" id="46A-hw-rWC"/>
+                                                                                    <constraint firstAttribute="height" constant="12" id="4Fg-KO-pSx"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-nz-Oh1">
+                                                                                <rect key="frame" x="16" y="0.0" width="224" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="14"/>
+                                                                                <color key="textColor" name="greyishBrownTwo"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="16" left="0.0" bottom="16" right="0.0"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ8-PO-7BM">
+                                        <rect key="frame" x="24" y="114" width="288" height="1"/>
+                                        <color key="backgroundColor" name="whiteThree"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="P4t-Ep-Exm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="24"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l5r-41-QJB" firstAttribute="top" secondItem="aqP-MV-0dW" secondAttribute="top" id="Rql-Ay-xs5"/>
+                            <constraint firstAttribute="trailing" secondItem="l5r-41-QJB" secondAttribute="trailing" id="TME-wp-LE8"/>
+                            <constraint firstAttribute="bottom" secondItem="l5r-41-QJB" secondAttribute="bottom" id="X75-IT-zJ9"/>
+                            <constraint firstItem="l5r-41-QJB" firstAttribute="leading" secondItem="aqP-MV-0dW" secondAttribute="leading" id="mtF-W0-SX1"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ggc-Sx-XFZ" secondAttribute="trailing" constant="15" id="3Lk-Dh-bVi"/>
-                    <constraint firstItem="ggc-Sx-XFZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="aO8-9s-gbZ"/>
-                    <constraint firstAttribute="bottom" secondItem="ggc-Sx-XFZ" secondAttribute="bottom" constant="15" id="jpY-J1-RRK"/>
-                    <constraint firstItem="ggc-Sx-XFZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xlZ-wS-6tq"/>
+                    <constraint firstItem="aqP-MV-0dW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="50G-ZH-8y2"/>
+                    <constraint firstAttribute="trailing" secondItem="aqP-MV-0dW" secondAttribute="trailing" id="Mdu-Cn-IRS"/>
+                    <constraint firstAttribute="bottom" secondItem="aqP-MV-0dW" secondAttribute="bottom" id="RFF-fK-8uF"/>
+                    <constraint firstItem="aqP-MV-0dW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tJS-Lv-4l5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="recipeName" destination="ggc-Sx-XFZ" id="mAJ-Nl-oyo"/>
+                <outlet property="recipeDescription" destination="blh-1C-6HY" id="2ZM-u0-pWQ"/>
+                <outlet property="recipeImage" destination="mBe-jd-eZU" id="WC9-dQ-CAJ"/>
+                <outlet property="recipeName" destination="tIC-gS-cFv" id="L6s-nT-f2K"/>
             </connections>
-            <point key="canvasLocation" x="309" y="40"/>
+            <point key="canvasLocation" x="55" y="37"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="shell_cell_logo" width="40" height="40"/>
+        <namedColor name="greyishBrownTwo">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteThree">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

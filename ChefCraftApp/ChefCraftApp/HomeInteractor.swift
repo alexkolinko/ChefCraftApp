@@ -37,7 +37,7 @@ extension HomeInteractorImpl : HomeInteractor {
         
         let recipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
             ChefCraftCollectionRecipes(id: "1", name: "First Recipes", image: "soup", recipes: [
-                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "These days it may seem odd to speak of grandma's cookie receipt, but at one time the only meaning of receipt was recipe. The first recorded use of receipt is a reference to a medicinal preparation in Chaucer's Canterbury Tales (c. 1386).", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)

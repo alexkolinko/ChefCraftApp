@@ -13,6 +13,8 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
+    @IBOutlet weak var recipeOwner: UILabel!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     // - Private properties
     private let constants: Constants = .init()
@@ -33,23 +35,28 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
         self.recipeImage.image = UIImage(named: model.model.image)
         self.recipeName.text = model.model.name
         self.recipeDescription.text = model.model.description
+        self.ratingControl.rating = model.model.stars
+        self.recipeOwner.text = "by \(model.model.owner)"
     }
     
     private func configUI() {
-        shadowContainer.layer.cornerRadius = constants.cellImageCornerRadius
-        shadowContainer.layer.shadowColor = UIColor.lightGray.cgColor
-        shadowContainer.layer.shadowOpacity = 1
-        shadowContainer.layer.shadowOffset = .zero
-        shadowContainer.layer.shadowRadius = 5
-        
+ 
+        self.configShadowContainer()
+        self.ratingControl.isUserInteractionEnabled = false
         self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
         self.recipeName.textColor = .black
         self.recipeName.font = constants.cellFontMetropolisBold
         self.recipeDescription.textColor = .gray
+        self.recipeOwner.textColor = .gray
+        self.recipeOwner.font = constants.cellFontMetropolis
     }
     
-    private func configShadowContainer () {
-        
+    private func configShadowContainer() {
+        shadowContainer.layer.cornerRadius = constants.cellImageCornerRadius
+        shadowContainer.layer.shadowColor = UIColor.lightGray.cgColor
+        shadowContainer.layer.shadowOpacity = constants.cellShadowOpacity
+        shadowContainer.layer.shadowOffset = .zero
+        shadowContainer.layer.shadowRadius = constants.cellshadowRadius
     }
     
 }
@@ -58,8 +65,10 @@ private extension CategoryRecipeCell {
     
     // MARK: - Internal constants
     struct Constants {
+        let cellShadowOpacity: Float = 1
+        let cellshadowRadius: CGFloat = 5
         let cellImageCornerRadius: CGFloat = 10
         let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 15.0)
-        let cellFontMetropolisLight = UIFont(name: "Metropolis", size: 13.0)
+        let cellFontMetropolis = UIFont(name: "Metropolis", size: 13.0)
     }
 }

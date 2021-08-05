@@ -61,6 +61,7 @@
 		965D7A2626BAC4F100D280B3 /* CategoryRecipesSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A2526BAC4F100D280B3 /* CategoryRecipesSectionModel.swift */; };
 		965D7A2926BACDE600D280B3 /* CategoryRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A2726BACDE600D280B3 /* CategoryRecipeCell.swift */; };
 		965D7A2A26BACDE600D280B3 /* CategoryRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965D7A2826BACDE600D280B3 /* CategoryRecipeCell.xib */; };
+		965D7A3426BBF7F600D280B3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A3326BBF7F500D280B3 /* RatingControl.swift */; };
 		965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63826A9B35B00958782 /* DependenciesHolder.swift */; };
 		965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63D26A9BC7400958782 /* RealmMigrationService.swift */; };
 		965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */; };
@@ -171,6 +172,7 @@
 		965D7A2526BAC4F100D280B3 /* CategoryRecipesSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipesSectionModel.swift; sourceTree = "<group>"; };
 		965D7A2726BACDE600D280B3 /* CategoryRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipeCell.swift; sourceTree = "<group>"; };
 		965D7A2826BACDE600D280B3 /* CategoryRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryRecipeCell.xib; sourceTree = "<group>"; };
+		965D7A3326BBF7F500D280B3 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		965DA63826A9B35B00958782 /* DependenciesHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesHolder.swift; sourceTree = "<group>"; };
 		965DA63D26A9BC7400958782 /* RealmMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationService.swift; sourceTree = "<group>"; };
 		965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertibleType.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 		965D79DB26B4476200D280B3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				965D7A3026BBF7A100D280B3 /* Views */,
 				965D79DC26B4479400D280B3 /* UITableView & Colleciton View */,
 			);
 			path = Components;
@@ -500,6 +503,30 @@
 				965D7A2526BAC4F100D280B3 /* CategoryRecipesSectionModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		965D7A3026BBF7A100D280B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				965D7A3126BBF7AD00D280B3 /* Custom Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		965D7A3126BBF7AD00D280B3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				965D7A3226BBF7D400D280B3 /* RatingControlView */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		965D7A3226BBF7D400D280B3 /* RatingControlView */ = {
+			isa = PBXGroup;
+			children = (
+				965D7A3326BBF7F500D280B3 /* RatingControl.swift */,
+			);
+			path = RatingControlView;
 			sourceTree = "<group>";
 		};
 		965DA63226A9B12000958782 /* Support Files */ = {
@@ -971,6 +998,7 @@
 				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965D79D326B3095C00D280B3 /* RecipeDetailsBuilder.swift in Sources */,
 				965DA68A26AA9F9000958782 /* Router.swift in Sources */,
+				965D7A3426BBF7F600D280B3 /* RatingControl.swift in Sources */,
 				96A3841B26AEEBBC00F6530C /* Array+Extensions.swift in Sources */,
 				965DA64226A9BD1E00958782 /* DatabaseError.swift in Sources */,
 				965D79D526B31E8500D280B3 /* UIApplication+topViewController.swift in Sources */,

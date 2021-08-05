@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,10 +58,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5U-bf-upJ">
-                                                        <rect key="frame" x="48" y="0.0" width="220" height="54"/>
+                                                        <rect key="frame" x="48" y="0.0" width="220" height="63"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="oB3-Ny-puY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="63"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-gS-cFv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
@@ -77,21 +76,26 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zNr-zK-WNi">
-                                                                        <rect key="frame" x="0.0" y="4" width="220" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="4" width="220" height="8"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ef-YY-cEm">
-                                                                                <rect key="frame" x="0.0" y="19" width="12" height="12"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="12" id="46A-hw-rWC"/>
-                                                                                    <constraint firstAttribute="height" constant="12" id="4Fg-KO-pSx"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-nz-Oh1">
-                                                                                <rect key="frame" x="16" y="0.0" width="204" height="50"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2C-ve-2qB">
+                                                                                <rect key="frame" x="0.0" y="8" width="220" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="14"/>
-                                                                                <color key="textColor" name="greyishBrownTwo"/>
+                                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
+                                                                        </subviews>
+                                                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="0.0" right="0.0"/>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZRo-xt-R5U">
+                                                                        <rect key="frame" x="0.0" y="14" width="220" height="49"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5ck-1W-dqg" customClass="RatingControl" customModule="ChefCraftApp" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="49"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="100" id="bHc-7M-qbO"/>
+                                                                                </constraints>
+                                                                            </stackView>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
@@ -126,18 +130,17 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="ratingControl" destination="5ck-1W-dqg" id="vZV-ek-yVt"/>
                 <outlet property="recipeDescription" destination="blh-1C-6HY" id="2ZM-u0-pWQ"/>
                 <outlet property="recipeImage" destination="mBe-jd-eZU" id="WC9-dQ-CAJ"/>
                 <outlet property="recipeName" destination="tIC-gS-cFv" id="L6s-nT-f2K"/>
+                <outlet property="recipeOwner" destination="I2C-ve-2qB" id="mEx-UH-mUw"/>
                 <outlet property="shadowContainer" destination="aqP-MV-0dW" id="oiq-QP-2C4"/>
             </connections>
-            <point key="canvasLocation" x="55" y="37"/>
+            <point key="canvasLocation" x="53.623188405797109" y="36.495535714285715"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="shell_cell_logo" width="40" height="40"/>
-        <namedColor name="greyishBrownTwo">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

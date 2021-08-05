@@ -9,6 +9,7 @@ import UIKit
 
 class CategoryRecipeCell: UITableViewCell, CellInizializable {
     
+    @IBOutlet weak var shadowContainer: UIView!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
@@ -35,10 +36,20 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
     }
     
     private func configUI() {
+        shadowContainer.layer.cornerRadius = constants.cellImageCornerRadius
+        shadowContainer.layer.shadowColor = UIColor.lightGray.cgColor
+        shadowContainer.layer.shadowOpacity = 1
+        shadowContainer.layer.shadowOffset = .zero
+        shadowContainer.layer.shadowRadius = 5
+        
         self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
         self.recipeName.textColor = .black
         self.recipeName.font = constants.cellFontMetropolisBold
         self.recipeDescription.textColor = .gray
+    }
+    
+    private func configShadowContainer () {
+        
     }
     
 }

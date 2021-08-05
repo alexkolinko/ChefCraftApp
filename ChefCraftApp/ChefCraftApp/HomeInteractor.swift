@@ -41,6 +41,11 @@ extension HomeInteractorImpl : HomeInteractor {
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
             ChefCraftCollectionRecipes(id: "2", name: "Second Recipes", image: "breakfast", recipes: [

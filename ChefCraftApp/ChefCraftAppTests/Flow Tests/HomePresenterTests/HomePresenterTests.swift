@@ -25,6 +25,7 @@ class HomePresenterTests: QuickSpec {
             
             context("for user actions") {
                 var data_mirrow: ReplaySubject<Void>!
+                let mockes = MockedItem()
                 
                 beforeEach {
                     tested_interactor = MockedInteractor()
@@ -45,20 +46,6 @@ class HomePresenterTests: QuickSpec {
                 
                 it("try start mapViewData with recipes") {
                     
-                    let mocked_recipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
-                        ChefCraftCollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
-                            RecipeItem(id: "1", name: "RecipeItem 1"),
-                            RecipeItem(id: "2", name: "RecipeItem 2"),
-                            RecipeItem(id: "3", name: "RecipeItem 3")
-                        ]),
-                    ], recipes: [
-                        ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
-                            RecipeComposition(type: .calories, value: 200),
-                            RecipeComposition(type: .ingredients, value: 7),
-                            RecipeComposition(type: .totalTime, value: 40)
-                        ])
-                    ])
-                    
                     tested_presenter.viewDataPublisher
                         .subscribe(onNext: { value in
                             if value != nil {
@@ -67,7 +54,7 @@ class HomePresenterTests: QuickSpec {
                         })
                         .disposed(by: bag)
                     
-                    tested_interactor.chefCraftRecipes.accept(mocked_recipes)
+                    tested_interactor.chefCraftRecipes.accept(mockes.chefCraftAllRecipes)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         data_mirrow.onCompleted()
@@ -96,15 +83,38 @@ class HomePresenterTests: QuickSpec {
                 }
                 
                 it("trigger show showRecipeDetails action") {
-                    let selectModel = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
                     
-                    tested_presenter.selectCell(model: selectModel)
+                    tested_presenter.selectCell(model: mockes.recipeCellItem)
                     
                     tested_router.action_subj.onCompleted()
                     
                     expect(tested_router.action_subj).last.to(equal(.showRecipeDetails), description: "Expect for calling show recipe details navigation from router according to presenter flow")
                 }
             }
+        }
+    }
+}
+
+private extension HomePresenterTests {
+    struct MockedItem {
+        var recipeCellItem: HomeViewContent.RecipeCellItem
+        var chefCraftAllRecipes: ChefCraftAllRecipes
+        
+        init() {
+            self.recipeCellItem = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
+            self.chefCraftAllRecipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
+                ChefCraftCollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+                    RecipeItem(id: "1", name: "RecipeItem 1"),
+                    RecipeItem(id: "2", name: "RecipeItem 2"),
+                    RecipeItem(id: "3", name: "RecipeItem 3")
+                ]),
+            ], recipes: [
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 200),
+                    RecipeComposition(type: .ingredients, value: 7),
+                    RecipeComposition(type: .totalTime, value: 40)
+                ])
+            ])
         }
     }
 }

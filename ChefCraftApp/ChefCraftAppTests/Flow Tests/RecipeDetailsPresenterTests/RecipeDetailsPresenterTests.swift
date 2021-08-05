@@ -21,16 +21,15 @@ class RecipeDetailsPresenterTests: QuickSpec {
             var tested_interactor: MockedInteractor!
             var tested_router: MockedRouter!
             var bag: DisposeBag!
-            let mocked_details = HomeViewContent.RecipeCellItem(id: "test", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
-            
             
             context("for user actions") {
                 var data_mirrow: ReplaySubject<Void>!
+                let mockes = MockedItem()
                 
                 beforeEach {
                     tested_interactor = MockedInteractor()
                     tested_router = MockedRouter()
-                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor, details: mocked_details)
+                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor, details: mockes.cellItem)
                     data_mirrow = ReplaySubject<Void>.createUnbounded()
                     bag = DisposeBag()
                     
@@ -70,6 +69,16 @@ class RecipeDetailsPresenterTests: QuickSpec {
                     expect(tested_router.action_subj).last.to(equal(.popView), description: "Expect for calling show recipe details navigation from router according to presenter flow")
                 }
             }
+        }
+    }
+}
+
+private extension RecipeDetailsPresenterTests {
+    struct MockedItem {
+        var cellItem: HomeViewContent.RecipeCellItem
+        
+        init() {
+            self.cellItem = HomeViewContent.RecipeCellItem(id: "test", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
         }
     }
 }

@@ -62,6 +62,7 @@
 		965D7A2926BACDE600D280B3 /* CategoryRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A2726BACDE600D280B3 /* CategoryRecipeCell.swift */; };
 		965D7A2A26BACDE600D280B3 /* CategoryRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965D7A2826BACDE600D280B3 /* CategoryRecipeCell.xib */; };
 		965D7A3426BBF7F600D280B3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A3326BBF7F500D280B3 /* RatingControl.swift */; };
+		965D7A3626BC147300D280B3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D7A3526BC147300D280B3 /* UIView+Extensions.swift */; };
 		965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63826A9B35B00958782 /* DependenciesHolder.swift */; };
 		965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63D26A9BC7400958782 /* RealmMigrationService.swift */; };
 		965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */; };
@@ -173,6 +174,7 @@
 		965D7A2726BACDE600D280B3 /* CategoryRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipeCell.swift; sourceTree = "<group>"; };
 		965D7A2826BACDE600D280B3 /* CategoryRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryRecipeCell.xib; sourceTree = "<group>"; };
 		965D7A3326BBF7F500D280B3 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		965D7A3526BC147300D280B3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		965DA63826A9B35B00958782 /* DependenciesHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesHolder.swift; sourceTree = "<group>"; };
 		965DA63D26A9BC7400958782 /* RealmMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationService.swift; sourceTree = "<group>"; };
 		965DA63F26A9BCED00958782 /* DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertibleType.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				965DA67D26AA9A6400958782 /* Custom Inits */,
 				965DA69E26AAA1AF00958782 /* UIWindow+switchRoot.swift */,
 				960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */,
+				965D7A3526BC147300D280B3 /* UIView+Extensions.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965DA69526AAA05F00958782 /* ModalTransition.swift in Sources */,
+				965D7A3626BC147300D280B3 /* UIView+Extensions.swift in Sources */,
 				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965D79D326B3095C00D280B3 /* RecipeDetailsBuilder.swift in Sources */,
 				965DA68A26AA9F9000958782 /* Router.swift in Sources */,

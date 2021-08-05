@@ -52,11 +52,8 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
     }
     
     private func configShadowContainer() {
+        self.shadowContainer.dropShadow()
         shadowContainer.layer.cornerRadius = constants.cellImageCornerRadius
-        shadowContainer.layer.shadowColor = UIColor.lightGray.cgColor
-        shadowContainer.layer.shadowOpacity = constants.cellShadowOpacity
-        shadowContainer.layer.shadowOffset = .zero
-        shadowContainer.layer.shadowRadius = constants.cellshadowRadius
     }
     
 }
@@ -65,8 +62,6 @@ private extension CategoryRecipeCell {
     
     // MARK: - Internal constants
     struct Constants {
-        let cellShadowOpacity: Float = 1
-        let cellshadowRadius: CGFloat = 5
         let cellImageCornerRadius: CGFloat = 10
         let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 15.0)
         let cellFontMetropolis = UIFont(name: "Metropolis", size: 13.0)

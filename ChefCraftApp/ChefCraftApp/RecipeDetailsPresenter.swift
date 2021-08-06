@@ -37,6 +37,10 @@ class RecipeDetailsPresenter {
         self.router.popView()
     }
     
+    func selectRating(_ rating: Int) {
+       print("RATING ---- \(rating)")
+    }
+    
     private func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
         
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(

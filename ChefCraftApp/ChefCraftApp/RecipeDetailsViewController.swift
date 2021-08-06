@@ -120,6 +120,12 @@ extension RecipeDetailsViewController {
             case .header(item: let item):
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item)
+                cell.selectedRating
+                    .subscribe (onNext: { [weak self] rating in
+                        guard let rating = rating else { return }
+                        self?.presenter.selectRating(rating)
+                    })
+                    .disposed(by: self.disposeBag)
                 return cell
             case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)

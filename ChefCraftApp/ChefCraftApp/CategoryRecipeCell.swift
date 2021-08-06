@@ -35,7 +35,7 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
         self.recipeImage.image = UIImage(named: model.model.image)
         self.recipeName.text = model.model.name
         self.recipeDescription.text = model.model.description
-        self.ratingControl.rating = model.model.stars
+        self.ratingControl.rating.accept(model.model.stars)
         self.recipeOwner.text = "by \(model.model.owner)"
     }
     

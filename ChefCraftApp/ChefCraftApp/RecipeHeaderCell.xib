@@ -31,7 +31,7 @@
                                         <rect key="frame" x="30" y="35" width="237" height="144"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="76a-Yg-nHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="237" height="8"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-1S-NY0">
                                                         <rect key="frame" x="0.0" y="0.0" width="237" height="0.0"/>
@@ -45,6 +45,18 @@
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ulF-qT-94a">
+                                                        <rect key="frame" x="0.0" y="16" width="237" height="20"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YYE-UV-QxR" customClass="RatingControl" customModule="ChefCraftApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="0ae-q0-TEM"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="axz-bj-oK2"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -73,6 +85,7 @@
             <size key="customSize" width="291" height="179"/>
             <connections>
                 <outlet property="backgraundView" destination="m0o-1G-czC" id="Jfn-f3-nYf"/>
+                <outlet property="ratingControl" destination="YYE-UV-QxR" id="WvH-FG-bzh"/>
                 <outlet property="recipeOwner" destination="bCS-9U-Qm7" id="U7q-OJ-PRo"/>
                 <outlet property="recipeTitle" destination="1yJ-1S-NY0" id="SRC-Iq-h3A"/>
             </connections>

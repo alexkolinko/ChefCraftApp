@@ -45,7 +45,7 @@ enum RecipeDetailsOverviewContentBox: IdentifiableItem {
     func calculateItemSize(width: CGFloat) -> CGSize {
         switch self {
         case .header:
-            let height = CGFloat(100)
+            let height = CGFloat(120)
             return CGSize(width: width, height: height)
         case .compositions:
             let height = CGFloat(80)

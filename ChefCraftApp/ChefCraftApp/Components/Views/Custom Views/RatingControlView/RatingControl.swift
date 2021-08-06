@@ -7,17 +7,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 @IBDesignable class RatingControl: UIStackView {
     
     //MARK: Properties
-    private var ratingButtons = [UIButton]()
+    var rating = BehaviorRelay<Int>(value: 0)
     
-    var rating = 0 {
-        didSet {
-            updateButtonSelectionStates()
-        }
-    }
+    // - Private properties
+    private(set) var bag = DisposeBag()
+    private var ratingButtons = [UIButton]()
     
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
@@ -41,6 +41,7 @@ import UIKit
     required init(coder: NSCoder) {
         super.init(coder: coder)
         setupButtons()
+        binding()
     }
     
     //MARK: Button Action
@@ -52,18 +53,18 @@ import UIKit
         
         // Calculate the rating of the selected button
         let selectedRating = index + 1
-        
-        if selectedRating == rating {
-            // If the selected star represents the current rating, reset the rating to 0.
-            rating = 0
-        } else {
-            // Otherwise set the rating to the selected star
-            rating = selectedRating
-        }
+        guard selectedRating != rating.value else { return }
+        rating.accept(selectedRating)
     }
     
     
     //MARK: Private Methods
+    private func binding() {
+        self.rating.subscribe(onNext: {[weak self] value in
+            self?.updateButtonSelectionStates(rating: value)
+        })
+        .disposed(by: self.bag)
+    }
     
     private func setupButtons() {
         
@@ -107,11 +108,9 @@ import UIKit
             // Add the new button to the rating button array
             ratingButtons.append(button)
         }
-        
-        updateButtonSelectionStates()
     }
     
-    private func updateButtonSelectionStates() {
+    private func updateButtonSelectionStates(rating: Int) {
         for (index, button) in ratingButtons.enumerated() {
             // If the index of a button is less than the rating, that button should be selected.
             button.isSelected = index < rating

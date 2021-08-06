@@ -59,17 +59,17 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 
 
 extension HomeViewController {
-    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<ChefCraftOverviewContentBox>>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<HomeOverviewContentBox>>
     
     var dataSource: DataSource {
         return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in
 
             switch item {
-            case .collectionsRecipesHeader(let item):
+            case .categories(let item):
                 let cell: CollectionsRecipesHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configure(viewData: item)
                 return cell
-            case .recipesHeader(item: let item):
+            case .recipes(item: let item):
                 let cell: RecipesHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configure(viewData: item)
                 cell.selectedRecipe

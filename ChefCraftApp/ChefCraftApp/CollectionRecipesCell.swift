@@ -27,12 +27,12 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
     }
     
     private func configUI() {
-        backgroundCellView.backgroundColor = .clear
-        collectionRecipesName.textColor =  .gray
+        backgroundCellView.backgroundColor = .white
+        collectionRecipesName.textColor = .gray
         collectionRecipesName.font = constants.cellFontMetropolis
     }
     
-    func configure(viewData: CollectionRecipes) {
+    func configure(viewData: HomeViewContent.CategoryCellItem) {
         collectionRecipesName.text = viewData.title
         collectionRecipesImage.image = UIImage(named: viewData.image)
     }

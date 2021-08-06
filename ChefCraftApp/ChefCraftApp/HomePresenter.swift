@@ -11,7 +11,7 @@ import RxCocoa
 class HomePresenter {
     
     // - Internal properties
-    let viewDataPublisher = BehaviorRelay<ChefCraftOverviewViewData?>(value: nil)
+    let viewDataPublisher = BehaviorRelay<HomeViewContent?>(value: nil)
     
     // - Private Properties
     private let disposeBag = DisposeBag()
@@ -25,7 +25,7 @@ class HomePresenter {
         self.binding()
     }
     
-    func selectCell(model: Recipe) {
+    func selectCell(model: HomeViewContent.RecipeCellItem) {
         self.router.showRecipeDetails(details: model)
     }
     
@@ -41,10 +41,10 @@ class HomePresenter {
             .disposed(by: disposeBag)
     }
     
-    private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> ChefCraftOverviewViewData? {
+    private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> HomeViewContent? {
         guard let recipes = recipes else { return nil }
-        let collectionsRecipesHeader = ChefCraftOverviewViewData.RecipesCategoriesSection(collectionsRecipes: recipes.collectionsRecipes.map {
-            CollectionRecipes(
+        let collectionsRecipesHeader = HomeViewContent.CategoriesSection(categories: recipes.collectionsRecipes.map {
+            HomeViewContent.CategoryCellItem(
                 id: $0.id,
                 title: $0.name,
                 image: $0.image,
@@ -52,8 +52,8 @@ class HomePresenter {
             )
         })
         
-        let recipesHeader = ChefCraftOverviewViewData.MainRecipesSection(recipesHeader: recipes.recipes.map {
-            Recipe(
+        let recipesHeader = HomeViewContent.RecipesSection(recipes: recipes.recipes.map {
+            HomeViewContent.RecipeCellItem(
                 id: $0.id,
                 title: $0.name,
                 image: $0.image,
@@ -66,15 +66,15 @@ class HomePresenter {
             )
         })
         
-        let sectionItems: [ChefCraftOverviewContentBox] = [
-            .collectionsRecipesHeader(item: collectionsRecipesHeader),
-            .recipesHeader(item: recipesHeader)
+        let sectionItems: [HomeOverviewContentBox] = [
+            .categories(item: collectionsRecipesHeader),
+            .recipes(item: recipesHeader)
         ]
         
-        return ChefCraftOverviewViewData(
+        return HomeViewContent(
             id: recipes.id,
             previewId: "1",
-            sectionModel: AnimatableSection<ChefCraftOverviewContentBox>(items: sectionItems)
+            sectionModel: AnimatableSection<HomeOverviewContentBox>(items: sectionItems)
         )
     }
 }

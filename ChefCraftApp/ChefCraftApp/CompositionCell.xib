@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="f011003t.ttf">
+            <string>ShellFutura-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CompositionCell" id="gTV-IL-0wX" customClass="CompositionCell" customModule="ChefCraftApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="55"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="76" height="55"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-XJ-cDK">
+                        <rect key="frame" x="0.0" y="0.0" width="76" height="55"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-nh-Rrr">
+                                <rect key="frame" x="0.0" y="0.0" width="76" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z42-bm-nDu">
+                                        <rect key="frame" x="16" y="0.0" width="44" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="165 cal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0w-H9-kF1">
+                                        <rect key="frame" x="18.5" y="27.5" width="39" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="ShellFutura-Book" family="ShellFutura" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mnX-nh-Rrr" firstAttribute="top" secondItem="UDS-XJ-cDK" secondAttribute="top" id="5qa-12-4pA"/>
+                            <constraint firstItem="mnX-nh-Rrr" firstAttribute="leading" secondItem="UDS-XJ-cDK" secondAttribute="leading" id="Tgy-qB-Hxd"/>
+                            <constraint firstAttribute="bottom" secondItem="mnX-nh-Rrr" secondAttribute="bottom" id="aWc-RA-sg9"/>
+                            <constraint firstAttribute="trailing" secondItem="mnX-nh-Rrr" secondAttribute="trailing" id="w29-QX-tKl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="UDS-XJ-cDK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mrf-bk-IPx"/>
+                <constraint firstAttribute="bottom" secondItem="UDS-XJ-cDK" secondAttribute="bottom" id="Zmg-ks-Vhh"/>
+                <constraint firstAttribute="trailing" secondItem="UDS-XJ-cDK" secondAttribute="trailing" id="nDD-Xs-6GZ"/>
+                <constraint firstItem="UDS-XJ-cDK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ynD-aL-8Yj"/>
+            </constraints>
+            <size key="customSize" width="76" height="55"/>
+            <connections>
+                <outlet property="backgraundView" destination="UDS-XJ-cDK" id="Glg-MT-YAE"/>
+                <outlet property="compositionType" destination="z42-bm-nDu" id="TYb-wN-qQL"/>
+                <outlet property="compositionValue" destination="X0w-H9-kF1" id="JOb-cd-FlF"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="41.183035714285715"/>
+        </collectionViewCell>
+    </objects>
+</document>

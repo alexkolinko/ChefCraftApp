@@ -27,12 +27,6 @@ class RecipeDetailsPresenter {
         self.binding()
     }
     
-    // - Private functions
-    private func binding() {
-        let data = self.mapToViewData(self.details)
-        self.viewDataPublisher.accept(Output(content: data, imageHeader: self.details.image))
-    }
-    
     func popView() {
         self.router.popView()
     }
@@ -40,8 +34,17 @@ class RecipeDetailsPresenter {
     func selectRating(_ rating: Int) {
        print("RATING ---- \(rating)")
     }
+}
+
+// MARK: - Private logic
+extension RecipeDetailsPresenter {
     
-    private func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
+    func binding() {
+        let data = self.mapToViewData(self.details)
+        self.viewDataPublisher.accept(Output(content: data, imageHeader: self.details.image))
+    }
+    
+    func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
         
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
@@ -67,6 +70,7 @@ class RecipeDetailsPresenter {
     }
 }
 
+// MARK: - RecipeDetailsPresenter Output
 extension RecipeDetailsPresenter {
     
     struct Output {

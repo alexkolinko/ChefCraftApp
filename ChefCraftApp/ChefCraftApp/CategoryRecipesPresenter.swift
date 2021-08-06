@@ -16,32 +16,39 @@ class CategoryRecipesPresenter {
     // - Private Properties
     private let router: CategoryRecipesNavigation
     private let interactor: CategoryRecipesInteractor
-    private let category: HomeViewContent.CategoryCellItem
     private let disposeBag = DisposeBag()
     
     
     // - Base
-    init(router: CategoryRecipesNavigation, interactor: CategoryRecipesInteractor, category: HomeViewContent.CategoryCellItem) {
+    init(router: CategoryRecipesNavigation, interactor: CategoryRecipesInteractor) {
         self.router = router
         self.interactor = interactor
-        self.category = category
         self.binding()
     }
     
     func popView() {
         self.router.popView()
     }
+}
+
+// MARK: - Private logic
+private extension CategoryRecipesPresenter {
     
-    // - Private functions
-    private func binding() {
-        let categoryRecipes = self.category.recipes.compactMap { model -> CategoryRecipeCellModel? in
-            return CategoryRecipeCellModel(model: model)
-        }
-        let section = CategoryRecipesSectionModel(id: "category_recipes_section", items: categoryRecipes)
-        self.viewData.accept(Output(categoryRecipesDataSource: [section], imageCategory: self.category.image))
+    func binding() {
+        self.interactor.categoryData
+            .subscribe(onNext: { [weak self] category in
+                guard let category = category else { return }
+                let categoryRecipes = category.recipes.compactMap { model -> CategoryRecipeCellModel? in
+                    return CategoryRecipeCellModel(model: model)
+                }
+                let section = CategoryRecipesSectionModel(id: "category_recipes_section", items: categoryRecipes)
+                self?.viewData.accept(Output(categoryRecipesDataSource: [section], imageCategory: category.image))
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
+// MARK: - Internal Output
 extension CategoryRecipesPresenter {
     
     struct Output {

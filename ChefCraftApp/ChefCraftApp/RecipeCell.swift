@@ -28,18 +28,6 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
         self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
     }
     
-    private func configUI() {
-        
-        recipeImage.clipsToBounds = true
-        backgroundCellView.backgroundColor = .clear
-        
-        recipeName.textColor = .gray
-        recipeName.font = constants.cellFontMetropolis
-        
-        recipeDescription.textColor = .lightGray
-        recipeDescription.font = constants.cellFontMetropolis
-    }
-    
     func configure(viewData: HomeViewContent.RecipeCellItem) {
         recipeImage.image = UIImage(named: viewData.image)
         recipeName.text = viewData.title
@@ -47,9 +35,22 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     }
 }
 
+// MARK: - Private logic
 private extension RecipeCell {
     
-    // MARK: - Internal constants
+    private func configUI() {
+        recipeImage.clipsToBounds = true
+        backgroundCellView.backgroundColor = .clear
+        recipeName.textColor = .gray
+        recipeName.font = constants.cellFontMetropolis
+        recipeDescription.textColor = .lightGray
+        recipeDescription.font = constants.cellFontMetropolis
+    }
+}
+
+// MARK: - Internal constants
+private extension RecipeCell {
+    
     struct Constants {
         let cellImageCornerRadius: CGFloat = 20
         let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)

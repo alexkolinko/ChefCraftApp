@@ -60,7 +60,6 @@ class CategoryRecipesViewController: UIViewController, StoryboardInitializable {
     private func setUpTableView() {
         self.recipesTable.rowHeight = UITableView.automaticDimension
         self.recipesTable.estimatedRowHeight = constants.estimatedRowHeight
-        self.recipesTable.separatorStyle = .none
         self.recipesTable.registerNib(CategoryRecipeCell.self)
         self.recipesTable.backgroundColor = .white
         self.recipesTable.separatorStyle = .none

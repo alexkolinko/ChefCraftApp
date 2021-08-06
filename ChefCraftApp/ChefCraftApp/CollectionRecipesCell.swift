@@ -26,21 +26,25 @@ final class CollectionRecipesCell: UICollectionViewCell, CellInizializable {
         self.collectionRecipesImage.layer.cornerRadius = constants.cellImageCornerRadius
     }
     
-    private func configUI() {
-        backgroundCellView.backgroundColor = .white
-        collectionRecipesName.textColor = .gray
-        collectionRecipesName.font = constants.cellFontMetropolis
-    }
-    
     func configure(viewData: HomeViewContent.CategoryCellItem) {
         collectionRecipesName.text = viewData.title
         collectionRecipesImage.image = UIImage(named: viewData.image)
     }
 }
 
+// MARK: - Private logic
 private extension CollectionRecipesCell {
     
-    // MARK: - Internal constants
+    func configUI() {
+        backgroundCellView.backgroundColor = .white
+        collectionRecipesName.textColor = .gray
+        collectionRecipesName.font = constants.cellFontMetropolis
+    }
+}
+
+// MARK: - Internal constants
+private extension CollectionRecipesCell {
+    
     struct Constants {
         let cellImageCornerRadius: CGFloat = 20
         let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)

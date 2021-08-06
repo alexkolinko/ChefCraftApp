@@ -16,9 +16,9 @@ class CategoryRecipesBuilder {
         let router = CategoryRecipesRouter(injector: injector)
         router.viewController = viewController
         
-        let interactor = CategoryRecipesInteractorImpl()
+        let interactor = CategoryRecipesInteractorImpl(category: category)
         
-        let presenter = CategoryRecipesPresenter(router: router, interactor: interactor, category: category)
+        let presenter = CategoryRecipesPresenter(router: router, interactor: interactor)
         
         viewController.presenter = presenter
         

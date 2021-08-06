@@ -12,6 +12,7 @@ import RxSwift
 /// Abstract logic layer for CategoryRecipesInteractorImpl
 protocol CategoryRecipesInteractor {
     
+    var categoryData: BehaviorRelay<HomeViewContent.CategoryCellItem?> { get set }
 }
 
 // MARK: - CategoryRecipesInteractorImpl
@@ -19,20 +20,26 @@ protocol CategoryRecipesInteractor {
 class CategoryRecipesInteractorImpl {
     
     // - Internal Properties
-
+    var categoryData = BehaviorRelay<HomeViewContent.CategoryCellItem?>(value: nil)
+    
     // - Private Properties
+    private let category: HomeViewContent.CategoryCellItem
     private let disposeBag = DisposeBag()
+    
+    init(category: HomeViewContent.CategoryCellItem) {
+        self.category = category
+        self.binding()
+    }
+}
 
-//    private let databaseProvider:
-//    private let networkProvider:
-//
-//    init(databaseProvider: , networkProvider: ) {
-//        self.databaseProvider = databaseProvider
-//        self.networkProvider = networkProvider
-//    }
+private extension CategoryRecipesInteractorImpl {
+    func binding() {
+        self.categoryData.accept(self.category)
+    }
 }
 
 // MARK: - CategoryRecipesInteractorImpl: CategoryRecipesInteractor
-extension CategoryRecipesInteractorImpl : CategoryRecipesInteractor {
+extension CategoryRecipesInteractorImpl: CategoryRecipesInteractor {
+    
     
 }

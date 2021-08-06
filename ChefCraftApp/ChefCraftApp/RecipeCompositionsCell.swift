@@ -31,6 +31,7 @@ class RecipeCompositionsCell: UICollectionViewCell, CellInizializable {
     
 }
 
+// MARK: - Private logic
 private extension RecipeCompositionsCell {
     
     func setupUI() {
@@ -82,9 +83,9 @@ extension RecipeCompositionsCell {
     }
 }
 
+// MARK: - Internal constants
 private extension RecipeCompositionsCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let layoutMinimumInteritemSpacing: CGFloat = 6.0
         let layoutMinimumLineSpacing: CGFloat = 12.0

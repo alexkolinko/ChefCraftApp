@@ -12,12 +12,6 @@ import UIKit
 /// Abstract navigation layer for CategoryRecipesRouter
 protocol CategoryRecipesNavigation {
     
-//    /// Open inputed link in UIApplication default browser
-//    func showUrl(_ url: URL)
-//
-//    /// Close View message details screen
-//    func closeView()
-    
     /// Pop to pre screen from posts filter screen
     func popView()
 }

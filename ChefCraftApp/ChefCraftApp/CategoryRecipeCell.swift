@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxDataSources
 
 class CategoryRecipeCell: UITableViewCell, CellInizializable {
     
@@ -24,12 +25,6 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
         self.configUI()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
     // - Internal Logic
     func setModel(_ model: CategoryRecipeCellModel) {
         self.recipeImage.image = UIImage(named: model.model.image)
@@ -38,9 +33,12 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
         self.ratingControl.rating.accept(model.model.stars)
         self.recipeOwner.text = "by \(model.model.owner)"
     }
+}
+
+// MARK: - Private logic
+private extension CategoryRecipeCell {
     
-    private func configUI() {
- 
+    func configUI() {
         self.configShadowContainer()
         self.ratingControl.isUserInteractionEnabled = false
         self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
@@ -51,19 +49,36 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
         self.recipeOwner.font = constants.cellFontMetropolis
     }
     
-    private func configShadowContainer() {
+    func configShadowContainer() {
         self.shadowContainer.dropShadow()
         shadowContainer.layer.cornerRadius = constants.cellImageCornerRadius
     }
-    
 }
 
+// MARK: - Internal constants
 private extension CategoryRecipeCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let cellImageCornerRadius: CGFloat = 10
         let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 15.0)
         let cellFontMetropolis = UIFont(name: "Metropolis", size: 13.0)
+    }
+}
+
+extension CategoryRecipeCell {
+    struct Model: IdentifiableType {
+        /// JSON data of ChefCraftRecipe
+        var data: ChefCraftRecipe
+        
+        var identity: String {
+            return "\(data.id)"
+        }
+    }
+}
+
+extension CategoryRecipeCell.Model: Equatable {
+    
+    static func == (lhs: CategoryRecipeCell.Model, rhs: CategoryRecipeCell.Model) -> Bool {
+        return lhs.identity == rhs.identity
     }
 }

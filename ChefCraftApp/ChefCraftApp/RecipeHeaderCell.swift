@@ -39,18 +39,22 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
         self.ratingControl.rating.accept(model.stars)
     }
     
-    private func configUI() {
+
+}
+
+// MARK: - Private logic
+private extension RecipeHeaderCell {
+   
+    func configUI() {
         self.recipeTitle.font = constants.cellFontMetropolisBold
         self.recipeOwner.font = constants.cellFontMetropolis
         self.backgraundView.layer.cornerRadius = 20
     }
-    
-
 }
 
+// MARK: - Internal constants
 private extension RecipeHeaderCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
         let cellFontMetropolis = UIFont(name: "Metropolis-Light", size: 10.0)

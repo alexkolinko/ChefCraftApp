@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     }
 }
 
-
+// MARK: - RxCollectionViewSectionedAnimatedDataSource
 extension HomeViewController {
     typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<HomeOverviewContentBox>>
     
@@ -92,6 +92,7 @@ extension HomeViewController {
     }
 }
 
+// MARK: - HomeViewController: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

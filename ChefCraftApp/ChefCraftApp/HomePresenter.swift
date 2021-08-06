@@ -32,10 +32,12 @@ class HomePresenter {
     func selectRecipeCell(model: HomeViewContent.RecipeCellItem) {
         self.router.showRecipeDetails(details: model)
     }
+}
+
+// MARK: - Private logic
+private extension HomePresenter {
     
-    // - Private functions
     private func binding() {
-        
         self.interactor.chefCraftRecipes
             .map { [weak self] recipes in
                 self?.mapToViewData(recipes)

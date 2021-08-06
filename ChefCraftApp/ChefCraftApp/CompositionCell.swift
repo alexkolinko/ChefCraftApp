@@ -30,6 +30,15 @@ class CompositionCell: UICollectionViewCell, CellInizializable {
         self.backgraundView.layer.borderWidth = constants.borderWidth
     }
     
+    func configure(model: RecipeDetailsViewContent.CompositionCellItem) {
+        compositionType.text = model.type.title
+        compositionValue.text = "\(model.value) \(model.type.unit)"
+    }
+}
+
+// MARK: - Private logic
+private extension CompositionCell {
+    
     private func configUI() {
         compositionType.textColor =  .gray
         compositionType.font = constants.cellFontMetropolis
@@ -37,19 +46,11 @@ class CompositionCell: UICollectionViewCell, CellInizializable {
         compositionValue.textColor =  .black
         compositionValue.font = constants.cellFontMetropolis
     }
-    
-    func configure(model: RecipeDetailsViewContent.CompositionCellItem) {
-        compositionType.text = model.type.title
-        compositionValue.text = "\(model.value) \(model.type.unit)"
-    }
-
-
 }
 
-
+// MARK: - Internal constants
 private extension CompositionCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let backgraundCornerRadius: CGFloat = 10
         let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)

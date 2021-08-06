@@ -39,6 +39,7 @@ final class CollectionsRecipesHeaderCell: UICollectionViewCell, CellInizializabl
     }
 }
 
+// MARK: - Private logic
 private extension CollectionsRecipesHeaderCell {
     
     func setupUI() {
@@ -91,9 +92,9 @@ extension CollectionsRecipesHeaderCell {
     }
 }
 
+// MARK: - Internal constants
 private extension CollectionsRecipesHeaderCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let layoutMinimumInteritemSpacing: CGFloat = 6.0
         let layoutMinimumLineSpacing: CGFloat = 12.0

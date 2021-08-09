@@ -21,18 +21,18 @@ class HomeInteractorImpl {
     // - Internal Properties
     var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
     // - Private Properties
+    private let homeMessageDatabaseProvider: DatabaseChefCraftAllRecipeProviderProtocol
     private let disposeBag = DisposeBag()
 
-    init() {
+    init(homeMessageDatabaseProvider: DatabaseChefCraftAllRecipeProviderProtocol) {
+        self.homeMessageDatabaseProvider = homeMessageDatabaseProvider
         self.binding()
     }
 }
 
-// MARK: - HomeInteractorImpl: HomeInteractor
-extension HomeInteractorImpl : HomeInteractor {
+// MARK: - Private logic
+private extension HomeInteractorImpl {
     
-    
-    // - Private BL
     private func binding() {
         
         let recipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
@@ -110,6 +110,19 @@ extension HomeInteractorImpl : HomeInteractor {
             ])
         ])
         
-        self.chefCraftRecipes.accept(recipes)
+        self.homeMessageDatabaseProvider.saveChefCraftAllRecipe(with: recipes)
+            .subscribe()
+            .disposed(by: self.disposeBag)
+        
+        self.homeMessageDatabaseProvider.subscribeOnChefCraftAllRecipe()
+            .subscribe(onNext: {[weak self] allRecipes in
+                self?.chefCraftRecipes.accept(recipes)
+            })
+            .disposed(by: self.disposeBag)
     }
+}
+
+// MARK: - HomeInteractorImpl: HomeInteractor
+extension HomeInteractorImpl : HomeInteractor {
+ 
 }

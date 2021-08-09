@@ -26,15 +26,19 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
         self.configUI()
         self.configBinding()
     }
+}
+
+// MARK: - Private logic
+extension RecipeDetailsViewController {
     
     // - UI Setup
-    private func configUI() {
+    func configUI() {
         self.configCollectionView()
         self.configNavigationView()
     }
     
     // - Binding Setup
-    private func configBinding() {
+    func configBinding() {
         
         let viewData = presenter.viewDataPublisher
             .observe(on: MainScheduler.instance)
@@ -56,7 +60,7 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
             .disposed(by: self.disposeBag)
     }
     
-    private func configNavigationView() {
+    func configNavigationView() {
         let button = UIButton(type: .custom)
         button.frame = self.constants.backButtonFrame
         button.backgroundColor = self.constants.backButtonBackgroundColor
@@ -71,7 +75,7 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
         self.navigationItem.setLeftBarButton(barButton, animated: true)
     }
     
-    private func configureParalaxHeader(_ imageString: String) {
+    func configureParalaxHeader(_ imageString: String) {
         let image = UIImageView()
         image.image = UIImage(named: imageString)
         image.contentMode = .scaleAspectFill
@@ -95,12 +99,12 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
     }
     
     // - Selectors
-    @objc
-    private func closeButton() {
+    @objc func closeButton() {
         self.presenter.popView()
     }
 }
 
+// MARK: - RecipeDetailsViewController: UICollectionViewDelegateFlowLayout
 extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -111,6 +115,7 @@ extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - RecipeDetailsViewController: RxCollectionViewSectionedAnimatedDataSource
 extension RecipeDetailsViewController {
     typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeDetailsOverviewContentBox>>
     var dataSource: DataSource {
@@ -120,6 +125,12 @@ extension RecipeDetailsViewController {
             case .header(item: let item):
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item)
+                cell.selectedRating
+                    .subscribe (onNext: { [weak self] rating in
+                        guard let rating = rating else { return }
+                        self?.presenter.selectRating(rating)
+                    })
+                    .disposed(by: self.disposeBag)
                 return cell
             case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
@@ -134,9 +145,9 @@ extension RecipeDetailsViewController {
     }
 }
 
+// MARK: - Internal constants
 private extension RecipeDetailsViewController {
     
-    // MARK: - Internal constants
     struct Constants {
         let backButtonImage = UIImage(named: "backButton")
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)

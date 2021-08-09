@@ -15,6 +15,9 @@ final class CollectionsRecipesHeaderCell: UICollectionViewCell, CellInizializabl
     // - Outlets
     @IBOutlet weak var collectionsRecipesCollectionView: UICollectionView!
     
+    // - Internal properties
+    let selectedCategory = BehaviorRelay<HomeViewContent.CategoryCellItem?>(value: nil)
+    
     // - Private properties
     private let constants: Constants = .init()
     private(set) var disposeBag = DisposeBag()
@@ -36,6 +39,7 @@ final class CollectionsRecipesHeaderCell: UICollectionViewCell, CellInizializabl
     }
 }
 
+// MARK: - Private logic
 private extension CollectionsRecipesHeaderCell {
     
     func setupUI() {
@@ -60,6 +64,10 @@ private extension CollectionsRecipesHeaderCell {
         self.collectionRecipes
             .bind(to: self.collectionsRecipesCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        self.collectionsRecipesCollectionView.rx.modelSelected(HomeViewContent.CategoryCellItem.self)
+            .bind(to: self.selectedCategory)
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -84,9 +92,9 @@ extension CollectionsRecipesHeaderCell {
     }
 }
 
+// MARK: - Internal constants
 private extension CollectionsRecipesHeaderCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let layoutMinimumInteritemSpacing: CGFloat = 6.0
         let layoutMinimumLineSpacing: CGFloat = 12.0

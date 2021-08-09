@@ -37,44 +37,65 @@ extension HomeInteractorImpl : HomeInteractor {
         
         let recipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
             ChefCraftCollectionRecipes(id: "1", name: "First Recipes", image: "soup", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "These days it may seem odd to speak of grandma's cookie receipt, but at one time the only meaning of receipt was recipe. The first recorded use of receipt is a reference to a medicinal preparation in Chaucer's Canterbury Tales (c. 1386).", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "2", name: "Second Recipes", image: "breakfast", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "3", name: "3 Recipes", image: "soup", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "4", name: "4 Recipes", image: "breakfast", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "5", name: "5 Recipes", image: "soup", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "6", name: "6 Recipes", image: "breakfast", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "7", name: "7 Recipes", image: "soup", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
             ChefCraftCollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
-                RecipeItem(id: "1", name: "RecipeItem 1"),
-                RecipeItem(id: "2", name: "RecipeItem 2"),
-                RecipeItem(id: "3", name: "RecipeItem 3")
+                ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ])
             ]),
         ], recipes: [
             ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [

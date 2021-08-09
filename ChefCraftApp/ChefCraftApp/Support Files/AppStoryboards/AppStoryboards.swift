@@ -11,6 +11,7 @@ enum AppStoryboards: String, CaseIterable {
     
     case Home
     case RecipeDetails
+    case CategoryRecipes
   
     var storyboard: String {
         return self.rawValue + "View"

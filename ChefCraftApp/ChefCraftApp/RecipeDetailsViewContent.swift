@@ -36,7 +36,7 @@ struct RecipeDetailsViewContent: Equatable {
     }
 }
 
-// MARK: - RecipeDetailsOverviewContentBox
+// MARK: - RecipeDetailsOverviewContentBox: IdentifiableItem
 enum RecipeDetailsOverviewContentBox: IdentifiableItem {
     case header(item: RecipeDetailsViewContent.HeaderSection)
     case compositions(item: RecipeDetailsViewContent.CompositionsSection)
@@ -45,7 +45,7 @@ enum RecipeDetailsOverviewContentBox: IdentifiableItem {
     func calculateItemSize(width: CGFloat) -> CGSize {
         switch self {
         case .header:
-            let height = CGFloat(100)
+            let height = CGFloat(120)
             return CGSize(width: width, height: height)
         case .compositions:
             let height = CGFloat(80)
@@ -57,33 +57,37 @@ enum RecipeDetailsOverviewContentBox: IdentifiableItem {
     }
 }
 
+// MARK: - RecipeDetailsOverviewContentBox
 extension RecipeDetailsOverviewContentBox {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.identity == rhs.identity
     }
 }
 
+// MARK: - RecipeDetailsViewContent.HeaderSection: IdentifiableItem
 extension RecipeDetailsViewContent.HeaderSection: IdentifiableItem {
     var identity: String {
         id
     }
 }
 
+// MARK: - RecipeDetailsViewContent.CompositionCellItem: IdentifiableItem
 extension RecipeDetailsViewContent.CompositionCellItem: IdentifiableItem {
     var identity: String {
         id
     }
 }
 
+// MARK: - RecipeDetailsViewContent.HeaderSection: Equatable
 extension RecipeDetailsViewContent.HeaderSection: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
     }
 }
 
+// MARK: - RecipeDetailsViewContent.CompositionCellItem: Equatable
 extension RecipeDetailsViewContent.CompositionCellItem: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
     }
 }
-

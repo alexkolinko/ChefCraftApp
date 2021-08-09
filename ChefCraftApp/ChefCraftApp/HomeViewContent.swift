@@ -26,7 +26,7 @@ struct HomeViewContent: Equatable {
         let id: String
         let title: String
         let image: String
-        let recipes: [RecipeItem]
+        let recipes: [ChefCraftRecipe]
     }
     
     struct RecipeCellItem {

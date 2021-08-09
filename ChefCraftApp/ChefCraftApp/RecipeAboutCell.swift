@@ -9,7 +9,6 @@ import UIKit
 
 class RecipeAboutCell: UICollectionViewCell, CellInizializable {
 
-    
     @IBOutlet weak var aboutTitle: UILabel!
     @IBOutlet weak var aboutDescription: UILabel!
     
@@ -25,17 +24,19 @@ class RecipeAboutCell: UICollectionViewCell, CellInizializable {
     func setModel(_ content: String) {
         self.aboutDescription.text = content
     }
-    
-    // - Private Properties
-    private func configUI() {
+}
+
+// MARK: - Private logic
+private extension RecipeAboutCell {
+    func configUI() {
         self.aboutTitle.font = constants.cellFontMetropolisBold
         self.aboutDescription.font = constants.cellFontMetropolis
     }
 }
 
+// MARK: - Internal constants
 private extension RecipeAboutCell {
     
-    // MARK: - Internal constants
     struct Constants {
         let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
         let cellFontMetropolis = UIFont(name: "Metropolis-Light", size: 10.0)

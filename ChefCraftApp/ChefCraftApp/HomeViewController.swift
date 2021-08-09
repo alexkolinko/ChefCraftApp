@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     }
 }
 
-
+// MARK: - RxCollectionViewSectionedAnimatedDataSource
 extension HomeViewController {
     typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<HomeOverviewContentBox>>
     
@@ -68,6 +68,13 @@ extension HomeViewController {
             case .categories(let item):
                 let cell: CollectionsRecipesHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configure(viewData: item)
+                cell.selectedCategory
+                    .subscribe (onNext: { [weak self] category in
+                        guard let category = category else { return }
+                        self?.presenter.selectCategoryCell(model: category)
+                    })
+                    .disposed(by: self.disposeBag)
+
                 return cell
             case .recipes(item: let item):
                 let cell: RecipesHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
@@ -75,7 +82,7 @@ extension HomeViewController {
                 cell.selectedRecipe
                     .subscribe (onNext: { [weak self] recipe in
                         guard let recipe = recipe else { return }
-                        self?.presenter.selectCell(model: recipe)
+                        self?.presenter.selectRecipeCell(model: recipe)
                     })
                     .disposed(by: self.disposeBag)
 
@@ -85,6 +92,7 @@ extension HomeViewController {
     }
 }
 
+// MARK: - HomeViewController: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Category Recipes View Controller-->
+        <scene sceneID="qMf-yz-dDL">
+            <objects>
+                <viewController storyboardIdentifier="CategoryRecipesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KYT-7B-KQj" customClass="CategoryRecipesViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5c-I5-CN8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-dw-oCw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Vb-OB-BWu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="QAF-c9-87s"/>
+                                        </constraints>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-u7-sJZ">
+                                        <rect key="frame" x="0.0" y="350" width="414" height="512"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iSh-ct-ISV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bcG-dw-oCw" firstAttribute="leading" secondItem="iSh-ct-ISV" secondAttribute="leading" id="0a3-CN-hYV"/>
+                            <constraint firstItem="iSh-ct-ISV" firstAttribute="trailing" secondItem="bcG-dw-oCw" secondAttribute="trailing" id="7iF-YB-edm"/>
+                            <constraint firstItem="bcG-dw-oCw" firstAttribute="top" secondItem="w5c-I5-CN8" secondAttribute="top" id="NG7-11-iRz"/>
+                            <constraint firstItem="iSh-ct-ISV" firstAttribute="bottom" secondItem="bcG-dw-oCw" secondAttribute="bottom" id="pdb-bG-9rd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryImage" destination="3Vb-OB-BWu" id="iza-ht-IBX"/>
+                        <outlet property="recipesTable" destination="fIp-u7-sJZ" id="2UR-Ub-Wb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVK-qB-eIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

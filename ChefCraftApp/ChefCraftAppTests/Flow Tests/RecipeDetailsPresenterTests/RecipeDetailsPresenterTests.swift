@@ -29,7 +29,7 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 beforeEach {
                     tested_interactor = MockedInteractor()
                     tested_router = MockedRouter()
-                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor, details: mockes.cellItem)
+                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor)
                     data_mirrow = ReplaySubject<Void>.createUnbounded()
                     bag = DisposeBag()
                     
@@ -52,6 +52,10 @@ class RecipeDetailsPresenterTests: QuickSpec {
                             }
                         })
                         .disposed(by: bag)
+                    
+                    tested_interactor.recipeData.accept(mockes.cellItem)
+                    
+//                    HomeViewContent.RecipeCellItem
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         data_mirrow.onCompleted()
@@ -85,7 +89,15 @@ private extension RecipeDetailsPresenterTests {
 
 // MARK: - MockedInteractor: RecipeDetailsInteractor
 private class MockedInteractor: RecipeDetailsInteractor {
+    let action = ReplaySubject<MockInteractorAction>.createUnbounded()
+    
+    var recipeData = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
     var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
+    
+    func updateStorage(rating: Int) {
+        self.action.onNext(.updateStorage)
+    }
+    
     
 }
 
@@ -103,5 +115,10 @@ private class MockedRouter: RecipeDetailsNavigation {
 // MARK: - MockNavigationAction
 private enum MockNavigationAction: String, Equatable {
     case popView
+}
+
+// MARK: - MockInteractorAction
+private enum MockInteractorAction {
+    case updateStorage
 }
 

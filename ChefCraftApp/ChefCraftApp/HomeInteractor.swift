@@ -42,7 +42,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
                 ]),
-                ChefCraftRecipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
@@ -53,10 +53,20 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
             ChefCraftCollectionRecipes(id: "3", name: "3 Recipes", image: "soup", recipes: [
                 ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
@@ -67,10 +77,20 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
             ChefCraftCollectionRecipes(id: "5", name: "5 Recipes", image: "soup", recipes: [
                 ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
@@ -81,6 +101,11 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
             ChefCraftCollectionRecipes(id: "7", name: "7 Recipes", image: "soup", recipes: [
@@ -88,10 +113,20 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
             ChefCraftCollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
                 ChefCraftRecipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 150),
+                    RecipeComposition(type: .ingredients, value: 5),
+                    RecipeComposition(type: .totalTime, value: 30)
+                ]),
+                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
                     RecipeComposition(type: .totalTime, value: 30)
@@ -104,6 +139,11 @@ private extension HomeInteractorImpl {
                 RecipeComposition(type: .totalTime, value: 30)
             ]),
             ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                RecipeComposition(type: .calories, value: 200),
+                RecipeComposition(type: .ingredients, value: 7),
+                RecipeComposition(type: .totalTime, value: 40)
+            ]),
+            ChefCraftRecipe(id: "3", name: "RECIPE #3", image: "bitmap", description: "#3 RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                 RecipeComposition(type: .calories, value: 200),
                 RecipeComposition(type: .ingredients, value: 7),
                 RecipeComposition(type: .totalTime, value: 40)

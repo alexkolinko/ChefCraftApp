@@ -24,7 +24,7 @@ final class RMRecipe: Object {
         return "id"
     }
     
-    func customInit(from domain: ChefCraftRecipe) {
+    func customInit(from domain: Recipe) {
         self.id = domain.id
         self.name = domain.name
         self.image = domain.image
@@ -43,14 +43,14 @@ final class RMRecipe: Object {
 }
 
 extension RMRecipe: DomainConvertibleType {
-    func asDomain() -> ChefCraftRecipe {
+    func asDomain() -> Recipe {
         
         let decoder = JSONDecoder()
         let compositions = (try? decoder.decode([RecipeComposition].self, from: self.compositions)) ?? []
-        return ChefCraftRecipe(id: self.id, name: self.name, image: self.image, description: self.descriptionRecipe, owner: self.owner, isLike: self.isLike, stars: self.stars, about: self.about, compositions: compositions)
+        return Recipe(id: self.id, name: self.name, image: self.image, description: self.descriptionRecipe, owner: self.owner, isLike: self.isLike, stars: self.stars, about: self.about, compositions: compositions)
     }
     
-    func fromDomain(domain: ChefCraftRecipe) {
+    func fromDomain(domain: Recipe) {
         customInit(from: domain)
     }
 }

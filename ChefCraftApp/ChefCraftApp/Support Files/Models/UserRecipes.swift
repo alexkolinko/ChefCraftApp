@@ -1,5 +1,5 @@
 //
-//  ChefCraftAllRecipes.swift
+//  UserRecipes.swift
 //  ChefCraftApp
 //
 //  Created by Work on 26.07.2021.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct ChefCraftAllRecipes: Decodable {
+struct UserRecipes: Decodable {
     let id: String
-    let collectionsRecipes: [ChefCraftCollectionRecipes]
-    let recipes: [ChefCraftRecipe]
+    let collectionsRecipes: [CollectionRecipes]
+    let recipes: [Recipe]
     
     init(
         id: String,
-        collectionsRecipes: [ChefCraftCollectionRecipes],
-        recipes: [ChefCraftRecipe]
+        collectionsRecipes: [CollectionRecipes],
+        recipes: [Recipe]
     ) {
         self.id = id
         self.collectionsRecipes = collectionsRecipes
@@ -23,15 +23,15 @@ struct ChefCraftAllRecipes: Decodable {
     }
 }
 
-extension ChefCraftAllRecipes: Equatable {
+extension UserRecipes: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
     }
 }
 
-extension ChefCraftAllRecipes {
+extension UserRecipes {
     /// For use in mocks
     static var `default`: Self {
-        ChefCraftAllRecipes(id: "", collectionsRecipes: [], recipes: [])
+        UserRecipes(id: "", collectionsRecipes: [], recipes: [])
     }
 }

@@ -100,7 +100,7 @@ private class MockedInteractor: RecipeDetailsInteractor {
     let action = ReplaySubject<MockInteractorAction>.createUnbounded()
     
     var recipeData = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
-    var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
+    var chefCraftRecipes = BehaviorRelay<UserRecipes?>(value: nil)
     
     func updateStorage(rating: Int) {
         self.action.onNext(.updateStorage)

@@ -11,7 +11,7 @@ import UIKit
 // MARK: - CategoryRecipeCellModel
 struct CategoryRecipeCellModel: IdentifiableType {
     /// JSON model of FuelTerminalModel
-    var model: ChefCraftRecipe
+    var model: Recipe
     
     var identity: String {
         return "\(model.id)"

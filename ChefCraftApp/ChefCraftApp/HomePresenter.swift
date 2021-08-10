@@ -47,7 +47,7 @@ private extension HomePresenter {
             .disposed(by: disposeBag)
     }
     
-    private func mapToViewData(_ recipes: ChefCraftAllRecipes?) -> HomeViewContent? {
+    private func mapToViewData(_ recipes: UserRecipes?) -> HomeViewContent? {
         guard let recipes = recipes else { return nil }
         let collectionsRecipesHeader = HomeViewContent.CategoriesSection(categories: recipes.collectionsRecipes.map {
             HomeViewContent.CategoryCellItem(

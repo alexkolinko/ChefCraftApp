@@ -15,8 +15,8 @@ extension EKColor {
                        dark: .yellow)
     }
     
-    static var pinkyColor: EKColor {
-        return EKColor(light: .systemPink,
-                       dark: .systemPink)
+    static var green: EKColor {
+        return EKColor(light: .green,
+                       dark: .green)
     }
 }

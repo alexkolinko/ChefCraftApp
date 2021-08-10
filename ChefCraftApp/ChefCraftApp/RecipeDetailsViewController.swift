@@ -132,6 +132,13 @@ extension RecipeDetailsViewController {
                         self?.presenter.selectRating(rating)
                     })
                     .disposed(by: self.disposeBag)
+                cell.selectedLike
+                    .asObservable()
+                    .ignoreNil()
+                    .subscribe (onNext: { [weak self] isLike in
+                        self?.presenter.selectLike(isLike)
+                    })
+                    .disposed(by: self.disposeBag)
                 return cell
             case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)

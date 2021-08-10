@@ -16,9 +16,11 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipeOwner: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var backgraundView: UIView!
+    @IBOutlet weak var likeButton: UIButton!
     
     // - Internal properties
     let selectedRating = BehaviorRelay<Int?>(value: nil)
+    let selectedLike = BehaviorRelay<Bool?>(value: nil)
     
     // - Private properties
     private(set) var bag = DisposeBag()
@@ -35,16 +37,18 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
         self.recipeTitle.text = model.title
         self.recipeOwner.text = "by \(model.owner)"
         self.ratingControl.rating.accept(model.stars)
+        
+        self.likeButton.setImage(model.isLike ? self.constants.selectedHeartImage : self.constants.unselectedHeartImage, for: .normal)
+        
     }
-    
 }
 
 // MARK: - Private logic
 private extension RecipeHeaderCell {
    
     func configUI() {
-        self.recipeTitle.font = constants.cellFontMetropolisBold
-        self.recipeOwner.font = constants.cellFontMetropolis
+        self.recipeTitle.font = self.constants.fontMetropolisBold
+        self.recipeOwner.font = self.constants.fontMetropolisLight
         self.backgraundView.layer.cornerRadius = 20
     }
     
@@ -55,6 +59,20 @@ private extension RecipeHeaderCell {
             })
             .disposed(by: self.bag)
         
+        self.likeButton.rx
+            .tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                if self?.likeButton.imageView?.image == self?.constants.unselectedHeartImage {
+                    self?.likeButton.setImage(self?.constants.selectedHeartImage, for: .normal)
+                    self?.selectedLike.accept(true)
+                    self?.showFloatView()
+                } else {
+                    self?.likeButton.setImage(self?.constants.unselectedHeartImage, for: .normal)
+                    self?.selectedLike.accept(false)
+                }
+            })
+            .disposed(by: self.bag)
     }
     
     // Show rating view
@@ -75,43 +93,40 @@ private extension RecipeHeaderCell {
         attributes.screenBackground = .visualEffect(style: .standard)
         attributes.entryBackground = .visualEffect(style: .standard)
         
-        guard let myFont = UIFont(name: "Metropolis", size: 13.0) else { return }
-        
-        
+        guard let metropolisFont = self.constants.fontMetropolis else { return }
         let unselectedImage = EKProperty.ImageContent(
-            image: UIImage(named: "ic_star_unselected")!.withRenderingMode(.alwaysTemplate),
+            image: self.constants.unselectedStarImage!.withRenderingMode(.alwaysTemplate),
             displayMode: .light,
             tint: .standardContent
         )
         let selectedImage = EKProperty.ImageContent(
-            image: UIImage(named: "ic_star_unselected.imageset")!.withRenderingMode(.alwaysTemplate),
+            image: self.constants.selectedStarImage!.withRenderingMode(.alwaysTemplate),
             displayMode: .light,
             tint: EKColor.ratingStar
         )
         let initialTitle = EKProperty.LabelContent(
-            text: "Rate our food",
+            text: self.constants.ratingTitleText,
             style: .init(
-                font: myFont,
+                font: metropolisFont,
                 color: .standardContent,
                 alignment: .center,
                 displayMode: EKAttributes.DisplayMode.inferred
             )
         )
         let initialDescription = EKProperty.LabelContent(
-            text: "How was it?",
+            text: self.constants.ratingDescriptionText,
             style: .init(
-                font: myFont,
+                font: metropolisFont,
                 color: EKColor.standardContent.with(alpha: 0.5),
                 alignment: .center,
                 displayMode: EKAttributes.DisplayMode.inferred
             )
         )
-        let items = [("💩", "Pooish!"), ("🤨", "Ahhh?!"), ("👍", "OK!"),
-                     ("👌", "Tasty!"), ("😋", "Delicius!")].map { texts -> EKProperty.EKRatingItemContent in
+        let items = self.constants.ratingMessageItems.map { texts -> EKProperty.EKRatingItemContent in
                         let itemTitle = EKProperty.LabelContent(
                             text: texts.0,
                             style: .init(
-                                font: myFont,
+                                font: metropolisFont,
                                 color: .standardContent,
                                 alignment: .center,
                                 displayMode: EKAttributes.DisplayMode.inferred
@@ -120,7 +135,7 @@ private extension RecipeHeaderCell {
                         let itemDescription = EKProperty.LabelContent(
                             text: texts.1,
                             style: .init(
-                                font: myFont,
+                                font: metropolisFont,
                                 color: .standardContent,
                                 alignment: .center,
                                 displayMode: EKAttributes.DisplayMode.inferred
@@ -135,15 +150,15 @@ private extension RecipeHeaderCell {
                      }
         
         var message: EKRatingMessage!
-        let lightFont = myFont
-        let mediumFont = myFont
+        let lightFont = metropolisFont
+        let mediumFont = metropolisFont
         let closeButtonLabelStyle = EKProperty.LabelStyle(
             font: mediumFont,
             color: .standardContent,
             displayMode: EKAttributes.DisplayMode.inferred
         )
         let closeButtonLabel = EKProperty.LabelContent(
-            text: "Dismiss",
+            text: self.constants.ratingCloseButtonText,
             style: closeButtonLabelStyle
         )
         let closeButton = EKProperty.ButtonContent(
@@ -151,25 +166,21 @@ private extension RecipeHeaderCell {
             backgroundColor: .clear,
             highlightedBackgroundColor: EKColor.standardBackground.with(alpha: 0.2),
             displayMode: EKAttributes.DisplayMode.inferred) {
-            SwiftEntryKit.dismiss {
-                // Here you may perform a completion handler
-            }
         }
-        
-        let pinkyColor = EKColor.pinkyColor
+        let greenColor = EKColor.green
         let okButtonLabelStyle = EKProperty.LabelStyle(
             font: lightFont,
-            color: pinkyColor,
+            color: greenColor,
             displayMode: EKAttributes.DisplayMode.inferred
         )
         let okButtonLabel = EKProperty.LabelContent(
-            text: "Accept",
+            text: self.constants.ratingOkButtonText,
             style: okButtonLabelStyle
         )
         let okButton = EKProperty.ButtonContent(
             label: okButtonLabel,
             backgroundColor: .clear,
-            highlightedBackgroundColor: pinkyColor.with(alpha: 0.05),
+            highlightedBackgroundColor: greenColor.with(alpha: 0.05),
             displayMode: EKAttributes.DisplayMode.inferred) { [weak self] in
             self?.ratingControl.rating.accept(rating)
             self?.selectedRating.accept(rating)
@@ -190,8 +201,27 @@ private extension RecipeHeaderCell {
             // Rating selected
             rating = index + 1
         }
-        
         let contentView = EKRatingMessageView(with: message)
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+    }
+    
+    // Show float view
+    func showFloatView() {
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .color(color: EKColor.black.with(alpha: 0.7))
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.size = .init(width: .offset(value: 20), height: .intrinsic)
+
+        guard let metropolisFont = constants.fontMetropolis else { return }
+        let title = EKProperty.LabelContent(text: self.constants.floatTitleText, style: .init(font: metropolisFont, color: EKColor.white))
+        let description = EKProperty.LabelContent(text: self.constants.floatDescriptionText, style: .init(font: metropolisFont, color: EKColor.white))
+        let image = EKProperty.ImageContent(image: constants.selectedHeartImage!, size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+        let contentView = EKNotificationMessageView(with: notificationMessage)
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
 }
@@ -200,7 +230,20 @@ private extension RecipeHeaderCell {
 private extension RecipeHeaderCell {
     
     struct Constants {
-        let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
-        let cellFontMetropolis = UIFont(name: "Metropolis-Light", size: 10.0)
+        let floatDescriptionText = "Recipe is your favorite."
+        let floatTitleText = "Like!"
+        let ratingCloseButtonText = "Dismiss"
+        let ratingOkButtonText = "Accept"
+        let ratingDescriptionText = "How was it?"
+        let ratingTitleText = "Rate our food"
+        let selectedStarImage = UIImage(named: "ic_star_selected")
+        let unselectedStarImage = UIImage(named: "ic_star_unselected")
+        let unselectedHeartImage = UIImage(named: "icHeart")
+        let selectedHeartImage = UIImage(named: "icRedHeart")
+        let fontMetropolis = UIFont(name: "Metropolis", size: 13.0)
+        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
+        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
+        let ratingMessageItems = [("💩", "Pooish!"), ("🤨", "Ahhh?!"), ("👍", "OK!"),
+                                 ("👌", "Tasty!"), ("😋", "Delicius!")]
     }
 }

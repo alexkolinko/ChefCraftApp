@@ -30,7 +30,11 @@ class RecipeDetailsPresenter {
     }
     
     func selectRating(_ rating: Int) {
-        self.interactor.updateStorage(rating: rating)
+        self.interactor.updateRating(rating)
+    }
+    
+    func selectLike(_ isLike: Bool) {
+        self.interactor.updateLike(isLike)
     }
 }
 
@@ -59,7 +63,8 @@ extension RecipeDetailsPresenter {
             id: "1",
             title: recipe.title,
             owner: recipe.owner,
-            stars: recipe.stars
+            stars: recipe.stars,
+            isLike: recipe.isLike
         )
         let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
             RecipeDetailsViewContent.CompositionCellItem(

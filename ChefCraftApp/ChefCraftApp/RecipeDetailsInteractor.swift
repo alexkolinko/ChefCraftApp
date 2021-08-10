@@ -14,7 +14,9 @@ protocol RecipeDetailsInteractor {
     
     var recipeData: BehaviorRelay<HomeViewContent.RecipeCellItem?> { get set }
     
-    func updateStorage(rating: Int)
+    func updateRating(_ rating: Int)
+    
+    func updateLike(_ isLike: Bool)
     
 }
 
@@ -57,8 +59,12 @@ private extension RecipeDetailsInteractorImpl {
 
 // MARK: - RecipeDetailsInteractorImpl: RecipeDetailsInteractor
 extension RecipeDetailsInteractorImpl : RecipeDetailsInteractor {
- 
-    func updateStorage(rating: Int) {
+    func updateLike(_ isLike: Bool) {
+        let newModel = Recipe(id: details.id, name: details.title, image: details.image, description: details.description, owner: details.owner, isLike: isLike, stars: details.stars, about: details.about, compositions: details.compositions)
+        self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
+    }
+    
+    func updateRating(_ rating: Int) {
         let newModel = Recipe(id: details.id, name: details.title, image: details.image, description: details.description, owner: details.owner, isLike: details.isLike, stars: rating, about: details.about, compositions: details.compositions)
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }

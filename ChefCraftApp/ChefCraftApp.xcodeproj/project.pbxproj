@@ -20,6 +20,7 @@
 		960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */; };
 		960676FE26AEC06700DDD3CA /* HomeViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676FD26AEC06700DDD3CA /* HomeViewContent.swift */; };
 		9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9612C35226AAAEF700AB16AA /* UIScreen+Brightness.swift */; };
+		9623327026C2A5CF0007F904 /* EKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9623326F26C2A5CF0007F904 /* EKColor+Extensions.swift */; };
 		962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418DE26AAD2C800200576 /* Metropolis-Bold.otf */; };
 		962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E026AAD2D600200576 /* Metropolis-Light.otf */; };
 		962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E226AAD2F300200576 /* Metropolis-Medium.otf */; };
@@ -134,6 +135,7 @@
 		960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		960676FD26AEC06700DDD3CA /* HomeViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContent.swift; sourceTree = "<group>"; };
 		9612C35226AAAEF700AB16AA /* UIScreen+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Brightness.swift"; sourceTree = "<group>"; };
+		9623326F26C2A5CF0007F904 /* EKColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKColor+Extensions.swift"; sourceTree = "<group>"; };
 		962418DE26AAD2C800200576 /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Bold.otf"; sourceTree = "<group>"; };
 		962418E026AAD2D600200576 /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Light.otf"; sourceTree = "<group>"; };
 		962418E226AAD2F300200576 /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				965DA69E26AAA1AF00958782 /* UIWindow+switchRoot.swift */,
 				960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */,
 				965D7A3526BC147300D280B3 /* UIView+Extensions.swift */,
+				9623326F26C2A5CF0007F904 /* EKColor+Extensions.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				965D79E126B447E300D280B3 /* ParallaxHeaderMode.swift in Sources */,
 				965D7A1D26BAA6CD00D280B3 /* CategoryRecipesViewController.swift in Sources */,
 				960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */,
+				9623327026C2A5CF0007F904 /* EKColor+Extensions.swift in Sources */,
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
 				965D79DA26B43F8D00D280B3 /* RecipeDetailsViewContent.swift in Sources */,

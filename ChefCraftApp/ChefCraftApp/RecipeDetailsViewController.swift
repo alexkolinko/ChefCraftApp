@@ -126,8 +126,9 @@ extension RecipeDetailsViewController {
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item)
                 cell.selectedRating
+                    .asObservable()
+                    .ignoreNil()
                     .subscribe (onNext: { [weak self] rating in
-                        guard let rating = rating else { return }
                         self?.presenter.selectRating(rating)
                     })
                     .disposed(by: self.disposeBag)

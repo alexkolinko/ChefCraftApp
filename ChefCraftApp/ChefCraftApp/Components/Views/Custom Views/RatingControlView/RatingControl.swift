@@ -15,6 +15,8 @@ import RxCocoa
     //MARK: Properties
     var rating = BehaviorRelay<Int>(value: 0)
     
+    let ratingTapped = PublishRelay<Void>()
+    
     // - Private properties
     private(set) var bag = DisposeBag()
     private var ratingButtons = [UIButton]()
@@ -47,16 +49,8 @@ import RxCocoa
     //MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
-        guard let index = ratingButtons.firstIndex(of: button) else {
-            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
-        }
-        
-        // Calculate the rating of the selected button
-        let selectedRating = index + 1
-        guard selectedRating != rating.value else { return }
-        rating.accept(selectedRating)
+        self.ratingTapped.accept(())
     }
-    
     
     //MARK: Private Methods
     private func binding() {

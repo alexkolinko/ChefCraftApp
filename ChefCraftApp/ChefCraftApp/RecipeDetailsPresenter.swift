@@ -39,8 +39,9 @@ extension RecipeDetailsPresenter {
     
     func binding() {
         self.interactor.recipeData
+            .asObservable()
+            .ignoreNil()
             .subscribe(onNext: {[weak self] recipe in
-                guard let recipe = recipe else { return }
                 self?.mapToOutput(recipe)
  
             })

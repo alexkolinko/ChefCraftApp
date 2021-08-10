@@ -58,11 +58,12 @@ extension DatabaseRecipeCompositionProvider: DatabaseRecipeCompositionProviderPr
     }
     
     func subscribeOnRecipeComposition() -> Observable<RecipeComposition> {
-        return self.storage.subscribeOnDomainObjects(realmType: RMRecipeComposition.self).flatMap { objects, _ -> Observable<RecipeComposition>  in
-            guard let object = objects.first else {
-                return Observable.empty()
+        return self.storage.subscribeOnDomainObjects(realmType: RMRecipeComposition.self)
+            .flatMap { objects, _ -> Observable<RecipeComposition>  in
+                guard let object = objects.first else {
+                    return Observable.empty()
+                }
+                return Observable.of(object)
             }
-            return Observable.of(object)
-        }
     }
 }

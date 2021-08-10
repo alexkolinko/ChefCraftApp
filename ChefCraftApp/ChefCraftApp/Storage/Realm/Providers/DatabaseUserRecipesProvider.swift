@@ -1,5 +1,5 @@
 //
-//  DatabaseChefCraftAllRecipeProvider.swift
+//  DatabaseUserRecipesProvider.swift
 //  ChefCraftApp
 //
 //  Created by Work on 06.08.2021.
@@ -9,8 +9,8 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-// MARK: - DatabaseChefCraftAllRecipeProviderProtocol
-protocol DatabaseChefCraftAllRecipeProviderProtocol {
+// MARK: - DatabaseUserRecipesProviderProtocol
+protocol DatabaseUserRecipesProviderProtocol {
     /**
      Save current ChefCraftAllRecipes to Realm Data storage. Actual info you can get from NN
      
@@ -38,8 +38,8 @@ protocol DatabaseChefCraftAllRecipeProviderProtocol {
     func subscribeOnChefCraftAllRecipe() -> Observable<ChefCraftAllRecipes>
 }
 
-// MARK: - DatabaseChefCraftAllRecipeProvider
-class DatabaseChefCraftAllRecipeProvider {
+// MARK: - DatabaseUserRecipesProvider
+class DatabaseUserRecipesProvider {
     private let storage: RealmStorageManager
     
     init(storage: RealmStorageManager) {
@@ -47,22 +47,23 @@ class DatabaseChefCraftAllRecipeProvider {
     }
 }
 
-// MARK: - DatabaseChefCraftAllRecipeProvider: DatabaseChefCraftAllRecipeProviderProtocol
-extension DatabaseChefCraftAllRecipeProvider: DatabaseChefCraftAllRecipeProviderProtocol {
+// MARK: - DatabaseUserRecipesProvider: DatabaseUserRecipesProviderProtocol
+extension DatabaseUserRecipesProvider: DatabaseUserRecipesProviderProtocol {
     func saveChefCraftAllRecipe(with model: ChefCraftAllRecipes) -> Completable {
-        return self.storage.setDomainObject(realmType: RMChefCraftAllRecipes.self, model: model)
+        return self.storage.setDomainObject(realmType: RMUserRecipes.self, model: model)
     }
     
     func getChefCraftAllRecipe() -> Single<ChefCraftAllRecipes> {
-        return self.storage.getUniqueDomainObject(realmType: RMChefCraftAllRecipes.self)
+        return self.storage.getUniqueDomainObject(realmType: RMUserRecipes.self)
     }
     
     func subscribeOnChefCraftAllRecipe() -> Observable<ChefCraftAllRecipes> {
-        return self.storage.subscribeOnDomainObjects(realmType: RMChefCraftAllRecipes.self).flatMap { objects, _ -> Observable<ChefCraftAllRecipes>  in
-            guard let object = objects.first else {
-                return Observable.empty()
+        return self.storage.subscribeOnDomainObjects(realmType: RMUserRecipes.self)
+            .flatMap { objects, _ -> Observable<ChefCraftAllRecipes>  in
+                guard let object = objects.first else {
+                    return Observable.empty()
+                }
+                return Observable.of(object)
             }
-            return Observable.of(object)
-        }
     }
 }

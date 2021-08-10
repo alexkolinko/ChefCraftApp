@@ -27,10 +27,10 @@ class RecipeDetailsInteractorImpl {
     
     // - Private Properties
     private let details: HomeViewContent.RecipeCellItem
-    private let databaseProvider: DatabaseChefCraftRecipeProviderProtocol
+    private let databaseProvider: DatabaseRecipeProviderProtocol
     private let disposeBag = DisposeBag()
     
-    init(databaseProvider: DatabaseChefCraftRecipeProviderProtocol, details: HomeViewContent.RecipeCellItem) {
+    init(databaseProvider: DatabaseRecipeProviderProtocol, details: HomeViewContent.RecipeCellItem) {
         self.databaseProvider = databaseProvider
         self.details = details
         self.binding()

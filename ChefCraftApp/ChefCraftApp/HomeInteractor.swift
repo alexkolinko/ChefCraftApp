@@ -21,10 +21,10 @@ class HomeInteractorImpl {
     // - Internal Properties
     var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
     // - Private Properties
-    private let homeMessageDatabaseProvider: DatabaseChefCraftAllRecipeProviderProtocol
+    private let homeMessageDatabaseProvider: DatabaseUserRecipesProviderProtocol
     private let disposeBag = DisposeBag()
 
-    init(homeMessageDatabaseProvider: DatabaseChefCraftAllRecipeProviderProtocol) {
+    init(homeMessageDatabaseProvider: DatabaseUserRecipesProviderProtocol) {
         self.homeMessageDatabaseProvider = homeMessageDatabaseProvider
         self.binding()
     }

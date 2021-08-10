@@ -16,7 +16,7 @@ class HomeBuilder {
         let router = HomeRouter(injector: injector)
         router.viewController = viewController
         
-        let interactor = HomeInteractorImpl(homeMessageDatabaseProvider: injector.resolve(DatabaseChefCraftAllRecipeProvider.self)!)
+        let interactor = HomeInteractorImpl(homeMessageDatabaseProvider: injector.resolve(DatabaseUserRecipesProvider.self)!)
         
         let presenter = HomePresenter(router: router, interactor: interactor)
         

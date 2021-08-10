@@ -1,5 +1,5 @@
 //
-//  RMChefCraftRecipe.swift
+//  RMRecipe.swift
 //  ChefCraftApp
 //
 //  Created by Work on 06.08.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class RMChefCraftRecipe: Object {
+final class RMRecipe: Object {
     
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
@@ -42,7 +42,7 @@ final class RMChefCraftRecipe: Object {
     }
 }
 
-extension RMChefCraftRecipe: DomainConvertibleType {
+extension RMRecipe: DomainConvertibleType {
     func asDomain() -> ChefCraftRecipe {
         
         let decoder = JSONDecoder()

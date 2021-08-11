@@ -29,7 +29,7 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 beforeEach {
                     tested_interactor = MockedInteractor()
                     tested_router = MockedRouter()
-                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor, details: mockes.cellItem)
+                    tested_presenter = RecipeDetailsPresenter(router: tested_router, interactor: tested_interactor)
                     data_mirrow = ReplaySubject<Void>.createUnbounded()
                     bag = DisposeBag()
                     
@@ -53,11 +53,21 @@ class RecipeDetailsPresenterTests: QuickSpec {
                         })
                         .disposed(by: bag)
                     
+                    tested_interactor.recipeData.accept(mockes.cellItem)
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         data_mirrow.onCompleted()
                     }
                     
                     expect(data_mirrow).last.toNot(beNil(), description: "Expect for returning not nil")
+                }
+                
+                it("trigger updateStorage") {
+                    tested_presenter.selectRating(mockes.rating)
+                    
+                    tested_interactor.action.onCompleted()
+                    
+                    expect(tested_interactor.action).last.to(equal(.updateStorage), description: "Expect for the storage to update according to the presenter flow")
                 }
                 
                 it("trigger show popView action") {
@@ -75,9 +85,11 @@ class RecipeDetailsPresenterTests: QuickSpec {
 
 private extension RecipeDetailsPresenterTests {
     struct MockedItem {
+        var rating: Int
         var cellItem: HomeViewContent.RecipeCellItem
         
         init() {
+            self.rating = 3
             self.cellItem = HomeViewContent.RecipeCellItem(id: "test", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
         }
     }
@@ -85,7 +97,15 @@ private extension RecipeDetailsPresenterTests {
 
 // MARK: - MockedInteractor: RecipeDetailsInteractor
 private class MockedInteractor: RecipeDetailsInteractor {
-    var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
+    let action = ReplaySubject<MockInteractorAction>.createUnbounded()
+    
+    var recipeData = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
+    var chefCraftRecipes = BehaviorRelay<UserRecipes?>(value: nil)
+    
+    func updateStorage(rating: Int) {
+        self.action.onNext(.updateStorage)
+    }
+    
     
 }
 
@@ -103,5 +123,10 @@ private class MockedRouter: RecipeDetailsNavigation {
 // MARK: - MockNavigationAction
 private enum MockNavigationAction: String, Equatable {
     case popView
+}
+
+// MARK: - MockInteractorAction
+private enum MockInteractorAction {
+    case updateStorage
 }
 

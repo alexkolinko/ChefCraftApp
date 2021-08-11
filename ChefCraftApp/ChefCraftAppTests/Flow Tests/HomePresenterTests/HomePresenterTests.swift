@@ -84,12 +84,22 @@ class HomePresenterTests: QuickSpec {
                 
                 it("trigger show showRecipeDetails action") {
                     
-                    tested_presenter.selectCell(model: mockes.recipeCellItem)
+                    tested_presenter.selectRecipeCell(model: mockes.recipeCellItem)
                     
                     tested_router.action_subj.onCompleted()
                     
                     expect(tested_router.action_subj).last.to(equal(.showRecipeDetails), description: "Expect for calling show recipe details navigation from router according to presenter flow")
                 }
+                
+                it("trigger show showCategoryDetails action") {
+                    
+                    tested_presenter.selectCategoryCell(model: mockes.categoryCellItem)
+                    
+                    tested_router.action_subj.onCompleted()
+                    
+                    expect(tested_router.action_subj).last.to(equal(.showCategoryDetails), description: "Expect for calling show category details navigation from router according to presenter flow")
+                }
+
             }
         }
     }
@@ -97,19 +107,21 @@ class HomePresenterTests: QuickSpec {
 
 private extension HomePresenterTests {
     struct MockedItem {
+        var categoryCellItem: HomeViewContent.CategoryCellItem
         var recipeCellItem: HomeViewContent.RecipeCellItem
-        var chefCraftAllRecipes: ChefCraftAllRecipes
+        var chefCraftAllRecipes: UserRecipes
         
         init() {
+            self.categoryCellItem = HomeViewContent.CategoryCellItem(id: "1", title: "test", image: "test", recipes: [])
             self.recipeCellItem = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
-            self.chefCraftAllRecipes = ChefCraftAllRecipes(id: "1", collectionsRecipes: [
-                ChefCraftCollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
-                    RecipeItem(id: "1", name: "RecipeItem 1"),
-                    RecipeItem(id: "2", name: "RecipeItem 2"),
-                    RecipeItem(id: "3", name: "RecipeItem 3")
+            self.chefCraftAllRecipes = UserRecipes(id: "1", collectionsRecipes: [
+                CollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
+                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
+                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])
                 ]),
             ], recipes: [
-                ChefCraftRecipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                Recipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
                     RecipeComposition(type: .totalTime, value: 40)
@@ -121,7 +133,7 @@ private extension HomePresenterTests {
 
 // MARK: - MockedInteractor: HomeInteractor
 private class MockedInteractor: HomeInteractor {
-    var chefCraftRecipes = BehaviorRelay<ChefCraftAllRecipes?>(value: nil)
+    var chefCraftRecipes = BehaviorRelay<UserRecipes?>(value: nil)
     
 }
 
@@ -134,9 +146,14 @@ private class MockedRouter: HomeNavigationProtocol {
         self.action_subj.onNext(.showRecipeDetails)
     }
     
+    func showCategoryDetails(details: HomeViewContent.CategoryCellItem) {
+        self.action_subj.onNext(.showCategoryDetails)
+    }
+    
 }
 
 // MARK: - MockNavigationAction
 private enum MockNavigationAction: String, Equatable {
     case showRecipeDetails
+    case showCategoryDetails
 }

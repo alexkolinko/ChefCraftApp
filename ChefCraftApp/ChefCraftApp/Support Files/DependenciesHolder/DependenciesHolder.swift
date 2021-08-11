@@ -20,6 +20,16 @@ class DependenciesHolder {
         // MARK: - SINGLETON INJECTS
         //
         
+        // Register DatabaseRecipeProvider. New instance created on each 'resolve()'
+        container.register(DatabaseRecipeProvider.self) { resolver -> DatabaseRecipeProvider in
+            return DatabaseRecipeProvider(storage: resolver.resolve(RealmStorageManager.self)!)
+        }.inObjectScope(.transient)
+        
+        // Register RealmStorageManager. New instance created on each 'resolve()'
+        container.register(RealmStorageManager.self) { _ -> RealmStorageManager in
+            return RealmStorageManager()
+        }.inObjectScope(.transient)
+        
         return container
     }
 }

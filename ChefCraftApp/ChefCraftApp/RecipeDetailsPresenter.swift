@@ -15,15 +15,13 @@ class RecipeDetailsPresenter {
     
     // - Private Properties
     private let disposeBag = DisposeBag()
-    private let details: HomeViewContent.RecipeCellItem
     private let router: RecipeDetailsNavigation
     private let interactor: RecipeDetailsInteractor
     
     // - Base
-    init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor, details: HomeViewContent.RecipeCellItem) {
+    init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor) {
         self.router = router
         self.interactor = interactor
-        self.details = details
         self.binding()
     }
     
@@ -32,7 +30,7 @@ class RecipeDetailsPresenter {
     }
     
     func selectRating(_ rating: Int) {
-       print("RATING ---- \(rating)")
+        self.interactor.updateStorage(rating: rating)
     }
 }
 
@@ -40,8 +38,19 @@ class RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     func binding() {
-        let data = self.mapToViewData(self.details)
-        self.viewDataPublisher.accept(Output(content: data, imageHeader: self.details.image))
+        self.interactor.recipeData
+            .asObservable()
+            .ignoreNil()
+            .subscribe(onNext: {[weak self] recipe in
+                self?.mapToOutput(recipe)
+ 
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    func mapToOutput(_ recipe: HomeViewContent.RecipeCellItem) {
+        let data = self.mapToViewData(recipe)
+        self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe.image))
     }
     
     func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {

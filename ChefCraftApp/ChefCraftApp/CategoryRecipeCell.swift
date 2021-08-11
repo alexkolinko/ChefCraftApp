@@ -68,7 +68,7 @@ private extension CategoryRecipeCell {
 extension CategoryRecipeCell {
     struct Model: IdentifiableType {
         /// JSON data of ChefCraftRecipe
-        var data: ChefCraftRecipe
+        var data: Recipe
         
         var identity: String {
             return "\(data.id)"

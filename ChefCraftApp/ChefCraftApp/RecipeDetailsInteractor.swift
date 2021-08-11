@@ -60,12 +60,14 @@ private extension RecipeDetailsInteractorImpl {
 // MARK: - RecipeDetailsInteractorImpl: RecipeDetailsInteractor
 extension RecipeDetailsInteractorImpl : RecipeDetailsInteractor {
     func updateLike(_ isLike: Bool) {
-        let newModel = Recipe(id: details.id, name: details.title, image: details.image, description: details.description, owner: details.owner, isLike: isLike, stars: details.stars, about: details.about, compositions: details.compositions)
+        guard let recipe = self.recipeData.value else { return }
+        let newModel = Recipe(id: recipe.id, name: recipe.title, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: isLike, stars: recipe.stars, about: recipe.about, compositions: recipe.compositions)
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
     
     func updateRating(_ rating: Int) {
-        let newModel = Recipe(id: details.id, name: details.title, image: details.image, description: details.description, owner: details.owner, isLike: details.isLike, stars: rating, about: details.about, compositions: details.compositions)
+        guard let recipe = self.recipeData.value else { return }
+        let newModel = Recipe(id: recipe.id, name: recipe.title, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: recipe.isLike, stars: rating, about: recipe.about, compositions: recipe.compositions)
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
 }

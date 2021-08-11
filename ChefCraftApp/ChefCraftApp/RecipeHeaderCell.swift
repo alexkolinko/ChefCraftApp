@@ -63,16 +63,21 @@ private extension RecipeHeaderCell {
             .tap
             .asDriver()
             .drive(onNext: { [weak self] in
-                if self?.likeButton.imageView?.image == self?.constants.unselectedHeartImage {
-                    self?.likeButton.setImage(self?.constants.selectedHeartImage, for: .normal)
-                    self?.selectedLike.accept(true)
-                    self?.showFloatView()
-                } else {
-                    self?.likeButton.setImage(self?.constants.unselectedHeartImage, for: .normal)
-                    self?.selectedLike.accept(false)
-                }
+                self?.likeButtonAction()
             })
             .disposed(by: self.bag)
+    }
+    
+    func likeButtonAction() {
+        if self.likeButton.imageView?.image == self.constants.unselectedHeartImage {
+            self.likeButton.setImage(self.constants.selectedHeartImage, for: .normal)
+            self.selectedLike.accept(true)
+            self.showFloatView(title: self.constants.floatLikeTitle, description: self.constants.floatLikeDescription, image: self.constants.selectedHeartImage)
+        } else {
+            self.likeButton.setImage(self.constants.unselectedHeartImage, for: .normal)
+            self.selectedLike.accept(false)
+            self.showFloatView(title: self.constants.floatRemovedLikeTitle, description: self.constants.floatRemovedLikeDescription, image: self.constants.unselectedHeartImage)
+        }
     }
     
     // Show rating view
@@ -166,6 +171,7 @@ private extension RecipeHeaderCell {
             backgroundColor: .clear,
             highlightedBackgroundColor: EKColor.standardBackground.with(alpha: 0.2),
             displayMode: EKAttributes.DisplayMode.inferred) {
+            SwiftEntryKit.dismiss()
         }
         let greenColor = EKColor.green
         let okButtonLabelStyle = EKProperty.LabelStyle(
@@ -206,7 +212,7 @@ private extension RecipeHeaderCell {
     }
     
     // Show float view
-    func showFloatView() {
+    func showFloatView(title: String, description: String, image: UIImage?) {
         var attributes = EKAttributes.topFloat
         attributes.entryBackground = .color(color: EKColor.black.with(alpha: 0.7))
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
@@ -216,9 +222,9 @@ private extension RecipeHeaderCell {
         attributes.positionConstraints.size = .init(width: .offset(value: 20), height: .intrinsic)
 
         guard let metropolisFont = constants.fontMetropolis else { return }
-        let title = EKProperty.LabelContent(text: self.constants.floatTitleText, style: .init(font: metropolisFont, color: EKColor.white))
-        let description = EKProperty.LabelContent(text: self.constants.floatDescriptionText, style: .init(font: metropolisFont, color: EKColor.white))
-        let image = EKProperty.ImageContent(image: constants.selectedHeartImage!, size: CGSize(width: 35, height: 35))
+        let title = EKProperty.LabelContent(text: title, style: .init(font: metropolisFont, color: EKColor.white))
+        let description = EKProperty.LabelContent(text: description, style: .init(font: metropolisFont, color: EKColor.white))
+        let image = EKProperty.ImageContent(image: image!, size: CGSize(width: 35, height: 35))
         let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
         let contentView = EKNotificationMessageView(with: notificationMessage)
@@ -230,8 +236,10 @@ private extension RecipeHeaderCell {
 private extension RecipeHeaderCell {
     
     struct Constants {
-        let floatDescriptionText = "Recipe is your favorite."
-        let floatTitleText = "Like!"
+        let floatLikeDescription = "Recipe added to your favorite."
+        let floatRemovedLikeDescription = "Recipe removed from your favorite."
+        let floatLikeTitle = "Like!"
+        let floatRemovedLikeTitle = "Removed like!"
         let ratingCloseButtonText = "Dismiss"
         let ratingOkButtonText = "Accept"
         let ratingDescriptionText = "How was it?"

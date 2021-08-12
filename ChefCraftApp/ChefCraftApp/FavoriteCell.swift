@@ -1,14 +1,14 @@
 //
-//  CategoryRecipeCell.swift
+//  FavoriteCell.swift
 //  ChefCraftApp
 //
-//  Created by Work on 04.08.2021.
+//  Created by Work on 11.08.2021.
 //
 
 import UIKit
 import RxDataSources
 
-class CategoryRecipeCell: UITableViewCell, CellInizializable {
+class FavoriteCell: UITableViewCell, CellInizializable {
     
     @IBOutlet weak var shadowContainer: UIView!
     @IBOutlet weak var recipeImage: UIImageView!
@@ -26,7 +26,7 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
     }
     
     // - Internal Logic
-    func setModel(_ model: CategoryRecipeCellModel) {
+    func setModel(_ model: FavoriteCellModel) {
         self.recipeImage.image = UIImage(named: model.model.image)
         self.recipeName.text = model.model.name
         self.recipeDescription.text = model.model.description
@@ -36,7 +36,7 @@ class CategoryRecipeCell: UITableViewCell, CellInizializable {
 }
 
 // MARK: - Private logic
-private extension CategoryRecipeCell {
+private extension FavoriteCell {
     
     func configUI() {
         self.configShadowContainer()
@@ -56,7 +56,7 @@ private extension CategoryRecipeCell {
 }
 
 // MARK: - Internal constants
-private extension CategoryRecipeCell {
+private extension FavoriteCell {
     
     struct Constants {
         let cellImageCornerRadius: CGFloat = 10
@@ -65,20 +65,21 @@ private extension CategoryRecipeCell {
     }
 }
 
-extension CategoryRecipeCell {
+// MARK: - Internal models
+extension FavoriteCell {
     struct Model: IdentifiableType {
         /// JSON data of ChefCraftRecipe
         var data: Recipe
-        
         var identity: String {
             return "\(data.id)"
         }
     }
 }
 
-extension CategoryRecipeCell.Model: Equatable {
+// MARK: - FavoriteCell.Model: Equatable
+extension FavoriteCell.Model: Equatable {
     
-    static func == (lhs: CategoryRecipeCell.Model, rhs: CategoryRecipeCell.Model) -> Bool {
+    static func == (lhs: FavoriteCell.Model, rhs: FavoriteCell.Model) -> Bool {
         return lhs.identity == rhs.identity
     }
 }

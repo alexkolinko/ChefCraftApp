@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,24 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-lT-9oz">
-                                <rect key="frame" x="163.5" y="437.5" width="87.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-rD-FD8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMM-GY-N8N"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2Ie-lT-9oz" firstAttribute="centerX" secondItem="Lco-Cr-Rhx" secondAttribute="centerX" id="ieQ-Dt-9tF"/>
-                            <constraint firstItem="2Ie-lT-9oz" firstAttribute="centerY" secondItem="Lco-Cr-Rhx" secondAttribute="centerY" id="sW5-q7-6rh"/>
+                            <constraint firstItem="xAa-rD-FD8" firstAttribute="top" secondItem="gMM-GY-N8N" secondAttribute="top" id="Aaw-ZE-RB5"/>
+                            <constraint firstItem="gMM-GY-N8N" firstAttribute="trailing" secondItem="xAa-rD-FD8" secondAttribute="trailing" id="Hba-Pr-oBy"/>
+                            <constraint firstItem="xAa-rD-FD8" firstAttribute="leading" secondItem="gMM-GY-N8N" secondAttribute="leading" id="eUh-nM-GWz"/>
+                            <constraint firstItem="gMM-GY-N8N" firstAttribute="bottom" secondItem="xAa-rD-FD8" secondAttribute="bottom" id="qVH-Sl-hJo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favoritesTable" destination="xAa-rD-FD8" id="Dsa-2G-GFC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1n-Z5-Px9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48" y="31"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

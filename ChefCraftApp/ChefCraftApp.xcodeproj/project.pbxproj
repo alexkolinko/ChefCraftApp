@@ -45,6 +45,11 @@
 		965D2D2C26C3DD4700259515 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D2526C3DD4700259515 /* FavoritesPresenter.swift */; };
 		965D2D2D26C3DD4700259515 /* FavoritesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D2626C3DD4700259515 /* FavoritesBuilder.swift */; };
 		965D2D2E26C3DD4700259515 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D2726C3DD4700259515 /* FavoritesInteractor.swift */; };
+		965D2D3326C3F6DD00259515 /* FavoritesSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D3226C3F6DD00259515 /* FavoritesSectionModel.swift */; };
+		965D2D3526C3F78F00259515 /* FavoriteCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D3426C3F78F00259515 /* FavoriteCellModel.swift */; };
+		965D2D3826C3FC5700259515 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D3626C3FC5700259515 /* FavoriteCell.swift */; };
+		965D2D3926C3FC5700259515 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965D2D3726C3FC5700259515 /* FavoriteCell.xib */; };
+		965D2D3C26C40D2900259515 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D2D3B26C40D2900259515 /* UIColor+Additions.swift */; };
 		965D79CD26B3095C00D280B3 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D79C626B3095B00D280B3 /* RecipeDetailsViewController.swift */; };
 		965D79CE26B3095C00D280B3 /* RecipeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D79C726B3095B00D280B3 /* RecipeDetailsPresenter.swift */; };
 		965D79CF26B3095C00D280B3 /* RecipeDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965D79C826B3095B00D280B3 /* RecipeDetailsView.storyboard */; };
@@ -175,6 +180,11 @@
 		965D2D2526C3DD4700259515 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		965D2D2626C3DD4700259515 /* FavoritesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesBuilder.swift; sourceTree = "<group>"; };
 		965D2D2726C3DD4700259515 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		965D2D3226C3F6DD00259515 /* FavoritesSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSectionModel.swift; sourceTree = "<group>"; };
+		965D2D3426C3F78F00259515 /* FavoriteCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellModel.swift; sourceTree = "<group>"; };
+		965D2D3626C3FC5700259515 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		965D2D3726C3FC5700259515 /* FavoriteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		965D2D3B26C40D2900259515 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		965D79C626B3095B00D280B3 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		965D79C726B3095B00D280B3 /* RecipeDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenter.swift; sourceTree = "<group>"; };
 		965D79C826B3095B00D280B3 /* RecipeDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecipeDetailsView.storyboard; sourceTree = "<group>"; };
@@ -421,6 +431,7 @@
 		965D2D1126C3DCAA00259515 /* FavoritesView */ = {
 			isa = PBXGroup;
 			children = (
+				965D2D2F26C3F62000259515 /* Support Classes */,
 				965D2D2626C3DD4700259515 /* FavoritesBuilder.swift */,
 				965D2D2726C3DD4700259515 /* FavoritesInteractor.swift */,
 				965D2D2526C3DD4700259515 /* FavoritesPresenter.swift */,
@@ -430,6 +441,41 @@
 				965D2D2426C3DD4700259515 /* FavoritesViewController.swift */,
 			);
 			name = FavoritesView;
+			sourceTree = "<group>";
+		};
+		965D2D2F26C3F62000259515 /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				965D2D3026C3F62700259515 /* Models */,
+				965D2D3126C3F63400259515 /* Cells */,
+			);
+			name = "Support Classes";
+			sourceTree = "<group>";
+		};
+		965D2D3026C3F62700259515 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				965D2D3226C3F6DD00259515 /* FavoritesSectionModel.swift */,
+				965D2D3426C3F78F00259515 /* FavoriteCellModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		965D2D3126C3F63400259515 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				965D2D3626C3FC5700259515 /* FavoriteCell.swift */,
+				965D2D3726C3FC5700259515 /* FavoriteCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		965D2D3A26C40D0D00259515 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				965D2D3B26C40D2900259515 /* UIColor+Additions.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		965D798C26B3075300D280B3 /* RecipeDetailsView */ = {
@@ -636,6 +682,7 @@
 		965DA63526A9B22300958782 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				965D2D3A26C40D0D00259515 /* Colors */,
 				962418DD26AAD26A00200576 /* Fonts */,
 				4BD8F9C726A9A150003FAC6A /* Assets.xcassets */,
 			);
@@ -984,6 +1031,7 @@
 				965DA67926AA97E000958782 /* HomeView.storyboard in Resources */,
 				965D79E826B7EE4200D280B3 /* RecipeHeaderCell.xib in Resources */,
 				962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */,
+				965D2D3926C3FC5700259515 /* FavoriteCell.xib in Resources */,
 				4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */,
 				965D7A1A26BAA6CD00D280B3 /* CategoryRecipesView.storyboard in Resources */,
 				965D79F226B819E600D280B3 /* RecipeCompositionsCell.xib in Resources */,
@@ -1106,6 +1154,7 @@
 				965D79EC26B8001800D280B3 /* RecipeAboutCell.swift in Sources */,
 				965D2D2A26C3DD4700259515 /* FavoritesRouter.swift in Sources */,
 				965D2D0B26C3C8A900259515 /* RootBuilder.swift in Sources */,
+				965D2D3826C3FC5700259515 /* FavoriteCell.swift in Sources */,
 				969428C826B0026B00A0D3B6 /* Recipe.swift in Sources */,
 				965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */,
 				965DA67A26AA97E000958782 /* HomeRoute.swift in Sources */,
@@ -1114,6 +1163,7 @@
 				965DA69F26AAA1AF00958782 /* UIWindow+switchRoot.swift in Sources */,
 				965DA68826AA9F7400958782 /* InjectorProtocol.swift in Sources */,
 				965D7A1C26BAA6CD00D280B3 /* CategoryRecipesRoute.swift in Sources */,
+				965D2D3526C3F78F00259515 /* FavoriteCellModel.swift in Sources */,
 				965D2D2E26C3DD4700259515 /* FavoritesInteractor.swift in Sources */,
 				965DA68626AA9F5400958782 /* ClosableRouterProtocol.swift in Sources */,
 				965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */,
@@ -1144,6 +1194,7 @@
 				965DA69126AAA02A00958782 /* ClosablePushTransition.swift in Sources */,
 				96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */,
 				965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */,
+				965D2D3326C3F6DD00259515 /* FavoritesSectionModel.swift in Sources */,
 				965D79CD26B3095C00D280B3 /* RecipeDetailsViewController.swift in Sources */,
 				96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */,
 				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
@@ -1165,6 +1216,7 @@
 				965DA67726AA97E000958782 /* HomeRouter.swift in Sources */,
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				965D2D2D26C3DD4700259515 /* FavoritesBuilder.swift in Sources */,
+				965D2D3C26C40D2900259515 /* UIColor+Additions.swift in Sources */,
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				965D2D2826C3DD4700259515 /* FavoritesRoute.swift in Sources */,

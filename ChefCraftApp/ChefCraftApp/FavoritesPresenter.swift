@@ -10,6 +10,9 @@ import RxCocoa
 
 class FavoritesPresenter {
 
+    // - Internal Propreties
+    let viewData = BehaviorRelay<Output?>(value: nil)
+    
     // - Private Properties
     private let disposeBag = DisposeBag()
     
@@ -25,7 +28,24 @@ class FavoritesPresenter {
     
     // - Private functions
     private func binding() {
-        
+        self.interactor.favoritesData
+            .subscribe(onNext: { [weak self] recipes in
+                let favoriteRecipes = recipes.compactMap { model -> FavoriteCellModel? in
+                    return FavoriteCellModel(model: model)
+                }
+                let section = FavoritesSectionModel(id: "favorites_recipes_section", items: favoriteRecipes)
+
+                self?.viewData.accept(Output(favoritesRecipesDataSource: [section]))
+            })
+            .disposed(by: self.disposeBag)
     }
 
+}
+
+// MARK: - Internal Output
+extension FavoritesPresenter {
+    
+    struct Output {
+        let favoritesRecipesDataSource: [FavoritesSectionModel]
+    }
 }

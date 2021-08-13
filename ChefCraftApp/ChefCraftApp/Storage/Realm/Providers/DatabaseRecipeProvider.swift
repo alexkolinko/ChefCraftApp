@@ -38,13 +38,22 @@ protocol DatabaseRecipeProviderProtocol {
     func getRecipe(id: String) -> Single<Recipe>
     
     /**
-     Subscribe on current fuel dashboard info, for dynamic handle changes of model. Use it, when you offen comes to View and don't need to user network for data updating.
+     Subscribe on recipe, for dynamic handle changes of model. Use it, when you offen comes to View and don't need to user network for data updating.
      
      - Returns:
      Return Observable<Recipe> in success cases(it seams that model existing in local storage and it's not corrupated).
      Return Observable.empty in error cases, because Observable.eror will destroy your binder or subscribtion. Error case seams that your object or not exist, or data base if corrupted.
      */
     func subscribeOnRecipe() -> Observable<Recipe>
+    
+    /**
+     Subscribe on recipe, for dynamic handle changes of model. Use it, when you offen comes to View and don't need to user network for data updating.
+     
+     - Returns:
+     Return Observable<[Recipe]> in success cases(it seams that model existing in local storage and it's not corrupated).
+     Return Observable.empty in error cases, because Observable.eror will destroy your binder or subscribtion. Error case seams that your object or not exist, or data base if corrupted.
+     */
+    func subscribeOnRecipes() -> Observable<[Recipe]>
 }
 
 // MARK: - DatabaseRecipeProvider
@@ -58,6 +67,14 @@ class DatabaseRecipeProvider {
 
 // MARK: - DatabaseRecipeProvider: DatabaseRecipeProviderProtocol
 extension DatabaseRecipeProvider: DatabaseRecipeProviderProtocol {
+    
+    func subscribeOnRecipes() -> Observable<[Recipe]> {
+        return self.storage.subscribeOnDomainObjects(realmType: RMRecipe.self)
+            .map { objects, _ -> [Recipe] in
+                return objects
+            }
+    }
+    
     func saveRecipe(with model: Recipe) -> Completable {
         return self.storage.setDomainObject(realmType: RMRecipe.self, model: model)
     }

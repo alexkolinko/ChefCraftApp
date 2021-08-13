@@ -17,3 +17,13 @@ extension Array {
         return self[index]
     }
 }
+
+// MARK: - Array where Element: Equatable
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func remove(object: Element) {
+        guard let index = firstIndex(of: object) else {return}
+        remove(at: index)
+    }
+}

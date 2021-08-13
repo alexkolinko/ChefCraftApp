@@ -26,12 +26,13 @@ protocol RecipeDetailsInteractor {
 class RecipeDetailsInteractorImpl {
     
     // - Internal Properties
-    var recipeData = BehaviorRelay<Recipe?>(value: nil)
-    var recipeRating = BehaviorRelay<Int>(value: 0)
-    var recipeFavorite = BehaviorRelay<Bool>(value: false)
+    let recipeData = BehaviorRelay<Recipe?>(value: nil)
+    let recipeRating = BehaviorRelay<Int>(value: 0)
+    let recipeFavorite = BehaviorRelay<Bool>(value: false)
     
     // - Private Properties
     private let details: Recipe
+    private let favorites = BehaviorRelay<[String]>(value: [])
     private let databaseProvider: DatabaseRecipeProviderProtocol
     private let favoritesDatabaseProvider: DatabaseFavoritesProvider
     private let disposeBag = DisposeBag()
@@ -47,13 +48,23 @@ class RecipeDetailsInteractorImpl {
 // MARK: - Private logic
 private extension RecipeDetailsInteractorImpl {
     func binding() {
-        
         self.recipeData.accept(self.details)
         
         self.databaseProvider.getRecipe(id: details.id)
             .subscribe(onSuccess: { [weak self] recipe in
                 self?.recipeRating.accept(recipe.stars)
-                self?.recipeFavorite.accept(recipe.isLike)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.favoritesDatabaseProvider.getFavorites()
+            .subscribe(onSuccess: { [weak self] favorites in
+                self?.favorites.accept(favorites.recipes)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.favorites
+            .subscribe(onNext: { [weak self] value in
+                self?.recipeFavorite.accept(value.first(where: {$0 == self?.details.id}) != nil)
             })
             .disposed(by: self.disposeBag)
     }
@@ -62,9 +73,9 @@ private extension RecipeDetailsInteractorImpl {
 // MARK: - RecipeDetailsInteractorImpl: RecipeDetailsInteractor
 extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     func updateLike(_ isLike: Bool) {
-        guard let recipe = self.recipeData.value else { return }
-        let newModel = Recipe(id: recipe.id, name: recipe.name, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: isLike, stars: recipe.stars, about: recipe.about, compositions: recipe.compositions)
-        self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
+        var recipes = self.favorites.value
+        isLike ? recipes.append(self.details.id) : recipes.remove(object: self.details.id)
+        self.favoritesDatabaseProvider.saveFavorites(with: Favorites(recipes: recipes)).subscribe().disposed(by: self.disposeBag)
     }
     
     func updateRating(_ rating: Int) {

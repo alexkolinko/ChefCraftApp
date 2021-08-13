@@ -13,7 +13,7 @@ import RxCocoa
 @IBDesignable class RatingControl: UIStackView {
     
     //MARK: Properties
-    var rating = BehaviorRelay<Int>(value: 0)
+    let rating = BehaviorRelay<Int>(value: 0)
     
     let ratingTapped = PublishRelay<Void>()
     

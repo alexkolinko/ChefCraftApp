@@ -12,10 +12,11 @@ import RxSwift
 /// Abstract logic layer for RecipeDetailsInteractorImpl
 protocol RecipeDetailsInteractor {
     
-    var recipeData: BehaviorRelay<HomeViewContent.RecipeCellItem?> { get set }
+    var recipeData: BehaviorRelay<Recipe?> { get }
+    var recipeRating: BehaviorRelay<Int> { get }
+    var recipeFavorite: BehaviorRelay<Bool> { get }
     
     func updateRating(_ rating: Int)
-    
     func updateLike(_ isLike: Bool)
     
 }
@@ -25,15 +26,17 @@ protocol RecipeDetailsInteractor {
 class RecipeDetailsInteractorImpl {
     
     // - Internal Properties
-    var recipeData = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
+    var recipeData = BehaviorRelay<Recipe?>(value: nil)
+    var recipeRating = BehaviorRelay<Int>(value: 0)
+    var recipeFavorite = BehaviorRelay<Bool>(value: false)
     
     // - Private Properties
-    private let details: HomeViewContent.RecipeCellItem
+    private let details: Recipe
     private let databaseProvider: DatabaseRecipeProviderProtocol
     private let favoritesDatabaseProvider: DatabaseFavoritesProvider
     private let disposeBag = DisposeBag()
     
-    init(databaseProvider: DatabaseRecipeProviderProtocol, favoritesDatabaseProvider: DatabaseFavoritesProvider, details: HomeViewContent.RecipeCellItem) {
+    init(databaseProvider: DatabaseRecipeProviderProtocol, favoritesDatabaseProvider: DatabaseFavoritesProvider, details: Recipe) {
         self.databaseProvider = databaseProvider
         self.favoritesDatabaseProvider = favoritesDatabaseProvider
         self.details = details
@@ -44,32 +47,29 @@ class RecipeDetailsInteractorImpl {
 // MARK: - Private logic
 private extension RecipeDetailsInteractorImpl {
     func binding() {
+        
+        self.recipeData.accept(self.details)
+        
         self.databaseProvider.getRecipe(id: details.id)
-            .subscribe(onSuccess: {[weak self] recipe in
-                let data = HomeViewContent.RecipeCellItem(id: recipe.id, title: recipe.name, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: recipe.isLike, stars: recipe.stars, about: recipe.about, compositions: recipe.compositions)
-                self?.recipeData.accept(data)
-            }, onFailure: {[weak self] _ in
-                self?.bindRecipeData()
+            .subscribe(onSuccess: { [weak self] recipe in
+                self?.recipeRating.accept(recipe.stars)
+                self?.recipeFavorite.accept(recipe.isLike)
             })
             .disposed(by: self.disposeBag)
-    }
-    
-    func bindRecipeData() {
-        self.recipeData.accept(details)
     }
 }
 
 // MARK: - RecipeDetailsInteractorImpl: RecipeDetailsInteractor
-extension RecipeDetailsInteractorImpl : RecipeDetailsInteractor {
+extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     func updateLike(_ isLike: Bool) {
         guard let recipe = self.recipeData.value else { return }
-        let newModel = Recipe(id: recipe.id, name: recipe.title, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: isLike, stars: recipe.stars, about: recipe.about, compositions: recipe.compositions)
+        let newModel = Recipe(id: recipe.id, name: recipe.name, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: isLike, stars: recipe.stars, about: recipe.about, compositions: recipe.compositions)
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
     
     func updateRating(_ rating: Int) {
         guard let recipe = self.recipeData.value else { return }
-        let newModel = Recipe(id: recipe.id, name: recipe.title, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: recipe.isLike, stars: rating, about: recipe.about, compositions: recipe.compositions)
+        let newModel = Recipe(id: recipe.id, name: recipe.name, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: recipe.isLike, stars: rating, about: recipe.about, compositions: recipe.compositions)
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
 }

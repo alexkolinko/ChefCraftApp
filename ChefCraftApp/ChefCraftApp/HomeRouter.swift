@@ -18,7 +18,7 @@ protocol HomeNavigationProtocol {
     
     func showCategoryDetails(details: HomeViewContent.CategoryCellItem)
     
-    func showRecipeDetails(details: HomeViewContent.RecipeCellItem)
+    func showRecipeDetails(details: Recipe)
 }
 
 // MARK: - HomeRoute
@@ -43,7 +43,7 @@ extension HomeRouter: HomeNavigationProtocol {
         self.showCategoryRecipes(item: details)
     }
     
-    func showRecipeDetails(details: HomeViewContent.RecipeCellItem) {
+    func showRecipeDetails(details: Recipe) {
         self.showRecipe(details)
     }
 }

@@ -46,26 +46,26 @@ class RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     func binding() {
-        Observable.combineLatest(self.interactor.recipeData, self.applyLikeAction, self.applyRatingSelected)
-            .subscribe(onNext: { [weak self] recipe, applyLikeAction, applyRatingSelected in
-                self?.mapToOutput(recipe, applyLikeAction, applyRatingSelected)
+        Observable.combineLatest(self.interactor.recipeData, self.interactor.recipeRating, self.interactor.recipeFavorite, self.applyLikeAction, self.applyRatingSelected)
+            .subscribe(onNext: { [weak self] recipe, rating, favorite, applyLikeAction, applyRatingSelected in
+                self?.mapToOutput(recipe, rating, favorite, applyLikeAction, applyRatingSelected)
             })
             .disposed(by: self.disposeBag)
     }
     
-    func mapToOutput(_ recipe: HomeViewContent.RecipeCellItem?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
-        let data = self.mapToViewData(recipe)
+    func mapToOutput(_ recipe: Recipe?, _ rating: Int?, _ favorite: Bool?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
+        let data = self.mapToViewData(recipe, rating, favorite)
         self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe?.image, applyLikeAction: applyLikeAction, applyRatingSelected: applyRatingSelected))
     }
     
-    func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem?) -> RecipeDetailsViewContent? {
+    func mapToViewData(_ recipe: Recipe?, _ rating: Int?, _ favorite: Bool?) -> RecipeDetailsViewContent? {
         guard let recipe = recipe else { return nil }
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
-            title: recipe.title,
+            title: recipe.name,
             owner: recipe.owner,
-            stars: recipe.stars,
-            isLike: recipe.isLike
+            stars: rating ?? 0,
+            isLike: favorite ?? false
         )
         let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
             RecipeDetailsViewContent.CompositionCellItem(

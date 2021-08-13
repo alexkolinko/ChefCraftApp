@@ -17,6 +17,7 @@ class HomePresenter {
     private let disposeBag = DisposeBag()
     private let router: HomeNavigationProtocol
     private let interactor: HomeInteractor
+    private let recipes = BehaviorRelay<[Recipe]>(value: [])
     
     // - Base
     init(router: HomeNavigationProtocol, interactor: HomeInteractor) {
@@ -30,7 +31,9 @@ class HomePresenter {
     }
     
     func selectRecipeCell(model: HomeViewContent.RecipeCellItem) {
-        self.router.showRecipeDetails(details: model)
+        
+        guard let value = self.recipes.value.first(where: {$0.id == model.id}) else { return }
+        self.router.showRecipeDetails(details: value)
     }
 }
 
@@ -45,6 +48,14 @@ private extension HomePresenter {
             .ignoreNil()
             .bind(to: viewDataPublisher)
             .disposed(by: disposeBag)
+        
+        self.interactor.chefCraftRecipes
+            .asObservable()
+            .map({ $0?.recipes})
+            .ignoreNil()
+            .bind(to: self.recipes)
+            .disposed(by: self.disposeBag)
+            
     }
     
     private func mapToViewData(_ recipes: UserRecipes?) -> HomeViewContent? {

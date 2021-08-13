@@ -20,7 +20,7 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
     
     // - Private properties
     private let constants: Constants = .init()
-    private var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,23 +44,23 @@ extension RecipeDetailsViewController {
         let viewData = presenter.viewDataPublisher
             .observe(on: MainScheduler.instance)
         
-        viewData
-            .flatMap { Observable.of($0?.content) }
+        viewData.asObservable()
+            .map({ $0?.content })
             .ignoreNil()
             .map { [$0.sectionModel] }
             .bind(to: contentCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        viewData
-            .flatMap { Observable.of($0?.imageHeader) }
+        viewData.asObservable()
+            .map({ $0?.imageHeader })
             .ignoreNil()
             .subscribe (onNext: { [weak self] image in
                 self?.configureParalaxHeader(image)
             })
             .disposed(by: self.disposeBag)
         
-        viewData
-            .flatMap { Observable.of($0?.applyLikeAction) }
+        viewData.asObservable()
+            .map({ $0?.applyLikeAction })
             .ignoreNil()
             .subscribe (onNext: { [weak self] value in
                 self?.likeAction(value)
@@ -108,8 +108,7 @@ extension RecipeDetailsViewController {
     }
     
     func likeAction(_ value: Bool) {
-        let const = self.constants
-        self.showFloatView(title: value ? const.floatLikeTitle : const.floatRemovedLikeTitle, description: value ? const.floatLikeDescription : const.floatRemovedLikeDescription, image: value ? const.selectedHeartImage : const.unselectedHeartImage)
+        self.showFloatView(title: value ? self.constants.floatLikeTitle : self.constants.floatRemovedLikeTitle, description: value ? self.constants.floatLikeDescription : self.constants.floatRemovedLikeDescription, image: value ? self.constants.selectedHeartImage : self.constants.unselectedHeartImage)
     }
     
     // - Selectors
@@ -133,37 +132,41 @@ extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
 extension RecipeDetailsViewController {
     typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<RecipeDetailsOverviewContentBox>>
     var dataSource: DataSource {
-        return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in
+        return .init(configureCell: { [weak self] _, collectionView, indexPath, item -> UICollectionViewCell in
             
             switch item {
             case .header(item: let item):
                 let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setModel(item)
+                
                 cell.selectedRating
                     .subscribe (onNext: { [weak self] rating in
                         self?.showRatingView()
                     })
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: cell.bag)
+                
                 cell.selectedLike
                     .asObservable()
                     .ignoreNil()
                     .subscribe (onNext: { [weak self] isLike in
                         self?.presenter.selectLike(isLike)
                     })
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: cell.bag)
                 
-                self.presenter.viewDataPublisher
+                self?.presenter.viewDataPublisher
                     .asObservable()
                     .ignoreNil()
                     .map { $0.applyLikeAction }
                     .bind(to: cell.isLike)
-                    .disposed(by: self.disposeBag)
-                self.presenter.viewDataPublisher
+                    .disposed(by: cell.bag)
+                
+                self?.presenter.viewDataPublisher
                     .asObservable()
                     .ignoreNil()
                     .map { $0.applyRatingSelected }
                     .bind(to: cell.rating)
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: cell.bag)
+                
                 return cell
             case .compositions(item: let item):
                 let cell: RecipeCompositionsCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
@@ -199,7 +202,6 @@ private extension RecipeDetailsViewController {
         attributes.screenBackground = .visualEffect(style: .standard)
         attributes.entryBackground = .visualEffect(style: .standard)
         
-        guard let metropolisFont = self.constants.fontMetropolis else { return }
         let unselectedImage = EKProperty.ImageContent(
             image: self.constants.unselectedStarImage!.withRenderingMode(.alwaysTemplate),
             displayMode: .light,
@@ -213,7 +215,7 @@ private extension RecipeDetailsViewController {
         let initialTitle = EKProperty.LabelContent(
             text: self.constants.ratingTitleText,
             style: .init(
-                font: metropolisFont,
+                font: self.constants.fontMetropolis,
                 color: .standardContent,
                 alignment: .center,
                 displayMode: EKAttributes.DisplayMode.inferred
@@ -222,7 +224,7 @@ private extension RecipeDetailsViewController {
         let initialDescription = EKProperty.LabelContent(
             text: self.constants.ratingDescriptionText,
             style: .init(
-                font: metropolisFont,
+                font: self.constants.fontMetropolis,
                 color: EKColor.standardContent.with(alpha: 0.5),
                 alignment: .center,
                 displayMode: EKAttributes.DisplayMode.inferred
@@ -232,7 +234,7 @@ private extension RecipeDetailsViewController {
             let itemTitle = EKProperty.LabelContent(
                 text: texts.0,
                 style: .init(
-                    font: metropolisFont,
+                    font: self.constants.fontMetropolis,
                     color: .standardContent,
                     alignment: .center,
                     displayMode: EKAttributes.DisplayMode.inferred
@@ -241,7 +243,7 @@ private extension RecipeDetailsViewController {
             let itemDescription = EKProperty.LabelContent(
                 text: texts.1,
                 style: .init(
-                    font: metropolisFont,
+                    font: self.constants.fontMetropolis,
                     color: .standardContent,
                     alignment: .center,
                     displayMode: EKAttributes.DisplayMode.inferred
@@ -256,8 +258,8 @@ private extension RecipeDetailsViewController {
         }
         
         var message: EKRatingMessage!
-        let lightFont = metropolisFont
-        let mediumFont = metropolisFont
+        let lightFont = self.constants.fontMetropolis
+        let mediumFont = self.constants.fontMetropolis
         let closeButtonLabelStyle = EKProperty.LabelStyle(
             font: mediumFont,
             color: .standardContent,
@@ -321,9 +323,8 @@ private extension RecipeDetailsViewController {
         attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
         attributes.positionConstraints.size = .init(width: .offset(value: 20), height: .intrinsic)
         
-        guard let metropolisFont = constants.fontMetropolis else { return }
-        let title = EKProperty.LabelContent(text: title, style: .init(font: metropolisFont, color: EKColor.white))
-        let description = EKProperty.LabelContent(text: description, style: .init(font: metropolisFont, color: EKColor.white))
+        let title = EKProperty.LabelContent(text: title, style: .init(font: constants.fontMetropolis, color: EKColor.white))
+        let description = EKProperty.LabelContent(text: description, style: .init(font: constants.fontMetropolis, color: EKColor.white))
         let image = EKProperty.ImageContent(image: image!, size: CGSize(width: 35, height: 35))
         let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
@@ -336,10 +337,15 @@ private extension RecipeDetailsViewController {
 private extension RecipeDetailsViewController {
     
     struct Constants {
-        let backButtonImage = UIImage(named: "backButton")
+        
+        // - Colors
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
+        
+        // - Geometry
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
         let parallaxHeaderHeight: CGFloat = 312.0
+        
+        // - Texts
         let floatLikeDescription = "Recipe added to your favorite."
         let floatRemovedLikeDescription = "Recipe removed from your favorite."
         let floatLikeTitle = "Like!"
@@ -348,14 +354,19 @@ private extension RecipeDetailsViewController {
         let ratingOkButtonText = "Accept"
         let ratingDescriptionText = "How was it?"
         let ratingTitleText = "Rate our food"
+        let ratingMessageItems = [("💩", "Pooish!"), ("🤨", "Ahhh?!"), ("👍", "OK!"),
+                                  ("👌", "Tasty!"), ("😋", "Delicius!")]
+        
+        // - Icons
+        let backButtonImage = UIImage(named: "backButton")
         let selectedStarImage = UIImage(named: "ic_star_selected")
         let unselectedStarImage = UIImage(named: "ic_star_unselected")
         let unselectedHeartImage = UIImage(named: "icHeart")
         let selectedHeartImage = UIImage(named: "icRedHeart")
-        let fontMetropolis = UIFont(name: "Metropolis", size: 13.0)
-        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
-        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
-        let ratingMessageItems = [("💩", "Pooish!"), ("🤨", "Ahhh?!"), ("👍", "OK!"),
-                                  ("👌", "Tasty!"), ("😋", "Delicius!")]
+
+        // - Fonts
+        let fontMetropolis = UIFont(name: "Metropolis", size: 13.0) ?? UIFont.systemFont(ofSize: 13)
+        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
+        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0) ?? UIFont.systemFont(ofSize: 10)
     }
 }

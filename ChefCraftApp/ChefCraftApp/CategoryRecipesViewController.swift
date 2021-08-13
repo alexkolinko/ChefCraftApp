@@ -20,7 +20,7 @@ class CategoryRecipesViewController: UIViewController, StoryboardInitializable {
     
     // - Private properties
     private let constants: Constants = .init()
-    private var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,9 +109,16 @@ extension CategoryRecipesViewController {
 private extension CategoryRecipesViewController {
     
     struct Constants {
+        
+        // - Geometry
         let estimatedRowHeight: CGFloat = 96.0
-        let backButtonImage = UIImage(named: "backButton")
-        let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        
+        // - Icons
+        let backButtonImage = UIImage(named: "backButton")
+        
+        // - Colors
+        let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
+        
     }
 }

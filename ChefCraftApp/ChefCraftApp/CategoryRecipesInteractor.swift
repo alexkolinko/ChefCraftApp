@@ -12,7 +12,7 @@ import RxSwift
 /// Abstract logic layer for CategoryRecipesInteractorImpl
 protocol CategoryRecipesInteractor {
     
-    var categoryData: BehaviorRelay<HomeViewContent.CategoryCellItem?> { get set }
+    var categoryData: BehaviorRelay<HomeViewContent.CategoryCellItem?> { get }
 }
 
 // MARK: - CategoryRecipesInteractorImpl

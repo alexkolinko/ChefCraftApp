@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     var presenter: HomePresenter!
 
     // - Private properties
-    private var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ extension HomeViewController {
     typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSection<HomeOverviewContentBox>>
     
     var dataSource: DataSource {
-        return .init(configureCell: { _, collectionView, indexPath, item -> UICollectionViewCell in
+        return .init(configureCell: { [weak self] _, collectionView, indexPath, item -> UICollectionViewCell in
 
             switch item {
             case .categories(let item):
@@ -73,7 +73,7 @@ extension HomeViewController {
                         guard let category = category else { return }
                         self?.presenter.selectCategoryCell(model: category)
                     })
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: cell.disposeBag)
 
                 return cell
             case .recipes(item: let item):
@@ -84,7 +84,7 @@ extension HomeViewController {
                         guard let recipe = recipe else { return }
                         self?.presenter.selectRecipeCell(model: recipe)
                     })
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: cell.disposeBag)
 
                 return cell
             }

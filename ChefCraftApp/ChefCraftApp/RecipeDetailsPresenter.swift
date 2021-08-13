@@ -17,6 +17,8 @@ class RecipeDetailsPresenter {
     private let disposeBag = DisposeBag()
     private let router: RecipeDetailsNavigation
     private let interactor: RecipeDetailsInteractor
+    private let applyLikeAction = BehaviorRelay<Bool?>(value: nil)
+    private let applyRatingSelected = BehaviorRelay<Int?>(value: nil)
     
     // - Base
     init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor) {
@@ -30,11 +32,13 @@ class RecipeDetailsPresenter {
     }
     
     func selectRating(_ rating: Int) {
+        self.applyRatingSelected.accept(rating)
         self.interactor.updateRating(rating)
     }
     
-    func selectLike(_ isLike: Bool) {
-        self.interactor.updateLike(isLike)
+    func selectLike(_ value: Bool) {
+        self.applyLikeAction.accept(value)
+        self.interactor.updateLike(value)
     }
 }
 
@@ -42,23 +46,20 @@ class RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     func binding() {
-        self.interactor.recipeData
-            .asObservable()
-            .ignoreNil()
-            .subscribe(onNext: {[weak self] recipe in
-                self?.mapToOutput(recipe)
- 
+        Observable.combineLatest(self.interactor.recipeData, self.applyLikeAction, self.applyRatingSelected)
+            .subscribe(onNext: { [weak self] recipe, applyLikeAction, applyRatingSelected in
+                self?.mapToOutput(recipe, applyLikeAction, applyRatingSelected)
             })
             .disposed(by: self.disposeBag)
     }
     
-    func mapToOutput(_ recipe: HomeViewContent.RecipeCellItem) {
+    func mapToOutput(_ recipe: HomeViewContent.RecipeCellItem?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
         let data = self.mapToViewData(recipe)
-        self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe.image))
+        self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe?.image, applyLikeAction: applyLikeAction, applyRatingSelected: applyRatingSelected))
     }
     
-    func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
-        
+    func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem?) -> RecipeDetailsViewContent? {
+        guard let recipe = recipe else { return nil }
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
             title: recipe.title,
@@ -79,7 +80,6 @@ extension RecipeDetailsPresenter {
             .compositions(item: recipeCompositionsHeader),
             .about(item: recipeAboutHeader)
         ]
-        
         return RecipeDetailsViewContent(id: recipe.id, sectionModel: AnimatableSection<RecipeDetailsOverviewContentBox>(items: sectionItems))
     }
 }
@@ -88,8 +88,9 @@ extension RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     struct Output {
-    let content: RecipeDetailsViewContent
-    let imageHeader: String
+        let content: RecipeDetailsViewContent?
+        let imageHeader: String?
+        let applyLikeAction: Bool?
+        let applyRatingSelected: Int?
     }
-    
 }

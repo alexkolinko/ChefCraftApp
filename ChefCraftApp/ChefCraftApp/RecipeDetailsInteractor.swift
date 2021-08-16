@@ -13,7 +13,7 @@ import RxSwift
 protocol RecipeDetailsInteractor {
     
     var recipeData: BehaviorRelay<Recipe?> { get }
-    var recipeRating: BehaviorRelay<Int> { get }
+    var recipeRating: BehaviorRelay<Int?> { get }
     var recipeFavorite: BehaviorRelay<String?> { get }
     
     func updateRating(_ rating: Int)
@@ -27,7 +27,7 @@ class RecipeDetailsInteractorImpl {
     
     // - Internal Properties
     let recipeData = BehaviorRelay<Recipe?>(value: nil)
-    let recipeRating = BehaviorRelay<Int>(value: 0)
+    let recipeRating = BehaviorRelay<Int?>(value: nil)
     let recipeFavorite = BehaviorRelay<String?>(value: nil)
     
     // - Private Properties

@@ -29,15 +29,6 @@ protocol DatabaseFavoritesProviderProtocol {
     func getFavorites() -> Single<Favorites>
     
     /**
-     Get Favorites by id as JSON model from Realm Data Storage.
-     
-     - Returns:
-     Return SingleTrait<Favorites> in success cases(it seams that model existing in local storage and it's not corrupted).
-     Return Single.error(DatabaseErorr.objectNotExist) in case of fail(it seams that there're not any model of user -> so you need to get actual info from network request)
-     */
-    func getFavorites(id: String) -> Single<Favorites>
-    
-    /**
      Subscribe on favorites, for dynamic handle changes of model. Use it, when you offen comes to View and don't need to user network for data updating.
      
      - Returns:
@@ -64,10 +55,6 @@ extension DatabaseFavoritesProvider: DatabaseFavoritesProviderProtocol {
     
     func getFavorites() -> Single<Favorites> {
         return self.storage.getUniqueDomainObject(realmType: RMFavorites.self)
-    }
-    
-    func getFavorites(id: String) -> Single<Favorites> {
-        return self.storage.getDomainObject(by: id, realmType: RMFavorites.self)
     }
     
     func subscribeOnFavorites() -> Observable<Favorites> {

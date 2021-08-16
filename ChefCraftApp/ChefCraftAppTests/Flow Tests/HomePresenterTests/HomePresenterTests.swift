@@ -84,6 +84,8 @@ class HomePresenterTests: QuickSpec {
                 
                 it("trigger show showRecipeDetails action") {
                     
+                    tested_interactor.chefCraftRecipes.accept(mockes.chefCraftAllRecipes)
+                    
                     tested_presenter.selectRecipeCell(model: mockes.recipeCellItem)
                     
                     tested_router.action_subj.onCompleted()
@@ -91,13 +93,37 @@ class HomePresenterTests: QuickSpec {
                     expect(tested_router.action_subj).last.to(equal(.showRecipeDetails), description: "Expect for calling show recipe details navigation from router according to presenter flow")
                 }
                 
+                it("trigger show showRecipeDetails action with chefCraftRecipes be nil") {
+                    
+                    tested_interactor.chefCraftRecipes.accept(nil)
+                    
+                    tested_presenter.selectRecipeCell(model: mockes.recipeCellItem)
+                    
+                    tested_router.action_subj.onCompleted()
+                    
+                    expect(tested_router.action_subj).last.to(beNil(), description: "Expect for calling show recipe details navigation from router according to presenter flow")
+                }
+                
                 it("trigger show showCategoryDetails action") {
+                    
+                    tested_interactor.chefCraftRecipes.accept(mockes.chefCraftAllRecipes)
                     
                     tested_presenter.selectCategoryCell(model: mockes.categoryCellItem)
                     
                     tested_router.action_subj.onCompleted()
                     
                     expect(tested_router.action_subj).last.to(equal(.showCategoryDetails), description: "Expect for calling show category details navigation from router according to presenter flow")
+                }
+                
+                it("trigger show showCategoryDetails action with chefCraftRecipes be nil") {
+                    
+                    tested_interactor.chefCraftRecipes.accept(nil)
+                    
+                    tested_presenter.selectCategoryCell(model: mockes.categoryCellItem)
+                    
+                    tested_router.action_subj.onCompleted()
+                    
+                    expect(tested_router.action_subj).last.to(beNil(), description: "Expect for calling show category details navigation from router according to presenter flow")
                 }
 
             }
@@ -114,13 +140,23 @@ private extension HomePresenterTests {
         init() {
             self.categoryCellItem = HomeViewContent.CategoryCellItem(id: "1", title: "test", image: "test", recipes: [])
             self.recipeCellItem = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
-            self.chefCraftAllRecipes = UserRecipes(id: "1", collectionsRecipes: [
-                CategoryRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+            self.chefCraftAllRecipes = UserRecipes(id: "1", categoriesRecipes: [
+                CategoryRecipes(id: "1", name: "8 Recipes", image: "breakfast", recipes: [
                     Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
                     Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
                     Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])
                 ]),
+                CategoryRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
+                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
+                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])
+                ])
             ], recipes: [
+                Recipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                    RecipeComposition(type: .calories, value: 200),
+                    RecipeComposition(type: .ingredients, value: 7),
+                    RecipeComposition(type: .totalTime, value: 40)
+                ]),
                 Recipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
@@ -142,12 +178,12 @@ private class MockedRouter: HomeNavigationProtocol {
     
     var action_subj = ReplaySubject<MockNavigationAction>.createUnbounded()
     
-    func showRecipeDetails(details: HomeViewContent.RecipeCellItem) {
-        self.action_subj.onNext(.showRecipeDetails)
+    func showCategoryDetails(details: CategoryRecipes) {
+        self.action_subj.onNext(.showCategoryDetails)
     }
     
-    func showCategoryDetails(details: HomeViewContent.CategoryCellItem) {
-        self.action_subj.onNext(.showCategoryDetails)
+    func showRecipeDetails(details: Recipe) {
+        self.action_subj.onNext(.showRecipeDetails)
     }
     
 }

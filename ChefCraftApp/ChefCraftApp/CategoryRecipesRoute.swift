@@ -10,12 +10,12 @@ import Foundation
 protocol CategoryRecipesRoute {
     var CategoryRecipesTransition: Transition { get }
     
-    func showCategoryRecipes(item: HomeViewContent.CategoryCellItem)
+    func showCategoryRecipes(item: CategoryRecipes)
 }
 
 extension CategoryRecipesRoute where Self: RouterProtocol {
     
-    func showCategoryRecipes(item: HomeViewContent.CategoryCellItem) {
+    func showCategoryRecipes(item: CategoryRecipes) {
         let viewController = CategoryRecipesBuilder.build(injector: injector, category: item)
         open(viewController, transition: CategoryRecipesTransition)
     }

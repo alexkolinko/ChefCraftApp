@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 
 class CategoryRecipesBuilder {
-    static func build(injector: Container, category: HomeViewContent.CategoryCellItem) -> CategoryRecipesViewController {
+    static func build(injector: Container, category: CategoryRecipes) -> CategoryRecipesViewController {
         let viewController = CategoryRecipesViewController.board(.CategoryRecipes)
         
         let router = CategoryRecipesRouter(injector: injector)

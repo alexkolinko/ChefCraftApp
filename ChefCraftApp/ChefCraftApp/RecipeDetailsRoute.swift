@@ -10,12 +10,12 @@ import Foundation
 protocol RecipeDetailsRoute {
     var RecipeDetailsTransition: Transition { get }
     
-    func showRecipe(_ details: HomeViewContent.RecipeCellItem)
+    func showRecipe(_ details: Recipe)
 }
 
 extension RecipeDetailsRoute where Self: RouterProtocol {
     
-    func showRecipe(_ details: HomeViewContent.RecipeCellItem) {
+    func showRecipe(_ details: Recipe) {
         let viewController = RecipeDetailsBuilder.build(injector: injector, details: details)
         open(viewController, transition: RecipeDetailsTransition)
     }

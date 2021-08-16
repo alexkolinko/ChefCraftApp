@@ -33,8 +33,8 @@ private extension HomeInteractorImpl {
     
     private func binding() {
         
-        let recipes = UserRecipes(id: "1", collectionsRecipes: [
-            CollectionRecipes(id: "1", name: "First Recipes", image: "soup", recipes: [
+        let recipes = UserRecipes(id: "1", categoriesRecipes: [
+            CategoryRecipes(id: "1", name: "First Recipes", image: "soup", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "These days it may seem odd to speak of grandma's cookie receipt, but at one time the only meaning of receipt was recipe. The first recorded use of receipt is a reference to a medicinal preparation in Chaucer's Canterbury Tales (c. 1386).", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -46,7 +46,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "2", name: "Second Recipes", image: "breakfast", recipes: [
+            CategoryRecipes(id: "2", name: "Second Recipes", image: "breakfast", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -58,7 +58,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "3", name: "3 Recipes", image: "soup", recipes: [
+            CategoryRecipes(id: "3", name: "3 Recipes", image: "soup", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -70,7 +70,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "4", name: "4 Recipes", image: "breakfast", recipes: [
+            CategoryRecipes(id: "4", name: "4 Recipes", image: "breakfast", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -82,7 +82,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "5", name: "5 Recipes", image: "soup", recipes: [
+            CategoryRecipes(id: "5", name: "5 Recipes", image: "soup", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -94,7 +94,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "6", name: "6 Recipes", image: "breakfast", recipes: [
+            CategoryRecipes(id: "6", name: "6 Recipes", image: "breakfast", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -106,7 +106,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "7", name: "7 Recipes", image: "soup", recipes: [
+            CategoryRecipes(id: "7", name: "7 Recipes", image: "soup", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),
@@ -118,7 +118,7 @@ private extension HomeInteractorImpl {
                     RecipeComposition(type: .totalTime, value: 30)
                 ])
             ]),
-            CollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+            CategoryRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
                 Recipe(id: "1", name: "First RECIPE", image: "bitmap", description: "First RECIPE - description", owner: "Smith", isLike: true, stars: 4, about: "First RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 150),
                     RecipeComposition(type: .ingredients, value: 5),

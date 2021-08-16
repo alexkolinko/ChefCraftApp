@@ -64,8 +64,6 @@ private extension RecipeDetailsInteractorImpl {
         
         self.favorites
             .subscribe(onNext: { [weak self] value in
-//                self?.recipeFavorite.accept(value.first(where: {$0 == self?.details.id}) != nil)
-                
                 guard let favoriteObject = value.first(where: { $0 == self?.details.id }) else { return }
                 self?.recipeFavorite.accept(favoriteObject)
             })

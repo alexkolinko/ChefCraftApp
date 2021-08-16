@@ -37,7 +37,7 @@ private extension CollectionRecipesCell {
     
     func configUI() {
         backgroundCellView.backgroundColor = .white
-        collectionRecipesName.textColor = .customGrey
+        collectionRecipesName.textColor = .gray
         collectionRecipesName.font = constants.cellFontMetropolis
     }
 }

@@ -42,7 +42,7 @@ private extension CategoryRecipeCell {
         self.configShadowContainer()
         self.ratingControl.isUserInteractionEnabled = false
         self.recipeImage.layer.cornerRadius = constants.cellImageCornerRadius
-        self.recipeName.textColor = .customGrey
+        self.recipeName.textColor = .gray
         self.recipeName.font = constants.cellFontMetropolisBold
         self.recipeDescription.textColor = .gray
         self.recipeOwner.textColor = .gray

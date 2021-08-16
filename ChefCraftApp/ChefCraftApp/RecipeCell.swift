@@ -39,7 +39,7 @@ private extension RecipeCell {
     
     private func configUI() {
         recipeImage.clipsToBounds = true
-        recipeName.textColor = .customGrey
+        recipeName.textColor = .gray
         recipeName.font = constants.cellFontMetropolis
         recipeDescription.textColor = .lightGray
         recipeDescription.font = constants.cellFontMetropolis

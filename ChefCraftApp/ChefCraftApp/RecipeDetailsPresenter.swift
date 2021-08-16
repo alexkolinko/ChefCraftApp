@@ -53,19 +53,19 @@ extension RecipeDetailsPresenter {
             .disposed(by: self.disposeBag)
     }
     
-    func mapToOutput(_ recipe: Recipe?, _ rating: Int?, _ favorite: Bool?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
+    func mapToOutput(_ recipe: Recipe?, _ rating: Int?, _ favorite: String?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
         let data = self.mapToViewData(recipe, rating, favorite)
         self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe?.image, applyLikeAction: applyLikeAction, applyRatingSelected: applyRatingSelected))
     }
     
-    func mapToViewData(_ recipe: Recipe?, _ rating: Int?, _ favorite: Bool?) -> RecipeDetailsViewContent? {
+    func mapToViewData(_ recipe: Recipe?, _ rating: Int?, _ favorite: String?) -> RecipeDetailsViewContent? {
         guard let recipe = recipe else { return nil }
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
             title: recipe.name,
             owner: recipe.owner,
             stars: rating ?? 0,
-            isLike: favorite ?? false
+            isLike: favorite != nil ? true : false
         )
         let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
             RecipeDetailsViewContent.CompositionCellItem(

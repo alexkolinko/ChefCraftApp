@@ -18,6 +18,7 @@ class HomePresenter {
     private let router: HomeNavigationProtocol
     private let interactor: HomeInteractor
     private let recipes = BehaviorRelay<[Recipe]>(value: [])
+    private let categoriesRecipes = BehaviorRelay<[CategoryRecipes]>(value: [])
     
     // - Base
     init(router: HomeNavigationProtocol, interactor: HomeInteractor) {
@@ -27,11 +28,11 @@ class HomePresenter {
     }
     
     func selectCategoryCell(model: HomeViewContent.CategoryCellItem) {
-        self.router.showCategoryDetails(details: model)
+        guard let value = self.categoriesRecipes.value.first(where: {$0.id == model.id}) else { return }
+        self.router.showCategoryDetails(details: value)
     }
     
     func selectRecipeCell(model: HomeViewContent.RecipeCellItem) {
-        
         guard let value = self.recipes.value.first(where: {$0.id == model.id}) else { return }
         self.router.showRecipeDetails(details: value)
     }
@@ -55,12 +56,19 @@ private extension HomePresenter {
             .ignoreNil()
             .bind(to: self.recipes)
             .disposed(by: self.disposeBag)
+        
+        self.interactor.chefCraftRecipes
+            .asObservable()
+            .map({ $0?.categoriesRecipes})
+            .ignoreNil()
+            .bind(to: self.categoriesRecipes)
+            .disposed(by: self.disposeBag)
             
     }
     
     private func mapToViewData(_ recipes: UserRecipes?) -> HomeViewContent? {
         guard let recipes = recipes else { return nil }
-        let collectionsRecipesHeader = HomeViewContent.CategoriesSection(categories: recipes.collectionsRecipes.map {
+        let collectionsRecipesHeader = HomeViewContent.CategoriesSection(categories: recipes.categoriesRecipes.map {
             HomeViewContent.CategoryCellItem(
                 id: $0.id,
                 title: $0.name,

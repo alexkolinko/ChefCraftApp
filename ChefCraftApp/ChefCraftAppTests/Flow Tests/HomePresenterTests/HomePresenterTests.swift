@@ -115,7 +115,7 @@ private extension HomePresenterTests {
             self.categoryCellItem = HomeViewContent.CategoryCellItem(id: "1", title: "test", image: "test", recipes: [])
             self.recipeCellItem = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
             self.chefCraftAllRecipes = UserRecipes(id: "1", collectionsRecipes: [
-                CollectionRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
+                CategoryRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
                     Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
                     Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
                     Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])

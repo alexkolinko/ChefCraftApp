@@ -14,7 +14,7 @@ protocol RecipeDetailsInteractor {
     
     var recipeData: BehaviorRelay<Recipe?> { get }
     var recipeRating: BehaviorRelay<Int> { get }
-    var recipeFavorite: BehaviorRelay<Bool> { get }
+    var recipeFavorite: BehaviorRelay<String?> { get }
     
     func updateRating(_ rating: Int)
     func updateLike(_ isLike: Bool)
@@ -28,7 +28,7 @@ class RecipeDetailsInteractorImpl {
     // - Internal Properties
     let recipeData = BehaviorRelay<Recipe?>(value: nil)
     let recipeRating = BehaviorRelay<Int>(value: 0)
-    let recipeFavorite = BehaviorRelay<Bool>(value: false)
+    let recipeFavorite = BehaviorRelay<String?>(value: nil)
     
     // - Private Properties
     private let details: Recipe
@@ -64,7 +64,10 @@ private extension RecipeDetailsInteractorImpl {
         
         self.favorites
             .subscribe(onNext: { [weak self] value in
-                self?.recipeFavorite.accept(value.first(where: {$0 == self?.details.id}) != nil)
+//                self?.recipeFavorite.accept(value.first(where: {$0 == self?.details.id}) != nil)
+                
+                guard let favoriteObject = value.first(where: { $0 == self?.details.id }) else { return }
+                self?.recipeFavorite.accept(favoriteObject)
             })
             .disposed(by: self.disposeBag)
     }

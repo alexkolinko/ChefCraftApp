@@ -16,7 +16,11 @@ class RecipeDetailsBuilder {
         let router = RecipeDetailsRouter(injector: injector)
         router.viewController = viewController
         
-        let interactor = RecipeDetailsInteractorImpl(databaseProvider: injector.resolve(DatabaseRecipeProvider.self)!, favoritesDatabaseProvider: injector.resolve(DatabaseFavoritesProvider.self)!, details: details)
+        let interactor = RecipeDetailsInteractorImpl(
+            databaseProvider: injector.resolve(DatabaseRecipeProvider.self)!,
+            favoritesDatabaseProvider: injector.resolve(DatabaseFavoritesProvider.self)!,
+            details: details
+        )
         
         let presenter = RecipeDetailsPresenter(router: router, interactor: interactor)
         

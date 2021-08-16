@@ -87,6 +87,8 @@ extension RecipeCompositionsCell {
 private extension RecipeCompositionsCell {
     
     struct Constants {
+        
+        // - Geometry
         let layoutMinimumInteritemSpacing: CGFloat = 6.0
         let layoutMinimumLineSpacing: CGFloat = 12.0
         let compositionCellHeight: CGFloat = 50

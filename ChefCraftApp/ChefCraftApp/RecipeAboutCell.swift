@@ -38,7 +38,7 @@ private extension RecipeAboutCell {
 private extension RecipeAboutCell {
     
     struct Constants {
-        let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
+        let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
         let cellFontMetropolis = UIFont(name: "Metropolis-Light", size: 10.0)
         let borderWidth: CGFloat = 0.5
     }

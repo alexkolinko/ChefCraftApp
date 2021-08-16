@@ -54,6 +54,8 @@ class RecipeDetailsPresenterTests: QuickSpec {
                         .disposed(by: bag)
                     
                     tested_interactor.recipeData.accept(mockes.cellItem)
+                    tested_interactor.recipeFavorite.accept(mockes.like)
+                    tested_interactor.recipeRating.accept(mockes.rating)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         data_mirrow.onCompleted()
@@ -62,12 +64,64 @@ class RecipeDetailsPresenterTests: QuickSpec {
                     expect(data_mirrow).last.toNot(beNil(), description: "Expect for returning not nil")
                 }
                 
-                it("trigger updateStorage") {
+                it("try start mapViewData with recipes and recipeFavorite be nil") {
+                    
+                    tested_presenter.viewDataPublisher
+                        .subscribe(onNext: { value in
+                            if value != nil {
+                                data_mirrow.onNext(())
+                            }
+                        })
+                        .disposed(by: bag)
+                    
+                    tested_interactor.recipeData.accept(mockes.cellItem)
+                    
+                    tested_interactor.recipeFavorite.accept(nil)
+                    tested_interactor.recipeRating.accept(mockes.rating)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        data_mirrow.onCompleted()
+                    }
+                    
+                    expect(data_mirrow).last.toNot(beNil(), description: "Expect for returning not nil")
+                }
+                
+                it("try start mapViewData with recipes and recipeRating be nil") {
+                    
+                    tested_presenter.viewDataPublisher
+                        .subscribe(onNext: { value in
+                            if value != nil {
+                                data_mirrow.onNext(())
+                            }
+                        })
+                        .disposed(by: bag)
+                    
+                    tested_interactor.recipeData.accept(mockes.cellItem)
+                    
+                    tested_interactor.recipeFavorite.accept(mockes.like)
+                    tested_interactor.recipeRating.accept(nil)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        data_mirrow.onCompleted()
+                    }
+                    
+                    expect(data_mirrow).last.toNot(beNil(), description: "Expect for returning not nil")
+                }
+                
+                it("trigger selectRating") {
                     tested_presenter.selectRating(mockes.rating)
                     
                     tested_interactor.action.onCompleted()
                     
-                    expect(tested_interactor.action).last.to(equal(.updateStorage), description: "Expect for the storage to update according to the presenter flow")
+                    expect(tested_interactor.action).last.to(equal(.updateRating), description: "Expect for the storage to update according to the presenter flow")
+                }
+                
+                it("trigger selectLike") {
+                    tested_presenter.selectLike(mockes.isLike)
+                    
+                    tested_interactor.action.onCompleted()
+                    
+                    expect(tested_interactor.action).last.to(equal(.updateLike), description: "Expect for the storage to update according to the presenter flow")
                 }
                 
                 it("trigger show popView action") {
@@ -86,26 +140,33 @@ class RecipeDetailsPresenterTests: QuickSpec {
 private extension RecipeDetailsPresenterTests {
     struct MockedItem {
         var rating: Int
-        var cellItem: HomeViewContent.RecipeCellItem
+        var like: String
+        var isLike: Bool
+        var cellItem: Recipe
         
         init() {
             self.rating = 3
-            self.cellItem = HomeViewContent.RecipeCellItem(id: "test", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
+            self.like = "1"
+            self.isLike = true
+            self.cellItem = Recipe(id: "test", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
         }
     }
 }
 
 // MARK: - MockedInteractor: RecipeDetailsInteractor
 private class MockedInteractor: RecipeDetailsInteractor {
+    var recipeData = BehaviorRelay<Recipe?>(value: nil)
+    var recipeRating = BehaviorRelay<Int?>(value: nil)
+    var recipeFavorite = BehaviorRelay<String?>(value: nil)
     let action = ReplaySubject<MockInteractorAction>.createUnbounded()
     
-    var recipeData = BehaviorRelay<HomeViewContent.RecipeCellItem?>(value: nil)
-    var chefCraftRecipes = BehaviorRelay<UserRecipes?>(value: nil)
-    
-    func updateStorage(rating: Int) {
-        self.action.onNext(.updateStorage)
+    func updateRating(_ rating: Int) {
+        self.action.onNext(.updateRating)
     }
     
+    func updateLike(_ isLike: Bool) {
+        self.action.onNext(.updateLike)
+    }
     
 }
 
@@ -127,6 +188,7 @@ private enum MockNavigationAction: String, Equatable {
 
 // MARK: - MockInteractorAction
 private enum MockInteractorAction {
-    case updateStorage
+    case updateRating
+    case updateLike
 }
 

@@ -18,6 +18,7 @@ struct RecipeDetailsViewContent: Equatable {
         let title: String
         let owner: String
         let stars: Int
+        let isLike: Bool
     }
     
     struct CompositionsSection {

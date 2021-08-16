@@ -9,16 +9,16 @@ import Foundation
 
 struct UserRecipes: Decodable {
     let id: String
-    let collectionsRecipes: [CollectionRecipes]
+    let categoriesRecipes: [CategoryRecipes]
     let recipes: [Recipe]
     
     init(
         id: String,
-        collectionsRecipes: [CollectionRecipes],
+        categoriesRecipes: [CategoryRecipes],
         recipes: [Recipe]
     ) {
         self.id = id
-        self.collectionsRecipes = collectionsRecipes
+        self.categoriesRecipes = categoriesRecipes
         self.recipes = recipes
     }
 }
@@ -32,6 +32,6 @@ extension UserRecipes: Equatable {
 extension UserRecipes {
     /// For use in mocks
     static var `default`: Self {
-        UserRecipes(id: "", collectionsRecipes: [], recipes: [])
+        UserRecipes(id: "", categoriesRecipes: [], recipes: [])
     }
 }

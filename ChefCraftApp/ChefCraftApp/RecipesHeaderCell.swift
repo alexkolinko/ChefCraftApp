@@ -97,6 +97,8 @@ extension RecipesHeaderCell {
 private extension RecipesHeaderCell {
     
     struct Constants {
+        
+        // - Geometry
         let layoutMinimumInteritemSpacing: CGFloat = 6.0
         let layoutMinimumLineSpacing: CGFloat = 12.0
         let recipesHeaderCellHeight: CGFloat = 350

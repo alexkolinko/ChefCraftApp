@@ -31,25 +31,25 @@
                                         <rect key="frame" x="30" y="35" width="237" height="144"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="76a-Yg-nHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="237" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-1S-NY0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="237" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="ShellFutura-Bold" family="ShellFutura" pointSize="16"/>
                                                         <color key="textColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCS-9U-Qm7">
-                                                        <rect key="frame" x="0.0" y="8" width="237" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="8" width="220" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ulF-qT-94a">
-                                                        <rect key="frame" x="0.0" y="16" width="237" height="20"/>
+                                                        <rect key="frame" x="0.0" y="16" width="220" height="44"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YYE-UV-QxR" customClass="RatingControl" customModule="ChefCraftApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="0ae-q0-TEM"/>
                                                                     <constraint firstAttribute="width" constant="100" id="axz-bj-oK2"/>
@@ -59,6 +59,14 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-vi-OYp">
+                                                <rect key="frame" x="228" y="0.0" width="9" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="0sR-2X-Zsl"/>
+                                                    <constraint firstAttribute="height" constant="20" id="2FZ-6G-CSy"/>
+                                                </constraints>
+                                                <state key="normal" image="heart.fill" catalog="system"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -85,6 +93,7 @@
             <size key="customSize" width="291" height="179"/>
             <connections>
                 <outlet property="backgraundView" destination="m0o-1G-czC" id="Jfn-f3-nYf"/>
+                <outlet property="likeButton" destination="MUe-vi-OYp" id="b0Y-3q-FdO"/>
                 <outlet property="ratingControl" destination="YYE-UV-QxR" id="WvH-FG-bzh"/>
                 <outlet property="recipeOwner" destination="bCS-9U-Qm7" id="U7q-OJ-PRo"/>
                 <outlet property="recipeTitle" destination="1yJ-1S-NY0" id="SRC-Iq-h3A"/>
@@ -92,4 +101,7 @@
             <point key="canvasLocation" x="264.49275362318843" y="82.03125"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
 </document>

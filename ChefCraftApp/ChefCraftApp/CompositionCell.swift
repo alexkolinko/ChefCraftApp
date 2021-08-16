@@ -52,8 +52,12 @@ private extension CompositionCell {
 private extension CompositionCell {
     
     struct Constants {
+        
+        // - Geometry
         let backgraundCornerRadius: CGFloat = 10
-        let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0)
         let borderWidth: CGFloat = 0.5
+        
+        // - Fonts
+        let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0) ?? UIFont.systemFont(ofSize: 12)
     }
 }

@@ -17,6 +17,8 @@ class RecipeDetailsPresenter {
     private let disposeBag = DisposeBag()
     private let router: RecipeDetailsNavigation
     private let interactor: RecipeDetailsInteractor
+    private let applyLikeAction = BehaviorRelay<Bool?>(value: nil)
+    private let applyRatingSelected = BehaviorRelay<Int?>(value: nil)
     
     // - Base
     init(router: RecipeDetailsNavigation, interactor: RecipeDetailsInteractor) {
@@ -30,7 +32,13 @@ class RecipeDetailsPresenter {
     }
     
     func selectRating(_ rating: Int) {
-        self.interactor.updateStorage(rating: rating)
+        self.applyRatingSelected.accept(rating)
+        self.interactor.updateRating(rating)
+    }
+    
+    func selectLike(_ value: Bool) {
+        self.applyLikeAction.accept(value)
+        self.interactor.updateLike(value)
     }
 }
 
@@ -38,28 +46,27 @@ class RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     func binding() {
-        self.interactor.recipeData
-            .asObservable()
-            .ignoreNil()
-            .subscribe(onNext: {[weak self] recipe in
-                self?.mapToOutput(recipe)
- 
+        Observable.combineLatest(self.interactor.recipeData, self.interactor.recipeRating, self.interactor.recipeFavorite, self.applyLikeAction, self.applyRatingSelected)
+            .subscribe(onNext: { [weak self] recipe, rating, favorite, applyLikeAction, applyRatingSelected in
+                self?.mapToOutput(recipe, rating, favorite, applyLikeAction, applyRatingSelected)
             })
             .disposed(by: self.disposeBag)
     }
     
-    func mapToOutput(_ recipe: HomeViewContent.RecipeCellItem) {
-        let data = self.mapToViewData(recipe)
-        self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe.image))
+    func mapToOutput(_ recipe: Recipe?, _ rating: Int?, _ favorite: String?, _ applyLikeAction: Bool?, _ applyRatingSelected: Int?) {
+        let isFavorite = favorite != nil ? true : false
+        let data = self.mapToViewData(recipe, rating, isFavorite)
+        self.viewDataPublisher.accept(Output(content: data, imageHeader: recipe?.image, applyLikeAction: applyLikeAction, applyRatingSelected: applyRatingSelected))
     }
     
-    func mapToViewData(_ recipe: HomeViewContent.RecipeCellItem) -> RecipeDetailsViewContent {
-        
+    func mapToViewData(_ recipe: Recipe?, _ rating: Int?, _ favorite: Bool) -> RecipeDetailsViewContent? {
+        guard let recipe = recipe else { return nil }
         let recipeHeader = RecipeDetailsViewContent.HeaderSection(
             id: "1",
-            title: recipe.title,
+            title: recipe.name,
             owner: recipe.owner,
-            stars: recipe.stars
+            stars: rating ?? 0,
+            isLike: favorite
         )
         let recipeCompositionsHeader = RecipeDetailsViewContent.CompositionsSection(compositions: recipe.compositions.map {
             RecipeDetailsViewContent.CompositionCellItem(
@@ -74,7 +81,6 @@ extension RecipeDetailsPresenter {
             .compositions(item: recipeCompositionsHeader),
             .about(item: recipeAboutHeader)
         ]
-        
         return RecipeDetailsViewContent(id: recipe.id, sectionModel: AnimatableSection<RecipeDetailsOverviewContentBox>(items: sectionItems))
     }
 }
@@ -83,8 +89,9 @@ extension RecipeDetailsPresenter {
 extension RecipeDetailsPresenter {
     
     struct Output {
-    let content: RecipeDetailsViewContent
-    let imageHeader: String
+        let content: RecipeDetailsViewContent?
+        let imageHeader: String?
+        let applyLikeAction: Bool?
+        let applyRatingSelected: Int?
     }
-    
 }

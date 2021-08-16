@@ -13,7 +13,9 @@ import RxCocoa
 @IBDesignable class RatingControl: UIStackView {
     
     //MARK: Properties
-    var rating = BehaviorRelay<Int>(value: 0)
+    let rating = BehaviorRelay<Int>(value: 0)
+    
+    let ratingTapped = PublishRelay<Void>()
     
     // - Private properties
     private(set) var bag = DisposeBag()
@@ -47,16 +49,8 @@ import RxCocoa
     //MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
-        guard let index = ratingButtons.firstIndex(of: button) else {
-            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
-        }
-        
-        // Calculate the rating of the selected button
-        let selectedRating = index + 1
-        guard selectedRating != rating.value else { return }
-        rating.accept(selectedRating)
+        self.ratingTapped.accept(())
     }
-    
     
     //MARK: Private Methods
     private func binding() {

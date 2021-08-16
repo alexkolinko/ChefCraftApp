@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import SwiftEntryKit
 
 class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     
@@ -15,9 +16,13 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipeOwner: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var backgraundView: UIView!
+    @IBOutlet weak var likeButton: UIButton!
     
     // - Internal properties
-    let selectedRating = BehaviorRelay<Int?>(value: nil)
+    let selectedRating = PublishRelay<Void>()
+    let selectedLike = BehaviorRelay<Bool?>(value: nil)
+    let isLike = BehaviorRelay<Bool?>(value: nil)
+    let rating = BehaviorRelay<Int?>(value: nil)
     
     // - Private properties
     private(set) var bag = DisposeBag()
@@ -26,10 +31,7 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configUI()
-        
-        self.ratingControl.rating
-            .bind(to: self.selectedRating)
-            .disposed(by: self.bag)
+        self.configBinding()
     }
     
     // - Internal Logic
@@ -37,18 +39,49 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
         self.recipeTitle.text = model.title
         self.recipeOwner.text = "by \(model.owner)"
         self.ratingControl.rating.accept(model.stars)
+        self.likeButton.rx.isSelected.onNext(model.isLike)
     }
-    
-
 }
 
 // MARK: - Private logic
 private extension RecipeHeaderCell {
    
     func configUI() {
-        self.recipeTitle.font = constants.cellFontMetropolisBold
-        self.recipeOwner.font = constants.cellFontMetropolis
+        self.likeButton.setImage(self.constants.selectedHeartImage, for: .selected)
+        self.likeButton.setImage(self.constants.unselectedHeartImage, for: .normal)
+        self.recipeTitle.font = self.constants.fontMetropolisBold
+        self.recipeOwner.font = self.constants.fontMetropolisLight
         self.backgraundView.layer.cornerRadius = 20
+    }
+    
+    func configBinding() {
+        self.likeButton.rx
+            .tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                self?.likeAction()
+            })
+            .disposed(by: self.bag)
+        
+        self.ratingControl.ratingTapped
+            .bind(to: self.selectedRating)
+            .disposed(by: self.bag)
+        
+        self.isLike
+            .asObservable()
+            .ignoreNil()
+            .bind(to: self.likeButton.rx.isSelected)
+            .disposed(by: self.bag)
+        
+        self.rating
+            .asObservable()
+            .ignoreNil()
+            .bind(to: self.ratingControl.rating)
+            .disposed(by: self.bag)
+    }
+    
+    func likeAction() {
+        self.selectedLike.accept(!self.likeButton.isSelected)
     }
 }
 
@@ -56,7 +89,11 @@ private extension RecipeHeaderCell {
 private extension RecipeHeaderCell {
     
     struct Constants {
-        let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
-        let cellFontMetropolis = UIFont(name: "Metropolis-Light", size: 10.0)
+        
+        // - Icons
+        let unselectedHeartImage = UIImage(named: "icHeart")
+        let selectedHeartImage = UIImage(named: "icRedHeart")
+        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
+        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
     }
 }

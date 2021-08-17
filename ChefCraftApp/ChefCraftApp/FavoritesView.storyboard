@@ -9,32 +9,32 @@
     </dependencies>
     <scenes>
         <!--Favorites View Controller-->
-        <scene sceneID="8No-k9-xUI">
+        <scene sceneID="es3-bA-F0U">
             <objects>
-                <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sNp-3E-pVp" customClass="FavoritesViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lco-Cr-Rhx">
+                <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2QD-fw-Pza" customClass="FavoritesViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nTz-h9-OER">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-rD-FD8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-1e-au5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gMM-GY-N8N"/>
+                        <viewLayoutGuide key="safeArea" id="3K5-Aq-EY2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xAa-rD-FD8" firstAttribute="top" secondItem="gMM-GY-N8N" secondAttribute="top" id="Aaw-ZE-RB5"/>
-                            <constraint firstItem="gMM-GY-N8N" firstAttribute="trailing" secondItem="xAa-rD-FD8" secondAttribute="trailing" id="Hba-Pr-oBy"/>
-                            <constraint firstItem="xAa-rD-FD8" firstAttribute="leading" secondItem="gMM-GY-N8N" secondAttribute="leading" id="eUh-nM-GWz"/>
-                            <constraint firstItem="gMM-GY-N8N" firstAttribute="bottom" secondItem="xAa-rD-FD8" secondAttribute="bottom" id="qVH-Sl-hJo"/>
+                            <constraint firstItem="5Gb-1e-au5" firstAttribute="leading" secondItem="3K5-Aq-EY2" secondAttribute="leading" id="NAE-lK-Bbd"/>
+                            <constraint firstItem="3K5-Aq-EY2" firstAttribute="trailing" secondItem="5Gb-1e-au5" secondAttribute="trailing" id="PIJ-iY-FII"/>
+                            <constraint firstItem="5Gb-1e-au5" firstAttribute="top" secondItem="3K5-Aq-EY2" secondAttribute="top" id="i6V-Uq-Gep"/>
+                            <constraint firstItem="3K5-Aq-EY2" firstAttribute="bottom" secondItem="5Gb-1e-au5" secondAttribute="bottom" id="slv-WO-fzo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="favoritesTable" destination="xAa-rD-FD8" id="Dsa-2G-GFC"/>
+                        <outlet property="favoritesTable" destination="5Gb-1e-au5" id="bkY-u9-bUB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X1n-Z5-Px9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiW-Ck-OD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48" y="31"/>
         </scene>

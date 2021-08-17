@@ -52,8 +52,8 @@ private extension FavoritesViewController {
     
     func setUpNavigationBar() {
         navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.customGrey,
-            .font: UIFont(name: "Metropolis-Bold", size: 21)!
+            .foregroundColor: UIColor.gray,
+            .font: self.constants.fontMetropolisBold
         ]
         self.navigationItem.title = "Your favorites recipes"
     }
@@ -91,9 +91,12 @@ extension FavoritesViewController {
 private extension FavoritesViewController {
     
     struct Constants {
-        let estimatedRowHeight: CGFloat = 96.0
         let backButtonImage = UIImage(named: "backButton")
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
+        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
+        
+        // - Geometry
+        let estimatedRowHeight: CGFloat = 96.0
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
     }
 }

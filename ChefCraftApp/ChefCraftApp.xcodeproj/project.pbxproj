@@ -112,22 +112,22 @@
 		96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */; };
 		96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */; };
 		96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */; };
-		96DB582B26CB044900328235 /* RootView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DB582326CB044800328235 /* RootView.storyboard */; };
-		96DB582C26CB044900328235 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582426CB044800328235 /* RootInteractor.swift */; };
-		96DB582D26CB044900328235 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582526CB044800328235 /* RootViewController.swift */; };
-		96DB582E26CB044900328235 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582626CB044800328235 /* RootPresenter.swift */; };
-		96DB582F26CB044900328235 /* RootTabItemTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582726CB044900328235 /* RootTabItemTags.swift */; };
-		96DB583026CB044900328235 /* RootRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582826CB044900328235 /* RootRoute.swift */; };
-		96DB583126CB044900328235 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582926CB044900328235 /* RootBuilder.swift */; };
-		96DB583226CB044900328235 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582A26CB044900328235 /* RootRouter.swift */; };
-		96DB584126CB048900328235 /* FavoritesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583626CB048800328235 /* FavoritesBuilder.swift */; };
-		96DB584226CB048900328235 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583726CB048800328235 /* FavoritesPresenter.swift */; };
-		96DB584326CB048900328235 /* FavoritesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583826CB048800328235 /* FavoritesRoute.swift */; };
-		96DB584426CB048900328235 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583926CB048900328235 /* FavoritesInteractor.swift */; };
-		96DB584526CB048900328235 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583A26CB048900328235 /* FavoritesRouter.swift */; };
-		96DB584626CB048900328235 /* FavoritesSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583B26CB048900328235 /* FavoritesSectionModel.swift */; };
-		96DB584726CB048900328235 /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DB583C26CB048900328235 /* FavoritesView.storyboard */; };
-		96DB584926CB048900328235 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB583E26CB048900328235 /* FavoritesViewController.swift */; };
+		96D20DAD26CBFD00001F91C2 /* FavoritesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DAC26CBFD00001F91C2 /* FavoritesBuilder.swift */; };
+		96D20DAF26CBFD75001F91C2 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DAE26CBFD75001F91C2 /* FavoritesInteractor.swift */; };
+		96D20DB126CBFE1E001F91C2 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DB026CBFE1E001F91C2 /* FavoritesPresenter.swift */; };
+		96D20DB326CBFE3E001F91C2 /* FavoritesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DB226CBFE3E001F91C2 /* FavoritesRoute.swift */; };
+		96D20DB526CBFE76001F91C2 /* FavoritesSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DB426CBFE76001F91C2 /* FavoritesSectionModel.swift */; };
+		96D20DB826CBFEC7001F91C2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DB626CBFEC7001F91C2 /* FavoritesViewController.swift */; };
+		96D20DBB26CBFF51001F91C2 /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DBA26CBFF51001F91C2 /* FavoritesView.storyboard */; };
+		96D20DBD26CC0044001F91C2 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DBC26CC0044001F91C2 /* FavoritesRouter.swift */; };
+		96D20DBF26CC019D001F91C2 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DBE26CC019D001F91C2 /* RootBuilder.swift */; };
+		96D20DC126CC01C0001F91C2 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC026CC01C0001F91C2 /* RootInteractor.swift */; };
+		96D20DC326CC01E7001F91C2 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC226CC01E7001F91C2 /* RootPresenter.swift */; };
+		96D20DC526CC0209001F91C2 /* RootRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC426CC0209001F91C2 /* RootRoute.swift */; };
+		96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC626CC0229001F91C2 /* RootRouter.swift */; };
+		96D20DC926CC024D001F91C2 /* RootTabItemTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC826CC024D001F91C2 /* RootTabItemTags.swift */; };
+		96D20DCB26CC027E001F91C2 /* RootView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DCA26CC027E001F91C2 /* RootView.storyboard */; };
+		96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DCC26CC02AA001F91C2 /* RootViewController.swift */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -251,22 +251,22 @@
 		96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellModel.swift; sourceTree = "<group>"; };
-		96DB582326CB044800328235 /* RootView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RootView.storyboard; path = ../../../Desktop/t/RootView.storyboard; sourceTree = "<group>"; };
-		96DB582426CB044800328235 /* RootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootInteractor.swift; path = ../../../Desktop/t/RootInteractor.swift; sourceTree = "<group>"; };
-		96DB582526CB044800328235 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../../../Desktop/t/RootViewController.swift; sourceTree = "<group>"; };
-		96DB582626CB044800328235 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootPresenter.swift; path = ../../../Desktop/t/RootPresenter.swift; sourceTree = "<group>"; };
-		96DB582726CB044900328235 /* RootTabItemTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTabItemTags.swift; path = ../../../Desktop/t/RootTabItemTags.swift; sourceTree = "<group>"; };
-		96DB582826CB044900328235 /* RootRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootRoute.swift; path = ../../../Desktop/t/RootRoute.swift; sourceTree = "<group>"; };
-		96DB582926CB044900328235 /* RootBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootBuilder.swift; path = ../../../Desktop/t/RootBuilder.swift; sourceTree = "<group>"; };
-		96DB582A26CB044900328235 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootRouter.swift; path = ../../../Desktop/t/RootRouter.swift; sourceTree = "<group>"; };
-		96DB583626CB048800328235 /* FavoritesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesBuilder.swift; path = ../../../Desktop/f/FavoritesBuilder.swift; sourceTree = "<group>"; };
-		96DB583726CB048800328235 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesPresenter.swift; path = ../../../Desktop/f/FavoritesPresenter.swift; sourceTree = "<group>"; };
-		96DB583826CB048800328235 /* FavoritesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesRoute.swift; path = ../../../Desktop/f/FavoritesRoute.swift; sourceTree = "<group>"; };
-		96DB583926CB048900328235 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesInteractor.swift; path = ../../../Desktop/f/FavoritesInteractor.swift; sourceTree = "<group>"; };
-		96DB583A26CB048900328235 /* FavoritesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesRouter.swift; path = ../../../Desktop/f/FavoritesRouter.swift; sourceTree = "<group>"; };
-		96DB583B26CB048900328235 /* FavoritesSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesSectionModel.swift; path = ../../../Desktop/f/FavoritesSectionModel.swift; sourceTree = "<group>"; };
-		96DB583C26CB048900328235 /* FavoritesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FavoritesView.storyboard; path = ../../../Desktop/f/FavoritesView.storyboard; sourceTree = "<group>"; };
-		96DB583E26CB048900328235 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = ../../../Desktop/f/FavoritesViewController.swift; sourceTree = "<group>"; };
+		96D20DAC26CBFD00001F91C2 /* FavoritesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBuilder.swift; sourceTree = "<group>"; };
+		96D20DAE26CBFD75001F91C2 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		96D20DB026CBFE1E001F91C2 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		96D20DB226CBFE3E001F91C2 /* FavoritesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRoute.swift; sourceTree = "<group>"; };
+		96D20DB426CBFE76001F91C2 /* FavoritesSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSectionModel.swift; sourceTree = "<group>"; };
+		96D20DB626CBFEC7001F91C2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		96D20DBA26CBFF51001F91C2 /* FavoritesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesView.storyboard; sourceTree = "<group>"; };
+		96D20DBC26CC0044001F91C2 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		96D20DBE26CC019D001F91C2 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		96D20DC026CC01C0001F91C2 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		96D20DC226CC01E7001F91C2 /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		96D20DC426CC0209001F91C2 /* RootRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRoute.swift; sourceTree = "<group>"; };
+		96D20DC626CC0229001F91C2 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		96D20DC826CC024D001F91C2 /* RootTabItemTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabItemTags.swift; sourceTree = "<group>"; };
+		96D20DCA26CC027E001F91C2 /* RootView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootView.storyboard; sourceTree = "<group>"; };
+		96D20DCC26CC02AA001F91C2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -870,14 +870,14 @@
 		96DB582226CB041F00328235 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
-				96DB582926CB044900328235 /* RootBuilder.swift */,
-				96DB582426CB044800328235 /* RootInteractor.swift */,
-				96DB582626CB044800328235 /* RootPresenter.swift */,
-				96DB582826CB044900328235 /* RootRoute.swift */,
-				96DB582A26CB044900328235 /* RootRouter.swift */,
-				96DB582726CB044900328235 /* RootTabItemTags.swift */,
-				96DB582326CB044800328235 /* RootView.storyboard */,
-				96DB582526CB044800328235 /* RootViewController.swift */,
+				96D20DBE26CC019D001F91C2 /* RootBuilder.swift */,
+				96D20DC026CC01C0001F91C2 /* RootInteractor.swift */,
+				96D20DC226CC01E7001F91C2 /* RootPresenter.swift */,
+				96D20DC426CC0209001F91C2 /* RootRoute.swift */,
+				96D20DC626CC0229001F91C2 /* RootRouter.swift */,
+				96D20DC826CC024D001F91C2 /* RootTabItemTags.swift */,
+				96D20DCA26CC027E001F91C2 /* RootView.storyboard */,
+				96D20DCC26CC02AA001F91C2 /* RootViewController.swift */,
 			);
 			name = RootView;
 			sourceTree = "<group>";
@@ -887,14 +887,14 @@
 			children = (
 				96D20DA126CBF4E9001F91C2 /* Models */,
 				96D20D9C26CBF4B8001F91C2 /* Cells */,
-				96DB583626CB048800328235 /* FavoritesBuilder.swift */,
-				96DB583926CB048900328235 /* FavoritesInteractor.swift */,
-				96DB583726CB048800328235 /* FavoritesPresenter.swift */,
-				96DB583826CB048800328235 /* FavoritesRoute.swift */,
-				96DB583A26CB048900328235 /* FavoritesRouter.swift */,
-				96DB583B26CB048900328235 /* FavoritesSectionModel.swift */,
-				96DB583C26CB048900328235 /* FavoritesView.storyboard */,
-				96DB583E26CB048900328235 /* FavoritesViewController.swift */,
+				96D20DAC26CBFD00001F91C2 /* FavoritesBuilder.swift */,
+				96D20DAE26CBFD75001F91C2 /* FavoritesInteractor.swift */,
+				96D20DB026CBFE1E001F91C2 /* FavoritesPresenter.swift */,
+				96D20DB226CBFE3E001F91C2 /* FavoritesRoute.swift */,
+				96D20DBC26CC0044001F91C2 /* FavoritesRouter.swift */,
+				96D20DB426CBFE76001F91C2 /* FavoritesSectionModel.swift */,
+				96D20DBA26CBFF51001F91C2 /* FavoritesView.storyboard */,
+				96D20DB626CBFEC7001F91C2 /* FavoritesViewController.swift */,
 			);
 			name = FavoritesView;
 			sourceTree = "<group>";
@@ -1010,7 +1010,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DB582B26CB044900328235 /* RootView.storyboard in Resources */,
 				962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */,
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
@@ -1019,17 +1018,18 @@
 				965D79FD26B8280900D280B3 /* CompositionCell.xib in Resources */,
 				4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */,
 				4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */,
+				96D20DCB26CC027E001F91C2 /* RootView.storyboard in Resources */,
 				96A3841926AEEAAB00F6530C /* CollectionRecipesCell.xib in Resources */,
 				965D79ED26B8001800D280B3 /* RecipeAboutCell.xib in Resources */,
 				965D7A2A26BACDE600D280B3 /* CategoryRecipeCell.xib in Resources */,
 				9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */,
 				965D79CF26B3095C00D280B3 /* RecipeDetailsView.storyboard in Resources */,
-				96DB584726CB048900328235 /* FavoritesView.storyboard in Resources */,
 				962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */,
 				96A3840226AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib in Resources */,
 				965DA67926AA97E000958782 /* HomeView.storyboard in Resources */,
 				965D79E826B7EE4200D280B3 /* RecipeHeaderCell.xib in Resources */,
 				962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */,
+				96D20DBB26CBFF51001F91C2 /* FavoritesView.storyboard in Resources */,
 				965D7A1A26BAA6CD00D280B3 /* CategoryRecipesView.storyboard in Resources */,
 				965D79F226B819E600D280B3 /* RecipeCompositionsCell.xib in Resources */,
 			);
@@ -1140,21 +1140,18 @@
 				96A3841B26AEEBBC00F6530C /* Array+Extensions.swift in Sources */,
 				965DA64226A9BD1E00958782 /* DatabaseError.swift in Sources */,
 				965D79D526B31E8500D280B3 /* UIApplication+topViewController.swift in Sources */,
+				96D20DB526CBFE76001F91C2 /* FavoritesSectionModel.swift in Sources */,
 				965D7A1926BAA6CC00D280B3 /* CategoryRecipesBuilder.swift in Sources */,
-				96DB583226CB044900328235 /* RootRouter.swift in Sources */,
-				96DB584326CB048900328235 /* FavoritesRoute.swift in Sources */,
+				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
-				96DB582F26CB044900328235 /* RootTabItemTags.swift in Sources */,
-				96DB583126CB044900328235 /* RootBuilder.swift in Sources */,
-				96DB584526CB048900328235 /* FavoritesRouter.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
+				96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */,
 				965D79D026B3095C00D280B3 /* RecipeDetailsInteractor.swift in Sources */,
 				965D79EC26B8001800D280B3 /* RecipeAboutCell.swift in Sources */,
-				96DB584426CB048900328235 /* FavoritesInteractor.swift in Sources */,
-				96DB582C26CB044900328235 /* RootInteractor.swift in Sources */,
 				969428C826B0026B00A0D3B6 /* Recipe.swift in Sources */,
 				965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */,
 				965DA67A26AA97E000958782 /* HomeRoute.swift in Sources */,
+				96D20DBF26CC019D001F91C2 /* RootBuilder.swift in Sources */,
 				965D79E326B447F900D280B3 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				965D79FC26B8280900D280B3 /* CompositionCell.swift in Sources */,
 				965DA69F26AAA1AF00958782 /* UIWindow+switchRoot.swift in Sources */,
@@ -1162,39 +1159,42 @@
 				965D7A1C26BAA6CD00D280B3 /* CategoryRecipesRoute.swift in Sources */,
 				965DA68626AA9F5400958782 /* ClosableRouterProtocol.swift in Sources */,
 				965DA63E26A9BC7400958782 /* RealmMigrationService.swift in Sources */,
-				96DB584626CB048900328235 /* FavoritesSectionModel.swift in Sources */,
 				965D79D126B3095C00D280B3 /* RecipeDetailsRouter.swift in Sources */,
 				965D7A2626BAC4F100D280B3 /* CategoryRecipesSectionModel.swift in Sources */,
 				969428D526B0608E00A0D3B6 /* RecipeCompositionType.swift in Sources */,
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965D79F126B819E600D280B3 /* RecipeCompositionsCell.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,
+				96D20DB326CBFE3E001F91C2 /* FavoritesRoute.swift in Sources */,
 				965D7A1B26BAA6CD00D280B3 /* CategoryRecipesPresenter.swift in Sources */,
 				965D79E726B7EE4200D280B3 /* RecipeHeaderCell.swift in Sources */,
 				965DA67526AA97E000958782 /* HomePresenter.swift in Sources */,
 				960676FE26AEC06700DDD3CA /* HomeViewContent.swift in Sources */,
 				965D2D4226C53F4D00259515 /* DatabaseFavoritesProvider.swift in Sources */,
-				96DB583026CB044900328235 /* RootRoute.swift in Sources */,
+				96D20DC926CC024D001F91C2 /* RootTabItemTags.swift in Sources */,
+				96D20DC326CC01E7001F91C2 /* RootPresenter.swift in Sources */,
 				96A8809726BD358100ADFFD0 /* DatabaseRecipeProvider.swift in Sources */,
 				96A3841826AEEAAB00F6530C /* CollectionRecipesCell.swift in Sources */,
 				965DA68C26AA9FC400958782 /* AnimatorProtocol.swift in Sources */,
-				96DB584926CB048900328235 /* FavoritesViewController.swift in Sources */,
+				96D20DAD26CBFD00001F91C2 /* FavoritesBuilder.swift in Sources */,
 				965DA64E26A9C77F00958782 /* RealmResults+Array.swift in Sources */,
 				965D79E126B447E300D280B3 /* ParallaxHeaderMode.swift in Sources */,
 				965D7A1D26BAA6CD00D280B3 /* CategoryRecipesViewController.swift in Sources */,
 				960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */,
 				965D2D4026C53DB000259515 /* Favorites.swift in Sources */,
 				9623327026C2A5CF0007F904 /* EKColor+Extensions.swift in Sources */,
-				96DB584226CB048900328235 /* FavoritesPresenter.swift in Sources */,
+				96D20DB826CBFEC7001F91C2 /* FavoritesViewController.swift in Sources */,
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
-				96DB582D26CB044900328235 /* RootViewController.swift in Sources */,
 				965D79DA26B43F8D00D280B3 /* RecipeDetailsViewContent.swift in Sources */,
 				965D2D3E26C514CE00259515 /* RMFavorites.swift in Sources */,
 				969428C626B0023E00A0D3B6 /* CategoryRecipes.swift in Sources */,
+				96D20DBD26CC0044001F91C2 /* FavoritesRouter.swift in Sources */,
+				96D20DC526CC0209001F91C2 /* RootRoute.swift in Sources */,
 				965DA69126AAA02A00958782 /* ClosablePushTransition.swift in Sources */,
 				96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */,
 				965DA64626A9BD7A00958782 /* RealmProtocols.swift in Sources */,
+				96D20DAF26CBFD75001F91C2 /* FavoritesInteractor.swift in Sources */,
 				965D79CD26B3095C00D280B3 /* RecipeDetailsViewController.swift in Sources */,
 				96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */,
 				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
@@ -1207,14 +1207,14 @@
 				965DA69D26AAA13800958782 /* FadeAnimator.swift in Sources */,
 				9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */,
 				965D79DF26B447CC00D280B3 /* ParallaxHeader.swift in Sources */,
-				96DB582E26CB044900328235 /* RootPresenter.swift in Sources */,
+				96D20DC126CC01C0001F91C2 /* RootInteractor.swift in Sources */,
 				965D7A1E26BAA6CD00D280B3 /* CategoryRecipesRouter.swift in Sources */,
 				965D7A2426BAC10D00D280B3 /* CategoryRecipeCellModel.swift in Sources */,
 				960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */,
 				965D7A2926BACDE600D280B3 /* CategoryRecipeCell.swift in Sources */,
 				96A383FD26AEDBF700F6530C /* UserRecipes.swift in Sources */,
 				965DA67726AA97E000958782 /* HomeRouter.swift in Sources */,
-				96DB584126CB048900328235 /* FavoritesBuilder.swift in Sources */,
+				96D20DB126CBFE1E001F91C2 /* FavoritesPresenter.swift in Sources */,
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,

@@ -16,7 +16,10 @@ class FavoritesBuilder {
         let router = FavoritesRouter(injector: injector)
         router.viewController = viewController
         
-        let interactor = FavoritesInteractorImpl()
+        let interactor = FavoritesInteractorImpl(
+            databaseProvider: injector.resolve(DatabaseRecipeProvider.self)!,
+            favoritesDatabaseProvider: injector.resolve(DatabaseFavoritesProvider.self)!
+        )
         
         let presenter = FavoritesPresenter(router: router, interactor: interactor)
         

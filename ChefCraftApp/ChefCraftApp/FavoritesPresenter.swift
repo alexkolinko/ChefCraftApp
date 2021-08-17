@@ -43,7 +43,7 @@ private extension FavoritesPresenter {
             .filter({ favoritesRecipes.contains($0.id) })
             .map { recipe -> Recipe in
                 var updatedRecipe = recipe
-                if let stars = ratingRecipes.first(where: {$0.id == updatedRecipe.id})?.stars {
+                if let stars = ratingRecipes.first(where: { $0.id == updatedRecipe.id })?.stars {
                     updatedRecipe.stars = stars
                 }
                 return updatedRecipe

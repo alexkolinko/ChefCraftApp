@@ -128,6 +128,8 @@
 		96D20DC926CC024D001F91C2 /* RootTabItemTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DC826CC024D001F91C2 /* RootTabItemTags.swift */; };
 		96D20DCB26CC027E001F91C2 /* RootView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DCA26CC027E001F91C2 /* RootView.storyboard */; };
 		96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DCC26CC02AA001F91C2 /* RootViewController.swift */; };
+		96D20DD026CC0786001F91C2 /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DCF26CC0786001F91C2 /* FavoritesPresenterTests.swift */; };
+		96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DD626CC16D2001F91C2 /* MockedItem.swift */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +269,8 @@
 		96D20DC826CC024D001F91C2 /* RootTabItemTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabItemTags.swift; sourceTree = "<group>"; };
 		96D20DCA26CC027E001F91C2 /* RootView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootView.storyboard; sourceTree = "<group>"; };
 		96D20DCC26CC02AA001F91C2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		96D20DCF26CC0786001F91C2 /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
+		96D20DD626CC16D2001F91C2 /* MockedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedItem.swift; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -641,6 +645,7 @@
 		965DA63A26A9BC1A00958782 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				96D20DD126CC14AB001F91C2 /* MockedData */,
 				965DA63B26A9BC2B00958782 /* Realm */,
 			);
 			path = Storage;
@@ -835,6 +840,7 @@
 		96CDFF7126B170EC00652CE4 /* Flow Tests */ = {
 			isa = PBXGroup;
 			children = (
+				96D20DCE26CC0776001F91C2 /* FavoritesPresenterTests */,
 				965D2D4326CA674E00259515 /* CategoryRecipesPresenterTests */,
 				965D79FE26BA97C200D280B3 /* RecipeDetailsPresenterTests */,
 				96CDFF7226B1710200652CE4 /* HomePresenterTests */,
@@ -865,6 +871,22 @@
 				96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		96D20DCE26CC0776001F91C2 /* FavoritesPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DCF26CC0786001F91C2 /* FavoritesPresenterTests.swift */,
+			);
+			path = FavoritesPresenterTests;
+			sourceTree = "<group>";
+		};
+		96D20DD126CC14AB001F91C2 /* MockedData */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DD626CC16D2001F91C2 /* MockedItem.swift */,
+			);
+			path = MockedData;
 			sourceTree = "<group>";
 		};
 		96DB582226CB041F00328235 /* RootView */ = {
@@ -1143,6 +1165,7 @@
 				96D20DB526CBFE76001F91C2 /* FavoritesSectionModel.swift in Sources */,
 				965D7A1926BAA6CC00D280B3 /* CategoryRecipesBuilder.swift in Sources */,
 				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
+				96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
 				96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */,
@@ -1234,6 +1257,7 @@
 			files = (
 				965D2D4526CA676500259515 /* CategoryRecipesPresenterTests.swift in Sources */,
 				96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */,
+				96D20DD026CC0786001F91C2 /* FavoritesPresenterTests.swift in Sources */,
 				965D7A0026BA97DF00D280B3 /* RecipeDetailsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

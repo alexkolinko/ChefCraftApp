@@ -8,6 +8,7 @@
 import RxCocoa
 import RxSwift
 import RxDataSources
+import TBEmptyDataSet
 
 class FavoritesViewController: UIViewController, StoryboardInitializable {
 
@@ -62,6 +63,8 @@ private extension FavoritesViewController {
         self.favoritesTable.rowHeight = UITableView.automaticDimension
         self.favoritesTable.estimatedRowHeight = constants.estimatedRowHeight
         self.favoritesTable.registerNib(FavoriteCell.self)
+        self.favoritesTable.emptyDataSetDelegate = self
+        self.favoritesTable.emptyDataSetDataSource = self
         self.favoritesTable.backgroundColor = .white
         self.favoritesTable.separatorStyle = .none
         self.favoritesTable.alwaysBounceVertical = true
@@ -87,6 +90,22 @@ extension FavoritesViewController {
     }
 }
 
+// MARK: - InAppPostsListViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
+extension FavoritesViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
+
+    func titleForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Recipes is empty")
+    }
+    
+    func emptyDataSetScrollEnabled(in scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    func titleMarginForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {
+        return self.constants.sizeTitleEmptyStyle
+    }
+}
+
 // MARK: - Constants
 private extension FavoritesViewController {
     
@@ -96,6 +115,7 @@ private extension FavoritesViewController {
         let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
         
         // - Geometry
+        let sizeTitleEmptyStyle: CGFloat = 24.0
         let estimatedRowHeight: CGFloat = 96.0
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
     }

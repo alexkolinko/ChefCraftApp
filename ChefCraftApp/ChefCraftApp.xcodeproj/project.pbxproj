@@ -109,6 +109,9 @@
 		96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809426BD2FF000ADFFD0 /* RMRecipe.swift */; };
 		96A8809726BD358100ADFFD0 /* DatabaseRecipeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809626BD358100ADFFD0 /* DatabaseRecipeProvider.swift */; };
 		96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */; };
+		96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */; };
+		96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */; };
+		96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */; };
 		96DB582B26CB044900328235 /* RootView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DB582326CB044800328235 /* RootView.storyboard */; };
 		96DB582C26CB044900328235 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582426CB044800328235 /* RootInteractor.swift */; };
 		96DB582D26CB044900328235 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB582526CB044800328235 /* RootViewController.swift */; };
@@ -245,6 +248,9 @@
 		96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefCraftAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CDFF6B26B16ED100652CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellModel.swift; sourceTree = "<group>"; };
 		96DB582326CB044800328235 /* RootView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RootView.storyboard; path = ../../../Desktop/t/RootView.storyboard; sourceTree = "<group>"; };
 		96DB582426CB044800328235 /* RootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootInteractor.swift; path = ../../../Desktop/t/RootInteractor.swift; sourceTree = "<group>"; };
 		96DB582526CB044800328235 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../../../Desktop/t/RootViewController.swift; sourceTree = "<group>"; };
@@ -844,6 +850,23 @@
 			path = HomePresenterTests;
 			sourceTree = "<group>";
 		};
+		96D20D9C26CBF4B8001F91C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */,
+				96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		96D20DA126CBF4E9001F91C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DAA26CBF71F001F91C2 /* FavoriteCellModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		96DB582226CB041F00328235 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +885,8 @@
 		96DB583326CB046B00328235 /* FavoritesView */ = {
 			isa = PBXGroup;
 			children = (
+				96D20DA126CBF4E9001F91C2 /* Models */,
+				96D20D9C26CBF4B8001F91C2 /* Cells */,
 				96DB583626CB048800328235 /* FavoritesBuilder.swift */,
 				96DB583926CB048900328235 /* FavoritesInteractor.swift */,
 				96DB583726CB048800328235 /* FavoritesPresenter.swift */,
@@ -990,6 +1015,7 @@
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
 				962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */,
+				96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */,
 				965D79FD26B8280900D280B3 /* CompositionCell.xib in Resources */,
 				4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */,
 				4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */,
@@ -1174,6 +1200,7 @@
 				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
 				969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
+				96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */,
 				965D79D226B3095C00D280B3 /* RecipeDetailsRoute.swift in Sources */,
 				965D79CE26B3095C00D280B3 /* RecipeDetailsPresenter.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
@@ -1193,6 +1220,7 @@
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
+				96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */,
 				965D7A1F26BAA6CD00D280B3 /* CategoryRecipesInteractor.swift in Sources */,
 				965DA67B26AA97E000958782 /* HomeBuilder.swift in Sources */,
 				965DA69A26AAA0A500958782 /* PushTransition.swift in Sources */,

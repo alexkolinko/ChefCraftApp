@@ -11,7 +11,7 @@
         <!--Recipe Details View Controller-->
         <scene sceneID="96Y-Ll-F2A">
             <objects>
-                <viewController storyboardIdentifier="RecipeDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xGf-CW-Jf8" customClass="RecipeDetailsViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailsViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xGf-CW-Jf8" customClass="RecipeDetailsViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QID-ov-2Ag">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

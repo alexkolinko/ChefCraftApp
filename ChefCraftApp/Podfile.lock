@@ -36,6 +36,7 @@ PODS:
   - SwiftEntryKit (1.2.7):
     - QuickLayout (= 3.0.0)
   - Swinject (2.7.1)
+  - TBEmptyDataSet (3.0)
 
 DEPENDENCIES:
   - Nimble
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - RxSwift
   - SwiftEntryKit
   - Swinject
+  - TBEmptyDataSet
 
 SPEC REPOS:
   trunk:
@@ -66,6 +68,7 @@ SPEC REPOS:
     - RxSwift
     - SwiftEntryKit
     - Swinject
+    - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
@@ -83,7 +86,8 @@ SPEC CHECKSUMS:
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  TBEmptyDataSet: 349add79095bf66d0d11ef9464edd1a8cf5354b5
 
-PODFILE CHECKSUM: c3ea28d5e16da7761b5594b43b91c3e7b383d5ef
+PODFILE CHECKSUM: 697ac3ef40404423c5a747a65f76528767df3c76
 
 COCOAPODS: 1.10.1

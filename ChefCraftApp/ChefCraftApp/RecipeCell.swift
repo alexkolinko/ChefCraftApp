@@ -13,7 +13,6 @@ final class RecipeCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
-    @IBOutlet weak var backgroundCellView: UIView!
     
     // - Private properties
     private let constants: Constants = .init()
@@ -40,7 +39,6 @@ private extension RecipeCell {
     
     private func configUI() {
         recipeImage.clipsToBounds = true
-        backgroundCellView.backgroundColor = .clear
         recipeName.textColor = .gray
         recipeName.font = constants.cellFontMetropolis
         recipeDescription.textColor = .lightGray

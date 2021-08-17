@@ -27,6 +27,15 @@ protocol DatabaseRecipeProviderProtocol {
      Return Single.error(DatabaseErorr.objectNotExist) in case of fail(it seams that there're not any model of user -> so you need to get actual info from network request)
      */
     func getRecipe(id: String) -> Single<Recipe>
+
+    /**
+     Subscribe on recipes, for dynamic handle changes of model. Use it, when you offen comes to View and don't need to user network for data updating.
+     
+     - Returns:
+     Return Observable<[Recipe]> in success cases(it seams that model existing in local storage and it's not corrupated).
+     Return Observable.empty in error cases, because Observable.eror will destroy your binder or subscribtion. Error case seams that your object or not exist, or data base if corrupted.
+     */
+    func subscribeOnRecipes() -> Observable<[Recipe]>
 }
 
 // MARK: - DatabaseRecipeProvider
@@ -41,6 +50,13 @@ class DatabaseRecipeProvider {
 // MARK: - DatabaseRecipeProvider: DatabaseRecipeProviderProtocol
 extension DatabaseRecipeProvider: DatabaseRecipeProviderProtocol {
     
+    func subscribeOnRecipes() -> Observable<[Recipe]> {
+        return self.storage.subscribeOnDomainObjects(realmType: RMRecipe.self)
+            .flatMap { data, _ -> Observable<[Recipe]> in
+                return Observable.just(data)
+            }
+    }
+        
     func saveRecipe(with model: Recipe) -> Completable {
         return self.storage.setDomainObject(realmType: RMRecipe.self, model: model)
     }

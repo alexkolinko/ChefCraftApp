@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - CategoryRecipeCellModel
 struct CategoryRecipeCellModel: IdentifiableType {
-    /// JSON model of FuelTerminalModel
+    /// JSON model of Recipe
     var model: Recipe
     
     var identity: String {
@@ -18,7 +18,7 @@ struct CategoryRecipeCellModel: IdentifiableType {
     }
 }
 
-// MARK: - FuelTerminalCellModel: Equatable
+// MARK: - CategoryRecipeCellModel: Equatable
 extension CategoryRecipeCellModel: Equatable {
     
     static func == (lhs: CategoryRecipeCellModel, rhs: CategoryRecipeCellModel) -> Bool {

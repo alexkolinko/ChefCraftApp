@@ -9,7 +9,9 @@ import Foundation
 
 enum AppStoryboards: String, CaseIterable {
     
+    case Root
     case Home
+    case Favorites
     case RecipeDetails
     case CategoryRecipes
   

@@ -37,7 +37,7 @@ extension RootTransition: Transition {
         viewController.modalTransitionStyle = modalTransitionStyle
         viewController.modalPresentationStyle = modalPresentationStyle
         
-               let mainWindow = UIApplication.shared.keyWindow
+        let mainWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
          mainWindow?.switchRootViewController(viewController)
          mainWindow?.rootViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }

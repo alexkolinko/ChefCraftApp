@@ -58,10 +58,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5U-bf-upJ">
-                                                        <rect key="frame" x="48" y="0.0" width="220" height="63"/>
+                                                        <rect key="frame" x="48" y="0.0" width="220" height="58"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="oB3-Ny-puY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="63"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="58"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-gS-cFv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
@@ -88,10 +88,10 @@
                                                                         <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="0.0" right="0.0"/>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZRo-xt-R5U">
-                                                                        <rect key="frame" x="0.0" y="14" width="220" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="14" width="220" height="44"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5ck-1W-dqg" customClass="RatingControl" customModule="ChefCraftApp" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="49"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="100" id="bHc-7M-qbO"/>
                                                                                 </constraints>

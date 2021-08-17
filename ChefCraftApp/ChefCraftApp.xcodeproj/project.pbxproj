@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		005B8A7909C90B6E79C3BCCF /* Pods_ChefCraftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */; };
 		4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */; };
-		4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C226A9A14E003FAC6A /* ViewController.swift */; };
-		4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C426A9A14E003FAC6A /* Main.storyboard */; };
 		4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C726A9A150003FAC6A /* Assets.xcassets */; };
 		4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */; };
 		7281B7BEC9DD1EC978F18EBC /* Pods_ChefCraftAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */; };
@@ -147,8 +145,6 @@
 		32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BD8F9BB26A9A14E003FAC6A /* ChefCraftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefCraftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BD8F9C226A9A14E003FAC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BD8F9C526A9A14E003FAC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD8F9C726A9A150003FAC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD8F9CA26A9A150003FAC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD8F9CC26A9A150003FAC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -327,9 +323,6 @@
 				965DA63A26A9BC1A00958782 /* Storage */,
 				965DA63226A9B12000958782 /* Support Files */,
 				965DA63526A9B22300958782 /* Themes */,
-				4BD8F9C226A9A14E003FAC6A /* ViewController.swift */,
-				4BD8F9C426A9A14E003FAC6A /* Main.storyboard */,
-				4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */,
 				4BD8F9CC26A9A150003FAC6A /* Info.plist */,
 			);
 			path = ChefCraftApp;
@@ -632,6 +625,7 @@
 				965D7A1126BAA6A100D280B3 /* CategoryRecipesView */,
 				965D798C26B3075300D280B3 /* RecipeDetailsView */,
 				965DA66D26AA97B400958782 /* HomeView */,
+				96DB584E26CBA64A00328235 /* LaunchView */,
 			);
 			name = Flow;
 			sourceTree = "<group>";
@@ -897,6 +891,14 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
+		96DB584E26CBA64A00328235 /* LaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchView;
+			sourceTree = "<group>";
+		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,7 +1014,6 @@
 				965D79E826B7EE4200D280B3 /* RecipeHeaderCell.xib in Resources */,
 				962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */,
 				96DB584826CB048900328235 /* FavoriteCell.xib in Resources */,
-				4BD8F9C626A9A14E003FAC6A /* Main.storyboard in Resources */,
 				965D7A1A26BAA6CD00D280B3 /* CategoryRecipesView.storyboard in Resources */,
 				965D79F226B819E600D280B3 /* RecipeCompositionsCell.xib in Resources */,
 			);
@@ -1176,7 +1177,6 @@
 				96DB582D26CB044900328235 /* RootViewController.swift in Sources */,
 				965D79DA26B43F8D00D280B3 /* RecipeDetailsViewContent.swift in Sources */,
 				965D2D3E26C514CE00259515 /* RMFavorites.swift in Sources */,
-				4BD8F9C326A9A14E003FAC6A /* ViewController.swift in Sources */,
 				969428C626B0023E00A0D3B6 /* CategoryRecipes.swift in Sources */,
 				965DA69126AAA02A00958782 /* ClosablePushTransition.swift in Sources */,
 				96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */,
@@ -1233,14 +1233,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4BD8F9C426A9A14E003FAC6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD8F9C526A9A14E003FAC6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

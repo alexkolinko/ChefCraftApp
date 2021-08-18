@@ -16,6 +16,7 @@ target 'ChefCraftApp' do
   pod 'SwiftEntryKit'
   pod 'TBEmptyDataSet'
   pod 'SwiftGen', '~> 6.4.0'
+  pod 'SwiftyUserDefaults'
   
   target 'ChefCraftAppTests' do
     inherit! :search_paths

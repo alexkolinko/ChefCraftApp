@@ -37,7 +37,7 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     // - Internal Logic
     func setModel(_ model: RecipeDetailsViewContent.HeaderSection) {
         self.recipeTitle.text = model.title
-        self.recipeOwner.text = "by \(model.owner)"
+        self.recipeOwner.text = "recipe.chef".localized + model.owner
         self.ratingControl.rating.accept(model.stars)
         self.likeButton.rx.isSelected.onNext(model.isLike)
     }

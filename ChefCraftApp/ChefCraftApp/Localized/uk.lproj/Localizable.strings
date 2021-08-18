@@ -1,0 +1,13 @@
+
+
+"localization.language.enum.ukranian" = "Українська";
+
+"tabBar.home.item.title" = "Головна";
+
+"tabBar.favorites.item.title" = "Улюблені";
+
+"favorites.screen.navigation.title" = "Ваші улюблені рецепти";
+
+"favorites.data.empty.title" = "Рецепти порожні";
+
+"recipe.chef" = "від: ";

@@ -36,6 +36,7 @@ PODS:
   - SwiftEntryKit (1.2.7):
     - QuickLayout (= 3.0.0)
   - SwiftGen (6.4.0)
+  - SwiftyUserDefaults (5.3.0)
   - Swinject (2.7.1)
   - TBEmptyDataSet (3.0)
 
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - RxSwift
   - SwiftEntryKit
   - SwiftGen (~> 6.4.0)
+  - SwiftyUserDefaults
   - Swinject
   - TBEmptyDataSet
 
@@ -70,6 +72,7 @@ SPEC REPOS:
     - RxSwift
     - SwiftEntryKit
     - SwiftGen
+    - SwiftyUserDefaults
     - Swinject
     - TBEmptyDataSet
 
@@ -89,9 +92,10 @@ SPEC CHECKSUMS:
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   TBEmptyDataSet: 349add79095bf66d0d11ef9464edd1a8cf5354b5
 
-PODFILE CHECKSUM: 7c2436781ce84762856a1e14760fdf4c0666e7fe
+PODFILE CHECKSUM: 16a2054fd65b97a16cf19ff6000fe948f3e0d0e3
 
 COCOAPODS: 1.10.1

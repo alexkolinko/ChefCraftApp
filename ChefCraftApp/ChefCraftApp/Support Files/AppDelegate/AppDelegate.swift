@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // - Private Service Properties
     private var dependenciesHolder: DependenciesHolder!
+    private var localizationService: LocalizationService?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,9 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.dependenciesHolder = DependenciesHolder()
         let injector = dependenciesHolder.injector()
         self.configureGeneralUI()
+        self.injectorInit(injector: injector)
         self.windowConfig(injector: injector)
         return true
     }
+}
+
+// MARK: - private extension AppDelegate
+private extension AppDelegate {
     
     func windowConfig(injector: Container) {
         window?.overrideUserInterfaceStyle = .light
@@ -44,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+    }
+    
+    func injectorInit(injector: Container) {
+        self.localizationService = injector.resolve(LocalizationService.self)
     }
 }
 

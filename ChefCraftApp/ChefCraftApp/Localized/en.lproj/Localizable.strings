@@ -1,0 +1,14 @@
+
+
+"localization.language.enum.ukranian" = "Ukranian";
+
+"tabBar.home.item.title" = "Home";
+
+"tabBar.favorites.item.title" = "Favorites";
+
+"favorites.navigation.title" = "Your favorites recipes";
+
+"favorites.data.empty.title" = "Recipes is empty";
+
+"recipe.chef" = "by: ";
+

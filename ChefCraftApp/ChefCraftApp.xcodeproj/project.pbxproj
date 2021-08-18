@@ -132,6 +132,11 @@
 		96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DD626CC16D2001F91C2 /* MockedItem.swift */; };
 		96D20DDB26CCFE85001F91C2 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DDA26CCFE85001F91C2 /* swiftgen.yml */; };
 		96D20DDF26CD06C7001F91C2 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */; };
+		96D20DE226CD2515001F91C2 /* LocalizationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */; };
+		96D20DE426CD252C001F91C2 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE326CD252C001F91C2 /* LocalizationService.swift */; };
+		96D20DE926CD272D001F91C2 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */; };
+		96D20E0026CD3719001F91C2 /* LocalizationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DFF26CD3719001F91C2 /* LocalizationExtensions.swift */; };
+		96D20E0426CD3960001F91C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96D20E0626CD3960001F91C2 /* Localizable.strings */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -275,6 +280,13 @@
 		96D20DD626CC16D2001F91C2 /* MockedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedItem.swift; sourceTree = "<group>"; };
 		96D20DDA26CCFE85001F91C2 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationLanguage.swift; sourceTree = "<group>"; };
+		96D20DE326CD252C001F91C2 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		96D20DFF26CD3719001F91C2 /* LocalizationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationExtensions.swift; sourceTree = "<group>"; };
+		96D20E0526CD3960001F91C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96D20E0726CD3975001F91C2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		96D20E0826CD3976001F91C2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +338,7 @@
 		4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */ = {
 			isa = PBXGroup;
 			children = (
+				96D20DE026CD24DC001F91C2 /* Localized */,
 				965D79DB26B4476200D280B3 /* Components */,
 				965DA64B26A9C74D00958782 /* Extensions */,
 				965DA63626A9B2D200958782 /* Flow */,
@@ -651,6 +664,7 @@
 		965DA63A26A9BC1A00958782 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				96D20DE726CD270A001F91C2 /* UserDefaults */,
 				96D20DD126CC14AB001F91C2 /* MockedData */,
 				965DA63B26A9BC2B00958782 /* Realm */,
 			);
@@ -714,6 +728,7 @@
 				960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */,
 				96A3841226AEE7E700F6530C /* Extensions+Rx.swift */,
 				96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */,
+				96D20DFF26CD3719001F91C2 /* LocalizationExtensions.swift */,
 			);
 			path = "Core Extensions";
 			sourceTree = "<group>";
@@ -903,6 +918,24 @@
 			path = GeneratedSwiftGen;
 			sourceTree = "<group>";
 		};
+		96D20DE026CD24DC001F91C2 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */,
+				96D20DE326CD252C001F91C2 /* LocalizationService.swift */,
+				96D20E0626CD3960001F91C2 /* Localizable.strings */,
+			);
+			path = Localized;
+			sourceTree = "<group>";
+		};
+		96D20DE726CD270A001F91C2 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		96DB582226CB041F00328235 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1030,6 +1063,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 4BD8F9B226A9A14E003FAC6A;
 			productRefGroup = 4BD8F9BC26A9A14E003FAC6A /* Products */;
@@ -1060,6 +1094,7 @@
 				965D79ED26B8001800D280B3 /* RecipeAboutCell.xib in Resources */,
 				965D7A2A26BACDE600D280B3 /* CategoryRecipeCell.xib in Resources */,
 				9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */,
+				96D20E0426CD3960001F91C2 /* Localizable.strings in Resources */,
 				965D79CF26B3095C00D280B3 /* RecipeDetailsView.storyboard in Resources */,
 				962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */,
 				96A3840226AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib in Resources */,
@@ -1188,6 +1223,7 @@
 			files = (
 				965DA69526AAA05F00958782 /* ModalTransition.swift in Sources */,
 				965D7A3626BC147300D280B3 /* UIView+Extensions.swift in Sources */,
+				96D20DE226CD2515001F91C2 /* LocalizationLanguage.swift in Sources */,
 				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965D79D326B3095C00D280B3 /* RecipeDetailsBuilder.swift in Sources */,
 				96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */,
@@ -1199,6 +1235,7 @@
 				96D20DB526CBFE76001F91C2 /* FavoritesSectionModel.swift in Sources */,
 				965D7A1926BAA6CC00D280B3 /* CategoryRecipesBuilder.swift in Sources */,
 				96D20DDF26CD06C7001F91C2 /* XCAssets+Generated.swift in Sources */,
+				96D20E0026CD3719001F91C2 /* LocalizationExtensions.swift in Sources */,
 				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
 				96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
@@ -1259,6 +1296,7 @@
 				969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
 				96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */,
+				96D20DE426CD252C001F91C2 /* LocalizationService.swift in Sources */,
 				965D79D226B3095C00D280B3 /* RecipeDetailsRoute.swift in Sources */,
 				965D79CE26B3095C00D280B3 /* RecipeDetailsPresenter.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
@@ -1269,6 +1307,7 @@
 				965D7A1E26BAA6CD00D280B3 /* CategoryRecipesRouter.swift in Sources */,
 				965D7A2426BAC10D00D280B3 /* CategoryRecipeCellModel.swift in Sources */,
 				960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */,
+				96D20DE926CD272D001F91C2 /* DefaultsKeys.swift in Sources */,
 				965D7A2926BACDE600D280B3 /* CategoryRecipeCell.swift in Sources */,
 				96A383FD26AEDBF700F6530C /* UserRecipes.swift in Sources */,
 				965DA67726AA97E000958782 /* HomeRouter.swift in Sources */,
@@ -1312,8 +1351,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				4BD8F9CA26A9A150003FAC6A /* Base */,
+				96D20E0726CD3975001F91C2 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		96D20E0626CD3960001F91C2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96D20E0526CD3960001F91C2 /* en */,
+				96D20E0826CD3976001F91C2 /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1323,6 +1372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1384,6 +1434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -31,7 +31,7 @@ class FavoriteCell: UITableViewCell, CellInizializable {
         self.recipeName.text = model.model.name
         self.recipeDescription.text = model.model.description
         self.ratingControl.rating.accept(model.model.stars)
-        self.recipeOwner.text = "by \(model.model.owner)"
+        self.recipeOwner.text = "recipe.chef".localized + model.model.owner
     }
 }
 

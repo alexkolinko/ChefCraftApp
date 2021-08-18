@@ -110,7 +110,6 @@ extension FavoritesViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSou
 private extension FavoritesViewController {
     
     struct Constants {
-        let backButtonImage = UIImage(named: "backButton")
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
         let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
         

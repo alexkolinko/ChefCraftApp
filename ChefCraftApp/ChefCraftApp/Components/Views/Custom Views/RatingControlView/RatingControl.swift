@@ -20,6 +20,7 @@ import RxCocoa
     // - Private properties
     private(set) var bag = DisposeBag()
     private var ratingButtons = [UIButton]()
+    private let constants: Constants = .init()
     
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
@@ -71,9 +72,9 @@ import RxCocoa
         
         // Load Button Images
         let bundle = Bundle(for: type(of: self))
-        let filledStar = UIImage(named: "icStar", in: bundle, compatibleWith: self.traitCollection)
-        let emptyStar = UIImage(named:"icUnlitStar", in: bundle, compatibleWith: self.traitCollection)
-        let highlightedStar = UIImage(named:"icStar", in: bundle, compatibleWith: self.traitCollection)
+        let filledStar = UIImage(named: self.constants.icStar, in: bundle, compatibleWith: self.traitCollection)
+        let emptyStar = UIImage(named:self.constants.icUnlitStar, in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named:self.constants.icStar, in: bundle, compatibleWith: self.traitCollection)
         
         for index in 0..<starCount {
             // Create the button
@@ -130,5 +131,16 @@ import RxCocoa
             button.accessibilityHint = hintString
             button.accessibilityValue = valueString
         }
+    }
+}
+
+// MARK: - Internal constants
+private extension RatingControl {
+    
+    struct Constants {
+
+        // - Icons
+        let icStar = Asset.Assets.icStar.name
+        let icUnlitStar = Asset.Assets.icUnlitStar.name
     }
 }

@@ -91,8 +91,10 @@ private extension RecipeHeaderCell {
     struct Constants {
         
         // - Icons
-        let unselectedHeartImage = UIImage(named: "icHeart")
-        let selectedHeartImage = UIImage(named: "icRedHeart")
+        let unselectedHeartImage = Asset.Assets.icHeart.image
+        let selectedHeartImage = Asset.Assets.icRedHeart.image
+        
+        // - Fonts
         let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
         let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
     }

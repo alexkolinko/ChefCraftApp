@@ -203,12 +203,12 @@ private extension RecipeDetailsViewController {
         attributes.entryBackground = .visualEffect(style: .standard)
         
         let unselectedImage = EKProperty.ImageContent(
-            image: self.constants.unselectedStarImage!.withRenderingMode(.alwaysTemplate),
+            image: self.constants.unselectedStarImage.withRenderingMode(.alwaysTemplate),
             displayMode: .light,
             tint: .standardContent
         )
         let selectedImage = EKProperty.ImageContent(
-            image: self.constants.selectedStarImage!.withRenderingMode(.alwaysTemplate),
+            image: self.constants.selectedStarImage.withRenderingMode(.alwaysTemplate),
             displayMode: .light,
             tint: EKColor.ratingStar
         )
@@ -358,11 +358,11 @@ private extension RecipeDetailsViewController {
                                   ("👌", "Tasty!"), ("😋", "Delicius!")]
         
         // - Icons
-        let backButtonImage = UIImage(named: "backButton")
-        let selectedStarImage = UIImage(named: "ic_star_selected")
-        let unselectedStarImage = UIImage(named: "ic_star_unselected")
-        let unselectedHeartImage = UIImage(named: "icHeart")
-        let selectedHeartImage = UIImage(named: "icRedHeart")
+        let backButtonImage = Asset.Assets.backButton.image
+        let selectedStarImage = Asset.Assets.icStarSelected.image
+        let unselectedStarImage = Asset.Assets.icStarUnselected.image
+        let unselectedHeartImage = Asset.Assets.icHeart.image
+        let selectedHeartImage = Asset.Assets.icRedHeart.image
 
         // - Fonts
         let fontMetropolis = UIFont(name: "Metropolis", size: 13.0) ?? UIFont.systemFont(ofSize: 13)

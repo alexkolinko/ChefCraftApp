@@ -106,6 +106,7 @@ extension CategoryRecipesViewController {
     }
 }
 
+// MARK: - Internal constants
 private extension CategoryRecipesViewController {
     
     struct Constants {
@@ -115,7 +116,7 @@ private extension CategoryRecipesViewController {
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
         
         // - Icons
-        let backButtonImage = UIImage(named: "backButton")
+        let backButtonImage = Asset.Assets.backButton.image
         
         // - Colors
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)

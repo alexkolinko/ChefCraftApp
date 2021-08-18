@@ -38,9 +38,9 @@ class RootBuilder {
         let homeViewController = UINavigationController(rootViewController: HomeBuilder.build(injector: injector))
         let favoritesViewController = UINavigationController(rootViewController: FavoritesBuilder.build(injector: injector))
         
-        let homeTabItem = UITabBarItem(title: "Home", image: UIImage(named: "icHome")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icHomeSelected")?.withRenderingMode(.alwaysOriginal))
+        let homeTabItem = UITabBarItem(title: "Home", image: UIImage(named: Asset.Assets.icHome.name)?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: Asset.Assets.icHomeSelected.name)?.withRenderingMode(.alwaysOriginal))
         
-        let favoritesTabItem = UITabBarItem(title: "Favorites", image: UIImage(named: "icFavorites")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icFavoritesSelected")?.withRenderingMode(.alwaysOriginal))
+        let favoritesTabItem = UITabBarItem(title: "Favorites", image: UIImage(named: Asset.Assets.icFavorites.name)?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: Asset.Assets.icFavoritesSelected.name)?.withRenderingMode(.alwaysOriginal))
         
         homeTabItem.tag = RootTabItemTags.home.rawValue
         favoritesTabItem.tag = RootTabItemTags.favorites.rawValue

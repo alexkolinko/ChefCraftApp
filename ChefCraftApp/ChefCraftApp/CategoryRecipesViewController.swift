@@ -116,7 +116,7 @@ private extension CategoryRecipesViewController {
         let backButtonFrame = CGRect(x: 0, y: 0, width: 34, height: 34)
         
         // - Icons
-        let backButtonImage = Asset.Assets.backButton.image
+        let backButtonImage = AppImages.backButton.image
         
         // - Colors
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)

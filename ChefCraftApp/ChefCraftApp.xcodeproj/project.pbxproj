@@ -132,11 +132,11 @@
 		96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DD626CC16D2001F91C2 /* MockedItem.swift */; };
 		96D20DDB26CCFE85001F91C2 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DDA26CCFE85001F91C2 /* swiftgen.yml */; };
 		96D20DDF26CD06C7001F91C2 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */; };
-		96D20DE226CD2515001F91C2 /* LocalizationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */; };
-		96D20DE426CD252C001F91C2 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE326CD252C001F91C2 /* LocalizationService.swift */; };
 		96D20DE926CD272D001F91C2 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */; };
 		96D20E0026CD3719001F91C2 /* LocalizationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DFF26CD3719001F91C2 /* LocalizationExtensions.swift */; };
 		96D20E0426CD3960001F91C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96D20E0626CD3960001F91C2 /* Localizable.strings */; };
+		96D20E2D26CE82D4001F91C2 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */; };
+		96D20E3426CE95B5001F91C2 /* structured-swift5-custom.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -280,13 +280,13 @@
 		96D20DD626CC16D2001F91C2 /* MockedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedItem.swift; sourceTree = "<group>"; };
 		96D20DDA26CCFE85001F91C2 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
-		96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationLanguage.swift; sourceTree = "<group>"; };
-		96D20DE326CD252C001F91C2 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		96D20DFF26CD3719001F91C2 /* LocalizationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationExtensions.swift; sourceTree = "<group>"; };
 		96D20E0526CD3960001F91C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96D20E0726CD3975001F91C2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		96D20E0826CD3976001F91C2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "structured-swift5-custom.stencil"; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -338,6 +338,7 @@
 		4BD8F9BD26A9A14E003FAC6A /* ChefCraftApp */ = {
 			isa = PBXGroup;
 			children = (
+				96D20E3226CE958E001F91C2 /* Templates */,
 				96D20DE026CD24DC001F91C2 /* Localized */,
 				965D79DB26B4476200D280B3 /* Components */,
 				965DA64B26A9C74D00958782 /* Extensions */,
@@ -913,6 +914,7 @@
 		96D20DDD26CD0498001F91C2 /* GeneratedSwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */,
 				96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */,
 			);
 			path = GeneratedSwiftGen;
@@ -921,8 +923,6 @@
 		96D20DE026CD24DC001F91C2 /* Localized */ = {
 			isa = PBXGroup;
 			children = (
-				96D20DE126CD2515001F91C2 /* LocalizationLanguage.swift */,
-				96D20DE326CD252C001F91C2 /* LocalizationService.swift */,
 				96D20E0626CD3960001F91C2 /* Localizable.strings */,
 			);
 			path = Localized;
@@ -934,6 +934,14 @@
 				96D20DE826CD272D001F91C2 /* DefaultsKeys.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		96D20E3226CE958E001F91C2 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */,
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 		96DB582226CB041F00328235 /* RootView */ = {
@@ -1083,6 +1091,7 @@
 			files = (
 				962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */,
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
+				96D20E3426CE95B5001F91C2 /* structured-swift5-custom.stencil in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
 				962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */,
 				96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */,
@@ -1223,7 +1232,6 @@
 			files = (
 				965DA69526AAA05F00958782 /* ModalTransition.swift in Sources */,
 				965D7A3626BC147300D280B3 /* UIView+Extensions.swift in Sources */,
-				96D20DE226CD2515001F91C2 /* LocalizationLanguage.swift in Sources */,
 				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965D79D326B3095C00D280B3 /* RecipeDetailsBuilder.swift in Sources */,
 				96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */,
@@ -1283,6 +1291,7 @@
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
 				965D79DA26B43F8D00D280B3 /* RecipeDetailsViewContent.swift in Sources */,
 				965D2D3E26C514CE00259515 /* RMFavorites.swift in Sources */,
+				96D20E2D26CE82D4001F91C2 /* Strings+Generated.swift in Sources */,
 				969428C626B0023E00A0D3B6 /* CategoryRecipes.swift in Sources */,
 				96D20DBD26CC0044001F91C2 /* FavoritesRouter.swift in Sources */,
 				96D20DC526CC0209001F91C2 /* RootRoute.swift in Sources */,
@@ -1296,7 +1305,6 @@
 				969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
 				96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */,
-				96D20DE426CD252C001F91C2 /* LocalizationService.swift in Sources */,
 				965D79D226B3095C00D280B3 /* RecipeDetailsRoute.swift in Sources */,
 				965D79CE26B3095C00D280B3 /* RecipeDetailsPresenter.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,

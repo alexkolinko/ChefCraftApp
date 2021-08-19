@@ -56,7 +56,7 @@ private extension FavoritesViewController {
             .foregroundColor: UIColor.gray,
             .font: self.constants.fontMetropolisBold
         ]
-        self.navigationItem.title = "favorites.screen.navigation.title".localized
+        self.navigationItem.title = AppStrings.Favorites.Navigation.title
     }
     
     func setUpTableView() {
@@ -94,7 +94,7 @@ extension FavoritesViewController {
 extension FavoritesViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
 
     func titleForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
-        return NSAttributedString(string: "favorites.data.empty.title".localized)
+        return NSAttributedString(string: AppStrings.Favorites.Data.Empty.title)
     }
     
     func emptyDataSetScrollEnabled(in scrollView: UIScrollView) -> Bool {

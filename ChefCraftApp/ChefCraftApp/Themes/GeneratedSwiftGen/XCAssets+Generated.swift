@@ -20,31 +20,27 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-internal enum Asset {
-  internal enum Assets {
-    internal static let accentColor = ColorAsset(name: "AccentColor")
-    internal static let backButton = ImageAsset(name: "backButton")
-    internal static let icBell = ImageAsset(name: "icBell")
-    internal static let icFavorites = ImageAsset(name: "icFavorites")
-    internal static let icFavoritesSelected = ImageAsset(name: "icFavoritesSelected")
-    internal static let icHeart = ImageAsset(name: "icHeart")
-    internal static let icHome = ImageAsset(name: "icHome")
-    internal static let icHomeSelected = ImageAsset(name: "icHomeSelected")
-    internal static let icRecipe = ImageAsset(name: "icRecipe")
-    internal static let icRecipeSelected = ImageAsset(name: "icRecipeSelected")
-    internal static let icRedHeart = ImageAsset(name: "icRedHeart")
-    internal static let icSearch = ImageAsset(name: "icSearch")
-    internal static let icStar = ImageAsset(name: "icStar")
-    internal static let icStarDeselect = ImageAsset(name: "icStarDeselect")
-    internal static let icUnlitStar = ImageAsset(name: "icUnlitStar")
-    internal static let icStarSelected = ImageAsset(name: "ic_star_selected")
-    internal static let icStarUnselected = ImageAsset(name: "ic_star_unselected")
-    internal enum MockedAssets {
-      internal static let bitmap = ImageAsset(name: "bitmap")
-      internal static let breakfast = ImageAsset(name: "breakfast")
-      internal static let soup = ImageAsset(name: "soup")
-    }
-  }
+internal enum AppImages {
+  internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let backButton = ImageAsset(name: "backButton")
+  internal static let icBell = ImageAsset(name: "icBell")
+  internal static let icFavorites = ImageAsset(name: "icFavorites")
+  internal static let icFavoritesSelected = ImageAsset(name: "icFavoritesSelected")
+  internal static let icHeart = ImageAsset(name: "icHeart")
+  internal static let icHome = ImageAsset(name: "icHome")
+  internal static let icHomeSelected = ImageAsset(name: "icHomeSelected")
+  internal static let icRecipe = ImageAsset(name: "icRecipe")
+  internal static let icRecipeSelected = ImageAsset(name: "icRecipeSelected")
+  internal static let icRedHeart = ImageAsset(name: "icRedHeart")
+  internal static let icSearch = ImageAsset(name: "icSearch")
+  internal static let icStar = ImageAsset(name: "icStar")
+  internal static let icStarDeselect = ImageAsset(name: "icStarDeselect")
+  internal static let icUnlitStar = ImageAsset(name: "icUnlitStar")
+  internal static let icStarSelected = ImageAsset(name: "ic_star_selected")
+  internal static let icStarUnselected = ImageAsset(name: "ic_star_unselected")
+  internal static let bitmap = ImageAsset(name: "bitmap")
+  internal static let breakfast = ImageAsset(name: "breakfast")
+  internal static let soup = ImageAsset(name: "soup")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -5,14 +5,19 @@ output_dir: ChefCraftApp/Themes/GeneratedSwiftGen/
 
 ## XCAssets
 xcassets:
+- inputs: Themes/Assets.xcassets
+  templateName: swift5
+  output: XCAssets+Generated.swift
+  params:
+    enumName: AppImages
+
+## Strings
+strings:
   inputs:
-    - Themes/Assets.xcassets
-  outputs:
-    templateName: swift5
     # 1
-    params:
-       # 2
-       forceProvidesNamespaces: true
-       # 3
-       forceFileNameEnum: true
-    output: XCAssets+Generated.swift
+    - Localized/en.lproj/Localizable.strings
+  outputs:
+      templatePath: ChefCraftApp/Templates/structured-swift5-custom.stencil
+      output: Strings+Generated.swift
+      params:
+        enumName: AppStrings

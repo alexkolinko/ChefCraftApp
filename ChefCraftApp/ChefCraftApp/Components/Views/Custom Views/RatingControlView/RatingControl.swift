@@ -140,7 +140,7 @@ private extension RatingControl {
     struct Constants {
 
         // - Icons
-        let icStar = Asset.Assets.icStar.name
-        let icUnlitStar = Asset.Assets.icUnlitStar.name
+        let icStar = AppImages.icStar.name
+        let icUnlitStar = AppImages.icUnlitStar.name
     }
 }

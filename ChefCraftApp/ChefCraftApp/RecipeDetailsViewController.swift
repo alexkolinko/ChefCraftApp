@@ -358,11 +358,11 @@ private extension RecipeDetailsViewController {
                                   ("👌", "Tasty!"), ("😋", "Delicius!")]
         
         // - Icons
-        let backButtonImage = Asset.Assets.backButton.image
-        let selectedStarImage = Asset.Assets.icStarSelected.image
-        let unselectedStarImage = Asset.Assets.icStarUnselected.image
-        let unselectedHeartImage = Asset.Assets.icHeart.image
-        let selectedHeartImage = Asset.Assets.icRedHeart.image
+        let backButtonImage = AppImages.backButton.image
+        let selectedStarImage = AppImages.icStarSelected.image
+        let unselectedStarImage = AppImages.icStarUnselected.image
+        let unselectedHeartImage = AppImages.icHeart.image
+        let selectedHeartImage = AppImages.icRedHeart.image
 
         // - Fonts
         let fontMetropolis = UIFont(name: "Metropolis", size: 13.0) ?? UIFont.systemFont(ofSize: 13)

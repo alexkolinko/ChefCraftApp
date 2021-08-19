@@ -20,11 +20,6 @@ class DependenciesHolder {
         // MARK: - SINGLETON INJECTS
         //
         
-        // Register 'LocalizationService' instance
-        container.register(LocalizationService.self) { _ -> LocalizationService in
-            return LocalizationService()
-        }.inObjectScope(.container)
-        
         // Register DatabaseFavoritesProvider. New instance created on each 'resolve()'
         container.register(DatabaseFavoritesProvider.self) { resolver -> DatabaseFavoritesProvider in
             return DatabaseFavoritesProvider(storage: resolver.resolve(RealmStorageManager.self)!)

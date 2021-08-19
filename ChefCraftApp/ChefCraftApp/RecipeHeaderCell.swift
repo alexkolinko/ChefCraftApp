@@ -37,7 +37,7 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     // - Internal Logic
     func setModel(_ model: RecipeDetailsViewContent.HeaderSection) {
         self.recipeTitle.text = model.title
-        self.recipeOwner.text = "recipe.chef".localized + model.owner
+        self.recipeOwner.text = AppStrings.Recipe.chef + model.owner
         self.ratingControl.rating.accept(model.stars)
         self.likeButton.rx.isSelected.onNext(model.isLike)
     }
@@ -91,8 +91,8 @@ private extension RecipeHeaderCell {
     struct Constants {
         
         // - Icons
-        let unselectedHeartImage = Asset.Assets.icHeart.image
-        let selectedHeartImage = Asset.Assets.icRedHeart.image
+        let unselectedHeartImage = AppImages.icHeart.image
+        let selectedHeartImage = AppImages.icRedHeart.image
         
         // - Fonts
         let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)

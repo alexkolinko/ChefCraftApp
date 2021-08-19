@@ -6,7 +6,7 @@
 
 "tabBar.favorites.item.title" = "Улюблені";
 
-"favorites.screen.navigation.title" = "Ваші улюблені рецепти";
+"favorites.navigation.title" = "Ваші улюблені рецепти";
 
 "favorites.data.empty.title" = "Рецепти порожні";
 

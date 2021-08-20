@@ -53,7 +53,7 @@ private extension FavoritesViewController {
     
     func setUpNavigationBar() {
         navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.gray,
+            .foregroundColor: AppColors.frenchGrey.color,
             .font: self.constants.fontMetropolisBold
         ]
         self.navigationItem.title = AppStrings.Favorites.Navigation.title

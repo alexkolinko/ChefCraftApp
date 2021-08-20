@@ -24,6 +24,8 @@
 		962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E226AAD2F300200576 /* Metropolis-Medium.otf */; };
 		962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E426AAD30000200576 /* Metropolis-Regular.otf */; };
 		962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */; };
+		9624566626CFD4C200E9548F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624566526CFD4C200E9548F /* Colors.xcassets */; };
+		9624566826CFD54000E9548F /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624566726CFD54000E9548F /* Colors+Generated.swift */; };
 		9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */; };
 		9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */; };
 		9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083D26AF1AF4006F54CC /* RecipeCell.swift */; };
@@ -171,6 +173,8 @@
 		962418E226AAD2F300200576 /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
 		962418E426AAD30000200576 /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
 		962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		9624566526CFD4C200E9548F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9624566726CFD54000E9548F /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesHeaderCell.swift; sourceTree = "<group>"; };
 		9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesHeaderCell.xib; sourceTree = "<group>"; };
 		9648083D26AF1AF4006F54CC /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -635,6 +639,7 @@
 				96D20DDD26CD0498001F91C2 /* GeneratedSwiftGen */,
 				962418DD26AAD26A00200576 /* Fonts */,
 				4BD8F9C726A9A150003FAC6A /* Assets.xcassets */,
+				9624566526CFD4C200E9548F /* Colors.xcassets */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -912,6 +917,7 @@
 		96D20DDD26CD0498001F91C2 /* GeneratedSwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				9624566726CFD54000E9548F /* Colors+Generated.swift */,
 				96D20E3B26CFAD1B001F91C2 /* Fonts+Generated.swift */,
 				96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */,
 				96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */,
@@ -1115,6 +1121,7 @@
 				965D7A2A26BACDE600D280B3 /* CategoryRecipeCell.xib in Resources */,
 				9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */,
 				96D20E0426CD3960001F91C2 /* Localizable.strings in Resources */,
+				9624566626CFD4C200E9548F /* Colors.xcassets in Resources */,
 				965D79CF26B3095C00D280B3 /* RecipeDetailsView.storyboard in Resources */,
 				962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */,
 				96A3840226AEE1C300F6530C /* CollectionsRecipesHeaderCell.xib in Resources */,
@@ -1215,7 +1222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PODSROOT=\"$1\"\nOUTPUT_FILES=(ChefCraftApp/Themes/GeneratedSwiftGen/Fonts+Generated.swift, ChefCraftApp/Themes/GeneratedSwiftGen/Strings+Generated.swift,  ChefCraftApp/Themes/GeneratedSwiftGen/XCAssets+Generated.swift)\n\nCOUNTER=0\nwhile [ $COUNTER -lt ${SCRIPT_OUTPUT_FILE_COUNT} ];\ndo\n    tmp=\"SCRIPT_OUTPUT_FILE_$COUNTER\"\n    OUTPUT_FILES+=(${!tmp})\n    COUNTER=$[$COUNTER+1]\ndone\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    if [ -f $file ]\n    then\n        chmod a=rw \"$file\"\n    fi\ndone\n\n\"$PODS_ROOT\"/SwiftGen/bin/swiftgen\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    chmod a=r \"$file\"\ndone\n";
+			shellScript = "PODSROOT=\"$1\"\nOUTPUT_FILES=(ChefCraftApp/Themes/GeneratedSwiftGen/Fonts+Generated.swift, ChefCraftApp/Themes/GeneratedSwiftGen/Strings+Generated.swift,  ChefCraftApp/Themes/GeneratedSwiftGen/XCAssets+Generated.swift,  ChefCraftApp/Themes/GeneratedSwiftGen/Colors+Generated.swift)\n\nCOUNTER=0\nwhile [ $COUNTER -lt ${SCRIPT_OUTPUT_FILE_COUNT} ];\ndo\n    tmp=\"SCRIPT_OUTPUT_FILE_$COUNTER\"\n    OUTPUT_FILES+=(${!tmp})\n    COUNTER=$[$COUNTER+1]\ndone\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    if [ -f $file ]\n    then\n        chmod a=rw \"$file\"\n    fi\ndone\n\n\"$PODS_ROOT\"/SwiftGen/bin/swiftgen\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    chmod a=r \"$file\"\ndone\n";
 		};
 		AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1336,6 +1343,7 @@
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
+				9624566826CFD54000E9548F /* Colors+Generated.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
 				96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */,
 				965D7A1F26BAA6CD00D280B3 /* CategoryRecipesInteractor.swift in Sources */,

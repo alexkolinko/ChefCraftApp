@@ -30,3 +30,11 @@ fonts:
     output: Fonts+Generated.swift
     params:
         enumName: AppFonts
+
+## Colors
+xcassets:
+- inputs: Themes/Colors.xcassets
+  templateName: swift5
+  output: Colors+Generated.swift
+  params:
+    enumName: AppColors

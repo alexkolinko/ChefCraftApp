@@ -51,6 +51,6 @@ private extension RecipeCell {
     
     struct Constants {
         let cellImageCornerRadius: CGFloat = 20
-        let cellFontMetropolis = UIFont(name: "Metropolis", size: 12.0) ?? UIFont.systemFont(ofSize: 12)
+        let cellFontMetropolis = AppFonts.Metropolis.regular.font(size: 12.0)
     }
 }

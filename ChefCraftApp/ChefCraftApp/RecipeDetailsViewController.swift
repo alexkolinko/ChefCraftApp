@@ -366,7 +366,7 @@ private extension RecipeDetailsViewController {
 
         // - Fonts
         let fontMetropolis = UIFont(name: "Metropolis", size: 13.0) ?? UIFont.systemFont(ofSize: 13)
-        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
-        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0) ?? UIFont.systemFont(ofSize: 10)
+        let fontMetropolisBold = AppFonts.Metropolis.bold.font(size: 18.0)
+        let fontMetropolisLight = AppFonts.Metropolis.light.font(size: 10.0)
     }
 }

@@ -60,8 +60,8 @@ private extension CategoryRecipeCell {
     
     struct Constants {
         let cellImageCornerRadius: CGFloat = 10
-        let cellFontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 15.0)
-        let cellFontMetropolis = UIFont(name: "Metropolis", size: 13.0)
+        let cellFontMetropolisBold = AppFonts.Metropolis.bold.font(size: 15.0)
+        let cellFontMetropolis = AppFonts.Metropolis.regular.font(size: 13.0)
     }
 }
 

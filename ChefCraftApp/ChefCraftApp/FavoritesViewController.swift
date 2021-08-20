@@ -111,8 +111,7 @@ private extension FavoritesViewController {
     
     struct Constants {
         let backButtonBackgroundColor: UIColor = .white.withAlphaComponent(0.2)
-        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0) ?? UIFont.systemFont(ofSize: 18)
-        
+        let fontMetropolisBold = AppFonts.Metropolis.bold.font(size: 18.0)        
         // - Geometry
         let sizeTitleEmptyStyle: CGFloat = 24.0
         let estimatedRowHeight: CGFloat = 96.0

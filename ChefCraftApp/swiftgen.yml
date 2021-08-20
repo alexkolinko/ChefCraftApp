@@ -21,3 +21,12 @@ strings:
       output: Strings+Generated.swift
       params:
         enumName: AppStrings
+
+## Fonts
+fonts:
+  inputs: Themes/Fonts
+  outputs:
+    templateName: swift5
+    output: Fonts+Generated.swift
+    params:
+        enumName: AppFonts

@@ -137,6 +137,7 @@
 		96D20E0426CD3960001F91C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96D20E0626CD3960001F91C2 /* Localizable.strings */; };
 		96D20E2D26CE82D4001F91C2 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */; };
 		96D20E3426CE95B5001F91C2 /* structured-swift5-custom.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */; };
+		96D20E3C26CFAD1B001F91C2 /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20E3B26CFAD1B001F91C2 /* Fonts+Generated.swift */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +288,7 @@
 		96D20E0826CD3976001F91C2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "structured-swift5-custom.stencil"; sourceTree = "<group>"; };
+		96D20E3B26CFAD1B001F91C2 /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -381,11 +383,7 @@
 		962418DD26AAD26A00200576 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				962418E026AAD2D600200576 /* Metropolis-Light.otf */,
-				962418DE26AAD2C800200576 /* Metropolis-Bold.otf */,
-				962418E226AAD2F300200576 /* Metropolis-Medium.otf */,
-				962418E426AAD30000200576 /* Metropolis-Regular.otf */,
-				962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */,
+				96D20E3D26CFAD5C001F91C2 /* Metropolis */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -914,6 +912,7 @@
 		96D20DDD26CD0498001F91C2 /* GeneratedSwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				96D20E3B26CFAD1B001F91C2 /* Fonts+Generated.swift */,
 				96D20E2C26CE82D4001F91C2 /* Strings+Generated.swift */,
 				96D20DDE26CD06C7001F91C2 /* XCAssets+Generated.swift */,
 			);
@@ -942,6 +941,18 @@
 				96D20E3326CE95B5001F91C2 /* structured-swift5-custom.stencil */,
 			);
 			path = Templates;
+			sourceTree = "<group>";
+		};
+		96D20E3D26CFAD5C001F91C2 /* Metropolis */ = {
+			isa = PBXGroup;
+			children = (
+				962418E026AAD2D600200576 /* Metropolis-Light.otf */,
+				962418DE26AAD2C800200576 /* Metropolis-Bold.otf */,
+				962418E226AAD2F300200576 /* Metropolis-Medium.otf */,
+				962418E426AAD30000200576 /* Metropolis-Regular.otf */,
+				962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */,
+			);
+			path = Metropolis;
 			sourceTree = "<group>";
 		};
 		96DB582226CB041F00328235 /* RootView */ = {
@@ -1244,6 +1255,7 @@
 				965D7A1926BAA6CC00D280B3 /* CategoryRecipesBuilder.swift in Sources */,
 				96D20DDF26CD06C7001F91C2 /* XCAssets+Generated.swift in Sources */,
 				96D20E0026CD3719001F91C2 /* LocalizationExtensions.swift in Sources */,
+				96D20E3C26CFAD1B001F91C2 /* Fonts+Generated.swift in Sources */,
 				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
 				96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,

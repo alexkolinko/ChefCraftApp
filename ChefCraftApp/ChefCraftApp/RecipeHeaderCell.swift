@@ -95,7 +95,7 @@ private extension RecipeHeaderCell {
         let selectedHeartImage = AppImages.icRedHeart.image
         
         // - Fonts
-        let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
-        let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
+        let fontMetropolisBold = AppFonts.Metropolis.bold.font(size: 18.0)
+        let fontMetropolisLight = AppFonts.Metropolis.light.font(size: 10.0)
     }
 }

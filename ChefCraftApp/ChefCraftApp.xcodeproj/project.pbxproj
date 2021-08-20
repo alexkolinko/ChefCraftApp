@@ -1215,7 +1215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi \n";
+			shellScript = "PODSROOT=\"$1\"\nOUTPUT_FILES=(ChefCraftApp/Themes/GeneratedSwiftGen/Fonts+Generated.swift, ChefCraftApp/Themes/GeneratedSwiftGen/Strings+Generated.swift,  ChefCraftApp/Themes/GeneratedSwiftGen/XCAssets+Generated.swift)\n\nCOUNTER=0\nwhile [ $COUNTER -lt ${SCRIPT_OUTPUT_FILE_COUNT} ];\ndo\n    tmp=\"SCRIPT_OUTPUT_FILE_$COUNTER\"\n    OUTPUT_FILES+=(${!tmp})\n    COUNTER=$[$COUNTER+1]\ndone\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    if [ -f $file ]\n    then\n        chmod a=rw \"$file\"\n    fi\ndone\n\n\"$PODS_ROOT\"/SwiftGen/bin/swiftgen\n\nfor file in \"${OUTPUT_FILES[@]}\"\ndo\n    chmod a=r \"$file\"\ndone\n";
 		};
 		AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -81,7 +81,18 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     
     func updateRating(_ rating: Int) {
         guard let recipe = self.recipeData.value else { return }
-        let newModel = Recipe(id: recipe.id, name: recipe.name, image: recipe.image, description: recipe.description, owner: recipe.owner, isLike: recipe.isLike, stars: rating, about: recipe.about, compositions: recipe.compositions)
+        let newModel = Recipe(
+            id: recipe.id,
+            name: recipe.name,
+            image: recipe.image,
+            description: recipe.description,
+            owner: recipe.owner,
+            isLike: recipe.isLike,
+            cooked: recipe.cooked,
+            stars: rating,
+            about: recipe.about,
+            compositions: recipe.compositions
+        )
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
 }

@@ -16,6 +16,7 @@ final class RMRecipe: Object {
     @objc dynamic var descriptionRecipe: String = ""
     @objc dynamic var owner: String = ""
     @objc dynamic var isLike: Bool = false
+    @objc dynamic var cooked: Bool = false
     @objc dynamic var stars: Int = 0
     @objc dynamic var about: String = ""
     @objc dynamic var compositions = Data()
@@ -31,6 +32,7 @@ final class RMRecipe: Object {
         self.descriptionRecipe = domain.description
         self.owner = domain.owner
         self.isLike = domain.isLike
+        self.cooked = domain.cooked
         self.stars = domain.stars
         self.about = domain.about
         
@@ -47,7 +49,18 @@ extension RMRecipe: DomainConvertibleType {
         
         let decoder = JSONDecoder()
         let compositions = (try? decoder.decode([RecipeComposition].self, from: self.compositions)) ?? []
-        return Recipe(id: self.id, name: self.name, image: self.image, description: self.descriptionRecipe, owner: self.owner, isLike: self.isLike, stars: self.stars, about: self.about, compositions: compositions)
+        return Recipe(
+            id: self.id,
+            name: self.name,
+            image: self.image,
+            description: self.descriptionRecipe,
+            owner: self.owner,
+            isLike: self.isLike,
+            cooked: self.cooked,
+            stars: self.stars,
+            about: self.about,
+            compositions: compositions
+        )
     }
     
     func fromDomain(domain: Recipe) {

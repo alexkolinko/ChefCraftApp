@@ -108,6 +108,7 @@
 		96A3841B26AEEBBC00F6530C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */; };
 		96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809426BD2FF000ADFFD0 /* RMRecipe.swift */; };
 		96A8809726BD358100ADFFD0 /* DatabaseRecipeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809626BD358100ADFFD0 /* DatabaseRecipeProvider.swift */; };
+		96BDE9432762809D00F12ADE /* RecipeDetailsPresenter+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDE9422762809D00F12ADE /* RecipeDetailsPresenter+Models.swift */; };
 		96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */; };
 		96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */; };
 		96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */; };
@@ -247,6 +248,7 @@
 		96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		96A8809426BD2FF000ADFFD0 /* RMRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRecipe.swift; sourceTree = "<group>"; };
 		96A8809626BD358100ADFFD0 /* DatabaseRecipeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecipeProvider.swift; sourceTree = "<group>"; };
+		96BDE9422762809D00F12ADE /* RecipeDetailsPresenter+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDetailsPresenter+Models.swift"; sourceTree = "<group>"; };
 		96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefCraftAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CDFF6B26B16ED100652CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				965D79D926B43F8D00D280B3 /* RecipeDetailsViewContent.swift */,
+				96BDE9422762809D00F12ADE /* RecipeDetailsPresenter+Models.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1178,6 +1181,7 @@
 				965D79E326B447F900D280B3 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				965D79FC26B8280900D280B3 /* CompositionCell.swift in Sources */,
 				965DA69F26AAA1AF00958782 /* UIWindow+switchRoot.swift in Sources */,
+				96BDE9432762809D00F12ADE /* RecipeDetailsPresenter+Models.swift in Sources */,
 				965DA68826AA9F7400958782 /* InjectorProtocol.swift in Sources */,
 				965D7A1C26BAA6CD00D280B3 /* CategoryRecipesRoute.swift in Sources */,
 				965DA68626AA9F5400958782 /* ClosableRouterProtocol.swift in Sources */,
@@ -1407,7 +1411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8X375UDGCY;
+				DEVELOPMENT_TEAM = Z9KD6SGS6V;
 				INFOPLIST_FILE = ChefCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1427,7 +1431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8X375UDGCY;
+				DEVELOPMENT_TEAM = Z9KD6SGS6V;
 				INFOPLIST_FILE = ChefCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

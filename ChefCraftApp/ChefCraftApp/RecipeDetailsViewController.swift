@@ -16,7 +16,7 @@ class RecipeDetailsViewController: UIViewController, StoryboardInitializable {
     @IBOutlet weak var contentCollectionView: UICollectionView!
     
     // - Internal properties
-    var presenter: RecipeDetailsPresenter!
+    var presenter: RecipeDetailsPresenterProtocol!
     
     // - Private properties
     private let constants: Constants = .init()
@@ -41,27 +41,21 @@ extension RecipeDetailsViewController {
     // - Binding Setup
     func configBinding() {
         
-        let viewData = presenter.viewDataPublisher
-            .observe(on: MainScheduler.instance)
-        
-        viewData.asObservable()
-            .map({ $0?.content })
-            .ignoreNil()
+        presenter.output.content
+            .observe(on: MainScheduler.asyncInstance)
             .map { [$0.sectionModel] }
             .bind(to: contentCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        viewData.asObservable()
-            .map({ $0?.imageHeader })
-            .ignoreNil()
+        presenter.output.imageHeader
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe (onNext: { [weak self] image in
                 self?.configureParalaxHeader(image)
             })
             .disposed(by: self.disposeBag)
-        
-        viewData.asObservable()
-            .map({ $0?.applyLikeAction })
-            .ignoreNil()
+
+        presenter.output.applyLikeAction
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe (onNext: { [weak self] value in
                 self?.likeAction(value)
             })
@@ -113,7 +107,7 @@ extension RecipeDetailsViewController {
     
     // - Selectors
     @objc func closeButton() {
-        self.presenter.popView()
+        self.presenter.input.onAction.onNext(.popView)
     }
 }
 
@@ -121,7 +115,8 @@ extension RecipeDetailsViewController {
 extension RecipeDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let item = self.presenter.viewDataPublisher.value?.content?.sectionModel.items[indexPath.row] else {
+        guard let item = self.presenter.getItem(index: indexPath.row)
+        else {
             return .zero
         }
         return item.calculateItemSize(width: collectionView.frame.width)
@@ -144,26 +139,23 @@ extension RecipeDetailsViewController {
                         self?.showRatingView()
                     })
                     .disposed(by: cell.bag)
-                
+
                 cell.selectedLike
                     .asObservable()
                     .ignoreNil()
+                    .observe(on: MainScheduler.asyncInstance)
                     .subscribe (onNext: { [weak self] isLike in
-                        self?.presenter.selectLike(isLike)
+                        self?.presenter.input.onAction.onNext(.selectLike(isLike))
                     })
                     .disposed(by: cell.bag)
                 
-                self?.presenter.viewDataPublisher
-                    .asObservable()
-                    .ignoreNil()
-                    .map { $0.applyLikeAction }
+                self?.presenter.output.applyLikeAction
+                    .observe(on: MainScheduler.asyncInstance)
                     .bind(to: cell.isLike)
                     .disposed(by: cell.bag)
                 
-                self?.presenter.viewDataPublisher
-                    .asObservable()
-                    .ignoreNil()
-                    .map { $0.applyRatingSelected }
+                self?.presenter.output.applyRatingSelected
+                    .observe(on: MainScheduler.asyncInstance)
                     .bind(to: cell.rating)
                     .disposed(by: cell.bag)
                 
@@ -291,7 +283,7 @@ private extension RecipeDetailsViewController {
             backgroundColor: .clear,
             highlightedBackgroundColor: greenColor.with(alpha: 0.05),
             displayMode: EKAttributes.DisplayMode.inferred) { [weak self] in
-            self?.presenter.selectRating(rating)
+                self?.presenter.input.onAction.onNext(.selectRating(rating))
             SwiftEntryKit.dismiss()
         }
         let buttonsBarContent = EKProperty.ButtonBarContent(

@@ -11,6 +11,7 @@ enum AppStoryboards: String, CaseIterable {
     
     case Root
     case Home
+    case Profile
     case Favorites
     case RecipeDetails
     case CategoryRecipes

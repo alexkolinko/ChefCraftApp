@@ -37,20 +37,26 @@ class RootBuilder {
         // - Child View Controlllers init
         let homeViewController = UINavigationController(rootViewController: HomeBuilder.build(injector: injector))
         let favoritesViewController = UINavigationController(rootViewController: FavoritesBuilder.build(injector: injector))
+        let profileViewController = UINavigationController(rootViewController: ProfileBuilder.build(injector: injector))
         
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage(named: "icHome")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icHomeSelected")?.withRenderingMode(.alwaysOriginal))
         
         let favoritesTabItem = UITabBarItem(title: "Favorites", image: UIImage(named: "icFavorites")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icFavoritesSelected")?.withRenderingMode(.alwaysOriginal))
         
+        let profileTabItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
+        
         homeTabItem.tag = RootTabItemTags.home.rawValue
         favoritesTabItem.tag = RootTabItemTags.favorites.rawValue
+        profileTabItem.tag = RootTabItemTags.profile.rawValue
         
         homeViewController.tabBarItem = homeTabItem
         favoritesViewController.tabBarItem = favoritesTabItem
+        profileViewController.tabBarItem = profileTabItem
         
         return [
             homeViewController,
-            favoritesViewController
+            favoritesViewController,
+            profileViewController
         ]
     }
 }

@@ -134,6 +134,13 @@
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
 		96E2BBC327677E1000502CDB /* UserProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBC227677E1000502CDB /* UserProgressService.swift */; };
 		96E2BBC527677EB100502CDB /* UserProgressService+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBC427677EB100502CDB /* UserProgressService+Models.swift */; };
+		96E2BBD027678E8B00502CDB /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E2BBC927678E8B00502CDB /* ProfileView.storyboard */; };
+		96E2BBD127678E8B00502CDB /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCA27678E8B00502CDB /* ProfilePresenter.swift */; };
+		96E2BBD227678E8B00502CDB /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCB27678E8B00502CDB /* ProfileRouter.swift */; };
+		96E2BBD327678E8B00502CDB /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCC27678E8B00502CDB /* ProfileRoute.swift */; };
+		96E2BBD427678E8B00502CDB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCD27678E8B00502CDB /* ProfileViewController.swift */; };
+		96E2BBD527678E8B00502CDB /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCE27678E8B00502CDB /* ProfileBuilder.swift */; };
+		96E2BBD627678E8B00502CDB /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCF27678E8B00502CDB /* ProfileInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +285,13 @@
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
 		96E2BBC227677E1000502CDB /* UserProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressService.swift; sourceTree = "<group>"; };
 		96E2BBC427677EB100502CDB /* UserProgressService+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProgressService+Models.swift"; sourceTree = "<group>"; };
+		96E2BBC927678E8B00502CDB /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
+		96E2BBCA27678E8B00502CDB /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		96E2BBCB27678E8B00502CDB /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		96E2BBCC27678E8B00502CDB /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
+		96E2BBCD27678E8B00502CDB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		96E2BBCE27678E8B00502CDB /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
+		96E2BBCF27678E8B00502CDB /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -637,6 +651,7 @@
 				965D7A1126BAA6A100D280B3 /* CategoryRecipesView */,
 				965D798C26B3075300D280B3 /* RecipeDetailsView */,
 				965DA66D26AA97B400958782 /* HomeView */,
+				96E2BBC827678E6A00502CDB /* ProfileView */,
 				96DB584E26CBA64A00328235 /* LaunchView */,
 			);
 			name = Flow;
@@ -970,6 +985,20 @@
 			path = "Support Classes";
 			sourceTree = "<group>";
 		};
+		96E2BBC827678E6A00502CDB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				96E2BBC927678E8B00502CDB /* ProfileView.storyboard */,
+				96E2BBCA27678E8B00502CDB /* ProfilePresenter.swift */,
+				96E2BBCB27678E8B00502CDB /* ProfileRouter.swift */,
+				96E2BBCC27678E8B00502CDB /* ProfileRoute.swift */,
+				96E2BBCD27678E8B00502CDB /* ProfileViewController.swift */,
+				96E2BBCE27678E8B00502CDB /* ProfileBuilder.swift */,
+				96E2BBCF27678E8B00502CDB /* ProfileInteractor.swift */,
+			);
+			name = ProfileView;
+			sourceTree = "<group>";
+		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,6 +1095,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */,
+				96E2BBD027678E8B00502CDB /* ProfileView.storyboard in Resources */,
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
 				962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */,
@@ -1203,6 +1233,7 @@
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
 				96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */,
+				96E2BBD127678E8B00502CDB /* ProfilePresenter.swift in Sources */,
 				965D79D026B3095C00D280B3 /* RecipeDetailsInteractor.swift in Sources */,
 				965D79EC26B8001800D280B3 /* RecipeAboutCell.swift in Sources */,
 				969428C826B0026B00A0D3B6 /* Recipe.swift in Sources */,
@@ -1221,6 +1252,7 @@
 				965D7A2626BAC4F100D280B3 /* CategoryRecipesSectionModel.swift in Sources */,
 				969428D526B0608E00A0D3B6 /* RecipeCompositionType.swift in Sources */,
 				96E2BBC527677EB100502CDB /* UserProgressService+Models.swift in Sources */,
+				96E2BBD327678E8B00502CDB /* ProfileRoute.swift in Sources */,
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965D79F126B819E600D280B3 /* RecipeCompositionsCell.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,
@@ -1234,6 +1266,7 @@
 				96D20DC326CC01E7001F91C2 /* RootPresenter.swift in Sources */,
 				96A8809726BD358100ADFFD0 /* DatabaseRecipeProvider.swift in Sources */,
 				96A3841826AEEAAB00F6530C /* CollectionRecipesCell.swift in Sources */,
+				96E2BBD227678E8B00502CDB /* ProfileRouter.swift in Sources */,
 				965DA68C26AA9FC400958782 /* AnimatorProtocol.swift in Sources */,
 				96D20DAD26CBFD00001F91C2 /* FavoritesBuilder.swift in Sources */,
 				965DA64E26A9C77F00958782 /* RealmResults+Array.swift in Sources */,
@@ -1245,6 +1278,7 @@
 				96D20DB826CBFEC7001F91C2 /* FavoritesViewController.swift in Sources */,
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
 				965DA69726AAA07900958782 /* Transition.swift in Sources */,
+				96E2BBD527678E8B00502CDB /* ProfileBuilder.swift in Sources */,
 				965D79DA26B43F8D00D280B3 /* RecipeDetailsViewContent.swift in Sources */,
 				965D2D3E26C514CE00259515 /* RMFavorites.swift in Sources */,
 				969428C626B0023E00A0D3B6 /* CategoryRecipes.swift in Sources */,
@@ -1263,6 +1297,7 @@
 				965D79D226B3095C00D280B3 /* RecipeDetailsRoute.swift in Sources */,
 				965D79CE26B3095C00D280B3 /* RecipeDetailsPresenter.swift in Sources */,
 				965DA64826A9BDA500958782 /* RealmStorageManager.swift in Sources */,
+				96E2BBD427678E8B00502CDB /* ProfileViewController.swift in Sources */,
 				965DA69D26AAA13800958782 /* FadeAnimator.swift in Sources */,
 				9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */,
 				965D79DF26B447CC00D280B3 /* ParallaxHeader.swift in Sources */,
@@ -1277,6 +1312,7 @@
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
+				96E2BBD627678E8B00502CDB /* ProfileInteractor.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
 				96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */,

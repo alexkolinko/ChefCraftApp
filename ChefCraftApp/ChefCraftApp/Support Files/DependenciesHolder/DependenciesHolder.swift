@@ -35,6 +35,11 @@ class DependenciesHolder {
             return RealmStorageManager()
         }.inObjectScope(.transient)
         
+        // Register UserProgressService. New instance created on each 'resolve()'
+        container.register(UserProgressService.self) { _ -> UserProgressService in
+            return UserProgressService()
+        }.inObjectScope(.transient)
+        
         return container
     }
 }

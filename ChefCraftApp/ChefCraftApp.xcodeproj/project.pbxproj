@@ -132,6 +132,8 @@
 		96D20DD026CC0786001F91C2 /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DCF26CC0786001F91C2 /* FavoritesPresenterTests.swift */; };
 		96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DD626CC16D2001F91C2 /* MockedItem.swift */; };
 		96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB584B26CB050300328235 /* TabBarTransaction.swift */; };
+		96E2BBC327677E1000502CDB /* UserProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBC227677E1000502CDB /* UserProgressService.swift */; };
+		96E2BBC527677EB100502CDB /* UserProgressService+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBC427677EB100502CDB /* UserProgressService+Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +276,8 @@
 		96D20DCF26CC0786001F91C2 /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
 		96D20DD626CC16D2001F91C2 /* MockedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedItem.swift; sourceTree = "<group>"; };
 		96DB584B26CB050300328235 /* TabBarTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTransaction.swift; sourceTree = "<group>"; };
+		96E2BBC227677E1000502CDB /* UserProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressService.swift; sourceTree = "<group>"; };
+		96E2BBC427677EB100502CDB /* UserProgressService+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProgressService+Models.swift"; sourceTree = "<group>"; };
 		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 				965DA64B26A9C74D00958782 /* Extensions */,
 				965DA63626A9B2D200958782 /* Flow */,
 				965DA63A26A9BC1A00958782 /* Storage */,
+				96E2BBBF27677D3B00502CDB /* Services */,
 				965DA63226A9B12000958782 /* Support Files */,
 				965DA63526A9B22300958782 /* Themes */,
 				4BD8F9CC26A9A150003FAC6A /* Info.plist */,
@@ -940,6 +945,31 @@
 			path = LaunchView;
 			sourceTree = "<group>";
 		};
+		96E2BBBF27677D3B00502CDB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				96E2BBC027677DD900502CDB /* UserProgressService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		96E2BBC027677DD900502CDB /* UserProgressService */ = {
+			isa = PBXGroup;
+			children = (
+				96E2BBC127677DED00502CDB /* Support Classes */,
+				96E2BBC227677E1000502CDB /* UserProgressService.swift */,
+			);
+			path = UserProgressService;
+			sourceTree = "<group>";
+		};
+		96E2BBC127677DED00502CDB /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96E2BBC427677EB100502CDB /* UserProgressService+Models.swift */,
+			);
+			path = "Support Classes";
+			sourceTree = "<group>";
+		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,6 +1198,7 @@
 				96D20DB526CBFE76001F91C2 /* FavoritesSectionModel.swift in Sources */,
 				965D7A1926BAA6CC00D280B3 /* CategoryRecipesBuilder.swift in Sources */,
 				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
+				96E2BBC327677E1000502CDB /* UserProgressService.swift in Sources */,
 				96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
@@ -1189,6 +1220,7 @@
 				965D79D126B3095C00D280B3 /* RecipeDetailsRouter.swift in Sources */,
 				965D7A2626BAC4F100D280B3 /* CategoryRecipesSectionModel.swift in Sources */,
 				969428D526B0608E00A0D3B6 /* RecipeCompositionType.swift in Sources */,
+				96E2BBC527677EB100502CDB /* UserProgressService+Models.swift in Sources */,
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965D79F126B819E600D280B3 /* RecipeCompositionsCell.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,

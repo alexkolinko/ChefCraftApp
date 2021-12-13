@@ -14,10 +14,12 @@ protocol RecipeDetailsInteractor {
     
     var recipeData: BehaviorRelay<Recipe?> { get }
     var recipeRating: BehaviorRelay<Int?> { get }
+    var recipeCoocked: BehaviorRelay<Bool?> { get }
     var recipeFavorite: BehaviorRelay<String?> { get }
     
     func updateRating(_ rating: Int)
     func updateLike(_ isLike: Bool)
+    func updateCooked(_ isCooked: Bool)
     
 }
 
@@ -28,6 +30,7 @@ class RecipeDetailsInteractorImpl {
     // - Internal Properties
     let recipeData = BehaviorRelay<Recipe?>(value: nil)
     let recipeRating = BehaviorRelay<Int?>(value: nil)
+    let recipeCoocked = BehaviorRelay<Bool?>(value: nil)
     let recipeFavorite = BehaviorRelay<String?>(value: nil)
     
     // - Private Properties
@@ -53,6 +56,7 @@ private extension RecipeDetailsInteractorImpl {
         self.databaseProvider.getRecipe(id: details.id)
             .subscribe(onSuccess: { [weak self] recipe in
                 self?.recipeRating.accept(recipe.stars)
+                self?.recipeCoocked.accept(recipe.cooked)
             })
             .disposed(by: self.disposeBag)
         
@@ -73,10 +77,28 @@ private extension RecipeDetailsInteractorImpl {
 
 // MARK: - RecipeDetailsInteractorImpl: RecipeDetailsInteractor
 extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
+    
     func updateLike(_ isLike: Bool) {
         var recipes = self.favorites.value
         isLike ? recipes.append(self.details.id) : recipes.remove(object: self.details.id)
         self.favoritesDatabaseProvider.saveFavorites(with: Favorites(recipes: recipes)).subscribe().disposed(by: self.disposeBag)
+    }
+    
+    func updateCooked(_ isCooked: Bool) {
+        guard let recipe = self.recipeData.value else { return }
+        let newModel = Recipe(
+            id: recipe.id,
+            name: recipe.name,
+            image: recipe.image,
+            description: recipe.description,
+            owner: recipe.owner,
+            isLike: recipe.isLike,
+            cooked: isCooked,
+            stars: recipe.stars,
+            about: recipe.about,
+            compositions: recipe.compositions
+        )
+        self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
     }
     
     func updateRating(_ rating: Int) {

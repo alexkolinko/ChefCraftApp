@@ -149,9 +149,23 @@ extension RecipeDetailsViewController {
                     })
                     .disposed(by: cell.bag)
                 
+                cell.selectedCooked
+                    .asObservable()
+                    .ignoreNil()
+                    .observe(on: MainScheduler.asyncInstance)
+                    .subscribe (onNext: { [weak self] isCooked in
+                        self?.presenter.input.onAction.onNext(.selectCooked(isCooked))
+                    })
+                    .disposed(by: cell.bag)
+                
                 self?.presenter.output.applyLikeAction
                     .observe(on: MainScheduler.asyncInstance)
                     .bind(to: cell.isLike)
+                    .disposed(by: cell.bag)
+                
+                self?.presenter.output.applyCookedAction
+                    .observe(on: MainScheduler.asyncInstance)
+                    .bind(to: cell.isCooked)
                     .disposed(by: cell.bag)
                 
                 self?.presenter.output.applyRatingSelected

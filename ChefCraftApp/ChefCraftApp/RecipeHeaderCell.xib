@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,14 +60,27 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-vi-OYp">
-                                                <rect key="frame" x="228" y="0.0" width="9" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="0sR-2X-Zsl"/>
-                                                    <constraint firstAttribute="height" constant="20" id="2FZ-6G-CSy"/>
-                                                </constraints>
-                                                <state key="normal" image="heart.fill" catalog="system"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QrB-7h-aka">
+                                                <rect key="frame" x="228" y="0.0" width="9" height="48"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-vi-OYp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="9" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="0sR-2X-Zsl"/>
+                                                            <constraint firstAttribute="height" constant="20" id="2FZ-6G-CSy"/>
+                                                        </constraints>
+                                                        <state key="normal" image="heart.fill" catalog="system"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-tQ-Xs4">
+                                                        <rect key="frame" x="0.0" y="28" width="9" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="1YK-Cz-LAF"/>
+                                                            <constraint firstAttribute="width" constant="20" id="3zF-I8-mlN"/>
+                                                        </constraints>
+                                                        <state key="normal" image="checkmark.square" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -93,6 +107,7 @@
             <size key="customSize" width="291" height="179"/>
             <connections>
                 <outlet property="backgraundView" destination="m0o-1G-czC" id="Jfn-f3-nYf"/>
+                <outlet property="cookedButton" destination="Sc2-tQ-Xs4" id="zay-nX-Iq2"/>
                 <outlet property="likeButton" destination="MUe-vi-OYp" id="b0Y-3q-FdO"/>
                 <outlet property="ratingControl" destination="YYE-UV-QxR" id="WvH-FG-bzh"/>
                 <outlet property="recipeOwner" destination="bCS-9U-Qm7" id="U7q-OJ-PRo"/>
@@ -102,6 +117,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
     </resources>
 </document>

@@ -14,6 +14,7 @@ extension RecipeDetailsPresenter {
         let content: Observable<RecipeDetailsViewContent>
         let imageHeader: Observable<String>
         let applyLikeAction: Observable<Bool>
+        let applyCookedAction: Observable<Bool>
         let applyRatingSelected: Observable<Int>
     }
 }
@@ -31,5 +32,6 @@ extension RecipeDetailsPresenter {
         case popView
         case selectRating(_ rating: Int)
         case selectLike(_ value: Bool)
+        case selectCooked(_ value: Bool)
     }
 }

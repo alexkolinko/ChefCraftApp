@@ -55,6 +55,7 @@ private extension UserProgressService {
     
     func handleInput(recipies: [Recipe]) {
         let cookedRecipes = recipies.filter({ $0.cooked == true })
+        let datee = cookedRecipes.map({ $0.dateOfCooked })
         self.cookedRecipesOutput.onNext(cookedRecipes.count)
     }
 }

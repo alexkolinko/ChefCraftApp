@@ -86,6 +86,7 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     
     func updateCooked(_ isCooked: Bool) {
         guard let recipe = self.recipeData.value else { return }
+        let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short))
         let newModel = Recipe(
             id: recipe.id,
             name: recipe.name,
@@ -94,6 +95,7 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
             owner: recipe.owner,
             isLike: recipe.isLike,
             cooked: isCooked,
+            dateOfCooked: isCooked ? date : "",
             stars: recipe.stars,
             about: recipe.about,
             compositions: recipe.compositions
@@ -111,6 +113,7 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
             owner: recipe.owner,
             isLike: recipe.isLike,
             cooked: recipe.cooked,
+            dateOfCooked: recipe.dateOfCooked,
             stars: rating,
             about: recipe.about,
             compositions: recipe.compositions

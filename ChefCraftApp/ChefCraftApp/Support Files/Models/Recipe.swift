@@ -16,6 +16,7 @@ struct Recipe: Codable {
     let owner: String
     let isLike: Bool
     let cooked: Bool
+    let dateOfCooked: String
     var stars: Int
     let about: String
     let compositions: [RecipeComposition]

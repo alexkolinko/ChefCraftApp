@@ -17,6 +17,7 @@ final class RMRecipe: Object {
     @objc dynamic var owner: String = ""
     @objc dynamic var isLike: Bool = false
     @objc dynamic var cooked: Bool = false
+    @objc dynamic var dateOfCooked: String = ""
     @objc dynamic var stars: Int = 0
     @objc dynamic var about: String = ""
     @objc dynamic var compositions = Data()
@@ -33,6 +34,7 @@ final class RMRecipe: Object {
         self.owner = domain.owner
         self.isLike = domain.isLike
         self.cooked = domain.cooked
+        self.dateOfCooked = domain.dateOfCooked
         self.stars = domain.stars
         self.about = domain.about
         
@@ -57,6 +59,7 @@ extension RMRecipe: DomainConvertibleType {
             owner: self.owner,
             isLike: self.isLike,
             cooked: self.cooked,
+            dateOfCooked: self.dateOfCooked,
             stars: self.stars,
             about: self.about,
             compositions: compositions

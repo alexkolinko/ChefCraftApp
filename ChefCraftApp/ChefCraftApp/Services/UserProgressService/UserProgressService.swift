@@ -29,7 +29,7 @@ final class UserProgressService: UserProgressServiceProtocol {
     // - Private propreties
     private let inputRecipes = PublishSubject<[Recipe]>()
     
-    private let cookedRecipesOutput = ReplaySubject<Int>.create(bufferSize: 1)
+    private let cookedRecipesOutput = PublishSubject<Int>()
     
     private let disposeBag = DisposeBag()
     
@@ -54,7 +54,7 @@ private extension UserProgressService {
     }
     
     func handleInput(recipies: [Recipe]) {
-        let cookedRecipes = recipies.map({ $0.cooked == true })
+        let cookedRecipes = recipies.filter({ $0.cooked == true })
         self.cookedRecipesOutput.onNext(cookedRecipes.count)
     }
 }

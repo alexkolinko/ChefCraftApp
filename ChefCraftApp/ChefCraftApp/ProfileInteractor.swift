@@ -28,11 +28,6 @@ final class ProfileInteractorImpl {
     
     private let recipes = BehaviorRelay<[Recipe]>(value: [])
     
-    
-
-//    private let databaseProvider:
-//    private let networkProvider:
-//
     init(userProgressService: UserProgressServiceProtocol,databaseProvider: DatabaseRecipeProviderProtocol) {
         self.userProgressService = userProgressService
         self.databaseProvider = databaseProvider

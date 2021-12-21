@@ -12,26 +12,34 @@ import RxSwift
 // MARK: - ProfileInteractor
 /// Abstract logic layer for ProfileInteractorImpl
 protocol ProfileInteractor {
-    func userRecipesCountPerDay() -> Observable<Int>
+    var cookedRecipesPerDay: BehaviorRelay<Int> { get }
+    var cookedRecipesPerWeek: BehaviorRelay<Int> { get }
+    var missedRecipes: BehaviorRelay<Int> { get }
+    var needToBeCook: BehaviorRelay<Int> { get }
 }
 
 // MARK: - ProfileInteractorImpl
 /// Implementation class for ProfileInteractor
-final class ProfileInteractorImpl {
+final class ProfileInteractorImpl: ProfileInteractor {
     
     // - Internal Properties
-
+    let cookedRecipesPerDay = BehaviorRelay<Int>.init(value: 0)
+    let cookedRecipesPerWeek = BehaviorRelay<Int>.init(value: 0)
+    let missedRecipes = BehaviorRelay<Int>.init(value: 0)
+    let needToBeCook = BehaviorRelay<Int>.init(value: 0)
+    
     // - Private Properties
     private let userProgressService: UserProgressServiceProtocol
     private let databaseProvider: DatabaseRecipeProviderProtocol
     private let disposeBag = DisposeBag()
     
-    private let recipes = BehaviorRelay<[Recipe]>(value: [])
+    private let mockedRecipes: MockedItem = .init()
+    private let recipes = BehaviorRelay<[Recipe]>.init(value: [])
     
     init(userProgressService: UserProgressServiceProtocol,databaseProvider: DatabaseRecipeProviderProtocol) {
         self.userProgressService = userProgressService
         self.databaseProvider = databaseProvider
-    
+        
         self.binding()
     }
 }
@@ -39,6 +47,13 @@ final class ProfileInteractorImpl {
 // MARK: - ProfileInteractorImpl + Private
 private extension ProfileInteractorImpl {
     func binding() {
+        
+        self.databaseProvider.getRecipes()
+            .subscribe(onSuccess: { [weak self] recipes in
+                self?.recipes.accept(recipes)
+            })
+            .disposed(by: self.disposeBag)
+        
         self.databaseProvider.subscribeOnRecipes()
             .subscribe(onNext: { [weak self] recipes in
                 self?.recipes.accept(recipes)
@@ -46,17 +61,27 @@ private extension ProfileInteractorImpl {
             .disposed(by: self.disposeBag)
         
         self.recipes
-            .subscribe(onNext: { [weak self] value in
-                self?.userProgressService.input.recipes.onNext(value)
-            }).disposed(by: self.disposeBag)
+            .subscribe(onNext: { [weak self] recipes in
+                let mockedItems = self?.mockedRecipes.userRecipes.recipes ?? []
+                self?.userProgressService.input.recipes.onNext(recipes)
+                self?.userProgressService.input.mockedRecipes.onNext(mockedItems)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.userProgressService.output.cookedRecipesPerDay
+            .bind(to: self.cookedRecipesPerDay)
+            .disposed(by: self.disposeBag)
+        
+        self.userProgressService.output.cookedRecipesPerWeek
+            .bind(to: self.cookedRecipesPerWeek)
+            .disposed(by: self.disposeBag)
+        
+        self.userProgressService.output.missedRecipes
+            .bind(to: self.missedRecipes)
+            .disposed(by: self.disposeBag)
+        
+        self.userProgressService.output.needToBeCook
+            .bind(to: self.needToBeCook)
+            .disposed(by: self.disposeBag)
     }
-}
-
-// MARK: - ProfileInteractorImpl: ProfileInteractor
-extension ProfileInteractorImpl: ProfileInteractor {
-    func userRecipesCountPerDay() -> Observable<Int> {
-       return self.userProgressService.output.cookedRecipes
-    }
-    
-    
 }

@@ -12,7 +12,7 @@ import MapKit
 extension UserProgressService {
     
     struct Input {
-        
+        let mockedRecipes: AnyObserver<[Recipe]>
         let recipes: AnyObserver<[Recipe]>
     }
 }
@@ -21,8 +21,9 @@ extension UserProgressService {
 extension UserProgressService {
     
     struct Output {
-        let cookedRecipes: Observable<Int>
+        let cookedRecipesPerDay: Observable<Int>
+        let cookedRecipesPerWeek: Observable<Int>
+        let missedRecipes: Observable<Int>
+        let needToBeCook: Observable<Int>
     }
-    
-
 }

@@ -67,4 +67,16 @@ extension String {
         
         return ceil(boundingBox.width)
     }
+    
+    /// Convert date to Date type
+    func toDate(format: String = "dd MMM yyyy, HH:mm") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let prefixDate: String = String(self.prefix(format.count))
+        guard let date = dateFormatter.date(from: prefixDate) else {
+            return nil
+        }
+        return date
+    }
+
 }

@@ -120,7 +120,42 @@ struct MockedItem {
             RecipeComposition(type: .ingredients, value: 7),
             RecipeComposition(type: .totalTime, value: 40)
         ]),
-        Recipe(id: "3", name: "RECIPE #3", image: "bitmap", description: "#3 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+        Recipe(id: "3", name: "RECIPE #3", image: "bitmap", description: "#3 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "3 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "4", name: "RECIPE #4", image: "bitmap", description: "#4 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "4 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "5", name: "RECIPE #5", image: "bitmap", description: "#5 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "5 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "6", name: "RECIPE #6", image: "bitmap", description: "#6 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "6 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "7", name: "RECIPE #7", image: "bitmap", description: "#7 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "7 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "8", name: "RECIPE #8", image: "bitmap", description: "#8 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "8 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "9", name: "RECIPE #9", image: "bitmap", description: "#9 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "9 RECIPE - is best recipe", compositions: [
+            RecipeComposition(type: .calories, value: 200),
+            RecipeComposition(type: .ingredients, value: 7),
+            RecipeComposition(type: .totalTime, value: 40)
+        ]),
+        Recipe(id: "10", name: "RECIPE #10", image: "bitmap", description: "#10 RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "10 RECIPE - is best recipe", compositions: [
             RecipeComposition(type: .calories, value: 200),
             RecipeComposition(type: .ingredients, value: 7),
             RecipeComposition(type: .totalTime, value: 40)

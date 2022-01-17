@@ -72,8 +72,8 @@ private extension UserProgressService {
     
     func getCookedRecipiesPerDay(recipies: [Recipe]) {
         let cookedRecipes = recipies.filter({ $0.cooked == true })
-        let dates = cookedRecipes.map({ $0.dateOfCooked.toDate() })
-        let todayCooked = dates.filter { Calendar.current.isDateInToday($0!) }
+        let dates = cookedRecipes.compactMap({ $0.dateOfCooked.toDate() })
+        let todayCooked = dates.filter { Calendar.current.isDateInToday($0) }
         self.cookedRecipesPerDay.onNext(todayCooked.count)
     }
     

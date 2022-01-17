@@ -102,8 +102,8 @@ private extension CategoryRecipesPresenterTests {
         
         init() {
             self.categoryRecipes = CategoryRecipes(id: "1", name: "test", image: "test", recipes: [
-                Recipe(id: "1", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 1, about: "test", compositions: []),
-                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 1, about: "test", compositions: [])
+                Recipe(id: "1", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 1, about: "test", compositions: []),
+                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 1, about: "test", compositions: [])
             ])
         }
     }

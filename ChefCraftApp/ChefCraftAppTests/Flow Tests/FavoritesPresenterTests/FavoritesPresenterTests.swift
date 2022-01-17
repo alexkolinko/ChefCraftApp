@@ -160,11 +160,11 @@ private extension FavoritesPresenterTests {
         
         init() {
             self.recipes = [
-                Recipe(id: "1", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)]),
-                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
+                Recipe(id: "1", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)]),
+                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
             ]
             self.ratingRecipes = [
-                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 6, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
+                Recipe(id: "2", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 6, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
             ]
             self.favoritesRecipes = ["2"]
         }

@@ -86,7 +86,10 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     
     func updateCooked(_ isCooked: Bool) {
         guard let recipe = self.recipeData.value else { return }
-        let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short))
+        let today = Date()
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "dd MMM yyyy, HH:mm"
+        let date = formatter3.string(from: today)
         let newModel = Recipe(
             id: recipe.id,
             name: recipe.name,

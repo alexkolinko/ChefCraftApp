@@ -26,6 +26,7 @@
 		962418E326AAD2F300200576 /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E226AAD2F300200576 /* Metropolis-Medium.otf */; };
 		962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E426AAD30000200576 /* Metropolis-Regular.otf */; };
 		962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */; };
+		9624E15527957D1F0056159E /* UserProgressServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15427957D1F0056159E /* UserProgressServiceTests.swift */; };
 		9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */; };
 		9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */; };
 		9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083D26AF1AF4006F54CC /* RecipeCell.swift */; };
@@ -178,6 +179,7 @@
 		962418E226AAD2F300200576 /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
 		962418E426AAD30000200576 /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
 		962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		9624E15427957D1F0056159E /* UserProgressServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressServiceTests.swift; sourceTree = "<group>"; };
 		9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesHeaderCell.swift; sourceTree = "<group>"; };
 		9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesHeaderCell.xib; sourceTree = "<group>"; };
 		9648083D26AF1AF4006F54CC /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -413,6 +415,22 @@
 				962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9624E15227957C790056159E /* Services Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9624E15327957CED0056159E /* UserProgressServiceTests */,
+			);
+			path = "Services Tests";
+			sourceTree = "<group>";
+		};
+		9624E15327957CED0056159E /* UserProgressServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				9624E15427957D1F0056159E /* UserProgressServiceTests.swift */,
+			);
+			path = UserProgressServiceTests;
 			sourceTree = "<group>";
 		};
 		9648083726AF1925006F54CC /* Recipe */ = {
@@ -878,6 +896,7 @@
 		96CDFF6826B16ED100652CE4 /* ChefCraftAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				9624E15227957C790056159E /* Services Tests */,
 				96CDFF7126B170EC00652CE4 /* Flow Tests */,
 				96CDFF6B26B16ED100652CE4 /* Info.plist */,
 			);
@@ -1358,6 +1377,7 @@
 				965D2D4526CA676500259515 /* CategoryRecipesPresenterTests.swift in Sources */,
 				96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */,
 				96D20DD026CC0786001F91C2 /* FavoritesPresenterTests.swift in Sources */,
+				9624E15527957D1F0056159E /* UserProgressServiceTests.swift in Sources */,
 				965D7A0026BA97DF00D280B3 /* RecipeDetailsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

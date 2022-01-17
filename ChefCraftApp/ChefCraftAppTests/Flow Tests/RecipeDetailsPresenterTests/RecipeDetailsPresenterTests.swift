@@ -45,11 +45,9 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 
                 it("try start mapViewData with recipes") {
                     
-                    tested_presenter.viewDataPublisher
+                    tested_presenter.output.content
                         .subscribe(onNext: { value in
-                            if value != nil {
                                 data_mirrow.onNext(())
-                            }
                         })
                         .disposed(by: bag)
                     
@@ -66,11 +64,9 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 
                 it("try start mapViewData with recipes and recipeFavorite be nil") {
                     
-                    tested_presenter.viewDataPublisher
+                    tested_presenter.output.content
                         .subscribe(onNext: { value in
-                            if value != nil {
                                 data_mirrow.onNext(())
-                            }
                         })
                         .disposed(by: bag)
                     
@@ -88,11 +84,9 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 
                 it("try start mapViewData with recipes and recipeRating be nil") {
                     
-                    tested_presenter.viewDataPublisher
+                    tested_presenter.output.content
                         .subscribe(onNext: { value in
-                            if value != nil {
                                 data_mirrow.onNext(())
-                            }
                         })
                         .disposed(by: bag)
                     
@@ -109,15 +103,31 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 }
                 
                 it("trigger selectRating") {
-                    tested_presenter.selectRating(mockes.rating)
+                    tested_presenter.input.onAction.onNext(.selectRating(mockes.rating))
                     
                     tested_interactor.action.onCompleted()
                     
                     expect(tested_interactor.action).last.to(equal(.updateRating), description: "Expect for the storage to update according to the presenter flow")
                 }
                 
+                it("trigger selectCooked") {
+                    tested_presenter.input.onAction.onNext(.selectCooked(true))
+                    
+                    tested_interactor.action.onCompleted()
+                    
+                    expect(tested_interactor.action).last.to(equal(.updateCooked), description: "Expect for the storage to update according to the presenter flow")
+                }
+                
+                it("trigger unselectCooked") {
+                    tested_presenter.input.onAction.onNext(.selectCooked(false))
+                    
+                    tested_interactor.action.onCompleted()
+                    
+                    expect(tested_interactor.action).last.to(equal(.updateCooked), description: "Expect for the storage to update according to the presenter flow")
+                }
+                
                 it("trigger selectLike") {
-                    tested_presenter.selectLike(mockes.isLike)
+                    tested_presenter.input.onAction.onNext(.selectLike(mockes.isLike))
                     
                     tested_interactor.action.onCompleted()
                     
@@ -126,7 +136,7 @@ class RecipeDetailsPresenterTests: QuickSpec {
                 
                 it("trigger show popView action") {
                     
-                    tested_presenter.popView()
+                    tested_presenter.input.onAction.onNext(.popView)
                     
                     tested_router.action_subj.onCompleted()
                     
@@ -148,13 +158,14 @@ private extension RecipeDetailsPresenterTests {
             self.rating = 3
             self.like = "1"
             self.isLike = true
-            self.cellItem = Recipe(id: "test", name: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
+            self.cellItem = Recipe(id: "test", name: "test", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 5, about: "test", compositions: [RecipeComposition(type: .calories, value: 150), RecipeComposition(type: .ingredients, value: 4), RecipeComposition(type: .totalTime, value: 30)])
         }
     }
 }
 
 // MARK: - MockedInteractor: RecipeDetailsInteractor
 private class MockedInteractor: RecipeDetailsInteractor {
+    var recipeCoocked = BehaviorRelay<Bool?>(value: nil)
     var recipeData = BehaviorRelay<Recipe?>(value: nil)
     var recipeRating = BehaviorRelay<Int?>(value: nil)
     var recipeFavorite = BehaviorRelay<String?>(value: nil)
@@ -166,6 +177,10 @@ private class MockedInteractor: RecipeDetailsInteractor {
     
     func updateLike(_ isLike: Bool) {
         self.action.onNext(.updateLike)
+    }
+    
+    func updateCooked(_ isCooked: Bool) {
+        self.action.onNext(.updateCooked)
     }
     
 }
@@ -190,5 +205,6 @@ private enum MockNavigationAction: String, Equatable {
 private enum MockInteractorAction {
     case updateRating
     case updateLike
+    case updateCooked
 }
 

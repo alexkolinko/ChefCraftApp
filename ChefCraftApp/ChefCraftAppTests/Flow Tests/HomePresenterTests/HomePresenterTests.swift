@@ -142,22 +142,22 @@ private extension HomePresenterTests {
             self.recipeCellItem = HomeViewContent.RecipeCellItem(id: "1", title: "test", image: "test", description: "test", owner: "test", isLike: true, stars: 5, about: "test", compositions: [])
             self.chefCraftAllRecipes = UserRecipes(id: "1", categoriesRecipes: [
                 CategoryRecipes(id: "1", name: "8 Recipes", image: "breakfast", recipes: [
-                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
-                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
-                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])
+                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: []),
+                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: []),
+                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: [])
                 ]),
                 CategoryRecipes(id: "8", name: "8 Recipes", image: "breakfast", recipes: [
-                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
-                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: []),
-                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, stars: 3, about: "test", compositions: [])
+                    Recipe(id: "1", name: "RecipeItem 1", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: []),
+                    Recipe(id: "2", name: "RecipeItem 2", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: []),
+                    Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: [])
                 ])
             ], recipes: [
-                Recipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                Recipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
                     RecipeComposition(type: .totalTime, value: 40)
                 ]),
-                Recipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                Recipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
                     RecipeComposition(type: .totalTime, value: 40)

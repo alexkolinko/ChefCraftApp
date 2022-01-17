@@ -160,12 +160,12 @@ class UserProgressServiceTests: QuickSpec {
 private struct Mock {
     
     static let mockedRecipes: [Recipe] = [
-        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "These days it may seem odd to speak of grandma's cookie receipt, but at one time the only meaning of receipt was recipe. The first recorded use of receipt is a reference to a medicinal preparation in Chaucer's Canterbury Tales (c. 1386).", owner: "Smith", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "First RECIPE - is best recipe", compositions: [
+        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
         ]),
-        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "First RECIPE - is best recipe", compositions: [
+        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
@@ -173,12 +173,12 @@ private struct Mock {
     ]
     
     static let inputRecipes: [Recipe] = [
-        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "These days it may seem odd to speak of grandma's cookie receipt, but at one time the only meaning of receipt was recipe. The first recorded use of receipt is a reference to a medicinal preparation in Chaucer's Canterbury Tales (c. 1386).", owner: "Smith", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "First RECIPE - is best recipe", compositions: [
+        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "test", owner: "Smith", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
         ]),
-        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "Bring a pan of lightly salted water to the boil. Cook the green beans for 2 minutes and drain them.", owner: "Smith", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "First RECIPE - is best recipe", compositions: [
+        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)

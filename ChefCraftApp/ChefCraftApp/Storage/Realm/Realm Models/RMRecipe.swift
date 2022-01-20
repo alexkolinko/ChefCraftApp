@@ -20,6 +20,8 @@ final class RMRecipe: Object {
     @objc dynamic var dateOfCooked: String = ""
     @objc dynamic var stars: Int = 0
     @objc dynamic var about: String = ""
+    @objc dynamic var latitude: Float = 0.0
+    @objc dynamic var longitude: Float = 0.0
     @objc dynamic var compositions = Data()
     
     override class func primaryKey() -> String? {
@@ -36,6 +38,8 @@ final class RMRecipe: Object {
         self.cooked = domain.cooked
         self.dateOfCooked = domain.dateOfCooked
         self.stars = domain.stars
+        self.latitude = domain.latitude
+        self.longitude = domain.longitude
         self.about = domain.about
         
         let encoder = JSONEncoder()
@@ -62,6 +66,8 @@ extension RMRecipe: DomainConvertibleType {
             dateOfCooked: self.dateOfCooked,
             stars: self.stars,
             about: self.about,
+            latitude: self.latitude,
+            longitude: self.longitude,
             compositions: compositions
         )
     }

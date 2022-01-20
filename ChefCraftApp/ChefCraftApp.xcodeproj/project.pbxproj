@@ -27,6 +27,16 @@
 		962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E426AAD30000200576 /* Metropolis-Regular.otf */; };
 		962418E726AAD31B00200576 /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */; };
 		9624E15527957D1F0056159E /* UserProgressServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15427957D1F0056159E /* UserProgressServiceTests.swift */; };
+		9624E15F2795BBA00056159E /* RecipesMapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9624E1582795BBA00056159E /* RecipesMapView.storyboard */; };
+		9624E1602795BBA00056159E /* RecipesMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E1592795BBA00056159E /* RecipesMapPresenter.swift */; };
+		9624E1612795BBA00056159E /* RecipesMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15A2795BBA00056159E /* RecipesMapRouter.swift */; };
+		9624E1622795BBA00056159E /* RecipesMapRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15B2795BBA00056159E /* RecipesMapRoute.swift */; };
+		9624E1632795BBA00056159E /* RecipesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15C2795BBA00056159E /* RecipesMapViewController.swift */; };
+		9624E1642795BBA00056159E /* RecipesMapBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15D2795BBA00056159E /* RecipesMapBuilder.swift */; };
+		9624E1652795BBA00056159E /* RecipesMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E15E2795BBA00056159E /* RecipesMapInteractor.swift */; };
+		9624E1672795BF4D0056159E /* RecipeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E1662795BF4D0056159E /* RecipeAnnotationView.swift */; };
+		9624E1692795CB020056159E /* RecipeAnnotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E1682795CB020056159E /* RecipeAnnotationModel.swift */; };
+		9624E16B2795CB800056159E /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624E16A2795CB800056159E /* ClusterAnnotationView.swift */; };
 		9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */; };
 		9648083C26AF1AD2006F54CC /* RecipesHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */; };
 		9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648083D26AF1AF4006F54CC /* RecipeCell.swift */; };
@@ -112,6 +122,7 @@
 		96A8809526BD2FF000ADFFD0 /* RMRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809426BD2FF000ADFFD0 /* RMRecipe.swift */; };
 		96A8809726BD358100ADFFD0 /* DatabaseRecipeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8809626BD358100ADFFD0 /* DatabaseRecipeProvider.swift */; };
 		96BDE9432762809D00F12ADE /* RecipeDetailsPresenter+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDE9422762809D00F12ADE /* RecipeDetailsPresenter+Models.swift */; };
+		96C856F02796F7B30076245E /* UIViewController+ModalAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C856EF2796F7B30076245E /* UIViewController+ModalAlerts.swift */; };
 		96CDFF7426B1711900652CE4 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */; };
 		96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D20DA626CBF65A001F91C2 /* FavoriteCell.swift */; };
 		96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D20DA726CBF65A001F91C2 /* FavoriteCell.xib */; };
@@ -180,6 +191,16 @@
 		962418E426AAD30000200576 /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
 		962418E626AAD31B00200576 /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
 		9624E15427957D1F0056159E /* UserProgressServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressServiceTests.swift; sourceTree = "<group>"; };
+		9624E1582795BBA00056159E /* RecipesMapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipesMapView.storyboard; sourceTree = "<group>"; };
+		9624E1592795BBA00056159E /* RecipesMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapPresenter.swift; sourceTree = "<group>"; };
+		9624E15A2795BBA00056159E /* RecipesMapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapRouter.swift; sourceTree = "<group>"; };
+		9624E15B2795BBA00056159E /* RecipesMapRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapRoute.swift; sourceTree = "<group>"; };
+		9624E15C2795BBA00056159E /* RecipesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapViewController.swift; sourceTree = "<group>"; };
+		9624E15D2795BBA00056159E /* RecipesMapBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapBuilder.swift; sourceTree = "<group>"; };
+		9624E15E2795BBA00056159E /* RecipesMapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesMapInteractor.swift; sourceTree = "<group>"; };
+		9624E1662795BF4D0056159E /* RecipeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnnotationView.swift; sourceTree = "<group>"; };
+		9624E1682795CB020056159E /* RecipeAnnotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnnotationModel.swift; sourceTree = "<group>"; };
+		9624E16A2795CB800056159E /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
 		9648083926AF1AD2006F54CC /* RecipesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesHeaderCell.swift; sourceTree = "<group>"; };
 		9648083A26AF1AD2006F54CC /* RecipesHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesHeaderCell.xib; sourceTree = "<group>"; };
 		9648083D26AF1AF4006F54CC /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -265,6 +286,7 @@
 		96A8809426BD2FF000ADFFD0 /* RMRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRecipe.swift; sourceTree = "<group>"; };
 		96A8809626BD358100ADFFD0 /* DatabaseRecipeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecipeProvider.swift; sourceTree = "<group>"; };
 		96BDE9422762809D00F12ADE /* RecipeDetailsPresenter+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDetailsPresenter+Models.swift"; sourceTree = "<group>"; };
+		96C856EF2796F7B30076245E /* UIViewController+ModalAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ModalAlerts.swift"; sourceTree = "<group>"; };
 		96CDFF6726B16ED100652CE4 /* ChefCraftAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefCraftAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CDFF6B26B16ED100652CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CDFF7326B1711900652CE4 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
@@ -431,6 +453,31 @@
 				9624E15427957D1F0056159E /* UserProgressServiceTests.swift */,
 			);
 			path = UserProgressServiceTests;
+			sourceTree = "<group>";
+		};
+		9624E1562795BB590056159E /* RecipesMapView */ = {
+			isa = PBXGroup;
+			children = (
+				9624E1572795BB7F0056159E /* Support Classes */,
+				9624E1582795BBA00056159E /* RecipesMapView.storyboard */,
+				9624E1592795BBA00056159E /* RecipesMapPresenter.swift */,
+				9624E15A2795BBA00056159E /* RecipesMapRouter.swift */,
+				9624E15B2795BBA00056159E /* RecipesMapRoute.swift */,
+				9624E15C2795BBA00056159E /* RecipesMapViewController.swift */,
+				9624E15D2795BBA00056159E /* RecipesMapBuilder.swift */,
+				9624E15E2795BBA00056159E /* RecipesMapInteractor.swift */,
+			);
+			name = RecipesMapView;
+			sourceTree = "<group>";
+		};
+		9624E1572795BB7F0056159E /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9624E1662795BF4D0056159E /* RecipeAnnotationView.swift */,
+				9624E1682795CB020056159E /* RecipeAnnotationModel.swift */,
+				9624E16A2795CB800056159E /* ClusterAnnotationView.swift */,
+			);
+			name = "Support Classes";
 			sourceTree = "<group>";
 		};
 		9648083726AF1925006F54CC /* Recipe */ = {
@@ -687,6 +734,7 @@
 		965DA63626A9B2D200958782 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				9624E1562795BB590056159E /* RecipesMapView */,
 				96DB583326CB046B00328235 /* FavoritesView */,
 				96DB582226CB041F00328235 /* RootView */,
 				965D7A1126BAA6A100D280B3 /* CategoryRecipesView */,
@@ -800,6 +848,7 @@
 				960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */,
 				965D7A3526BC147300D280B3 /* UIView+Extensions.swift */,
 				9623326F26C2A5CF0007F904 /* EKColor+Extensions.swift */,
+				96C856EF2796F7B30076245E /* UIViewController+ModalAlerts.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -1142,6 +1191,7 @@
 				96E2BBD027678E8B00502CDB /* ProfileView.storyboard in Resources */,
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
+				9624E15F2795BBA00056159E /* RecipesMapView.storyboard in Resources */,
 				962418E526AAD30000200576 /* Metropolis-Regular.otf in Resources */,
 				96D20DA926CBF65A001F91C2 /* FavoriteCell.xib in Resources */,
 				965D79FD26B8280900D280B3 /* CompositionCell.xib in Resources */,
@@ -1274,11 +1324,13 @@
 				96D20DCD26CC02AA001F91C2 /* RootViewController.swift in Sources */,
 				96E2BBC327677E1000502CDB /* UserProgressService.swift in Sources */,
 				96D20DD726CC16D2001F91C2 /* MockedItem.swift in Sources */,
+				9624E1652795BBA00056159E /* RecipesMapInteractor.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
 				96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */,
 				96E2BBD127678E8B00502CDB /* ProfilePresenter.swift in Sources */,
 				965D79D026B3095C00D280B3 /* RecipeDetailsInteractor.swift in Sources */,
+				96C856F02796F7B30076245E /* UIViewController+ModalAlerts.swift in Sources */,
 				965D79EC26B8001800D280B3 /* RecipeAboutCell.swift in Sources */,
 				969428C826B0026B00A0D3B6 /* Recipe.swift in Sources */,
 				965DA63926A9B35B00958782 /* DependenciesHolder.swift in Sources */,
@@ -1288,6 +1340,7 @@
 				965D79E326B447F900D280B3 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				965D79FC26B8280900D280B3 /* CompositionCell.swift in Sources */,
 				965DA69F26AAA1AF00958782 /* UIWindow+switchRoot.swift in Sources */,
+				9624E1692795CB020056159E /* RecipeAnnotationModel.swift in Sources */,
 				96BDE9432762809D00F12ADE /* RecipeDetailsPresenter+Models.swift in Sources */,
 				965DA68826AA9F7400958782 /* InjectorProtocol.swift in Sources */,
 				965D7A1C26BAA6CD00D280B3 /* CategoryRecipesRoute.swift in Sources */,
@@ -1300,6 +1353,7 @@
 				96E2BBD327678E8B00502CDB /* ProfileRoute.swift in Sources */,
 				965DA68F26AA9FFD00958782 /* CrossDisolvedTransition.swift in Sources */,
 				965D79F126B819E600D280B3 /* RecipeCompositionsCell.swift in Sources */,
+				9624E1622795BBA00056159E /* RecipesMapRoute.swift in Sources */,
 				960CA3142770C99800224CEE /* ProgressUserModel.swift in Sources */,
 				965DA69326AAA04500958782 /* RootTransition.swift in Sources */,
 				96D20DB326CBFE3E001F91C2 /* FavoritesRoute.swift in Sources */,
@@ -1339,6 +1393,7 @@
 				96A3840126AEE1C300F6530C /* CollectionsRecipesHeaderCell.swift in Sources */,
 				960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */,
 				969428D326B0606E00A0D3B6 /* RecipeComposition.swift in Sources */,
+				9624E1632795BBA00056159E /* RecipesMapViewController.swift in Sources */,
 				965DA67626AA97E000958782 /* HomeInteractor.swift in Sources */,
 				96D20DAB26CBF71F001F91C2 /* FavoriteCellModel.swift in Sources */,
 				965D79D226B3095C00D280B3 /* RecipeDetailsRoute.swift in Sources */,
@@ -1349,17 +1404,22 @@
 				9612C35326AAAEF700AB16AA /* UIScreen+Brightness.swift in Sources */,
 				965D79DF26B447CC00D280B3 /* ParallaxHeader.swift in Sources */,
 				96D20DC126CC01C0001F91C2 /* RootInteractor.swift in Sources */,
+				9624E1642795BBA00056159E /* RecipesMapBuilder.swift in Sources */,
 				965D7A1E26BAA6CD00D280B3 /* CategoryRecipesRouter.swift in Sources */,
 				965D7A2426BAC10D00D280B3 /* CategoryRecipeCellModel.swift in Sources */,
 				960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */,
 				965D7A2926BACDE600D280B3 /* CategoryRecipeCell.swift in Sources */,
 				96A383FD26AEDBF700F6530C /* UserRecipes.swift in Sources */,
+				9624E1612795BBA00056159E /* RecipesMapRouter.swift in Sources */,
 				965DA67726AA97E000958782 /* HomeRouter.swift in Sources */,
+				9624E1602795BBA00056159E /* RecipesMapPresenter.swift in Sources */,
+				9624E16B2795CB800056159E /* ClusterAnnotationView.swift in Sources */,
 				96D20DB126CBFE1E001F91C2 /* FavoritesPresenter.swift in Sources */,
 				4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */,
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				96E2BBD627678E8B00502CDB /* ProfileInteractor.swift in Sources */,
+				9624E1672795BF4D0056159E /* RecipeAnnotationView.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
 				96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */,
@@ -1526,8 +1586,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z9KD6SGS6V;
+				DEVELOPMENT_TEAM = 2J8MBXVFPZ;
 				INFOPLIST_FILE = ChefCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1535,6 +1596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.ChefCraftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1546,8 +1608,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z9KD6SGS6V;
+				DEVELOPMENT_TEAM = 2J8MBXVFPZ;
 				INFOPLIST_FILE = ChefCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1555,6 +1618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.ChefCraftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -38,6 +38,8 @@ class RootBuilder {
         let homeViewController = UINavigationController(rootViewController: HomeBuilder.build(injector: injector))
         let favoritesViewController = UINavigationController(rootViewController: FavoritesBuilder.build(injector: injector))
         let profileViewController = UINavigationController(rootViewController: ProfileBuilder.build(injector: injector))
+        let mapsViewController = UINavigationController(rootViewController: RecipesMapBuilder.build(injector: injector))
+        
         
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage(named: "icHome")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icHomeSelected")?.withRenderingMode(.alwaysOriginal))
         
@@ -45,18 +47,23 @@ class RootBuilder {
         
         let profileTabItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
         
+        let mapsTabItem = UITabBarItem(title: "Maps", image: nil, selectedImage: nil)
+        
         homeTabItem.tag = RootTabItemTags.home.rawValue
         favoritesTabItem.tag = RootTabItemTags.favorites.rawValue
         profileTabItem.tag = RootTabItemTags.profile.rawValue
+        mapsTabItem.tag = RootTabItemTags.maps.rawValue
         
         homeViewController.tabBarItem = homeTabItem
         favoritesViewController.tabBarItem = favoritesTabItem
         profileViewController.tabBarItem = profileTabItem
+        mapsViewController.tabBarItem = mapsTabItem
         
         return [
             homeViewController,
             favoritesViewController,
-            profileViewController
+            profileViewController,
+            mapsViewController
         ]
     }
 }

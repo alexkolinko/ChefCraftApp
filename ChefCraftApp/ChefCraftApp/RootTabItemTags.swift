@@ -12,4 +12,5 @@ enum RootTabItemTags: Int {
     case home = 0
     case favorites = 1
     case profile = 2
+    case maps = 3
 }

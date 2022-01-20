@@ -69,7 +69,7 @@ private extension UserProgressService {
         self.getCookedRecipiesPerWeek(recipies: inputRecipes)
         self.getMissedAndNeedToCookRecipes(inputRecipes, mockedRecipes: mockedRecipes)
     }
-    
+    // calculate Cooked RecipiesPerDay
     func getCookedRecipiesPerDay(recipies: [Recipe]) {
         let cookedRecipes = recipies.filter({ $0.cooked == true })
         let dates = cookedRecipes.compactMap({ $0.dateOfCooked.toDate() })

@@ -101,6 +101,8 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
             dateOfCooked: isCooked ? date : "",
             stars: recipe.stars,
             about: recipe.about,
+            latitude: recipe.latitude,
+            longitude: recipe.longitude,
             compositions: recipe.compositions
         )
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
@@ -119,6 +121,8 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
             dateOfCooked: recipe.dateOfCooked,
             stars: rating,
             about: recipe.about,
+            latitude: recipe.latitude,
+            longitude: recipe.longitude,
             compositions: recipe.compositions
         )
         self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)

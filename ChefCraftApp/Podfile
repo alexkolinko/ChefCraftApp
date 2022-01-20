@@ -11,6 +11,7 @@ target 'ChefCraftApp' do
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'RxRealm'
+  pod 'RxMKMapView'
   pod 'Swinject'
   pod 'RealmSwift'
   pod 'SwiftEntryKit'

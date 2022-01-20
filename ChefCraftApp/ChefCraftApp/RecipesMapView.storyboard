@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipes Map View Controller-->
+        <scene sceneID="buU-Ax-z4o">
+            <objects>
+                <viewController storyboardIdentifier="RecipesMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sph-VZ-f9c" customClass="RecipesMapViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L7a-Jd-IdT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MQG-pD-rgg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4zv-Lr-WRb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MQG-pD-rgg" firstAttribute="leading" secondItem="4zv-Lr-WRb" secondAttribute="leading" id="CSB-S3-68r"/>
+                            <constraint firstItem="MQG-pD-rgg" firstAttribute="top" secondItem="L7a-Jd-IdT" secondAttribute="top" id="U1Q-nL-Q9Q"/>
+                            <constraint firstItem="4zv-Lr-WRb" firstAttribute="bottom" secondItem="MQG-pD-rgg" secondAttribute="bottom" id="hS5-C0-Jmh"/>
+                            <constraint firstItem="4zv-Lr-WRb" firstAttribute="trailing" secondItem="MQG-pD-rgg" secondAttribute="trailing" id="vI2-33-Mgu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="MQG-pD-rgg" id="4af-ob-jVv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdP-dM-Frs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="-90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

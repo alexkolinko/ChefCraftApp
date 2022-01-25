@@ -10,6 +10,8 @@ import Foundation
 struct MockedItem {
     
     var userRecipes: UserRecipes
+    
+    var restaurants: [Restaurant]
 
     init() {
       userRecipes = UserRecipes(id: "1", categoriesRecipes: [
@@ -165,5 +167,13 @@ struct MockedItem {
             RecipeComposition(type: .totalTime, value: 40)
         ])
     ])
+        
+        restaurants = [
+            Restaurant(id: "1", name: "Restauran 1", isOpen: true, latitude: 50.4312638, longitude: 30.5284701),
+            Restaurant(id: "2", name: "Restauran 2", isOpen: false, latitude: 50.5225155, longitude: 30.590265),
+            Restaurant(id: "3", name: "Restauran 3", isOpen: true, latitude: 50.4325155, longitude: 30.590265),
+            Restaurant(id: "4", name: "Restauran 4", isOpen: false, latitude: 50.4077696, longitude: 30.6139807),
+            Restaurant(id: "5", name: "Restauran 5", isOpen: true, latitude: 50.4007796, longitude: 30.6249807)
+        ]
     }
 }

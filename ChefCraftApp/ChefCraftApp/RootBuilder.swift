@@ -45,9 +45,9 @@ class RootBuilder {
         
         let favoritesTabItem = UITabBarItem(title: "Favorites", image: UIImage(named: "icFavorites")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icFavoritesSelected")?.withRenderingMode(.alwaysOriginal))
         
-        let profileTabItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
+        let profileTabItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray), selectedImage: UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysOriginal))
         
-        let mapsTabItem = UITabBarItem(title: "Maps", image: nil, selectedImage: nil)
+        let mapsTabItem = UITabBarItem(title: "Maps", image: UIImage(systemName: "map.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray), selectedImage: UIImage(systemName: "map.fill")?.withRenderingMode(.alwaysOriginal))
         
         homeTabItem.tag = RootTabItemTags.home.rawValue
         favoritesTabItem.tag = RootTabItemTags.favorites.rawValue

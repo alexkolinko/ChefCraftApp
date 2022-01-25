@@ -21,14 +21,10 @@ class RecipesMapPresenterImpl {
     // - Internla Propreties
     /// Observable for location service enable status
     var isLocationServicesEnabled = BehaviorRelay<Bool>(value: false)
-    /// Observalbe for loading status of recipe's requests
-    var isLoadingTerminals = BehaviorRelay<Bool>(value: false)
-    /// Selected recipe model from user interaction with mapkit view on view controller
-    var selectedTerminal = BehaviorRelay<Recipe?>(value: nil)
+    /// Selected restaurant model from user interaction with mapkit view on view controller
+    var selectedRestaurant = BehaviorRelay<Restaurant?>(value: nil)
     /// All available recipes
-    var recipes = BehaviorRelay<[Recipe]>(value: [])
-    /// Selected Filters
-    var selectedFilters = BehaviorRelay<[Recipe]>(value: [])
+    var restaurants = BehaviorRelay<[Restaurant]>(value: [])
 
     // - Private Properties
     private var disposeBag = DisposeBag()
@@ -47,17 +43,17 @@ class RecipesMapPresenterImpl {
     
     // - Internal Logic
     func selectTerminal(with id: Int) {
-        if let selected = self.selectedTerminal.value?.id, let cuurentSelected = Int(selected) {
+        if let selected = self.selectedRestaurant.value?.id, let cuurentSelected = Int(selected) {
             if cuurentSelected != id {
-                self.selectedTerminal.accept(self.recipes.value.first(where: { item in
+                self.selectedRestaurant.accept(self.restaurants.value.first(where: { item in
                     guard let recipeId = Int(item.id) else { return false}
                     return recipeId == id
                 }) )
             } else {
-                self.selectedTerminal.accept(nil)
+                self.selectedRestaurant.accept(nil)
             }
         } else {
-            self.selectedTerminal.accept(self.recipes.value.first(where: { item in
+            self.selectedRestaurant.accept(self.restaurants.value.first(where: { item in
                 guard let recipeId = Int(item.id) else { return false}
                 return recipeId == id
             }))
@@ -67,8 +63,8 @@ class RecipesMapPresenterImpl {
     
     // - Private BL
     private func binding() {
-        self.interactor.recipesData
-            .bind(to: self.recipes)
+        self.interactor.restaurantsData
+            .bind(to: self.restaurants)
             .disposed(by: self.disposeBag)
     }
 

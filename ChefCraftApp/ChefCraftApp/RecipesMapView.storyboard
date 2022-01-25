@@ -1,45 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Recipes Map View Controller-->
-        <scene sceneID="buU-Ax-z4o">
+        <scene sceneID="CH2-bk-0lA">
             <objects>
-                <viewController storyboardIdentifier="RecipesMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sph-VZ-f9c" customClass="RecipesMapViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L7a-Jd-IdT">
+                <viewController storyboardIdentifier="RecipesMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8jz-xS-Myd" customClass="RecipesMapViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBi-h5-o5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MQG-pD-rgg">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6tT-SS-816">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RZg-10-JHE">
+                                <rect key="frame" x="354" y="112" width="36" height="36"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFd-Af-NYe" customClass="CorneredView" customModule="Shell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXJ-QP-sgz">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                <state key="normal" image="01IconsIcLocationArrow"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hXJ-QP-sgz" secondAttribute="bottom" id="5Dt-1b-OaW"/>
+                                            <constraint firstAttribute="width" constant="36" id="Pp3-J5-y5V"/>
+                                            <constraint firstItem="hXJ-QP-sgz" firstAttribute="leading" secondItem="cFd-Af-NYe" secondAttribute="leading" id="Wmg-eP-cbU"/>
+                                            <constraint firstAttribute="height" constant="36" id="gtJ-iv-BjT"/>
+                                            <constraint firstItem="hXJ-QP-sgz" firstAttribute="top" secondItem="cFd-Af-NYe" secondAttribute="top" id="kpc-Or-6T3"/>
+                                            <constraint firstAttribute="trailing" secondItem="hXJ-QP-sgz" secondAttribute="trailing" id="v7v-PQ-d8p"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="icX-pc-S4y">
+                                <rect key="frame" x="0.0" y="924" width="414" height="152"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-CJ-szA" customClass="RestaurantDetailView" customModule="ChefCraftApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
+                                        <color key="backgroundColor" name="whiteTwo"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="4zv-Lr-WRb"/>
+                        <viewLayoutGuide key="safeArea" id="jZR-eC-0aa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MQG-pD-rgg" firstAttribute="leading" secondItem="4zv-Lr-WRb" secondAttribute="leading" id="CSB-S3-68r"/>
-                            <constraint firstItem="MQG-pD-rgg" firstAttribute="top" secondItem="L7a-Jd-IdT" secondAttribute="top" id="U1Q-nL-Q9Q"/>
-                            <constraint firstItem="4zv-Lr-WRb" firstAttribute="bottom" secondItem="MQG-pD-rgg" secondAttribute="bottom" id="hS5-C0-Jmh"/>
-                            <constraint firstItem="4zv-Lr-WRb" firstAttribute="trailing" secondItem="MQG-pD-rgg" secondAttribute="trailing" id="vI2-33-Mgu"/>
+                            <constraint firstItem="RZg-10-JHE" firstAttribute="top" secondItem="jZR-eC-0aa" secondAttribute="top" constant="68" id="0yp-Ud-LO7"/>
+                            <constraint firstItem="jZR-eC-0aa" firstAttribute="bottom" secondItem="6tT-SS-816" secondAttribute="bottom" id="APT-we-ra6"/>
+                            <constraint firstItem="6tT-SS-816" firstAttribute="leading" secondItem="jZR-eC-0aa" secondAttribute="leading" id="BGw-Rn-73k"/>
+                            <constraint firstItem="jZR-eC-0aa" firstAttribute="trailing" secondItem="6tT-SS-816" secondAttribute="trailing" id="BMY-Hq-MX5"/>
+                            <constraint firstItem="icX-pc-S4y" firstAttribute="bottom" secondItem="dBi-h5-o5q" secondAttribute="bottom" constant="180" id="GoJ-W7-W59"/>
+                            <constraint firstItem="6tT-SS-816" firstAttribute="top" secondItem="dBi-h5-o5q" secondAttribute="top" id="MIl-Dv-tSF"/>
+                            <constraint firstItem="jZR-eC-0aa" firstAttribute="trailing" secondItem="RZg-10-JHE" secondAttribute="trailing" constant="24" id="QCi-t7-xWt"/>
+                            <constraint firstItem="icX-pc-S4y" firstAttribute="leading" secondItem="dBi-h5-o5q" secondAttribute="leading" id="aAP-X2-vbh"/>
+                            <constraint firstAttribute="trailing" secondItem="icX-pc-S4y" secondAttribute="trailing" id="woa-eM-NtT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="MQG-pD-rgg" id="4af-ob-jVv"/>
+                        <outlet property="mapView" destination="6tT-SS-816" id="Ix5-9q-nao"/>
+                        <outlet property="restaurantDetailView" destination="Cg3-CJ-szA" id="NdZ-C2-h7f"/>
+                        <outlet property="restaurantDetailedInfoBottomConstraint" destination="GoJ-W7-W59" id="3Wc-p2-V0T"/>
+                        <outlet property="userLocationButton" destination="hXJ-QP-sgz" id="bqt-LY-mGS"/>
+                        <outlet property="userLocationContainer" destination="cFd-Af-NYe" id="Loy-xD-c0v"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdP-dM-Frs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTb-5I-t09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-762" y="-90"/>
         </scene>
     </scenes>
     <resources>
+        <image name="01IconsIcLocationArrow" width="20" height="20"/>
+        <namedColor name="whiteTwo">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

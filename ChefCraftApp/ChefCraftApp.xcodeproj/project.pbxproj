@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005B8A7909C90B6E79C3BCCF /* Pods_ChefCraftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */; };
 		4BD8F9BF26A9A14E003FAC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */; };
 		4BD8F9C826A9A150003FAC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C726A9A150003FAC6A /* Assets.xcassets */; };
 		4BD8F9CB26A9A150003FAC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8F9C926A9A150003FAC6A /* LaunchScreen.storyboard */; };
-		7281B7BEC9DD1EC978F18EBC /* Pods_ChefCraftAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */; };
+		9073905F29B4483E604BB046 /* Pods_ChefCraftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997DCF2F1929FEE948E22C55 /* Pods_ChefCraftApp.framework */; };
 		960676F626AEBC9200DDD3CA /* GenericSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */; };
 		960676F826AEBCEB00DDD3CA /* UICollections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */; };
 		960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960676F926AEBD9600DDD3CA /* CellInizializable.swift */; };
@@ -156,6 +155,15 @@
 		96E2BBD527678E8B00502CDB /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCE27678E8B00502CDB /* ProfileBuilder.swift */; };
 		96E2BBD627678E8B00502CDB /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBCF27678E8B00502CDB /* ProfileInteractor.swift */; };
 		96E2BBD82767E2A700502CDB /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2BBD72767E2A700502CDB /* Date+Extensions.swift */; };
+		A46DF68C279F013D00976AB2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF68B279F013D00976AB2 /* Restaurant.swift */; };
+		A46DF68F279F0A9800976AB2 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF68E279F0A9800976AB2 /* RestaurantDetailView.swift */; };
+		A46DF691279F0AA400976AB2 /* RestaurantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46DF690279F0AA400976AB2 /* RestaurantDetailView.xib */; };
+		A46DF693279F0C7B00976AB2 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF692279F0C7B00976AB2 /* CALayer+Extensions.swift */; };
+		A46DF695279F0D3A00976AB2 /* ContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF694279F0D3A00976AB2 /* ContentContainerView.swift */; };
+		A46DF697279F128B00976AB2 /* CorneredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF696279F128B00976AB2 /* CorneredView.swift */; };
+		A46DF699279F19BB00976AB2 /* ReactiveUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF698279F19BB00976AB2 /* ReactiveUIControl.swift */; };
+		A46DF69D279F1C6F00976AB2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DF69C279F1C6F00976AB2 /* Int+Extensions.swift */; };
+		FCC9F8FB14E05BDCA0404A0F /* Pods_ChefCraftAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2505A0A3E7923A30BC044745 /* Pods_ChefCraftAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,13 +177,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F588D83489E78A0485B7CBD /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1B258B82769224C5416E7916 /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2505A0A3E7923A30BC044745 /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD8F9BB26A9A14E003FAC6A /* ChefCraftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefCraftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD8F9BE26A9A14E003FAC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD8F9C726A9A150003FAC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD8F9CA26A9A150003FAC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD8F9CC26A9A150003FAC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		902BDAC594FD3195BC4E9E51 /* Pods-ChefCraftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.release.xcconfig"; sourceTree = "<group>"; };
+		92D0C4E503153297046ECC52 /* Pods-ChefCraftAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		960676F526AEBC9100DDD3CA /* GenericSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSectionModel.swift; sourceTree = "<group>"; };
 		960676F726AEBCEB00DDD3CA /* UICollections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollections+Extensions.swift"; sourceTree = "<group>"; };
 		960676F926AEBD9600DDD3CA /* CellInizializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInizializable.swift; sourceTree = "<group>"; };
@@ -322,10 +333,15 @@
 		96E2BBCE27678E8B00502CDB /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
 		96E2BBCF27678E8B00502CDB /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		96E2BBD72767E2A700502CDB /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.debug.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefCraftApp.release.xcconfig"; path = "Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp.release.xcconfig"; sourceTree = "<group>"; };
+		997DCF2F1929FEE948E22C55 /* Pods_ChefCraftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefCraftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A46DF68B279F013D00976AB2 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		A46DF68E279F0A9800976AB2 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		A46DF690279F0AA400976AB2 /* RestaurantDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailView.xib; sourceTree = "<group>"; };
+		A46DF692279F0C7B00976AB2 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		A46DF694279F0D3A00976AB2 /* ContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerView.swift; sourceTree = "<group>"; };
+		A46DF696279F128B00976AB2 /* CorneredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredView.swift; sourceTree = "<group>"; };
+		A46DF698279F19BB00976AB2 /* ReactiveUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveUIControl.swift; sourceTree = "<group>"; };
+		A46DF69C279F1C6F00976AB2 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,7 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005B8A7909C90B6E79C3BCCF /* Pods_ChefCraftApp.framework in Frameworks */,
+				9073905F29B4483E604BB046 /* Pods_ChefCraftApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +357,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7281B7BEC9DD1EC978F18EBC /* Pods_ChefCraftAppTests.framework in Frameworks */,
+				FCC9F8FB14E05BDCA0404A0F /* Pods_ChefCraftAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +371,7 @@
 				96CDFF6826B16ED100652CE4 /* ChefCraftAppTests */,
 				4BD8F9BC26A9A14E003FAC6A /* Products */,
 				D4B5A0B48BE47B42B47E25BF /* Pods */,
-				74E362B676995E7149C6F050 /* Frameworks */,
+				60C785144B2CA7BC64C1F833 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -383,11 +399,11 @@
 			path = ChefCraftApp;
 			sourceTree = "<group>";
 		};
-		74E362B676995E7149C6F050 /* Frameworks */ = {
+		60C785144B2CA7BC64C1F833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7625E6841389B67C5D4C75C6 /* Pods_ChefCraftApp.framework */,
-				98371667DC552265E12F48EB /* Pods_ChefCraftAppTests.framework */,
+				997DCF2F1929FEE948E22C55 /* Pods_ChefCraftApp.framework */,
+				2505A0A3E7923A30BC044745 /* Pods_ChefCraftAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -508,6 +524,7 @@
 				969428D226B0606E00A0D3B6 /* RecipeComposition.swift */,
 				969428D426B0608E00A0D3B6 /* RecipeCompositionType.swift */,
 				965D2D3F26C53DB000259515 /* Favorites.swift */,
+				A46DF68B279F013D00976AB2 /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -689,7 +706,10 @@
 		965D7A3126BBF7AD00D280B3 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A46DF68D279F0A7300976AB2 /* RestaurantDetailView */,
 				965D7A3226BBF7D400D280B3 /* RatingControlView */,
+				A46DF694279F0D3A00976AB2 /* ContentContainerView.swift */,
+				A46DF696279F128B00976AB2 /* CorneredView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -818,6 +838,7 @@
 			children = (
 				965DA64D26A9C77F00958782 /* RealmResults+Array.swift */,
 				960676FB26AEBE0A00DDD3CA /* String+Extensions.swift */,
+				A46DF69C279F1C6F00976AB2 /* Int+Extensions.swift */,
 				96A3841226AEE7E700F6530C /* Extensions+Rx.swift */,
 				96A3841A26AEEBBC00F6530C /* Array+Extensions.swift */,
 				96E2BBD72767E2A700502CDB /* Date+Extensions.swift */,
@@ -849,6 +870,8 @@
 				965D7A3526BC147300D280B3 /* UIView+Extensions.swift */,
 				9623326F26C2A5CF0007F904 /* EKColor+Extensions.swift */,
 				96C856EF2796F7B30076245E /* UIViewController+ModalAlerts.swift */,
+				A46DF692279F0C7B00976AB2 /* CALayer+Extensions.swift */,
+				A46DF698279F19BB00976AB2 /* ReactiveUIControl.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -1092,13 +1115,22 @@
 			name = ProfileView;
 			sourceTree = "<group>";
 		};
+		A46DF68D279F0A7300976AB2 /* RestaurantDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A46DF68E279F0A9800976AB2 /* RestaurantDetailView.swift */,
+				A46DF690279F0AA400976AB2 /* RestaurantDetailView.xib */,
+			);
+			path = RestaurantDetailView;
+			sourceTree = "<group>";
+		};
 		D4B5A0B48BE47B42B47E25BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */,
-				F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */,
-				32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */,
-				C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */,
+				0F588D83489E78A0485B7CBD /* Pods-ChefCraftApp.debug.xcconfig */,
+				902BDAC594FD3195BC4E9E51 /* Pods-ChefCraftApp.release.xcconfig */,
+				92D0C4E503153297046ECC52 /* Pods-ChefCraftAppTests.debug.xcconfig */,
+				1B258B82769224C5416E7916 /* Pods-ChefCraftAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1110,11 +1142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BD8F9CF26A9A150003FAC6A /* Build configuration list for PBXNativeTarget "ChefCraftApp" */;
 			buildPhases = (
-				736B70E0EEE38A2B28B54CC9 /* [CP] Check Pods Manifest.lock */,
+				2D155256E870C52E5CD9C5DE /* [CP] Check Pods Manifest.lock */,
 				4BD8F9B726A9A14E003FAC6A /* Sources */,
 				4BD8F9B826A9A14E003FAC6A /* Frameworks */,
 				4BD8F9B926A9A14E003FAC6A /* Resources */,
-				AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */,
+				1C90D77DA2F542569A052463 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1129,11 +1161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96CDFF7026B16ED100652CE4 /* Build configuration list for PBXNativeTarget "ChefCraftAppTests" */;
 			buildPhases = (
-				09B1DE81D551B5802F7ECE3F /* [CP] Check Pods Manifest.lock */,
+				91D09865D9957DCECCB3D706 /* [CP] Check Pods Manifest.lock */,
 				96CDFF6326B16ED100652CE4 /* Sources */,
 				96CDFF6426B16ED100652CE4 /* Frameworks */,
 				96CDFF6526B16ED100652CE4 /* Resources */,
-				0E0B9DFF236245D86E2DA194 /* [CP] Embed Pods Frameworks */,
+				EBF8C669286FD56399A1D910 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1188,6 +1220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962418E126AAD2D600200576 /* Metropolis-Light.otf in Resources */,
+				A46DF691279F0AA400976AB2 /* RestaurantDetailView.xib in Resources */,
 				96E2BBD027678E8B00502CDB /* ProfileView.storyboard in Resources */,
 				9648084026AF1AF4006F54CC /* RecipeCell.xib in Resources */,
 				962418DF26AAD2C800200576 /* Metropolis-Bold.otf in Resources */,
@@ -1224,46 +1257,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09B1DE81D551B5802F7ECE3F /* [CP] Check Pods Manifest.lock */ = {
+		1C90D77DA2F542569A052463 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChefCraftAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0E0B9DFF236245D86E2DA194 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		736B70E0EEE38A2B28B54CC9 /* [CP] Check Pods Manifest.lock */ = {
+		2D155256E870C52E5CD9C5DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1285,21 +1296,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB1B0277034086A7052F0819 /* [CP] Embed Pods Frameworks */ = {
+		91D09865D9957DCECCB3D706 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChefCraftAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChefCraftApp/Pods-ChefCraftApp-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBF8C669286FD56399A1D910 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChefCraftAppTests/Pods-ChefCraftAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1313,6 +1346,7 @@
 				965D7A3626BC147300D280B3 /* UIView+Extensions.swift in Sources */,
 				960676FA26AEBD9600DDD3CA /* CellInizializable.swift in Sources */,
 				965D79D326B3095C00D280B3 /* RecipeDetailsBuilder.swift in Sources */,
+				A46DF699279F19BB00976AB2 /* ReactiveUIControl.swift in Sources */,
 				96DB584C26CB050300328235 /* TabBarTransaction.swift in Sources */,
 				965DA68A26AA9F9000958782 /* Router.swift in Sources */,
 				965D7A3426BBF7F600D280B3 /* RatingControl.swift in Sources */,
@@ -1327,6 +1361,7 @@
 				9624E1652795BBA00056159E /* RecipesMapInteractor.swift in Sources */,
 				9648083B26AF1AD2006F54CC /* RecipesHeaderCell.swift in Sources */,
 				96A3841326AEE7E700F6530C /* Extensions+Rx.swift in Sources */,
+				A46DF693279F0C7B00976AB2 /* CALayer+Extensions.swift in Sources */,
 				96D20DC726CC0229001F91C2 /* RootRouter.swift in Sources */,
 				96E2BBD127678E8B00502CDB /* ProfilePresenter.swift in Sources */,
 				965D79D026B3095C00D280B3 /* RecipeDetailsInteractor.swift in Sources */,
@@ -1340,6 +1375,7 @@
 				965D79E326B447F900D280B3 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				965D79FC26B8280900D280B3 /* CompositionCell.swift in Sources */,
 				965DA69F26AAA1AF00958782 /* UIWindow+switchRoot.swift in Sources */,
+				A46DF68C279F013D00976AB2 /* Restaurant.swift in Sources */,
 				9624E1692795CB020056159E /* RecipeAnnotationModel.swift in Sources */,
 				96BDE9432762809D00F12ADE /* RecipeDetailsPresenter+Models.swift in Sources */,
 				965DA68826AA9F7400958782 /* InjectorProtocol.swift in Sources */,
@@ -1375,6 +1411,7 @@
 				965D7A1D26BAA6CD00D280B3 /* CategoryRecipesViewController.swift in Sources */,
 				960676FC26AEBE0A00DDD3CA /* String+Extensions.swift in Sources */,
 				965D2D4026C53DB000259515 /* Favorites.swift in Sources */,
+				A46DF695279F0D3A00976AB2 /* ContentContainerView.swift in Sources */,
 				9623327026C2A5CF0007F904 /* EKColor+Extensions.swift in Sources */,
 				96D20DB826CBFEC7001F91C2 /* FavoritesViewController.swift in Sources */,
 				965DA67826AA97E000958782 /* HomeViewController.swift in Sources */,
@@ -1419,11 +1456,14 @@
 				965DA67F26AA9A7D00958782 /* StoryboardInitializable.swift in Sources */,
 				965DA64426A9BD5300958782 /* RMObjectMethod.swift in Sources */,
 				96E2BBD627678E8B00502CDB /* ProfileInteractor.swift in Sources */,
+				A46DF69D279F1C6F00976AB2 /* Int+Extensions.swift in Sources */,
 				9624E1672795BF4D0056159E /* RecipeAnnotationView.swift in Sources */,
 				9648083F26AF1AF4006F54CC /* RecipeCell.swift in Sources */,
+				A46DF697279F128B00976AB2 /* CorneredView.swift in Sources */,
 				965DA68226AA9AE100958782 /* AppStoryboards.swift in Sources */,
 				96D20DA826CBF65A001F91C2 /* FavoriteCell.swift in Sources */,
 				965D7A1F26BAA6CD00D280B3 /* CategoryRecipesInteractor.swift in Sources */,
+				A46DF68F279F0A9800976AB2 /* RestaurantDetailView.swift in Sources */,
 				965DA67B26AA97E000958782 /* HomeBuilder.swift in Sources */,
 				965DA69A26AAA0A500958782 /* PushTransition.swift in Sources */,
 				965DA64026A9BCED00958782 /* DomainConvertibleType.swift in Sources */,
@@ -1518,7 +1558,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1582,7 +1622,7 @@
 		};
 		4BD8F9D026A9A150003FAC6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEA678D6BEAFE8D36FDA5E7B /* Pods-ChefCraftApp.debug.xcconfig */;
+			baseConfigurationReference = 0F588D83489E78A0485B7CBD /* Pods-ChefCraftApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1604,7 +1644,7 @@
 		};
 		4BD8F9D126A9A150003FAC6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F684FDF0AD5672D9DC45E50D /* Pods-ChefCraftApp.release.xcconfig */;
+			baseConfigurationReference = 902BDAC594FD3195BC4E9E51 /* Pods-ChefCraftApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1626,7 +1666,7 @@
 		};
 		96CDFF6E26B16ED100652CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32CE16A7A6339B84E837BAAB /* Pods-ChefCraftAppTests.debug.xcconfig */;
+			baseConfigurationReference = 92D0C4E503153297046ECC52 /* Pods-ChefCraftAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1647,7 +1687,7 @@
 		};
 		96CDFF6F26B16ED100652CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3CE6EA5C1B123E2E575D85A /* Pods-ChefCraftAppTests.release.xcconfig */;
+			baseConfigurationReference = 1B258B82769224C5416E7916 /* Pods-ChefCraftAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

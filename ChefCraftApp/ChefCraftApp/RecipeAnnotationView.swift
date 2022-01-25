@@ -11,7 +11,7 @@ import UIKit
 
 class RecipeAnnotationView: MKAnnotationView {
     
-    public var isCooked: Bool = false {
+    public var isOpen: Bool = false {
         didSet {
             self.image = self.setTerminalImage()
         }
@@ -21,7 +21,7 @@ class RecipeAnnotationView: MKAnnotationView {
         willSet {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
-            let workIcon = UIImage(named: "isCooked")
+            let workIcon = UIImage(named: "selectedMarker")
             self.image = newValue ? workIcon : self.setTerminalImage()
             CATransaction.commit()
         }
@@ -37,6 +37,6 @@ class RecipeAnnotationView: MKAnnotationView {
     }
     
     private func setTerminalImage() -> UIImage? {
-        return self.isCooked == true ? UIImage(named: "icCookedPin") : UIImage(named: "icNotCookedPin")
+        return self.isOpen == true ? UIImage(named: "openMarker") : UIImage(named: "closeMarker")
     }
 }

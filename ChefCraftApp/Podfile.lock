@@ -3,11 +3,11 @@ PODS:
   - Nimble (9.2.0)
   - Quick (4.0.0)
   - QuickLayout (3.0.0)
-  - Realm (10.11.0):
-    - Realm/Headers (= 10.11.0)
-  - Realm/Headers (10.11.0)
-  - RealmSwift (10.11.0):
-    - Realm (= 10.11.0)
+  - Realm (10.21.1):
+    - Realm/Headers (= 10.21.1)
+  - Realm/Headers (10.21.1)
+  - RealmSwift (10.21.1):
+    - Realm (= 10.21.1)
   - RxBlocking (6.2.0):
     - RxSwift (= 6.2.0)
   - RxCocoa (6.2.0):
@@ -28,11 +28,11 @@ PODS:
   - RxNimble/RxBlocking (5.1.2):
     - RxBlocking
     - RxNimble/Core
-  - RxRealm (5.0.1):
-    - Realm (~> 10.5)
-    - RealmSwift (~> 10.5)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
+  - RxRealm (5.0.4):
+    - Realm (~> 10.21)
+    - RealmSwift (~> 10.21)
+    - RxCocoa (~> 6.1)
+    - RxSwift (~> 6.1)
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
@@ -80,20 +80,20 @@ SPEC CHECKSUMS:
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  Realm: 39ff23f0f709cd4ed93eb47ee6593c2158945b38
-  RealmSwift: 42713e09a8631070d6c12c3c5fb22b8edc1daa41
+  Realm: 44b41c3ae39e3ecfded71a04434bfde066c7b317
+  RealmSwift: dbf9a4eb06e0c929d51c4ef2e8f951bca541feab
   RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxMKMapView: 9e33a1f1a6bdd96ef4d489d587df40b0b9017c20
   RxNimble: 60c8162b1518306a11d0c272a65ade133b209670
-  RxRealm: bd7c601e78cfebe48c24d4550db83c31e1ab2c33
+  RxRealm: 666c8785327fe2fff972a3093b35dc7055c1ca38
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   TBEmptyDataSet: 349add79095bf66d0d11ef9464edd1a8cf5354b5
 
-PODFILE CHECKSUM: b5d336f3bcede2c2356e478c885e5bd120e23b23
+PODFILE CHECKSUM: 0b5b16f0cde812e836bd77218a1cf24f62fd0609
 
 COCOAPODS: 1.11.2

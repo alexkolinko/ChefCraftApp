@@ -10,12 +10,12 @@ target 'ChefCraftApp' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
-  pod 'RxRealm'
   pod 'RxMKMapView'
   pod 'Swinject'
-  pod 'RealmSwift'
   pod 'SwiftEntryKit'
   pod 'TBEmptyDataSet'
+  pod 'RxRealm'
+  pod 'RealmSwift'
   
   target 'ChefCraftAppTests' do
     inherit! :search_paths
@@ -28,3 +28,5 @@ target 'ChefCraftApp' do
   end
 
 end
+
+

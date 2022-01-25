@@ -16,6 +16,12 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     // - Outlets
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var restaurantDetailedInfoBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var restaurantDetailView: RestaurantDetailView!
+    
+    @IBOutlet weak var userLocationContainer: CorneredView!
+    @IBOutlet weak var userLocationButton: UIButton!
+    
     // - Internal properties
     var presenter: RecipesMapPresenterImpl!
 
@@ -23,15 +29,20 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     private var disposeBag = DisposeBag()
     private var locationManager = CLLocationManager()
 
+    private var defeaultBottomConstraintValue: CGFloat {
+        let min = self.restaurantDetailView.bounds.height
+        return min
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBinding()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.presenter.selectedTerminal.accept(nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.centerMapOnUserLocation()
     }
     
     deinit {
@@ -42,6 +53,12 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     private func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
         self.configureMapView()
+        self.configureButtons()
+    }
+    
+    private func configureButtons() {
+        self.userLocationContainer.layer.borderWidth = 1.0
+        self.userLocationContainer.layer.borderColor = UIColor.gray.cgColor
     }
     
     private func configureMapView() {
@@ -77,17 +94,17 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     private func setupBinding() {
         
         // - Map view bindings
-        self.presenter.recipes
+        self.presenter.restaurants
             .asDriver()
-            .map { terminals -> [RecipeAnnotationModel] in
-                let annotations: [RecipeAnnotationModel] = terminals.compactMap({
+            .map { restaurants -> [RecipeAnnotationModel] in
+                let annotations: [RecipeAnnotationModel] = restaurants.compactMap({
                     .init(
                         location: CLLocation(
                             latitude: CLLocationDegrees($0.latitude),
                             longitude: CLLocationDegrees($0.longitude)
                         ),
                         terminalId: Int($0.id) ?? 0,
-                        isCooked: $0.cooked
+                        isCooked: $0.isOpen
                     )
                 })
                 return annotations
@@ -106,6 +123,54 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
                     self?.presenter.selectTerminal(with: model.terminalId)
                 }
                 
+            })
+            .disposed(by: self.disposeBag)
+        
+        // - Presenter + fuelTerminalDetailView bindings
+        self.presenter.selectedRestaurant
+            .withPrevious(startWith: nil)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] previos, next in
+                if
+                    let previosAnnotation = self?.mapView.annotations.first(where: { ($0 as? RecipeAnnotationModel)?.terminalId.getString() == previos?.id }),
+                    let previosAnnotationView = self?.mapView.view(for: previosAnnotation) as? RecipeAnnotationView
+                {
+                    previosAnnotationView.isSelectedRecipe = false
+                }
+                
+                if
+                    let nextSelectedAnnotation = self?.mapView.annotations.first(where: { ($0 as? RecipeAnnotationModel)?.terminalId.getString() == next?.id }),
+                    let nextAnnotationView = self?.mapView.view(for: nextSelectedAnnotation) as? RecipeAnnotationView
+                {
+                    self?.mapView.showAnnotations([nextSelectedAnnotation], animated: true)
+                    nextAnnotationView.isSelectedRecipe = true
+                }
+                
+                self?.restaurantDetailView.restaurantShowing.accept(next)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.userLocationButton.rx.tap
+            .asDriver()
+            .throttle(.milliseconds(300), latest: false)
+            .drive(onNext: { [weak self] in
+                self?.centerMapOnUserLocation()
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.restaurantDetailView.restaurantShowing
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] selectedRestaurant in
+                self?.restaurantDetailedInfoBottomConstraint.constant = selectedRestaurant != nil ? 0.0 : self?.defeaultBottomConstraintValue ?? 0.0
+                UIView.animate(withDuration: 0.3) {
+                    self?.view.layoutIfNeeded()
+                }
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.restaurantDetailView.dissmisView
+            .subscribe(onNext: { [weak self] in
+                self?.presenter.selectedRestaurant.accept(nil)
             })
             .disposed(by: self.disposeBag)
  
@@ -138,28 +203,28 @@ extension RecipesMapViewController: CLLocationManagerDelegate {
             default:
                 break
             }
-            
+
         }
 }
 
 // MARK: - RecipesMapViewController: MKMapViewDelegate
 extension RecipesMapViewController: MKMapViewDelegate {
-    
+
     /// The map view asks `mapView(_:viewFor:)` for an appropiate annotation view for a specific annotation.
     ///  - Tag: CreateAnnotationViews
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
         }
-        
+
         if annotation is MKClusterAnnotation {
             return nil
         }
-        
+
         if let annotation = annotation as? RecipeAnnotationModel {
             let reuseIdentifier = NSStringFromClass(RecipeAnnotationModel.self)
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation) as? RecipeAnnotationView
-            annotationView?.isCooked = annotation.isCooked
+            annotationView?.isOpen = annotation.isCooked
             annotationView?.clusteringIdentifier = NSStringFromClass(ClusterAnnotationView.self)
             annotationView?.canShowCallout = false
             annotationView?.isDraggable = false

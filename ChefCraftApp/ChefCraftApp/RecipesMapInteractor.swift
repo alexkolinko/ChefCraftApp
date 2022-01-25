@@ -12,7 +12,7 @@ import RxSwift
 // MARK: - RecipesMapInteractor
 /// Abstract logic layer for RecipesMapInteractorImpl
 protocol RecipesMapInteractor {
-    var recipesData: BehaviorRelay<[Recipe]> { get }
+    var restaurantsData: BehaviorRelay<[Restaurant]> { get }
 }
 
 // MARK: - RecipesMapInteractorImpl
@@ -20,13 +20,13 @@ protocol RecipesMapInteractor {
 final class RecipesMapInteractorImpl {
     
     // - Internal Properties
-    let recipesData = BehaviorRelay<[Recipe]>(value: [])
+    let restaurantsData = BehaviorRelay<[Restaurant]>(value: [])
     // - Private Properties
     private let mocked: MockedItem = .init()
     private let disposeBag = DisposeBag()
     
     init() {
-        self.recipesData.accept(self.mocked.userRecipes.recipes)
+        self.restaurantsData.accept(self.mocked.restaurants)
     }
 }
 

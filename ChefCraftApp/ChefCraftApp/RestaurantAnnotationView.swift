@@ -1,5 +1,5 @@
 //
-//  RecipeAnnotationView.swift
+//  RestaurantAnnotationView.swift
 //  ChefCraftApp
 //
 //  Created by Work on 17.01.2022.
@@ -9,20 +9,20 @@ import Foundation
 import MapKit
 import UIKit
 
-class RecipeAnnotationView: MKAnnotationView {
+class RestaurantAnnotationView: MKAnnotationView {
     
     public var isOpen: Bool = false {
         didSet {
-            self.image = self.setTerminalImage()
+            self.image = self.setRestaurantImage()
         }
     }
     
-    var isSelectedRecipe: Bool = false {
+    var isSelectedRestaurant: Bool = false {
         willSet {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             let workIcon = UIImage(named: "selectedMarker")
-            self.image = newValue ? workIcon : self.setTerminalImage()
+            self.image = newValue ? workIcon : self.setRestaurantImage()
             CATransaction.commit()
         }
     }
@@ -36,7 +36,7 @@ class RecipeAnnotationView: MKAnnotationView {
         super.init(coder: aDecoder)
     }
     
-    private func setTerminalImage() -> UIImage? {
+    private func setRestaurantImage() -> UIImage? {
         return self.isOpen == true ? UIImage(named: "openMarker") : UIImage(named: "closeMarker")
     }
 }

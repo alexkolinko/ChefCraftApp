@@ -38,7 +38,7 @@ class RootBuilder {
         let homeViewController = UINavigationController(rootViewController: HomeBuilder.build(injector: injector))
         let favoritesViewController = UINavigationController(rootViewController: FavoritesBuilder.build(injector: injector))
         let profileViewController = UINavigationController(rootViewController: ProfileBuilder.build(injector: injector))
-        let mapsViewController = UINavigationController(rootViewController: RecipesMapBuilder.build(injector: injector))
+        let mapsViewController = UINavigationController(rootViewController: RestaurantsMapBuilder.build(injector: injector))
         
         
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage(named: "icHome")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icHomeSelected")?.withRenderingMode(.alwaysOriginal))

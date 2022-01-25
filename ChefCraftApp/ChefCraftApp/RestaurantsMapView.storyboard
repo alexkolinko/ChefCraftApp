@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipes Map View Controller-->
+        <!--Restaurants Map View Controller-->
         <scene sceneID="CH2-bk-0lA">
             <objects>
-                <viewController storyboardIdentifier="RecipesMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8jz-xS-Myd" customClass="RecipesMapViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantsMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8jz-xS-Myd" customClass="RestaurantsMapViewController" customModule="ChefCraftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBi-h5-o5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

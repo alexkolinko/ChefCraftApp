@@ -9,29 +9,29 @@
 import RxSwift
 import RxCocoa
 
-// MARK: - RecipesMapInteractor
-/// Abstract logic layer for RecipesMapPresenterImpl
-//protocol RecipesMapPresenter {
+// MARK: - RestaurantsMapInteractor
+/// Abstract logic layer for RestaurantsMapPresenterImpl
+//protocol RestaurantsMapPresenter {
 //
 //}
 
-// MARK: - RecipesMapPresenterImpl
-class RecipesMapPresenterImpl {
+// MARK: - RestaurantsMapPresenterImpl
+class RestaurantsMapPresenterImpl {
     
     // - Internla Propreties
     /// Observable for location service enable status
     var isLocationServicesEnabled = BehaviorRelay<Bool>(value: false)
     /// Selected restaurant model from user interaction with mapkit view on view controller
     var selectedRestaurant = BehaviorRelay<Restaurant?>(value: nil)
-    /// All available recipes
+    /// All available restaurants
     var restaurants = BehaviorRelay<[Restaurant]>(value: [])
 
     // - Private Properties
     private var disposeBag = DisposeBag()
-    private var router: RecipesMapNavigation
-    private var interactor: RecipesMapInteractor
+    private var router: RestaurantsMapNavigation
+    private var interactor: RestaurantsMapInteractor
 
-    init(router: RecipesMapNavigation, interactor: RecipesMapInteractor) {
+    init(router: RestaurantsMapNavigation, interactor: RestaurantsMapInteractor) {
         self.router = router
         self.interactor = interactor
         self.binding()
@@ -42,7 +42,7 @@ class RecipesMapPresenterImpl {
     }
     
     // - Internal Logic
-    func selectTerminal(with id: Int) {
+    func selectRestaurant(with id: Int) {
         if let selected = self.selectedRestaurant.value?.id, let cuurentSelected = Int(selected) {
             if cuurentSelected != id {
                 self.selectedRestaurant.accept(self.restaurants.value.first(where: { item in

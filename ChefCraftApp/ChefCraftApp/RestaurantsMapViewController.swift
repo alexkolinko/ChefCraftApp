@@ -1,5 +1,5 @@
 //
-//  RecipesMapViewController.swift
+//  RestaurantsMapViewController.swift
 //  ChefCraftApp
 //
 //  Created by Work on 17.01.2022.
@@ -11,7 +11,7 @@ import RxSwift
 import MapKit
 import RxMKMapView
 
-class RecipesMapViewController: UIViewController, StoryboardInitializable {
+class RestaurantsMapViewController: UIViewController, StoryboardInitializable {
 
     // - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -23,7 +23,7 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     @IBOutlet weak var userLocationButton: UIButton!
     
     // - Internal properties
-    var presenter: RecipesMapPresenterImpl!
+    var presenter: RestaurantsMapPresenterImpl!
 
     // - Private properties
     private var disposeBag = DisposeBag()
@@ -69,7 +69,7 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
         mapView.showsCompass = false
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
-        mapView.register(RecipeAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(RecipeAnnotationModel.self))
+        mapView.register(RestaurantAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(RestaurantAnnotationModel.self))
         mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         
         let authorizationStatus: CLAuthorizationStatus
@@ -96,15 +96,15 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
         // - Map view bindings
         self.presenter.restaurants
             .asDriver()
-            .map { restaurants -> [RecipeAnnotationModel] in
-                let annotations: [RecipeAnnotationModel] = restaurants.compactMap({
+            .map { restaurants -> [RestaurantAnnotationModel] in
+                let annotations: [RestaurantAnnotationModel] = restaurants.compactMap({
                     .init(
                         location: CLLocation(
                             latitude: CLLocationDegrees($0.latitude),
                             longitude: CLLocationDegrees($0.longitude)
                         ),
-                        terminalId: Int($0.id) ?? 0,
-                        isCooked: $0.isOpen
+                        restaurantId: Int($0.id) ?? 0,
+                        isOpen: $0.isOpen
                     )
                 })
                 return annotations
@@ -119,31 +119,31 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
                 
                 if let cluster = selectedView.annotation as? MKClusterAnnotation {
                     self?.mapView.showAnnotations(cluster.memberAnnotations, animated: true)
-                } else if let model = selectedView.annotation as? RecipeAnnotationModel {
-                    self?.presenter.selectTerminal(with: model.terminalId)
+                } else if let model = selectedView.annotation as? RestaurantAnnotationModel {
+                    self?.presenter.selectRestaurant(with: model.restaurantId)
                 }
                 
             })
             .disposed(by: self.disposeBag)
         
-        // - Presenter + fuelTerminalDetailView bindings
+        // - Presenter + selectedRestaurant bindings
         self.presenter.selectedRestaurant
             .withPrevious(startWith: nil)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] previos, next in
                 if
-                    let previosAnnotation = self?.mapView.annotations.first(where: { ($0 as? RecipeAnnotationModel)?.terminalId.getString() == previos?.id }),
-                    let previosAnnotationView = self?.mapView.view(for: previosAnnotation) as? RecipeAnnotationView
+                    let previosAnnotation = self?.mapView.annotations.first(where: { ($0 as? RestaurantAnnotationModel)?.restaurantId.getString() == previos?.id }),
+                    let previosAnnotationView = self?.mapView.view(for: previosAnnotation) as? RestaurantAnnotationView
                 {
-                    previosAnnotationView.isSelectedRecipe = false
+                    previosAnnotationView.isSelectedRestaurant = false
                 }
                 
                 if
-                    let nextSelectedAnnotation = self?.mapView.annotations.first(where: { ($0 as? RecipeAnnotationModel)?.terminalId.getString() == next?.id }),
-                    let nextAnnotationView = self?.mapView.view(for: nextSelectedAnnotation) as? RecipeAnnotationView
+                    let nextSelectedAnnotation = self?.mapView.annotations.first(where: { ($0 as? RestaurantAnnotationModel)?.restaurantId.getString() == next?.id }),
+                    let nextAnnotationView = self?.mapView.view(for: nextSelectedAnnotation) as? RestaurantAnnotationView
                 {
                     self?.mapView.showAnnotations([nextSelectedAnnotation], animated: true)
-                    nextAnnotationView.isSelectedRecipe = true
+                    nextAnnotationView.isSelectedRestaurant = true
                 }
                 
                 self?.restaurantDetailView.restaurantShowing.accept(next)
@@ -194,8 +194,8 @@ class RecipesMapViewController: UIViewController, StoryboardInitializable {
     }
 }
 
-// MARK: - RecipesMapViewController: CLLocationManagerDelegate
-extension RecipesMapViewController: CLLocationManagerDelegate {
+// MARK: - RestaurantsMapViewController: CLLocationManagerDelegate
+extension RestaurantsMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             switch status {
             case .authorizedWhenInUse, .authorizedAlways:
@@ -207,8 +207,8 @@ extension RecipesMapViewController: CLLocationManagerDelegate {
         }
 }
 
-// MARK: - RecipesMapViewController: MKMapViewDelegate
-extension RecipesMapViewController: MKMapViewDelegate {
+// MARK: - RestaurantsMapViewController: MKMapViewDelegate
+extension RestaurantsMapViewController: MKMapViewDelegate {
 
     /// The map view asks `mapView(_:viewFor:)` for an appropiate annotation view for a specific annotation.
     ///  - Tag: CreateAnnotationViews
@@ -221,10 +221,10 @@ extension RecipesMapViewController: MKMapViewDelegate {
             return nil
         }
 
-        if let annotation = annotation as? RecipeAnnotationModel {
-            let reuseIdentifier = NSStringFromClass(RecipeAnnotationModel.self)
-            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation) as? RecipeAnnotationView
-            annotationView?.isOpen = annotation.isCooked
+        if let annotation = annotation as? RestaurantAnnotationModel {
+            let reuseIdentifier = NSStringFromClass(RestaurantAnnotationModel.self)
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation) as? RestaurantAnnotationView
+            annotationView?.isOpen = annotation.isOpen
             annotationView?.clusteringIdentifier = NSStringFromClass(ClusterAnnotationView.self)
             annotationView?.canShowCallout = false
             annotationView?.isDraggable = false

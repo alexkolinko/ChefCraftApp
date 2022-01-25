@@ -19,7 +19,5 @@ struct Recipe: Codable {
     let dateOfCooked: String
     var stars: Int
     let about: String
-    let latitude: Float
-    let longitude: Float
     let compositions: [RecipeComposition]
 }

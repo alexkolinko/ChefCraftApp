@@ -1,5 +1,5 @@
 //
-//  RecipesMapInteractor.swift
+//  RestaurantsMapInteractor.swift
 //  ChefCraftApp
 //
 //  Created by Work on 17.01.2022.
@@ -9,15 +9,15 @@
 import RxCocoa
 import RxSwift
 
-// MARK: - RecipesMapInteractor
-/// Abstract logic layer for RecipesMapInteractorImpl
-protocol RecipesMapInteractor {
+// MARK: - RestaurantsMapInteractor
+/// Abstract logic layer for RestaurantsMapInteractorImpl
+protocol RestaurantsMapInteractor {
     var restaurantsData: BehaviorRelay<[Restaurant]> { get }
 }
 
-// MARK: - RecipesMapInteractorImpl
-/// Implementation class for RecipesMapInteractor
-final class RecipesMapInteractorImpl {
+// MARK: - RestaurantsMapInteractorImpl
+/// Implementation class for RestaurantsMapInteractor
+final class RestaurantsMapInteractorImpl {
     
     // - Internal Properties
     let restaurantsData = BehaviorRelay<[Restaurant]>(value: [])
@@ -30,7 +30,7 @@ final class RecipesMapInteractorImpl {
     }
 }
 
-// MARK: - RecipesMapInteractorImpl: RecipesMapInteractor
-extension RecipesMapInteractorImpl: RecipesMapInteractor {
+// MARK: - RestaurantsMapInteractorImpl: RestaurantsMapInteractor
+extension RestaurantsMapInteractorImpl: RestaurantsMapInteractor {
     
 }

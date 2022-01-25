@@ -38,8 +38,6 @@ final class RMRecipe: Object {
         self.cooked = domain.cooked
         self.dateOfCooked = domain.dateOfCooked
         self.stars = domain.stars
-        self.latitude = domain.latitude
-        self.longitude = domain.longitude
         self.about = domain.about
         
         let encoder = JSONEncoder()
@@ -66,8 +64,6 @@ extension RMRecipe: DomainConvertibleType {
             dateOfCooked: self.dateOfCooked,
             stars: self.stars,
             about: self.about,
-            latitude: self.latitude,
-            longitude: self.longitude,
             compositions: compositions
         )
     }

@@ -65,19 +65,19 @@ private extension UserProgressService {
     }
     
     func handleInput(_ mockedRecipes: [Recipe], _ inputRecipes: [Recipe]) {
-        self.getCookedRecipiesPerDay(recipies: inputRecipes)
-        self.getCookedRecipiesPerWeek(recipies: inputRecipes)
-        self.getMissedAndNeedToCookRecipes(inputRecipes, mockedRecipes: mockedRecipes)
+        self.calculateCookedRecipiesPerDay(recipies: inputRecipes)
+        self.calculateCookedRecipiesPerWeek(recipies: inputRecipes)
+        self.calculateMissedAndNeedToCookRecipes(inputRecipes, mockedRecipes: mockedRecipes)
     }
-    // calculate Cooked RecipiesPerDay
-    func getCookedRecipiesPerDay(recipies: [Recipe]) {
+    
+    func calculateCookedRecipiesPerDay(recipies: [Recipe]) {
         let cookedRecipes = recipies.filter({ $0.cooked == true })
         let dates = cookedRecipes.compactMap({ $0.dateOfCooked.toDate() })
         let todayCooked = dates.filter { Calendar.current.isDateInToday($0) }
         self.cookedRecipesPerDay.onNext(todayCooked.count)
     }
     
-    func getCookedRecipiesPerWeek(recipies: [Recipe]) {
+    func calculateCookedRecipiesPerWeek(recipies: [Recipe]) {
         let today = Date()
         let week = today.datesOfWeek().map({ $0.getShortDate() })
         let cookedDates = recipies.compactMap({ $0.dateOfCooked.toDate()?.getShortDate() })
@@ -86,7 +86,7 @@ private extension UserProgressService {
         self.cookedRecipesPerWeek.onNext(result.count)
     }
     
-    func getMissedAndNeedToCookRecipes(_ recipies: [Recipe], mockedRecipes: [Recipe]) {
+    func calculateMissedAndNeedToCookRecipes(_ recipies: [Recipe], mockedRecipes: [Recipe]) {
         let cookedIDs = recipies.filter({ $0.cooked == true }).map({ $0.id })
         let mockedIDs = mockedRecipes.map({ $0.id })
         

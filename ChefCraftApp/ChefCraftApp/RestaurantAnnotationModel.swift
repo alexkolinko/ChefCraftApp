@@ -1,5 +1,5 @@
 //
-//  RecipeAnnotationModel.swift
+//  RestaurantAnnotationModel.swift
 //  ChefCraftApp
 //
 //  Created by Work on 17.01.2022.
@@ -8,18 +8,18 @@
 import Foundation
 import MapKit
 
-class RecipeAnnotationModel: NSObject, MKAnnotation {
+class RestaurantAnnotationModel: NSObject, MKAnnotation {
     @objc dynamic var coordinate: CLLocationCoordinate2D
     @objc dynamic var title: String?
     
-    var terminalId: Int
-    var isCooked: Bool
+    var restaurantId: Int
+    var isOpen: Bool
 
-    init(location: CLLocation, terminalId: Int, isCooked: Bool) {
+    init(location: CLLocation, restaurantId: Int, isOpen: Bool) {
         self.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        self.isCooked = isCooked
+        self.isOpen = isOpen
         title = nil
-        self.terminalId = terminalId
+        self.restaurantId = restaurantId
         super.init()
     }
 }

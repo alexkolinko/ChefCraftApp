@@ -28,8 +28,8 @@ class ClusterAnnotationView: MKAnnotationView {
         super.prepareForDisplay()
         
         guard let cluster = annotation as? MKClusterAnnotation else { return }
-        let tototalTerminals = cluster.memberAnnotations.count
-        image = self.image(count: tototalTerminals)
+        let tototalRestaurants = cluster.memberAnnotations.count
+        image = self.image(count: tototalRestaurants)
     }
     
     private func image(count: Int) -> UIImage? {

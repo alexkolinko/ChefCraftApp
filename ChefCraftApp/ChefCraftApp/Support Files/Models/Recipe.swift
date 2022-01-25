@@ -15,9 +15,21 @@ struct Recipe: Codable {
     let description: String
     let owner: String
     let isLike: Bool
-    let cooked: Bool
-    let dateOfCooked: String
+    var cooked: Bool
+    var dateOfCooked: String
     var stars: Int
     let about: String
     let compositions: [RecipeComposition]
+}
+
+// MARK: - Recipe + mutating
+extension Recipe {
+    mutating func setCooked(cooked: Bool, dateOfCooked: String) {
+        self.cooked = cooked
+        self.dateOfCooked = dateOfCooked
+    }
+    
+    mutating func setStars(stars: Int) {
+        self.stars = stars
+    }
 }

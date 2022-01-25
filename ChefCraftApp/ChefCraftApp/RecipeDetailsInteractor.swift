@@ -85,42 +85,18 @@ extension RecipeDetailsInteractorImpl: RecipeDetailsInteractor {
     }
     
     func updateCooked(_ isCooked: Bool) {
-        guard let recipe = self.recipeData.value else { return }
+        guard var recipe = self.recipeData.value else { return }
         let today = Date()
         let formatter3 = DateFormatter()
         formatter3.dateFormat = "dd MMM yyyy, HH:mm"
         let date = formatter3.string(from: today)
-        let newModel = Recipe(
-            id: recipe.id,
-            name: recipe.name,
-            image: recipe.image,
-            description: recipe.description,
-            owner: recipe.owner,
-            isLike: recipe.isLike,
-            cooked: isCooked,
-            dateOfCooked: isCooked ? date : "",
-            stars: recipe.stars,
-            about: recipe.about,
-            compositions: recipe.compositions
-        )
-        self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
+        recipe.setCooked(cooked: isCooked, dateOfCooked: isCooked ? date : "")
+        self.databaseProvider.saveRecipe(with: recipe).subscribe().disposed(by: self.disposeBag)
     }
     
     func updateRating(_ rating: Int) {
-        guard let recipe = self.recipeData.value else { return }
-        let newModel = Recipe(
-            id: recipe.id,
-            name: recipe.name,
-            image: recipe.image,
-            description: recipe.description,
-            owner: recipe.owner,
-            isLike: recipe.isLike,
-            cooked: recipe.cooked,
-            dateOfCooked: recipe.dateOfCooked,
-            stars: rating,
-            about: recipe.about,
-            compositions: recipe.compositions
-        )
-        self.databaseProvider.saveRecipe(with: newModel).subscribe().disposed(by: self.disposeBag)
+        guard var recipe = self.recipeData.value else { return }
+        recipe.setStars(stars: rating)
+        self.databaseProvider.saveRecipe(with: recipe).subscribe().disposed(by: self.disposeBag)
     }
 }

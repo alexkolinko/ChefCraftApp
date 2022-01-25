@@ -21,9 +21,14 @@ extension UserProgressService {
 extension UserProgressService {
     
     struct Output {
-        let cookedRecipesPerDay: Observable<Int>
-        let cookedRecipesPerWeek: Observable<Int>
-        let missedRecipes: Observable<Int>
-        let needToBeCook: Observable<Int>
+        let result: Observable<Result>
+        
+        /// UI response DTO for service output stream
+        struct Result {
+            let cookedRecipesPerDay: Int
+            let cookedRecipesPerWeek: Int
+            let missedRecipes: Int
+            let needToBeCook: Int
+        }
     }
 }

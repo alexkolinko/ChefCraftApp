@@ -61,6 +61,14 @@ extension RecipeDetailsViewController {
             })
             .disposed(by: self.disposeBag)
         
+        presenter.output.applyCookedAction
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe (onNext: { [weak self] value in
+                self?.cookedAction(value)
+            })
+            .disposed(by: self.disposeBag)
+        
+        
     }
     
     func configNavigationView() {
@@ -103,6 +111,10 @@ extension RecipeDetailsViewController {
     
     func likeAction(_ value: Bool) {
         self.showFloatView(title: value ? self.constants.floatLikeTitle : self.constants.floatRemovedLikeTitle, description: value ? self.constants.floatLikeDescription : self.constants.floatRemovedLikeDescription, image: value ? self.constants.selectedHeartImage : self.constants.unselectedHeartImage)
+    }
+    
+    func cookedAction(_ value: Bool) {
+        self.showFloatView(title: value ? self.constants.floatCookedTitle : self.constants.floatRemoveCookedTitle, description: value ? self.constants.floatCookedDescription : self.constants.floatRemoveCookedDescription, image: value ? self.constants.selectedCookedImage : self.constants.unselectedCookedImage)
     }
     
     // - Selectors
@@ -355,7 +367,15 @@ private extension RecipeDetailsViewController {
         let floatLikeDescription = "Recipe added to your favorite."
         let floatRemovedLikeDescription = "Recipe removed from your favorite."
         let floatLikeTitle = "Like!"
-        let floatRemovedLikeTitle = "Removed like!"
+        let floatRemovedLikeTitle = "Remove like!"
+        
+        let floatCookedDescription = "Recipe is cooked."
+        let floatRemoveCookedDescription = "Recipe is not cooked."
+        let floatCookedTitle = "Cooked!"
+        let floatRemoveCookedTitle = "Remove cooked!"
+        
+        
+        
         let ratingCloseButtonText = "Dismiss"
         let ratingOkButtonText = "Accept"
         let ratingDescriptionText = "How was it?"
@@ -369,6 +389,8 @@ private extension RecipeDetailsViewController {
         let unselectedStarImage = UIImage(named: "ic_star_unselected")
         let unselectedHeartImage = UIImage(named: "icHeart")
         let selectedHeartImage = UIImage(named: "icRedHeart")
+        let selectedCookedImage = UIImage(named: "icYes")
+        let unselectedCookedImage = UIImage(named: "icNo")
 
         // - Fonts
         let fontMetropolis = UIFont(name: "Metropolis", size: 13.0) ?? UIFont.systemFont(ofSize: 13)

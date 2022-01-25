@@ -68,20 +68,29 @@ private extension ProfileInteractorImpl {
             })
             .disposed(by: self.disposeBag)
         
-        self.userProgressService.output.cookedRecipesPerDay
-            .bind(to: self.cookedRecipesPerDay)
+        self.userProgressService.output.result
+            .subscribe(onNext: { [weak self] result in
+                self?.cookedRecipesPerDay.accept(result.cookedRecipesPerDay)
+                self?.cookedRecipesPerWeek.accept(result.cookedRecipesPerWeek)
+                self?.missedRecipes.accept(result.missedRecipes)
+                self?.needToBeCook.accept(result.needToBeCook)
+            })
             .disposed(by: self.disposeBag)
         
-        self.userProgressService.output.cookedRecipesPerWeek
-            .bind(to: self.cookedRecipesPerWeek)
-            .disposed(by: self.disposeBag)
-        
-        self.userProgressService.output.missedRecipes
-            .bind(to: self.missedRecipes)
-            .disposed(by: self.disposeBag)
-        
-        self.userProgressService.output.needToBeCook
-            .bind(to: self.needToBeCook)
-            .disposed(by: self.disposeBag)
+//        self.userProgressService.output.cookedRecipesPerDay
+//            .bind(to: self.cookedRecipesPerDay)
+//            .disposed(by: self.disposeBag)
+//
+//        self.userProgressService.output.cookedRecipesPerWeek
+//            .bind(to: self.cookedRecipesPerWeek)
+//            .disposed(by: self.disposeBag)
+//
+//        self.userProgressService.output.missedRecipes
+//            .bind(to: self.missedRecipes)
+//            .disposed(by: self.disposeBag)
+//
+//        self.userProgressService.output.needToBeCook
+//            .bind(to: self.needToBeCook)
+//            .disposed(by: self.disposeBag)
     }
 }

@@ -22,6 +22,8 @@ protocol UserProgressServiceProtocol {
 // MARK: - UserProgressService
 final class UserProgressService: UserProgressServiceProtocol {
     
+    typealias OutputResult = UserProgressService.Output.Result
+    
     // - Public propreties
     let input: Input
     let output: Output
@@ -29,11 +31,7 @@ final class UserProgressService: UserProgressServiceProtocol {
     // - Private propreties
     private let mockedRecipes = PublishSubject<[Recipe]>()
     private let inputRecipes = PublishSubject<[Recipe]>()
-    private let cookedRecipesPerDay = ReplaySubject<Int>.create(bufferSize: 1)
-    private let cookedRecipesPerWeek = ReplaySubject<Int>.create(bufferSize: 1)
-    private let missedRecipes = ReplaySubject<Int>.create(bufferSize: 1)
-    private let needToBeCook = ReplaySubject<Int>.create(bufferSize: 1)
-    
+    private let result = ReplaySubject<OutputResult>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
     
     init() {
@@ -41,12 +39,7 @@ final class UserProgressService: UserProgressServiceProtocol {
             mockedRecipes: self.mockedRecipes.asObserver(),
             recipes: self.inputRecipes.asObserver()
         )
-        self.output = .init(
-            cookedRecipesPerDay: self.cookedRecipesPerDay.asObservable(),
-            cookedRecipesPerWeek: self.cookedRecipesPerWeek.asObservable(),
-            missedRecipes: self.missedRecipes.asObservable(),
-            needToBeCook: self.needToBeCook.asObservable()
-        )
+        self.output = .init(result: self.result)
         
         self.binding()
     }
@@ -58,45 +51,46 @@ private extension UserProgressService {
     func binding() {
         
         Observable.combineLatest(self.mockedRecipes, self.inputRecipes)
-            .subscribe(onNext: { [weak self] mockedRecipes, inputRecipes in
-                self?.handleInput(mockedRecipes, inputRecipes)
+            .map({ OutputResult(
+                cookedRecipesPerDay: self.calculateCookedRecipiesPerDay(recipies: $1),
+                cookedRecipesPerWeek: self.calculateCookedRecipiesPerWeek(recipies: $1),
+                missedRecipes: self.calculateMissedRecipes($0, mockedRecipes: $1),
+                needToBeCook: self.calculateNeedToCookRecipes($0, mockedRecipes: $1)
+            ) })
+            .subscribe(onNext: { [weak self] value in
+                self?.result.onNext(value)
             })
             .disposed(by: self.disposeBag)
     }
     
-    func handleInput(_ mockedRecipes: [Recipe], _ inputRecipes: [Recipe]) {
-        self.calculateCookedRecipiesPerDay(recipies: inputRecipes)
-        self.calculateCookedRecipiesPerWeek(recipies: inputRecipes)
-        self.calculateMissedAndNeedToCookRecipes(inputRecipes, mockedRecipes: mockedRecipes)
-    }
-    
-    func calculateCookedRecipiesPerDay(recipies: [Recipe]) {
+    func calculateCookedRecipiesPerDay(recipies: [Recipe]) -> Int {
         let cookedRecipes = recipies.filter({ $0.cooked == true })
         let dates = cookedRecipes.compactMap({ $0.dateOfCooked.toDate() })
         let todayCooked = dates.filter { Calendar.current.isDateInToday($0) }
-        self.cookedRecipesPerDay.onNext(todayCooked.count)
+        return todayCooked.count
     }
     
-    func calculateCookedRecipiesPerWeek(recipies: [Recipe]) {
-        let today = Date()
-        let week = today.datesOfWeek().map({ $0.getShortDate() })
+    func calculateCookedRecipiesPerWeek(recipies: [Recipe]) -> Int {
+        let week = Date().datesOfWeek().map({ $0.getShortDate() })
         let cookedDates = recipies.compactMap({ $0.dateOfCooked.toDate()?.getShortDate() })
-        let result = cookedDates.filter( {week.contains($0) == true} )
-        
-        self.cookedRecipesPerWeek.onNext(result.count)
+        let result = cookedDates.filter( { week.contains($0) } )
+        return result.count
     }
     
-    func calculateMissedAndNeedToCookRecipes(_ recipies: [Recipe], mockedRecipes: [Recipe]) {
+    func calculateMissedRecipes(_ recipies: [Recipe], mockedRecipes: [Recipe]) -> Int {
         let cookedIDs = recipies.filter({ $0.cooked == true }).map({ $0.id })
         let mockedIDs = mockedRecipes.map({ $0.id })
+        let coverageCooked = cookedIDs.compactMap({ mockedIDs.firstIndex(of: $0) }).max() ?? 0 + 1
+        return coverageCooked - cookedIDs.count
         
-        guard let maxIndex = cookedIDs.compactMap({ mockedIDs.firstIndex(of: $0) }).max() else { return }
-        let coverageCooked = maxIndex + 1
+    }
+    
+    func calculateNeedToCookRecipes(_ recipies: [Recipe], mockedRecipes: [Recipe]) -> Int {
+        let cookedIDs = recipies.filter({ $0.cooked == true }).map({ $0.id })
+        let mockedIDs = mockedRecipes.map({ $0.id })
+        let coverageCooked = cookedIDs.compactMap({ mockedIDs.firstIndex(of: $0) }).max() ?? 0 + 1
         let missed = coverageCooked - cookedIDs.count
-        let needed = (mockedRecipes.count - coverageCooked) + missed
-        
-        self.missedRecipes.onNext(missed)
-        self.needToBeCook.onNext(needed)
+        return (mockedRecipes.count - coverageCooked) + missed
         
     }
 }

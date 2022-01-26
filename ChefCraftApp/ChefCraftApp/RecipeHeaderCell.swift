@@ -17,6 +17,7 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var backgraundView: UIView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var cookedLabel: UILabel!
     @IBOutlet weak var cookedButton: UIButton!
     
     // - Internal properties
@@ -51,12 +52,14 @@ class RecipeHeaderCell: UICollectionViewCell, CellInizializable {
 private extension RecipeHeaderCell {
    
     func configUI() {
+        self.cookedLabel.text = "Is cooked:"
         self.likeButton.setImage(self.constants.selectedHeartImage, for: .selected)
         self.likeButton.setImage(self.constants.unselectedHeartImage, for: .normal)
         self.cookedButton.setImage(self.constants.selectedCookedImage, for: .selected)
         self.cookedButton.setImage(self.constants.unselectedCookedImage, for: .normal)
         self.recipeTitle.font = self.constants.fontMetropolisBold
         self.recipeOwner.font = self.constants.fontMetropolisLight
+        self.cookedLabel.font = self.constants.fontMetropolisBold15
         self.backgraundView.layer.cornerRadius = 20
     }
     
@@ -117,9 +120,10 @@ private extension RecipeHeaderCell {
         // - Icons
         let unselectedHeartImage = UIImage(named: "icHeart")
         let selectedHeartImage = UIImage(named: "icRedHeart")
-        let selectedCookedImage = UIImage(systemName: "checkmark.square.fill")
-        let unselectedCookedImage = UIImage(systemName: "checkmark.square")
+        let selectedCookedImage = UIImage(named: "icYes")
+        let unselectedCookedImage = UIImage(named: "icNo")
         let fontMetropolisBold = UIFont(name: "Metropolis-Bold", size: 18.0)
+        let fontMetropolisBold15 = UIFont(name: "Metropolis-Bold", size: 15.0)
         let fontMetropolisLight = UIFont(name: "Metropolis-Light", size: 10.0)
     }
 }

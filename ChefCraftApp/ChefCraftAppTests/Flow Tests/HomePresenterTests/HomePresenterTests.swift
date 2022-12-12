@@ -152,12 +152,12 @@ private extension HomePresenterTests {
                     Recipe(id: "3", name: "RecipeItem 3", image: "test", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 3, about: "test", compositions: [])
                 ])
             ], recipes: [
-                Recipe(id: "1", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                Recipe(id: "1", name: "Second RECIPE", image: "scrambledEggs", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
                     RecipeComposition(type: .totalTime, value: 40)
                 ]),
-                Recipe(id: "2", name: "Second RECIPE", image: "bitmap", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
+                Recipe(id: "2", name: "Second RECIPE", image: "scrambledEggs", description: "Second RECIPE - description",  owner: "Sarah", isLike: false, cooked: false, dateOfCooked: "", stars: 3, about: "Second RECIPE - is best recipe", compositions: [
                     RecipeComposition(type: .calories, value: 200),
                     RecipeComposition(type: .ingredients, value: 7),
                     RecipeComposition(type: .totalTime, value: 40)

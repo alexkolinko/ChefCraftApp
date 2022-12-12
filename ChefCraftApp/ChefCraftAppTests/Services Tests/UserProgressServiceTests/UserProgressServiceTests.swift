@@ -160,12 +160,12 @@ class UserProgressServiceTests: QuickSpec {
 private struct Mock {
     
     static let mockedRecipes: [Recipe] = [
-        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
+        .init(id: "1", name: "First RECIPE", image: "scrambledEggs", description: "test", owner: "test", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
         ]),
-        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
+        .init(id: "2", name: "Second RECIPE", image: "scrambledEggs", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
@@ -173,12 +173,12 @@ private struct Mock {
     ]
     
     static let inputRecipes: [Recipe] = [
-        .init(id: "1", name: "First RECIPE", image: "bitmap", description: "test", owner: "Smith", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
+        .init(id: "1", name: "First RECIPE", image: "scrambledEggs", description: "test", owner: "Smith", isLike: true, cooked: true, dateOfCooked: "17 Jan 2022, 16:06", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)
         ]),
-        .init(id: "2", name: "Second RECIPE", image: "bitmap", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
+        .init(id: "2", name: "Second RECIPE", image: "scrambledEggs", description: "test", owner: "test", isLike: true, cooked: false, dateOfCooked: "", stars: 4, about: "test", compositions: [
             RecipeComposition(type: .calories, value: 150),
             RecipeComposition(type: .ingredients, value: 5),
             RecipeComposition(type: .totalTime, value: 30)

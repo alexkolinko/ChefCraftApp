@@ -101,7 +101,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func getDomainObject<T: RealmConvertableType>(by key: Any, realmType: T.Type) -> Single<T.DomainType> {
+    func getDomainObject<T: Object & DomainConvertibleType>(by key: Any, realmType: T.Type) -> Single<T.DomainType> {
         do {
             let storage = try Realm()
             guard let object = storage.object(ofType: realmType.self, forPrimaryKey: key) else {
@@ -113,7 +113,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func getDomainObjects<T: RealmConvertableType>(realmType: T.Type) -> Single<[T.DomainType]> {
+    func getDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type) -> Single<[T.DomainType]> {
         do {
             let storage = try Realm()
             let objects = storage.objects(T.self).toArray(ofType: T.self).compactMap({ $0.asDomain() })
@@ -123,7 +123,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func setDomainObject<T: RealmConvertableType>(realmType: T.Type, model: T.DomainType) -> Completable {
+    func setDomainObject<T: Object & DomainConvertibleType>(realmType: T.Type, model: T.DomainType) -> Completable {
         do {
             let storage = try Realm()
             let object = realmType.init()
@@ -137,7 +137,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func setDomainObjects<T: RealmConvertableType>(realmType: T.Type, models: [T.DomainType]) -> Completable {
+    func setDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type, models: [T.DomainType]) -> Completable {
         do {
             let database = try Realm()
             let objects = models.compactMap { model -> T in
@@ -154,7 +154,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func removeDomainObject<T: RealmConvertableType>(relmType: T.Type, primaryKey: String) -> Completable {
+    func removeDomainObject<T: Object & DomainConvertibleType>(relmType: T.Type, primaryKey: String) -> Completable {
         do {
             let storage = try Realm()
             guard let object = storage.object(ofType: T.self, forPrimaryKey: primaryKey) else {
@@ -169,7 +169,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func removeDomainObject<T: RealmConvertableType>(relmType: T.Type, primaryKey: Int) -> Completable {
+    func removeDomainObject<T: Object & DomainConvertibleType>(relmType: T.Type, primaryKey: Int) -> Completable {
         do {
             let storage = try Realm()
             guard let object = storage.object(ofType: T.self, forPrimaryKey: primaryKey) else {
@@ -184,7 +184,7 @@ extension RealmStorageManager: DomainStorageProtocol {
         }
     }
     
-    func removeDomainObjects<T: RealmConvertableType>(realmType: T.Type, primaryKeys: [Any]) -> Single<[T.DomainType]> {
+    func removeDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type, primaryKeys: [Any]) -> Single<[T.DomainType]> {
         do {
             let database = try Realm()
             let objects = primaryKeys.compactMap { database.object(ofType: T.self, forPrimaryKey: $0) }

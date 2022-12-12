@@ -10,30 +10,26 @@ import RealmSwift
 
 /// Protocol to managed and connet ViewModel's JSON-codable models & Realm-containered models
 protocol DomainStorageProtocol {
+        
+    func getDomainObject<T: Object & DomainConvertibleType>(by key: Any, realmType: T.Type) -> Single<T.DomainType>
     
-    typealias RealmConvertableType = Object & DomainConvertibleType
+    func getDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type) -> Single<[T.DomainType]>
     
-    func getDomainObject<T: RealmConvertableType>(by key: Any, realmType: T.Type) -> Single<T.DomainType>
+    func getUniqueDomainObject<T: Object & DomainConvertibleType>(realmType: T.Type) -> Single<T.DomainType>
     
-    func getDomainObjects<T: RealmConvertableType>(realmType: T.Type) -> Single<[T.DomainType]>
+    func setDomainObject<T: Object & DomainConvertibleType>(realmType: T.Type, model: T.DomainType) -> Completable
     
-    func getUniqueDomainObject<T: RealmConvertableType>(realmType: T.Type) -> Single<T.DomainType>
+    func setDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type, models: [T.DomainType]) -> Completable
     
-    func setDomainObject<T: RealmConvertableType>(realmType: T.Type, model: T.DomainType) -> Completable
+    func removeDomainObject<T: Object & DomainConvertibleType>(relmType: T.Type, primaryKey: Int) -> Completable
     
-    func setDomainObjects<T: RealmConvertableType>(realmType: T.Type, models: [T.DomainType]) -> Completable
+    func removeDomainObject<T: Object & DomainConvertibleType>(relmType: T.Type, primaryKey: String) -> Completable
     
-    func removeDomainObject<T: RealmConvertableType>(relmType: T.Type, primaryKey: Int) -> Completable
-    
-    func removeDomainObject<T: RealmConvertableType>(relmType: T.Type, primaryKey: String) -> Completable
-    
-    func removeDomainObjects<T: RealmConvertableType>(realmType: T.Type, primaryKeys: [Any]) -> Single<[T.DomainType]>
+    func removeDomainObjects<T: Object & DomainConvertibleType>(realmType: T.Type, primaryKeys: [Any]) -> Single<[T.DomainType]>
 }
 
 /// Protocol to managed and connet ViewModel's Realm-containered models
 protocol RealmStorageProtocol {
-    
-    typealias RealmConvertableType = Object & DomainConvertibleType
     
     /// Set Realm Object to Data Base
     ///
